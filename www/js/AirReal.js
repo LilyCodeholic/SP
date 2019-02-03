@@ -54,11 +54,11 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サブライガ",
-                "durability":0,
-                "length":"-",
-                "range":"-",
-                "weight":0,
-                "feature":"？"
+                "durability":180,
+                "length":"D",
+                "range":"B",
+                "weight":200,
+                "feature":"(クリティカルの範囲が広い)"
             }
         ],
         Arm:
@@ -128,12 +128,12 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サイトヘッド",
-                "armor":0,
-                "durability":0,
-                "repairSpeed":"",
-                "repairLatency":"",
-                "weight":0,
-                "feature":"？"
+                "armor":230,
+                "durability":170,
+                "repairSpeed":"D",
+                "repairLatency":"D",
+                "weight":2100,
+                "feature":"-"
             },
             {
                 "name":"CU・レイター",
@@ -146,12 +146,12 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"ゴールテン・D",
-                "armor":0,
-                "durability":0,
-                "repairSpeed":"",
-                "repairLatency":"",
-                "weight":0,
-                "feature":"？"
+                "armor":300,
+                "durability":130,
+                "repairSpeed":"E",
+                "repairLatency":"E",
+                "weight":2200,
+                "feature":"-"
             },
             {
                 "name":"ディスドス",
@@ -200,15 +200,15 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サイトヘッド",
-                "durability":0,
-                "weight":0,
-                "dashType":"-",
-                "dodge":"",
-                "dash":"",
-                "fdType":"-",
-                "fdCharge":"",
-                "drift":"",
-                "feature":"？"
+                "durability":250,
+                "weight":2100,
+                "dashType":"加速ダッシュ",
+                "dodge":"B+",
+                "dash":"A+",
+                "fdType":"長距離スタンダード",
+                "fdCharge":"B+",
+                "drift":"C",
+                "feature":"-"
             },
             {
                 "name":"CU・レイター",
@@ -248,15 +248,15 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サブライガ",
-                "durability":0,
-                "weight":0,
-                "dashType":"",
-                "dodge":"",
-                "dash":"",
-                "fdType":"",
-                "fdCharge":"",
-                "drift":"",
-                "feature":"？"
+                "durability":190,
+                "weight":2200,
+                "dashType":"高速ダッシュ",
+                "dodge":"B",
+                "dash":"C",
+                "fdType":"長距離スタンダード",
+                "fdCharge":"B",
+                "drift":"B",
+                "feature":"-"
             }
         ],
         Leg:
@@ -277,10 +277,10 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サイトヘッド",
-                "durability":0,
-                "occupation":"",
-                "weight":0,
-                "feature":"？"
+                "durability":170,
+                "occupation":"B+",
+                "weight":2100,
+                "feature":"-"
             },
             {
                 "name":"CU・レイター",
@@ -291,10 +291,10 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"ゴールテン・D",
-                "durability":0,
-                "occupation":"",
-                "weight":0,
-                "feature":"？"
+                "durability":220,
+                "occupation":"C",
+                "weight":2200,
+                "feature":"地上ブースト回復速度UP>"
             },
             {
                 "name":"ディスドス",
@@ -312,10 +312,6 @@ const funcPageAirReal = () =>
             }
         ]
     };
-    for(const items of SPDB.AirReal.Leg)
-    {
-        console.log(items.name);
-    }
 
     const partsName =
     {
