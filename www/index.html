@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+                // namespaceを作成
+                const SPDB = {};
+    </script>
+    <script src="./js/Title.js"></script>
+    <script src="./js/Weapon.js"></script>
+    <script src="./js/AirReal.js"></script>
+    <script src="./js/AsOne.js"></script>
+    <script src="./js/NicePlay.js"></script>
+    <script src="./js/Ack.js"></script>
+
+    <script>
+        "use strict";
+        //AutoStyling 機能を無効にしたい場合、以下のコードを後述の onseui.js を読み込んだ直後に記述します。
+        ons.disableAutoStyling();
+        ons.ready(() =>
+        {
+            console.log("ons.ready:");
+            document.addEventListener("init", (event) =>
+            {
+                console.log(` init: ${event.target.id}`);
+                switch(event.target.id)
+                {
+                    case "pageMain":
+                        break;
+                    case "pageTitle":
+                        console.log("  call: funcPageTitle();");
+                        funcPageTitle();
+                        break;
+                    case "pageWeapon":
+                        console.log("  call: funcPageWeapon();");
+                        funcPageWeapon();
+                        break;
+                    case "pageAirReal":
+                        console.log("  call: funcPageAirReal();");
+                        funcPageAirReal();
+                        break;
+                    case "pageAsOne":
+                        console.log("  call: funcPageAsOne();");
+                        funcPageAsOne();
+                        break;
+                    case "pageNicePlay":
+                        console.log("  call: funcPageNicePlay();");
+                        funcPageNicePlay();
+                        break;
+                    case "pageAck":
+                        console.log("  call: funcPageAck();");
+                        funcPageAck();
+                        break;
+                    default:
+                        break;
+                }
+            }, false);
+
+           // 初期ページを設定
+            SPnavigator.pushPage("Main.html");
+        });
+
+        // PWAに対応
+        if("serviceWorker" in navigator)
+        {
+            navigator.serviceWorker.register("./sw.js").then((registration) =>
+            {
+                // 登録成功
+                console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
+            }).catch((err) =>
+            {
+                // 登録失敗
+                console.error(`ServiceWorker registration failed: ${err}`);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <ons-navigator id="SPnavigator">
+    </ons-navigator>
+
+    <ons-template id="Main.html">
+        <ons-page id="pageMain">
+            <ons-toolbar>
+                <div class="left"></div>
+                <div class="center">星と翼のパラドクス ver1.9 1/23</div>
+                <div class="right"></div>
+            </ons-toolbar>
+
+            <ons-list class="Main_Main">
+                <ons-list-header>メインメニュー</ons-list-header>
+
+                <ons-list-item id="gotoTitle" modifier="chevron"
+                onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
+                    称号</ons-list-item>
+                <ons-list-item id="gotoWeapon" modifier="chevron"
+                onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
+                    武器</ons-list-item>
+                <ons-list-item id="gotoAirReal" modifier="chevron"
+                onclick="SPnavigator.pushPage('AirReal.html', {animation: 'slide'});">
+                    エア・リアル</ons-list-item>
+                <ons-list-item id="gotoAsOne" modifier="chevron"
+                onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'});">
+                    アズワン</ons-list-item>
+                <ons-list-item id="gotoNicePlay" modifier="chevron"
+                onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
+                    ナイスプレイ一覧</ons-list-item>
+                <!-- <ons-list-item id="gotoVictoryPose" modifier="chevron"
+                onclick="SPnavigator.pushPage('VictoryPose.html', {animation: 'slide'});">
+                    勝利ポーズ(優先度低)</ons-list-item>
+                <ons-list-item id="gotoLineColor" modifier="chevron"
+                onclick="SPnavigator.pushPage('LineColor.html', {animation: 'slide'});">
+                    ラインカラー(優先度低)</ons-list-item>
+                <ons-list-item id="gotoPartsColor" modifier="chevron"
+                onclick="SPnavigator.pushPage('PartsColor.html', {animation: 'slide'});">
+                    パーツカラー(優先度低)</ons-list-item>
+                <ons-list-item id="gotoquotes" modifier="chevron"
+                onclick="SPnavigator.pushPage('quotes.html', {animation: 'slide'});">
+                    セリフ(優先度低)</ons-list-item> -->
+                <ons-list-item id="gotoAck" modifier="chevron"
+                onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
+                    謝辞・問い合わせ</ons-list-item>
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="Title.html">
+        <ons-page id="pageTitle">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    称号 - プレイ</div>
+                <div class="right"></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabTitle">
+                <ons-tab label="プレイ" page="Title_Play.html" active></ons-tab>
+                <ons-tab label="バトル" page="Title_Battle.html"></ons-tab>
+                <ons-tab label="アズワン" page="Title_AsOne.html"></ons-tab>
+            </ons-tabbar>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Title_Play.html">
+        <ons-page id="pageTitle_Play">
+            <ons-list id="listTitle_Play">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Title_Battle.html">
+        <ons-page id="pageTitle_Battle">
+            <ons-list id="listTitle_Battle">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Title_AsOne.html">
+        <ons-page id="pageTitle_AsOne">
+            <ons-list id="listTitle_AsOne">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="Weapon.html">
+        <ons-page id="pageWeapon">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    武器 - アサルト</div>
+                <div class="right"></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabWeapon">
+                <ons-tab label="アサルト" page="Weapon_Assault.html" active></ons-tab>
+                <ons-tab label="ヴァンガード" page="Weapon_Vanguard.html"></ons-tab>
+                <ons-tab label="サポート" page="Weapon_Support.html"></ons-tab>
+            </ons-tabbar>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Weapon_Assault.html">
+        <ons-page id="pageWeapon_Assault">
+            <ons-list id="listWeapon_Assault">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Weapon_Vanguard.html">
+        <ons-page id="pageWeapon_Vanguard">
+            <ons-list id="listWeapon_Vanguard">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Weapon_Support.html">
+        <ons-page id="pageWeapon_Support">
+            <ons-list id="listWeapon_Support">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="AirReal.html">
+        <ons-page id="pageAirReal">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    エア・リアル - ヘッド</div>
+                <div class="right"></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabAirReal">
+                <ons-tab label="頭" page="AirReal_Head.html" active></ons-tab>
+                <ons-tab label="腕" page="AirReal_Arm.html"></ons-tab>
+                <ons-tab label="胴" page="AirReal_Body.html"></ons-tab>
+                <ons-tab label="翼" page="AirReal_Wing.html"></ons-tab>
+                <ons-tab label="脚" page="AirReal_Leg.html"></ons-tab>
+            </ons-tabbar>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AirReal_Head.html">
+        <ons-page id="pageAirReal_Head">
+            <ons-list id="listAirReal_Head">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AirReal_Arm.html">
+        <ons-page id="pageAirReal_Arm">
+            <ons-list id="listAirReal_Arm">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AirReal_Body.html">
+        <ons-page id="pageAirReal_Body">
+            <ons-list id="listAirReal_Body">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AirReal_Wing.html">
+        <ons-page id="pageAirReal_Wing">
+            <ons-list id="listAirReal_Wing">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AirReal_Leg.html">
+        <ons-page id="pageAirReal_Leg">
+            <ons-list id="listAirReal_Leg">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="AsOne.html">
+        <ons-page id="pageAsOne">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    ヒカリ・ソラ</div>
+                <div class="right"></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabAsOne">
+                <ons-tab label="ヒカリ" page="AsOne_Hikari.html" active></ons-tab>
+                <ons-tab label="レイカ" page="AsOne_Reika.html"></ons-tab>
+                <ons-tab label="シャーリー" page="AsOne_Shirley.html"></ons-tab>
+                <ons-tab label="イサドラ" page="AsOne_Isadora.html"></ons-tab>
+                <ons-tab label="ナギ" page="AsOne_Nagi.html"></ons-tab>
+                <ons-tab label="カズマ" page="AsOne_Kazuma.html"></ons-tab>
+            </ons-tabbar>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOne_Hikari.html">
+        <ons-page id="pageAsOne_Hikari">
+            <ons-list id="listAsOne_Hikari">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOne_Reika.html">
+        <ons-page id="pageAsOne_Reika">
+            <ons-list id="listAsOne_Reika">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOne_Shirley.html">
+        <ons-page id="pageAsOne_Shirley">
+            <ons-list id="listAsOne_Shirley">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOne_Isadora.html">
+        <ons-page id="pageAsOne_Isadora">
+            <ons-list id="listAsOne_Isadora">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOne_Nagi.html">
+        <ons-page id="pageAsOne_Nagi">
+            <ons-list id="listAsOne_Nagi">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOne_Kazuma.html">
+        <ons-page id="pageAsOne_Kazuma">
+            <ons-list id="listAsOne_Kazuma">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="NicePlay.html">
+        <ons-page id="pageNicePlay">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    ナイスプレイ - エア・リアル
+                </div>
+                <div class="right">
+                </div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabNicePlay">
+                <ons-tab label="AR" page="NicePlay_AirReal.html" active></ons-tab>
+                <ons-tab label="NPC" page="NicePlay_Object.html"></ons-tab>
+                <ons-tab label="ポート" page="NicePlay_Port.html"></ons-tab>
+                <ons-tab label="コア" page="NicePlay_Core.html"></ons-tab>
+                <ons-tab label="他" page="NicePlay_Other.html"></ons-tab>
+            </ons-tabbar>
+        </ons-page>
+    </ons-template>
+    <ons-template id="NicePlay_AirReal.html">
+        <ons-page id="pageNicePlay_AirReal">
+            <ons-list id="listNicePlay_AirReal">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="NicePlay_Object.html">
+        <ons-page id="pageNicePlay_Object">
+            <ons-list id="listNicePlay_Object">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="NicePlay_Port.html">
+        <ons-page id="pageNicePlay_Port">
+            <ons-list id="listNicePlay_Port">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="NicePlay_Core.html">
+        <ons-page id="pageNicePlay_Core">
+            <ons-list id="listNicePlay_Core">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="NicePlay_Other.html">
+        <ons-page id="pageNicePlay_Other">
+            <ons-list id="listNicePlay_Other">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="Ack.html">
+        <ons-page id="pageAck">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    謝辞・問い合わせ
+                </div>
+                <div class="right">
+                </div>
+            </ons-toolbar>
+            <ons-list>
+                <ons-list-item expandable>
+                    5ch 星と翼のパラドクススレ
+                    <div class="expandable-content">
+                        <a href="https://ff5ch.syoboi.jp/?q=星と翼のパラドクス">5chスレタイ検索</a>
+                    </div>
+                </ons-list-item>
+                <ons-list-item expandable>
+                    お問い合わせはこちら(匿名で投稿できます。)
+                    <div class="expandable-content">
+                        <a href="">マシュマロ</a>
+                    </div>
+                </ons-list-item>
+            </ons-list>
+        </ons-page>
+    </ons-template>
+</body>
+</html>
