@@ -93,7 +93,8 @@
             <ons-toolbar>
                 <div class="left"></div>
                 <div class="center">星と翼のパラドクス ver1.9 1/23</div>
-                <div class="right"></div>
+                <div class="right">
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
             </ons-toolbar>
 
             <ons-list class="Main_Main">
@@ -140,7 +141,8 @@
                     <ons-back-button class="backtoMain">戻る</ons-back-button></div>
                 <div class="center">
                     称号 - プレイ</div>
-                <div class="right"></div>
+                <div class="right">
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabTitle">
                 <ons-tab label="プレイ" page="Title_Play.html" active></ons-tab>
@@ -175,7 +177,8 @@
                     <ons-back-button class="backtoMain">戻る</ons-back-button></div>
                 <div class="center">
                     武器 - アサルト</div>
-                <div class="right"></div>
+                <div class="right">
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabWeapon">
                 <ons-tab label="アサルト" page="Weapon_Assault.html" active></ons-tab>
@@ -210,7 +213,8 @@
                     <ons-back-button class="backtoMain">戻る</ons-back-button></div>
                 <div class="center">
                     エア・リアル - ヘッド</div>
-                <div class="right"></div>
+                <div class="right">
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabAirReal">
                 <ons-tab label="頭" page="AirReal_Head.html" active></ons-tab>
@@ -259,7 +263,8 @@
                     <ons-back-button class="backtoMain">戻る</ons-back-button></div>
                 <div class="center">
                     ヒカリ・ソラ</div>
-                <div class="right"></div>
+                <div class="right">
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabAsOne">
                 <ons-tab label="ヒカリ" page="AsOne_Hikari.html" active></ons-tab>
@@ -314,14 +319,13 @@
                 <div class="left">
                     <ons-back-button class="backtoMain">戻る</ons-back-button></div>
                 <div class="center">
-                    ナイスプレイ - エア・リアル
-                </div>
+                    ナイスプレイ - エア・リアル</div>
                 <div class="right">
-                </div>
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabNicePlay">
                 <ons-tab label="AR" page="NicePlay_AirReal.html" active></ons-tab>
-                <ons-tab label="NPC" page="NicePlay_Object.html"></ons-tab>
+                <ons-tab label="敵勢力" page="NicePlay_Object.html"></ons-tab>
                 <ons-tab label="ポート" page="NicePlay_Port.html"></ons-tab>
                 <ons-tab label="コア" page="NicePlay_Core.html"></ons-tab>
                 <ons-tab label="他" page="NicePlay_Other.html"></ons-tab>
@@ -365,10 +369,9 @@
                 <div class="left">
                     <ons-back-button class="backtoMain">戻る</ons-back-button></div>
                 <div class="center">
-                    謝辞・問い合わせ
-                </div>
+                    謝辞・問い合わせ</div>
                 <div class="right">
-                </div>
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-list>
                 <ons-list-item expandable>
@@ -386,5 +389,10 @@
             </ons-list>
         </ons-page>
     </ons-template>
+
+    <ons-toast id="toast" animation="fall">
+        <div id="textToast" onclick="toast.hide()"></div>
+    </ons-toast>
+
 </body>
 </html>

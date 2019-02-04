@@ -346,7 +346,7 @@ const funcPageNicePlay = () =>
     const category =
     {
         "AR":"エア・リアル",
-        "NPC":"NPC",
+        "敵勢力":"敵勢力",
         "ポート":"ポート",
         "コア":"コア",
         "他":"その他"
@@ -357,6 +357,17 @@ const funcPageNicePlay = () =>
         textToolbar = `ナイスプレイ - ${category[event.tabItem.textContent]}`;
         document.querySelector("#pageNicePlay .center").innerHTML = textToolbar;
     }, false);
+    document.querySelector("#pageNicePlay ons-toolbar-button").onclick = () =>
+    {
+        document.getElementById("textToast").innerHTML = `
+            ステータス:<br>
+            　敵勢力: タワーを破壊した時のポイントが不明確です。<br>
+            　他: 獲得経験値が1000を超えた時のポイントが不明確です。<br>
+            <br>
+            分類方法はオリジナルです。別の案があれば意見いただきたいです。<br>
+            間違いや古い情報、記載されていないアズワンスキルなどあれば連絡いただけると幸いです。`;
+        toast.toggle();
+    };
 
     const appendData = (tab) =>
     {

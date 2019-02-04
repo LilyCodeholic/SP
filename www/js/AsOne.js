@@ -133,6 +133,20 @@ const funcPageAsOne = () =>
         textToolbar = `${fullName[event.tabItem.textContent]}`;
         document.querySelector("#pageAsOne .center").innerHTML = textToolbar;
     }, false);
+    document.querySelector("#pageAsOne ons-toolbar-button").onclick = () =>
+    {
+        document.getElementById("textToast").innerHTML = `
+            ステータス:<br>
+            　ヒカリ: 初期スキル以外埋まっていません。<br>
+            　レイカ: 初期スキル以外埋まっていません。<br>
+            　シャーリー: 初期スキル以外埋まっていません。<br>
+            　イサドラ: 初期スキル以外埋まっていません。<br>
+            　ナギ: 初期スキル以外埋まっていません。<br>
+            　カズマ: 初期スキル以外埋まっていません。<br>
+            <br>
+            間違いや古い情報、記載されていないアズワンスキルなどあれば連絡いただけると幸いです。`;
+        toast.toggle();
+    };
 
     const appendData = (tab) =>
     {

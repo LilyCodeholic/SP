@@ -327,6 +327,16 @@ const funcPageAirReal = () =>
         textToolbar = `エア・リアル - ${partsName[event.tabItem.textContent]}`;
         document.querySelector("#pageAirReal .center").innerHTML = textToolbar;
     }, false);
+    document.querySelector("#pageAirReal ons-toolbar-button").onclick = () =>
+    {
+        document.getElementById("textToast").innerHTML = `
+            ステータス:<br>
+            　パーツ情報: すべて埋まっています。<br>
+            <br>
+            ディスドス・ソリディアカラーについてはディスドスと同じ性能のため記載していません。<br>
+            間違いや古い情報などあれば連絡いただけると幸いです。`;
+        toast.toggle();
+    };
 
     const appendData = (tab) =>
     {
@@ -372,7 +382,7 @@ const funcPageAirReal = () =>
 <ons-row>
     <ons-col width="40%">パーツ名</ons-col>
     <ons-col>耐久値</ons-col>
-    <ons-col>重量</ons-col>
+    <ons-col>アーマー</ons-col>
     <ons-col>全回復</ons-col>
     <ons-col>回復待機</ons-col>
     <ons-col width="5%"></ons-col>
@@ -486,7 +496,7 @@ const funcPageAirReal = () =>
         ${items.durability}
     </ons-col>
     <ons-col style="text-align: right;">
-        ${items.weight}
+        ${items.armor}
     </ons-col>
     <ons-col style="text-align: center;">
         ${items.repairSpeed}

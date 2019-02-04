@@ -11,8 +11,8 @@ const funcPageWeapon = () =>
                 "vsMAG":"？",
                 "reload":"？",
                 "usability":"？",
-                "weaponType":"妨害",
-                "ammo":0,
+                "weaponType":"-",
+                "ammo":1,
                 "attackType":"？",
                 "triggerType":"？",
                 "target":"？",
@@ -59,7 +59,7 @@ const funcPageWeapon = () =>
                 "vsMAG":"B",
                 "reload":"B+",
                 "usability":"B",
-                "weaponType":"妨害",
+                "weaponType":"-",
                 "ammo":3,
                 "attackType":"投擲",
                 "triggerType":"リリース",
@@ -386,7 +386,7 @@ const funcPageWeapon = () =>
                 "vsMAG":"B",
                 "reload":"D",
                 "usability":"A",
-                "weaponType":"妨害？",
+                "weaponType":"？",
                 "ammo":1,
                 "attackType":"投擲",
                 "triggerType":"リリース",
@@ -567,6 +567,18 @@ const funcPageWeapon = () =>
         textToolbar = `武器 - ${event.tabItem.textContent}`;
         document.querySelector("#pageWeapon .center").innerHTML = textToolbar;
     }, false);
+    document.querySelector("#pageWeapon ons-toolbar-button").onclick = () =>
+    {
+        document.getElementById("textToast").innerHTML = `
+            ステータス:<br>
+            　武器: 埋まっています<br>
+            　武器情報: ターレットBRの武器種別が分かりません。<br>
+            <br>
+            使いやすさはデータとしては持っていますが現在記載していません。<br>
+            武器名の左下はどの腕装備の効果(リロード速度UP)が乗るかを記載しています。<br>
+            間違いや古い情報などあれば連絡いただけると幸いです。`;
+        toast.toggle();
+    };
 
     const appendData = (tab) =>
     {
@@ -610,6 +622,13 @@ const funcPageWeapon = () =>
     </ons-col>
 </ons-row>
 <div class="expandable-content">
+    ${items.exParameter != undefined ?
+        `<ons-row>
+            <ons-col>${items.exParameter[0]}</ons-col>
+            <ons-col>${items.exParameter[1]}</ons-col>
+        </ons-row>` :
+        ''
+    }
     <ons-row>
         <ons-col>
             弾数

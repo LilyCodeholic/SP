@@ -339,6 +339,18 @@ const funcPageTitle = () =>
         textToolbar = `称号 - ${event.tabItem.textContent}`;
         document.querySelector("#pageTitle .center").innerHTML = textToolbar;
     }, false);
+    document.querySelector("#pageTitle ons-toolbar-button").onclick = () =>
+    {
+        document.getElementById("textToast").innerHTML = `
+            ステータス:<br>
+            　プレイ: 称号、条件共に埋まっていません<br>
+            　バトル: 称号、条件共に埋まっていません<br>
+            　アズワン: 称号、条件共に埋まっていません<br>
+            <br>
+            称号と取得条件をアプリの通りに記載しています。<br>
+            間違いや古い情報、記載されていない称号をお持ちの方は連絡いただけると幸いです。`;
+        toast.toggle();
+    };
 
     const appendData = (tab) =>
     {
