@@ -7,18 +7,18 @@ const funcPageWeapon = () =>
             {
                 "side":"L",
                 "name":"ボンバルド",
-                "vsAR":"？",
-                "vsMAG":"？",
-                "reload":"？",
-                "usability":"？",
-                "weaponType":"-",
+                "vsAR":"C",
+                "vsMAG":"C",
+                "reload":"B+",
+                "usability":"A",
+                "weaponType":"？",
                 "ammo":1,
-                "attackType":"？",
-                "triggerType":"？",
-                "target":"？",
-                "reloadTiming":"？",
-                "feature":"？",
-                "howToGet":"ドロップのみ"
+                "attackType":"投擲",
+                "triggerType":"リリース",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"炎上",
+                "howToGet":"4400CP"
             },
             {
                 "side":"L",
@@ -66,7 +66,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -114,7 +114,23 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
+            },
+            {
+                "side":"R",
+                "name":"L.O.V.E.",
+                "vsAR":"B",
+                "vsMAG":"A",
+                "reload":"B",
+                "usability":"A",
+                "weaponType":"ビーム",
+                "ammo":8,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"-",
+                "howToGet":"2/1-14までにチーム内5位以上を15回獲得する"
             },
             {
                 "side":"R",
@@ -130,7 +146,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -213,7 +229,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -229,7 +245,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             },
             {
                 "side":"L",
@@ -245,7 +261,7 @@ const funcPageWeapon = () =>
                 "target":"自分",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性、炎上",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -310,7 +326,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"R",
@@ -326,7 +342,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"炎上",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -342,7 +358,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"LR",
@@ -377,7 +393,7 @@ const funcPageWeapon = () =>
                 "target":"味方",
                 "reloadTiming":"弾切れ",
                 "feature":"攻撃力上昇",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -426,7 +442,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"ジャミング",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -442,7 +458,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"麻痺",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             },
             {
                 "side":"R",
@@ -491,7 +507,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"R",
@@ -539,7 +555,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"現在入手不可(イベント)"
+                "howToGet":"現在入手不可(12/12-25までにチーム内5位以上を10回獲得する)"
             },
             {
                 "side":"LR",
@@ -572,7 +588,7 @@ const funcPageWeapon = () =>
         document.getElementById("textToast").innerHTML = `
             ステータス:<br>
             　武器: 埋まっています<br>
-            　武器情報: ターレットBRの武器種別が分かりません。<br>
+            　武器情報: 武器属性が一部足りていないか、埋まっていません<br>
             <br>
             使いやすさはデータとしては持っていますが現在記載していません。<br>
             武器名の左下はどの腕装備の効果(リロード速度UP)が乗るかを記載しています。<br>
@@ -585,13 +601,13 @@ const funcPageWeapon = () =>
         const fragment = document.createDocumentFragment();
         const list_header = document.createElement("ons-list-header");
         list_header.innerHTML = `
-<ons-row>
-    <ons-col width="60%">武器名</ons-col>
-    <ons-col>AR</ons-col>
-    <ons-col>マグ</ons-col>
-    <ons-col>リロ</ons-col>
-    <ons-col></ons-col>
-</ons-row>
+            <ons-row>
+                <ons-col width="60%">武器名</ons-col>
+                <ons-col>AR</ons-col>
+                <ons-col>マグ</ons-col>
+                <ons-col>リロ</ons-col>
+                <ons-col></ons-col>
+            </ons-row>
         `;
         fragment.appendChild(list_header);
 
@@ -600,84 +616,84 @@ const funcPageWeapon = () =>
             const list_item = document.createElement("ons-list-item");
             list_item.setAttribute("expandable", "");
             list_item.innerHTML = `
-<ons-row>
-    <ons-col vertical-align="center">
-        ${items.side}
-    </ons-col>
-    <ons-col width="60%">
-        ${items.name}
-        <br>
-        <span style="font-size:small">
-            ${items.weaponType} ${items.attackType}
-        </span>
-    </ons-col>
-    <ons-col vertical-align="center">
-        ${items.vsAR}
-    </ons-col>
-    <ons-col vertical-align="center">
-        ${items.vsMAG}
-    </ons-col>
-    <ons-col vertical-align="center">
-        ${items.reload}
-    </ons-col>
-</ons-row>
-<div class="expandable-content">
-    ${items.exParameter != undefined ?
-        `<ons-row>
-            <ons-col>${items.exParameter[0]}</ons-col>
-            <ons-col>${items.exParameter[1]}</ons-col>
-        </ons-row>` :
-        ''
-    }
-    <ons-row>
-        <ons-col>
-            弾数
-        </ons-col>
-        <ons-col>
-            ${items.ammo}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col>
-            トリガータイプ
-        </ons-col>
-        <ons-col>
-            ${items.triggerType}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col>
-            対象
-        </ons-col>
-        <ons-col>
-            ${items.target}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col>
-            リロードタイミング:
-        </ons-col>
-        <ons-col>
-            ${items.reloadTiming}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col>
-            特性
-        </ons-col>
-        <ons-col>
-            ${items.feature}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col>
-            入手方法
-        </ons-col>
-        <ons-col>
-            ${items.howToGet}
-        </ons-col>
-    </ons-row>
-</div>
+                <ons-row>
+                    <ons-col vertical-align="center">
+                        ${items.side}
+                    </ons-col>
+                    <ons-col width="60%">
+                        ${items.name}
+                        <br>
+                        <span style="font-size:small">
+                            ${items.weaponType} ${items.attackType}
+                        </span>
+                    </ons-col>
+                    <ons-col vertical-align="center">
+                        ${items.vsAR}
+                    </ons-col>
+                    <ons-col vertical-align="center">
+                        ${items.vsMAG}
+                    </ons-col>
+                    <ons-col vertical-align="center">
+                        ${items.reload}
+                    </ons-col>
+                </ons-row>
+                <div class="expandable-content">
+                    ${items.exParameter != undefined ?
+                        `<ons-row>
+                            <ons-col>${items.exParameter[0]}</ons-col>
+                            <ons-col>${items.exParameter[1]}</ons-col>
+                        </ons-row>` :
+                        ''
+                    }
+                    <ons-row>
+                        <ons-col>
+                            弾数
+                        </ons-col>
+                        <ons-col>
+                            ${items.ammo}
+                        </ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>
+                            トリガータイプ
+                        </ons-col>
+                        <ons-col>
+                            ${items.triggerType}
+                        </ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>
+                            対象
+                        </ons-col>
+                        <ons-col>
+                            ${items.target}
+                        </ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>
+                            リロードタイミング:
+                        </ons-col>
+                        <ons-col>
+                            ${items.reloadTiming}
+                        </ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>
+                            特性
+                        </ons-col>
+                        <ons-col>
+                            ${items.feature}
+                        </ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>
+                            入手方法
+                        </ons-col>
+                        <ons-col>
+                            ${items.howToGet}
+                        </ons-col>
+                    </ons-row>
+                </div>
             `;
             fragment.appendChild(list_item);
         }

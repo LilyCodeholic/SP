@@ -365,7 +365,7 @@ const funcPageNicePlay = () =>
             　他: 獲得経験値が1000を超えた時のポイントが不明確です。<br>
             <br>
             分類方法はオリジナルです。別の案があれば意見いただきたいです。<br>
-            間違いや古い情報、記載されていないアズワンスキルなどあれば連絡いただけると幸いです。`;
+            間違いや古い情報、記載されていないナイスプレイなどあれば連絡いただけると幸いです。`;
         toast.toggle();
     };
 
@@ -374,10 +374,10 @@ const funcPageNicePlay = () =>
         const fragment = document.createDocumentFragment();
         const list_header = document.createElement("ons-list-header");
         list_header.innerHTML = `
-<ons-row>
-    <ons-col width="80%">ナイスプレイ</ons-col>
-    <ons-col>ポイント</ons-col>
-</ons-row>
+            <ons-row>
+                <ons-col width="80%">ナイスプレイ</ons-col>
+                <ons-col>ポイント</ons-col>
+            </ons-row>
         `;
         fragment.appendChild(list_header);
 
@@ -385,14 +385,14 @@ const funcPageNicePlay = () =>
         {
             const list_item = document.createElement("ons-list-item");
             list_item.innerHTML = `
-<ons-row>
-    <ons-col width="80%">
-        ${items.play}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.point}
-    </ons-col>
-</ons-row>
+                <ons-row>
+                    <ons-col width="80%">
+                        ${items.play}
+                    </ons-col>
+                    <ons-col style="text-align: right;">
+                        ${items.point}
+                    </ons-col>
+                </ons-row>
             `;
             fragment.appendChild(list_item);
         }

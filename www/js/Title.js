@@ -343,8 +343,8 @@ const funcPageTitle = () =>
     {
         document.getElementById("textToast").innerHTML = `
             ステータス:<br>
-            　プレイ: 称号、条件共に埋まっていません<br>
-            　バトル: 称号、条件共に埋まっていません<br>
+            　プレイ　: 称号、条件共に埋まっていません<br>
+            　バトル　: 称号、条件共に埋まっていません<br>
             　アズワン: 称号、条件共に埋まっていません<br>
             <br>
             称号と取得条件をアプリの通りに記載しています。<br>
@@ -360,12 +360,12 @@ const funcPageTitle = () =>
             const list_item = document.createElement("ons-list-item");
             // list_item.setAttribute("tappable", "");
             list_item.innerHTML = `
-<span class="list-item__title">
-    ${items.title}
-</span>
-<span class="list-item__subtitle">
-    ${items.flag}
-</span>
+                <span class="list-item__title">
+                    ${items.title}
+                </span>
+                <span class="list-item__subtitle">
+                    ${items.flag}
+                </span>
             `;
             fragment.appendChild(list_item);
         }

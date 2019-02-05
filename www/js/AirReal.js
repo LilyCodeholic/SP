@@ -103,7 +103,7 @@ const funcPageAirReal = () =>
                 "name":"サブライガ",
                 "durability":170,
                 "weight":2000,
-                "feature":"片手武器リロード速度UP"
+                "feature":"片手武器リロード速度UP>"
             }
         ],
         Body:
@@ -346,70 +346,70 @@ const funcPageAirReal = () =>
         {
             case "Head":
                 list_header.innerHTML = `
-<ons-row>
-    <ons-col width="40%"></ons-col>
-    <ons-col></ons-col>
-    <ons-col>ロックオン</ons-col>
-    <ons-col width="5%"></ons-col>
-</ons-row>
-<ons-row>
-    <ons-col width="40%">パーツ名</ons-col>
-    <ons-col>耐久値</ons-col>
-    <ons-col>重量</ons-col>
-    <ons-col>距離</ons-col>
-    <ons-col>範囲</ons-col>
-    <ons-col width="5%"></ons-col>
-</ons-row>
+                    <ons-row>
+                        <ons-col width="40%"></ons-col>
+                        <ons-col></ons-col>
+                        <ons-col>ロックオン</ons-col>
+                        <ons-col width="5%"></ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col>耐久値</ons-col>
+                        <ons-col>重量</ons-col>
+                        <ons-col>距離</ons-col>
+                        <ons-col>範囲</ons-col>
+                        <ons-col width="5%"></ons-col>
+                    </ons-row>
                 `;
                 break;
             case "Arm":
                 list_header.innerHTML = `
-<ons-row>
-    <ons-col width="40%">パーツ名</ons-col>
-    <ons-col>耐久値</ons-col>
-    <ons-col>重量</ons-col>
-</ons-row>
+                    <ons-row>
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col>耐久値</ons-col>
+                        <ons-col>重量</ons-col>
+                    </ons-row>
                 `;
                 break;
             case "Body":
                 list_header.innerHTML = `
-<ons-row>
-    <ons-col width="40%"></ons-col>
-    <ons-col></ons-col>
-    <ons-col>アーマー</ons-col>
-    <ons-col width="5%"></ons-col>
-</ons-row>
-<ons-row>
-    <ons-col width="40%">パーツ名</ons-col>
-    <ons-col>耐久値</ons-col>
-    <ons-col>アーマー</ons-col>
-    <ons-col>全回復</ons-col>
-    <ons-col>回復待機</ons-col>
-    <ons-col width="5%"></ons-col>
-</ons-row>
+                    <ons-row>
+                        <ons-col width="40%"></ons-col>
+                        <ons-col></ons-col>
+                        <ons-col>アーマー</ons-col>
+                        <ons-col width="5%"></ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col>耐久値</ons-col>
+                        <ons-col>アーマー</ons-col>
+                        <ons-col>全回復</ons-col>
+                        <ons-col>回復待機</ons-col>
+                        <ons-col width="5%"></ons-col>
+                    </ons-row>
                 `;
                 break;
             case "Wing":
                 list_header.innerHTML = `
-<ons-row>
-    <ons-col width="40%">パーツ名</ons-col>
-    <ons-col>回避</ons-col>
-    <ons-col>ダッシュ</ons-col>
-    <ons-col>FD溜め</ons-col>
-    <ons-col>ドリフト</ons-col>
-    <ons-col width="5%"></ons-col>
-</ons-row>
+                    <ons-row>
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col>回避</ons-col>
+                        <ons-col>ダッシュ</ons-col>
+                        <ons-col>FD溜め</ons-col>
+                        <ons-col>ドリフト</ons-col>
+                        <ons-col width="5%"></ons-col>
+                    </ons-row>
                 `;
                 break;
             case "Leg":
                 list_header.innerHTML = `
-<ons-row>
-    <ons-col width="40%">パーツ名</ons-col>
-    <ons-col>耐久値</ons-col>
-    <ons-col>重量</ons-col>
-    <ons-col>ポート占拠</ons-col>
-    <ons-col width="5%"></ons-col>
-</ons-row>
+                    <ons-row>
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col>耐久値</ons-col>
+                        <ons-col>重量</ons-col>
+                        <ons-col>ポート占拠</ons-col>
+                        <ons-col width="5%"></ons-col>
+                    </ons-row>
                 `;
                 break;
             default:
@@ -426,195 +426,195 @@ const funcPageAirReal = () =>
             {
                 case "Head":
                     list_item.innerHTML = `
-<ons-row>
-    <ons-col width="40%">
-        ${items.name}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.durability}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.weight}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.length}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.range}
-    </ons-col>
-</ons-row>
-<div class="expandable-content">
-    <ons-row>
-        <ons-col width="25%">
-            特性
-        </ons-col>
-        <ons-col>
-            ${Array.isArray(items.feature) === true ?
-                `${items.feature[0]}<br>${items.feature[1]}`:
-                `${items.feature}`
-            }
-        </ons-col>
-    </ons-row>
-</div>
+                        <ons-row>
+                            <ons-col width="40%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.length}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.range}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="25%">
+                                    特性
+                                </ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
                     `;
                     break;
                 case "Arm":
                     list_item.innerHTML = `
-<ons-row>
-    <ons-col width="40%">
-        ${items.name}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.durability}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.weight}
-    </ons-col>
-</ons-row>
-<div class="expandable-content">
-    <ons-row>
-        <ons-col width="25%">
-            特性
-        </ons-col>
-        <ons-col>
-            ${Array.isArray(items.feature) === true ?
-                `${items.feature[0]}<br>${items.feature[1]}`:
-                `${items.feature}`
-            }
-        </ons-col>
-    </ons-row>
-</div>
+                        <ons-row>
+                            <ons-col width="40%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="25%">
+                                    特性
+                                </ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
                     `;
                     break;
                 case "Body":
                     list_item.innerHTML = `
-<ons-row>
-    <ons-col width="40%">
-        ${items.name}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.durability}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.armor}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.repairSpeed}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.repairLatency}
-    </ons-col>
-</ons-row>
-<div class="expandable-content">
-    <ons-row>
-        <ons-col width="25%">
-            特性
-        </ons-col>
-        <ons-col>
-            ${Array.isArray(items.feature) === true ?
-                `${items.feature[0]}<br>${items.feature[1]}`:
-                `${items.feature}`
-            }
-        </ons-col>
-    </ons-row>
-</div>
+                        <ons-row>
+                            <ons-col width="40%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.armor}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.repairSpeed}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.repairLatency}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="25%">
+                                    特性
+                                </ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
                     `;
                     break;
                 case "Wing":
                     list_item.innerHTML = `
-<ons-row>
-    <ons-col width="40%">
-        ${items.name}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.dodge}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.dash}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.fdCharge}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.drift}
-    </ons-col>
-</ons-row>
-<div class="expandable-content">
-    <ons-row>
-        <ons-col width="25%">
-            耐久値
-        </ons-col>
-        <ons-col>
-            ${items.durability}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col width="25%">
-            重量
-        </ons-col>
-        <ons-col>
-            ${items.weight}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col width="50%">
-            ダッシュタイプ
-        </ons-col>
-        <ons-col>
-            ${items.dashType}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col width="50%">
-            フルドライブタイプ
-        </ons-col>
-        <ons-col>
-            ${items.fdType}
-        </ons-col>
-    </ons-row>
-    <ons-row>
-        <ons-col width="25%">
-            特性
-        </ons-col>
-        <ons-col>
-            ${Array.isArray(items.feature) === true ?
-                `${items.feature[0]}<br>${items.feature[1]}`:
-                `${items.feature}`
-            }
-        </ons-col>
-    </ons-row>
-</div>
+                        <ons-row>
+                            <ons-col width="40%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.dodge}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.dash}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.fdCharge}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.drift}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="25%">
+                                    耐久値
+                                </ons-col>
+                                <ons-col>
+                                    ${items.durability}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col width="25%">
+                                    重量
+                                </ons-col>
+                                <ons-col>
+                                    ${items.weight}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col width="50%">
+                                    ダッシュタイプ
+                                </ons-col>
+                                <ons-col>
+                                    ${items.dashType}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col width="50%">
+                                    フルドライブタイプ
+                                </ons-col>
+                                <ons-col>
+                                    ${items.fdType}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col width="25%">
+                                    特性
+                                </ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
                     `;
                     break;
                 case "Leg":
                     list_item.innerHTML = `
-<ons-row>
-    <ons-col width="40%">
-        ${items.name}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.durability}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.weight}
-    </ons-col>
-    <ons-col style="text-align: center;">
-        ${items.occupation}
-    </ons-col>
-</ons-row>
-<div class="expandable-content">
-    <ons-row>
-        <ons-col width="25%">
-            特性
-        </ons-col>
-        <ons-col>
-            ${Array.isArray(items.feature) === true ?
-                `${items.feature[0]}<br>${items.feature[1]}`:
-                `${items.feature}`
-            }
-        </ons-col>
-    </ons-row>
-</div>
+                        <ons-row>
+                            <ons-col width="40%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.occupation}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="25%">
+                                    特性
+                                </ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
                     `;
                     break;
                 default:

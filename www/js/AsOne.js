@@ -137,12 +137,12 @@ const funcPageAsOne = () =>
     {
         document.getElementById("textToast").innerHTML = `
             ステータス:<br>
-            　ヒカリ: 初期スキル以外埋まっていません。<br>
-            　レイカ: 初期スキル以外埋まっていません。<br>
+            　ヒカリ　　: 初期スキル以外埋まっていません。<br>
+            　レイカ　　: 初期スキル以外埋まっていません。<br>
             　シャーリー: 初期スキル以外埋まっていません。<br>
-            　イサドラ: 初期スキル以外埋まっていません。<br>
-            　ナギ: 初期スキル以外埋まっていません。<br>
-            　カズマ: 初期スキル以外埋まっていません。<br>
+            　イサドラ　: 初期スキル以外埋まっていません。<br>
+            　ナギ　　　: 初期スキル以外埋まっていません。<br>
+            　カズマ　　: 初期スキル以外埋まっていません。<br>
             <br>
             間違いや古い情報、記載されていないアズワンスキルなどあれば連絡いただけると幸いです。`;
         toast.toggle();
@@ -153,10 +153,10 @@ const funcPageAsOne = () =>
         const fragment = document.createDocumentFragment();
         const list_header = document.createElement("ons-list-header");
         list_header.innerHTML = `
-<ons-row>
-    <ons-col width="75%">アズワンスキル</ons-col>
-    <ons-col>チームレベル</ons-col>
-</ons-row>
+            <ons-row>
+                <ons-col width="75%">アズワンスキル</ons-col>
+                <ons-col>チームレベル</ons-col>
+            </ons-row>
         `;
         fragment.appendChild(list_header);
 
@@ -164,14 +164,14 @@ const funcPageAsOne = () =>
         {
             const list_item = document.createElement("ons-list-item");
             list_item.innerHTML = `
-<ons-row>
-    <ons-col width="75%">
-        ${items.skill}
-    </ons-col>
-    <ons-col style="text-align: right;">
-        ${items.level}
-    </ons-col>
-</ons-row>
+                <ons-row>
+                    <ons-col width="75%">
+                        ${items.skill}
+                    </ons-col>
+                    <ons-col style="text-align: right;">
+                        ${items.level}
+                    </ons-col>
+                </ons-row>
             `;
             fragment.appendChild(list_item);
         }
