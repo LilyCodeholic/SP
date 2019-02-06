@@ -175,9 +175,9 @@ const funcPageCustomize = () =>
     {
         document.getElementById("textToast").innerHTML = `
             ステータス:<br>
-            　勝利ポーズ　: 埋まっていません。<br>
-            　ラインカラー: 埋まっていません。<br>
-            　パーツカラー: 埋まっていません。<br>
+            　勝利ポーズ　: 埋まっています<br>
+            　ラインカラー: 右側の色を塗っていません<br>
+            　パーツカラー: 右側の色を塗っていません<br>
             <br>
             順番はアプリ、ゲームに準拠して記載しています。`;
         toast.toggle();
