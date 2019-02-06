@@ -357,7 +357,6 @@ const funcPageTitle = () =>
         for(const items of SPDB.Title[tab])
         {
             const list_item = document.createElement("ons-list-item");
-            // list_item.setAttribute("tappable", "");
             list_item.innerHTML = `
                 <span class="list-item__title">
                     ${items.title}

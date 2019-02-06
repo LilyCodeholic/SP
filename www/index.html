@@ -19,12 +19,15 @@
     <script src="./js/AirReal.js"></script>
     <script src="./js/AsOne.js"></script>
     <script src="./js/NicePlay.js"></script>
+    <script src="./js/Customize.js"></script>
+    <script src="./js/Quotes.js"></script>
     <script src="./js/Ack.js"></script>
 
     <script>
         "use strict";
         //AutoStyling 機能を無効にしたい場合、以下のコードを後述の onseui.js を読み込んだ直後に記述します。
         ons.disableAutoStyling();
+
         ons.ready(() =>
         {
             console.log("ons.ready:");
@@ -54,6 +57,14 @@
                     case "pageNicePlay":
                         console.log("  call: funcPageNicePlay();");
                         funcPageNicePlay();
+                        break;
+                    case "pageCustomize":
+                        console.log("  call: funcPageCustomize();");
+                        funcPageCustomize();
+                        break;
+                    case "pageQuotes":
+                        console.log("  call: funcPageQuotes();");
+                        funcPageQuotes();
                         break;
                     case "pageAck":
                         console.log("  call: funcPageAck();");
@@ -100,30 +111,28 @@
                 <ons-list-header>メインメニュー</ons-list-header>
 
                 <ons-list-item id="gotoTitle" modifier="chevron"
-                onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
+                 onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
                     称号</ons-list-item>
                 <ons-list-item id="gotoWeapon" modifier="chevron"
-                onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
+                 onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
                     武器</ons-list-item>
                 <ons-list-item id="gotoAirReal" modifier="chevron"
-                onclick="SPnavigator.pushPage('AirReal.html', {animation: 'slide'});">
+                 onclick="SPnavigator.pushPage('AirReal.html', {animation: 'slide'});">
                     エア・リアル</ons-list-item>
                 <ons-list-item id="gotoAsOne" modifier="chevron"
-                onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'});">
+                 onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'});">
                     アズワン</ons-list-item>
                 <ons-list-item id="gotoNicePlay" modifier="chevron"
-                onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
+                 onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
                     ナイスプレイ一覧</ons-list-item>
-                <ons-list-item id="gotoVictoryPose" modifier="chevron">
-                    勝利ポーズ(作成中)</ons-list-item>
-                <ons-list-item id="gotoLineColor" modifier="chevron">
-                    ラインカラー(作成中)</ons-list-item>
-                <ons-list-item id="gotoPartsColor" modifier="chevron">
-                    パーツカラー(作成中)</ons-list-item>
-                <ons-list-item id="gotoquotes" modifier="chevron">
+                <ons-list-item id="gotoCustomize" modifier="chevron"
+                 onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'});">
+                    カスタマイズ(作成中)</ons-list-item>
+                <ons-list-item id="gotoquotes" modifier="chevron"
+                 onclick="SPnavigator.pushPage('Quotes.html', {animation: 'slide'});">
                     セリフ(作成検討中)</ons-list-item>
                 <ons-list-item id="gotoAck" modifier="chevron"
-                onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
+                 onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
                     謝辞・問い合わせ</ons-list-item>
             </ons-list>
         </ons-page>
@@ -354,6 +363,66 @@
     <ons-template id="NicePlay_Other.html">
         <ons-page id="pageNicePlay_Other">
             <ons-list id="listNicePlay_Other">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="Customize.html">
+        <ons-page id="pageCustomize">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    勝利ポーズ</div>
+                <div class="right">
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabCustomize">
+                <ons-tab label="勝利ポーズ" page="Customize_VictoryPose.html" active></ons-tab>
+                <ons-tab label="ラインカラー" page="Customize_LineColor.html"></ons-tab>
+                <ons-tab label="パーツカラー" page="Customize_PartsColor.html"></ons-tab>
+            <ons-list>
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Customize_VictoryPose.html">
+        <ons-page id="pageCustomize_VictoryPose">
+            <ons-list id="listCustomize_VictoryPose">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Customize_LineColor.html">
+        <ons-page id="pageCustomize_LineColor">
+            <ons-list id="listCustomize_LineColor">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Customize_PartsColor.html">
+        <ons-page id="pageCustomize_PartsColor">
+            <ons-list id="listCustomize_PartsColor">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="Quotes.html">
+        <ons-page id="pageQuotes">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                <div class="center">
+                    セリフ</div>
+                <div class="right">
+                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabQuotes">
+                <ons-tab label="ヒカリ" page="Quotes_Hikari.html" active></ons-tab>
+                <ons-tab label="レイカ" page="Quotes_Reika.html"></ons-tab>
+                <ons-tab label="シャーリー" page="Quotes_Shirley.html"></ons-tab>
+                <ons-tab label="イサドラ" page="Quotes_Isadora.html"></ons-tab>
+                <ons-tab label="ナギ" page="Quotes_Nagi.html"></ons-tab>
+                <ons-tab label="カズマ" page="Quotes_Kazuma.html"></ons-tab>
+            </ons-tabbar>
+            <ons-list>
             </ons-list>
         </ons-page>
     </ons-template>
