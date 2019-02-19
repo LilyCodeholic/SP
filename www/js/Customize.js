@@ -14,145 +14,145 @@ const funcPageCustomize = () =>
             },
             {
                 "pose":"ダブルピース！",
-                "who": "ヒカリ"
+                "who": "ヒカリ専用"
             },
             {
                 "pose":"ジャンプ！",
-                "who": "レイカ"
+                "who": "レイカ専用"
             },
             {
                 "pose":"大勝利！",
-                "who": "シャーリー"
+                "who": "シャーリー専用"
             },
             {
                 "pose":"最高！",
-                "who": "イサドラ"
+                "who": "イサドラ専用"
             },
             {
                 "pose":"もっと上を！",
-                "who": "ナギ"
+                "who": "ナギ専用"
             },
             {
                 "pose":"テッペン獲るぜ！",
-                "who": "カズマ"
+                "who": "カズマ専用"
             },
         ],
         LineColor:
         [
             {
                 "color":"ヒカリカラー",
-                "RGB": "#ffffff"
+                "RGB": "#9b72b0"
             },
             {
                 "color":"レイカカラー",
-                "RGB": "#ffffff"
+                "RGB": "#0075c2"
             },
             {
                 "color":"シャーリーカラー",
-                "RGB": "#ffffff"
+                "RGB": "#f5b2b2"
             },
             {
                 "color":"イサドラカラー",
-                "RGB": "#ffffff"
+                "RGB": "#777e41"
             },
             {
                 "color":"ナギカラー",
-                "RGB": "#ffffff"
+                "RGB": "#ee7800"
             },
             {
                 "color":"カズマカラー",
-                "RGB": "#ffffff"
+                "RGB": "#fff3b8"
             },
             {
                 "color":"レッド",
-                "RGB": "#ffffff"
+                "RGB": "#ea5550"
             },
             {
                 "color":"イエロー",
-                "RGB": "#ffffff"
+                "RGB": "#ffdc00"
             },
             {
                 "color":"ライトグリーン",
-                "RGB": "#ffffff"
+                "RGB": "#bee0c2"
             },
             {
                 "color":"スカイブルー",
-                "RGB": "#ffffff"
+                "RGB": "#a0d8ef"
             },
             {
                 "color":"ウルトラマリン",
-                "RGB": "#ffffff"
+                "RGB": "#434da2"
             },
             {
                 "color":"ヴァイオレット",
-                "RGB": "#ffffff"
+                "RGB": "#5a4498"
             }
         ],
         PartsColor:
         [
             {
                 "color":"デフォルトカラー",
-                "RGB": "#ffffff"
+                "RGB": "#000000"
             },
             {
                 "color":"ワインレッド",
-                "RGB": "#ffffff"
+                "RGB": "#b33e5c"
             },
             {
                 "color":"シャドーエメラルド",
-                "RGB": "#ffffff"
+                "RGB": "#008753"
             },
             {
                 "color":"ダークターコイズ",
-                "RGB": "#ffffff"
+                "RGB": "#007c7f"
             },
             {
                 "color":"シャドーパープル",
-                "RGB": "#ffffff"
+                "RGB": "#7c5b8c"
             },
             {
                 "color":"ダークレッド",
-                "RGB": "#ffffff"
+                "RGB": "#bb4440"
             },
             {
                 "color":"ダークグリーン",
-                "RGB": "#ffffff"
+                "RGB": "#384e36"
             },
             {
                 "color":"ダークブルー",
-                "RGB": "#ffffff"
+                "RGB": "#001e43"
             },
             {
                 "color":"ダークイエロー",
-                "RGB": "#ffffff"
+                "RGB": "#ccb000"
             },
             {
                 "color":"レッド",
-                "RGB": "#ffffff"
+                "RGB": "#ea5550"
             },
             {
                 "color":"イエロー",
-                "RGB": "#ffffff"
+                "RGB": "#ffdc00"
             },
             {
                 "color":"クリームイエロー",
-                "RGB": "#ffffff"
+                "RGB": "#fff3b8"
             },
             {
                 "color":"グリーン",
-                "RGB": "#ffffff"
+                "RGB": "#00a960"
             },
             {
                 "color":"ブルー",
-                "RGB": "#ffffff"
+                "RGB": "#0075c2"
             },
             {
                 "color":"ヴァイオレット",
-                "RGB": "#ffffff"
+                "RGB": "#5a4498"
             },
             {
                 "color":"ローズ",
-                "RGB": "#ffffff"
+                "RGB": "#e95464"
             },
             {
                 "color":"ホワイト",
@@ -176,10 +176,11 @@ const funcPageCustomize = () =>
         document.getElementById("textToast").innerHTML = `
             ステータス:<br>
             　勝利ポーズ　: 埋まっています<br>
-            　ラインカラー: 右側の色を塗っていません<br>
-            　パーツカラー: 右側の色を塗っていません<br>
+            　ラインカラー: 埋まっています<br>
+            　パーツカラー: 埋まっています<br>
             <br>
-            順番はアプリ、ゲームに準拠して記載しています。`;
+            順番はアプリ、ゲームに準拠して記載しています。<br>
+            色は正確ではありません。`;
         toast.toggle();
     };
 
@@ -189,7 +190,6 @@ const funcPageCustomize = () =>
         for(const items of SPDB.Customize[tab])
         {
             const list_item = document.createElement("ons-list-item");
-            list_item.setAttribute("expandable", "");
             switch(tab)
             {
                 case "VictoryPose":
@@ -199,7 +199,7 @@ const funcPageCustomize = () =>
                                 ${items.pose}
                             </ons-col>
                             <ons-col>
-                                ${items.who}専用
+                                ${items.who}
                             </ons-col>
                         </ons-row>
                     `;
@@ -210,7 +210,7 @@ const funcPageCustomize = () =>
                             <ons-col>
                                 ${items.color}
                             </ons-col>
-                            <ons-col style="background-color: ${items.RGB};">
+                            <ons-col style="background: linear-gradient(to bottom right, white 10%, ${items.RGB}, white 90%);">
                             </ons-col>
                         </ons-row>
                     `;
@@ -221,7 +221,7 @@ const funcPageCustomize = () =>
                             <ons-col>
                                 ${items.color}
                             </ons-col>
-                            <ons-col style="background-color: ${items.RGB};">
+                            <ons-col style="background: ${items.RGB};">
                             </ons-col>
                         </ons-row>
                     `;
@@ -252,5 +252,4 @@ const funcPageCustomize = () =>
     appendData("VictoryPose");
     appendData("LineColor");
     appendData("PartsColor");
-
 }

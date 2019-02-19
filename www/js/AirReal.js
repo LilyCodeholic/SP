@@ -7,8 +7,8 @@ const funcPageAirReal = () =>
             {
                 "name":"ソリディア",
                 "durability":200,
-                "length":"C",
-                "range":"A+",
+                "length":"B",
+                "range":"B",
                 "weight":2000,
                 "feature":"-"
             },
@@ -392,11 +392,8 @@ const funcPageAirReal = () =>
                 list_header.innerHTML = `
                     <ons-row>
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col>回避</ons-col>
-                        <ons-col>ダッシュ</ons-col>
-                        <ons-col>FD溜め</ons-col>
-                        <ons-col>ドリフト</ons-col>
-                        <ons-col width="5%"></ons-col>
+                        <ons-col>耐久値</ons-col>
+                        <ons-col>重量</ons-col>
                     </ons-row>
                 `;
                 break;
@@ -525,36 +522,14 @@ const funcPageAirReal = () =>
                             <ons-col width="40%">
                                 ${items.name}
                             </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.dodge}
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
                             </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.dash}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.fdCharge}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.drift}
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
                             </ons-col>
                         </ons-row>
                         <div class="expandable-content">
-                            <ons-row>
-                                <ons-col width="25%">
-                                    耐久値
-                                </ons-col>
-                                <ons-col>
-                                    ${items.durability}
-                                </ons-col>
-                            </ons-row>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    重量
-                                </ons-col>
-                                <ons-col>
-                                    ${items.weight}
-                                </ons-col>
-                            </ons-row>
                             <ons-row>
                                 <ons-col width="50%">
                                     ダッシュタイプ
@@ -564,11 +539,43 @@ const funcPageAirReal = () =>
                                 </ons-col>
                             </ons-row>
                             <ons-row>
+                                <ons-col>
+                                    　回避
+                                </ons-col>
+                                <ons-col>
+                                    ${items.dodge}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col>
+                                    　ダッシュ
+                                </ons-col>
+                                <ons-col>
+                                    ${items.dash}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
                                 <ons-col width="50%">
                                     フルドライブタイプ
                                 </ons-col>
                                 <ons-col>
                                     ${items.fdType}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col>
+                                    　フルドライブ溜め
+                                </ons-col>
+                                <ons-col>
+                                    ${items.fdCharge}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col>
+                                    　ドリフト
+                                </ons-col>
+                                <ons-col>
+                                    ${items.drift}
                                 </ons-col>
                             </ons-row>
                             <ons-row>

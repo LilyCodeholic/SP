@@ -597,8 +597,11 @@ const funcPageWeapon = () =>
     const appendData = (tab) =>
     {
         const fragment = document.createDocumentFragment();
-        const list_header = document.createElement("ons-list-header");
-        list_header.innerHTML = `
+
+        const fixedList_header = document.createElement("ons-list-header");
+        const backList_header = document.createElement("ons-list-header");
+        fixedList_header.setAttribute("class", "fixed");
+        fixedList_header.innerHTML = `
             <ons-row>
                 <ons-col width="60%">武器名</ons-col>
                 <ons-col>AR</ons-col>
@@ -607,7 +610,8 @@ const funcPageWeapon = () =>
                 <ons-col></ons-col>
             </ons-row>
         `;
-        fragment.appendChild(list_header);
+        fragment.appendChild(fixedList_header);
+        fragment.appendChild(backList_header);
 
         for(const items of SPDB.Weapon[tab])
         {
@@ -669,7 +673,7 @@ const funcPageWeapon = () =>
                     </ons-row>
                     <ons-row>
                         <ons-col>
-                            リロードタイミング:
+                            リロードタイミング
                         </ons-col>
                         <ons-col>
                             ${items.reloadTiming}

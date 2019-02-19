@@ -20,7 +20,6 @@
     <script src="./js/AsOne.js"></script>
     <script src="./js/NicePlay.js"></script>
     <script src="./js/Customize.js"></script>
-    <script src="./js/Quotes.js"></script>
     <script src="./js/Ack.js"></script>
 
     <script>
@@ -75,7 +74,7 @@
                 }
             }, false);
 
-           // 初期ページを設定
+            // 初期ページを設定
             SPnavigator.pushPage("Main.html");
         });
 
@@ -127,10 +126,7 @@
                     ナイスプレイ一覧</ons-list-item>
                 <ons-list-item id="gotoCustomize" modifier="chevron"
                  onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'});">
-                    カスタマイズ(作成中)</ons-list-item>
-                <ons-list-item id="gotoquotes" modifier="chevron"
-                 onclick="SPnavigator.pushPage('Quotes.html', {animation: 'slide'});">
-                    セリフ(作成検討中)</ons-list-item>
+                    カスタマイズ</ons-list-item>
                 <ons-list-item id="gotoAck" modifier="chevron"
                  onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
                     謝辞・問い合わせ</ons-list-item>
@@ -142,11 +138,11 @@
         <ons-page id="pageTitle">
             <ons-toolbar>
                 <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
                     称号 - プレイ</div>
                 <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabTitle">
                 <ons-tab label="プレイ" page="Title_Play.html" active></ons-tab>
@@ -178,11 +174,11 @@
         <ons-page id="pageWeapon">
             <ons-toolbar>
                 <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
                     武器 - アサルト</div>
                 <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabWeapon">
                 <ons-tab label="アサルト" page="Weapon_Assault.html" active></ons-tab>
@@ -214,11 +210,11 @@
         <ons-page id="pageAirReal">
             <ons-toolbar>
                 <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
                     エア・リアル - ヘッド</div>
                 <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabAirReal">
                 <ons-tab label="頭" page="AirReal_Head.html" active></ons-tab>
@@ -264,11 +260,11 @@
         <ons-page id="pageAsOne">
             <ons-toolbar>
                 <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
                     ヒカリ・ソラ</div>
                 <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabAsOne">
                 <ons-tab label="ヒカリ" page="AsOne_Hikari.html" active></ons-tab>
@@ -321,11 +317,11 @@
         <ons-page id="pageNicePlay">
             <ons-toolbar>
                 <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
                     ナイスプレイ - エア・リアル</div>
                 <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabNicePlay">
                 <ons-tab label="AR" page="NicePlay_AirReal.html" active></ons-tab>
@@ -371,11 +367,11 @@
         <ons-page id="pageCustomize">
             <ons-toolbar>
                 <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
                     勝利ポーズ</div>
                 <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
             </ons-toolbar>
             <ons-tabbar animation="none" id="tabCustomize">
                 <ons-tab label="勝利ポーズ" page="Customize_VictoryPose.html" active></ons-tab>
@@ -404,38 +400,14 @@
         </ons-page>
     </ons-template>
 
-    <ons-template id="Quotes.html">
-        <ons-page id="pageQuotes">
-            <ons-toolbar>
-                <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
-                <div class="center">
-                    セリフ</div>
-                <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
-            </ons-toolbar>
-            <ons-tabbar animation="none" id="tabQuotes">
-                <ons-tab label="ヒカリ" page="Quotes_Hikari.html" active></ons-tab>
-                <ons-tab label="レイカ" page="Quotes_Reika.html"></ons-tab>
-                <ons-tab label="シャーリー" page="Quotes_Shirley.html"></ons-tab>
-                <ons-tab label="イサドラ" page="Quotes_Isadora.html"></ons-tab>
-                <ons-tab label="ナギ" page="Quotes_Nagi.html"></ons-tab>
-                <ons-tab label="カズマ" page="Quotes_Kazuma.html"></ons-tab>
-            </ons-tabbar>
-            <ons-list>
-            </ons-list>
-        </ons-page>
-    </ons-template>
-
     <ons-template id="Ack.html">
         <ons-page id="pageAck">
             <ons-toolbar>
                 <div class="left">
-                    <ons-back-button class="backtoMain">戻る</ons-back-button></div>
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
                     謝辞・問い合わせ</div>
-                <div class="right">
-                    <ons-toolbar-button modifier="outline">i</ons-toolbar-button></div>
+                <div class="right"></div>
             </ons-toolbar>
             <ons-list>
                 <ons-list-item expandable>
@@ -457,6 +429,5 @@
     <ons-toast id="toast" animation="fall">
         <div id="textToast" onclick="toast.hide()"></div>
     </ons-toast>
-
 </body>
 </html>

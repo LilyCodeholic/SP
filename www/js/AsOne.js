@@ -2,120 +2,174 @@ const funcPageAsOne = () =>
 {
     SPDB.AsOne =
     {
-        Hikari:
-        [
-            {
-                "skill":"武器切り替え速度上昇",
-                "level":4
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            }
-        ],
-        Reika:
-        [
-            {
-                "skill":"武器切り替え速度上昇",
-                "level":4
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            }
-        ],
-        Shirley:
-        [
-            {
-                "skill":"武器切り替え速度上昇",
-                "level":4
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            }
-        ],
-        Isadora:
-        [
-            {
-                "skill":"武器切り替え速度上昇",
-                "level":4
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            }
-        ],
-        Nagi:
-        [
-            {
-                "skill":"武器切り替え速度上昇",
-                "level":4
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            }
-        ],
-        Kazuma:
-        [
-            {
-                "skill":"武器切り替え速度上昇",
-                "level":4
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            },
-            {
-                "skill":"？",
-                "level":0
-            }
-        ]
+        Skill:
+        {
+            Hikari:
+            [
+                {
+                    "skill":"武器切り替え速度上昇",
+                    "level":4
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                }
+            ],
+            Reika:
+            [
+                {
+                    "skill":"武器切り替え速度上昇",
+                    "level":4
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                }
+            ],
+            Shirley:
+            [
+                {
+                    "skill":"武器切り替え速度上昇",
+                    "level":4
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                }
+            ],
+            Isadora:
+            [
+                {
+                    "skill":"武器切り替え速度上昇",
+                    "level":4
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                }
+            ],
+            Nagi:
+            [
+                {
+                    "skill":"武器切り替え速度上昇",
+                    "level":4
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                }
+            ],
+            Kazuma:
+            [
+                {
+                    "skill":"武器切り替え速度上昇",
+                    "level":4
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                },
+                {
+                    "skill":"？",
+                    "level":0
+                }
+            ]
+        },
+        Story:
+        {
+            Hikari:
+            [
+                {
+                    "title":"aaa",
+                    "dialog":
+                    [
+                        ["L", "1「」"],
+                        ["R", "2「」"],
+                        ["L", "1「」"]
+                    ]
+                }
+            ],
+            Reika:
+            [
+            ],
+            Shirley:
+            [
+            ],
+            Isadora:
+            [
+            ],
+            Nagi:
+            [
+            ],
+            Kazuma:
+            [
+            ]
+        },
+        Quotes:
+        {
+            Hikari:
+            [
+            ],
+            Reika:
+            [
+            ],
+            Shirley:
+            [
+            ],
+            Isadora:
+            [
+            ],
+            Nagi:
+            [
+            ],
+            Kazuma:
+            [
+            ]
+        }
     };
 
     const fullName =
@@ -149,16 +203,19 @@ const funcPageAsOne = () =>
     const appendData = (tab) =>
     {
         const fragment = document.createDocumentFragment();
-        const list_header = document.createElement("ons-list-header");
-        list_header.innerHTML = `
-            <ons-row>
-                <ons-col width="75%">アズワンスキル</ons-col>
-                <ons-col>チームレベル</ons-col>
-            </ons-row>
-        `;
-        fragment.appendChild(list_header);
 
-        for(const items of SPDB.AsOne[tab])
+        // SPDB.AsOne.Skill
+        {
+            const list_header = document.createElement("ons-list-header");
+            list_header.innerHTML = `
+                <ons-row>
+                    <ons-col width="75%">アズワンスキル</ons-col>
+                    <ons-col>チームレベル</ons-col>
+                </ons-row>
+            `;
+            fragment.appendChild(list_header);
+        }
+        for(const items of SPDB.AsOne.Skill[tab])
         {
             const list_item = document.createElement("ons-list-item");
             list_item.innerHTML = `
@@ -173,6 +230,49 @@ const funcPageAsOne = () =>
             `;
             fragment.appendChild(list_item);
         }
+/*
+        // SPDB.AsOne.Story
+        {
+            const list_header = document.createElement("ons-list-header");
+            list_header.innerHTML = `アズワンストーリー`;
+            fragment.appendChild(list_header);
+        }
+        for(const items of SPDB.AsOne.Story[tab])
+        {
+            const list_item = document.createElement("ons-list-item");
+            list_item.setAttribute("expandable", "");
+
+            const list_item_dialog = () =>
+            {
+                let tmpDialog = "";
+                for(const dialog of items.dialog)
+                {
+                    const nameSwitch = `name="${tab}-${SPDB.AsOne.Story[tab].indexOf(items)}"`;
+                    const idSwitch = `id="${tab}-${SPDB.AsOne.Story[tab].indexOf(items)}-${items.dialog.indexOf(dialog)}"`;
+                    tmpDialog += `
+                        <label>
+                            <ons-list-item tappable>
+                                ${dialog[0] === "R" ?
+                                    `<div class="right">${dialog[1]}</div>`:
+                                    `${dialog[1]}`}
+                            <input type="radio" ${nameSwitch} ${idSwitch} style="visibility:hidden;">
+                            </ons-list-item>
+                        </label>
+                    `;
+                }
+                return tmpDialog;
+            }
+            list_item.innerHTML = `
+                ${items.title}
+                <div class="expandable-content">
+                    ${list_item_dialog()}
+                </div>
+            `;
+            fragment.appendChild(list_item);
+        }
+*/
+        // SPDB.AsOne.Quotes
+        {}
 
         const findElement = (query) =>
         {
