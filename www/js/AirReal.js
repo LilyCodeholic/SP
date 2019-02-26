@@ -147,7 +147,7 @@ const funcPageAirReal = () =>
                 "repairSpeed":"B",
                 "repairLatency":"C",
                 "weight":2100,
-                "feature":""
+                "feature":"-"
             },
             {
                 "name":"サイトヘッド",
@@ -231,7 +231,7 @@ const funcPageAirReal = () =>
                 "fdType":"長距離持続",
                 "fdCharge":"C",
                 "drift":"B+",
-                "feature":""
+                "feature":"-"
             },
             {
                 "name":"サイトヘッド",

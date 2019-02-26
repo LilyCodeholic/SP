@@ -361,6 +361,7 @@ const funcPageNicePlay = () =>
     {
         document.getElementById("textToast").innerHTML = `
             ステータス:<br>
+            　ver 1.04で追加されたナイスプレイに対応していません。<br>
             　敵勢力: タワーを破壊した時のポイントが不明確です。<br>
             　他: 獲得経験値が1000を超えた時のポイントが不明です。<br>
             <br>
