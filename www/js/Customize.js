@@ -252,4 +252,4 @@ const funcPageCustomize = () =>
     appendData("VictoryPose");
     appendData("LineColor");
     appendData("PartsColor");
-}
+};

@@ -230,47 +230,77 @@ const funcPageAsOne = () =>
             `;
             fragment.appendChild(list_item);
         }
-/*
+
         // SPDB.AsOne.Story
         {
             const list_header = document.createElement("ons-list-header");
             list_header.innerHTML = `アズワンストーリー`;
             fragment.appendChild(list_header);
         }
+        const form = document.createElement("form");
+        form.setAttribute("name", "story");
+
         for(const items of SPDB.AsOne.Story[tab])
         {
             const list_item = document.createElement("ons-list-item");
             list_item.setAttribute("expandable", "");
 
-            const list_item_dialog = () =>
+            const expandableContent = document.createElement("div");
+            expandableContent.setAttribute("class", "expandable-content");
+            for(const dialog of items.dialog)
             {
-                let tmpDialog = "";
-                for(const dialog of items.dialog)
+                const numStory = SPDB.AsOne.Story[tab].indexOf(items);
+                const numOrder = items.dialog.indexOf(dialog);
+                const nameRadio = `${tab}${numStory}`;
+                const idRadio = `${tab}${numStory}-${numOrder}`;
+                const idList_item = `li${tab}${numStory}-${numOrder}`;
+
+                const label = document.createElement("label");
+                label.setAttribute("for", idRadio);
+
+                const expandableList_item = document.createElement("ons-list-item");
+                expandableList_item.setAttribute("tappable", "");
+                expandableList_item.setAttribute("id", idList_item);
+                if(numOrder != 0)
                 {
-                    const nameSwitch = `name="${tab}-${SPDB.AsOne.Story[tab].indexOf(items)}"`;
-                    const idSwitch = `id="${tab}-${SPDB.AsOne.Story[tab].indexOf(items)}-${items.dialog.indexOf(dialog)}"`;
-                    tmpDialog += `
-                        <label>
-                            <ons-list-item tappable>
-                                ${dialog[0] === "R" ?
-                                    `<div class="right">${dialog[1]}</div>`:
-                                    `${dialog[1]}`}
-                            <input type="radio" ${nameSwitch} ${idSwitch} style="visibility:hidden;">
-                            </ons-list-item>
-                        </label>
-                    `;
+                    expandableList_item.setAttribute("class", "hidden");
                 }
-                return tmpDialog;
+
+                const input = document.createElement("input");
+                input.setAttribute("type", "radio");
+                input.setAttribute("name", nameRadio);
+                input.setAttribute("id", idRadio);
+                input.setAttribute("value", numOrder);
+                input.setAttribute("class", "hidden");
+
+                expandableList_item.innerHTML = `
+                    ${dialog[0] === "R" ?
+                        `<div class="right">${dialog[1]}</div>`:
+                        `${dialog[1]}`}
+                `;
+                expandableList_item.appendChild(input);
+
+                input.onclick = () =>
+                {
+                    const radioNodeList = document.forms.story[nameRadio];
+                    const value = Number(document.forms.story[nameRadio].value);
+                    const targetNum = value + 1;
+                    if(radioNodeList.length > targetNum)
+                    {
+                        const edit = document.getElementById(`li${tab}${numStory}-${targetNum}`);
+                        edit.removeAttribute("class");
+                    }
+                };
+
+                label.appendChild(expandableList_item);
+                expandableContent.appendChild(label);
             }
-            list_item.innerHTML = `
-                ${items.title}
-                <div class="expandable-content">
-                    ${list_item_dialog()}
-                </div>
-            `;
-            fragment.appendChild(list_item);
+            list_item.innerHTML = `${items.title}`;
+            list_item.appendChild(expandableContent);
+            form.appendChild(list_item);
         }
-*/
+        fragment.appendChild(form);
+
         // SPDB.AsOne.Quotes
         {}
 

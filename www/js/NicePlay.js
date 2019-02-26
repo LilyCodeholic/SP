@@ -417,4 +417,4 @@ const funcPageNicePlay = () =>
     appendData("Port");
     appendData("Core");
     appendData("Other");
-}
+};

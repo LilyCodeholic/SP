@@ -11,7 +11,7 @@ const funcPageWeapon = () =>
                 "vsMAG":"C",
                 "reload":"B+",
                 "usability":"A",
-                "weaponType":"？",
+                "weaponType":"実弾/妨害",
                 "ammo":1,
                 "attackType":"投擲",
                 "triggerType":"リリース",
@@ -86,6 +86,38 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
+                "name":"グレイン-AS",
+                "vsAR":"B",
+                "vsMAG":"B",
+                "reload":"B+",
+                "usability":"A",
+                "weaponType":"ビーム",
+                "ammo":10,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"-",
+                "howToGet":"ドロップのみ(1400CP)"
+            },
+            {
+                "side":"R",
+                "name":"多連装導弾 大蛇",
+                "vsAR":"B+",
+                "vsMAG":"A",
+                "reload":"B+",
+                "usability":"A",
+                "weaponType":"実弾",
+                "ammo":20,
+                "attackType":"中距離射撃",
+                "triggerType":"リリース",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"マルチロック",
+                "howToGet":"初期所持武器"
+            },
+            {
+                "side":"R",
                 "name":"ミトラーム",
                 "vsAR":"C",
                 "vsMAG":"A",
@@ -114,7 +146,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"2600CP"
             },
             {
                 "side":"R",
@@ -130,39 +162,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"2/1-14までにチーム内5位以上を15回獲得する"
-            },
-            {
-                "side":"R",
-                "name":"グレイン-AS",
-                "vsAR":"B",
-                "vsMAG":"B",
-                "reload":"B+",
-                "usability":"A",
-                "weaponType":"ビーム",
-                "ammo":10,
-                "attackType":"中距離射撃",
-                "triggerType":"ホールド",
-                "target":"敵",
-                "reloadTiming":"常時",
-                "feature":"-",
-                "howToGet":"1400CP"
-            },
-            {
-                "side":"R",
-                "name":"多連装導弾 大蛇",
-                "vsAR":"B+",
-                "vsMAG":"A",
-                "reload":"B+",
-                "usability":"A",
-                "weaponType":"実弾",
-                "ammo":20,
-                "attackType":"中距離射撃",
-                "triggerType":"リリース",
-                "target":"敵",
-                "reloadTiming":"弾切れ",
-                "feature":"マルチロック",
-                "howToGet":"初期所持武器"
+                "howToGet":"現在入手不可(2/1-14までにチーム内5位以上を15回獲得する)"
             },
             {
                 "side":"LR",
@@ -194,7 +194,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"スコープ、ダウン特性",
-                "howToGet":"ドロップのみ(4400CP)"
+                "howToGet":"4400CP"
             }
         ],
         Vanguard:
@@ -207,7 +207,7 @@ const funcPageWeapon = () =>
                 "reload":"B+",
                 "usability":"B",
                 "weaponType":"実弾",
-                "ammo":3,
+                "ammo":2,
                 "attackType":"近距離射撃",
                 "triggerType":"ホールド",
                 "target":"敵",
@@ -245,7 +245,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
-                "howToGet":"4400CP"
+                "howToGet":"ドロップのみ(4400CP)"
             },
             {
                 "side":"L",
@@ -282,6 +282,22 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
+                "name":"ミトライユ・コルト",
+                "vsAR":"B",
+                "vsMAG":"C",
+                "reload":"A",
+                "usability":"B",
+                "weaponType":"実弾",
+                "ammo":30,
+                "attackType":"近距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"",
+                "howToGet":"1400CP"
+            },
+            {
+                "side":"R",
                 "name":"グレイン-VG",
                 "vsAR":"B",
                 "vsMAG":"B",
@@ -314,19 +330,19 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
-                "name":"ミトライユ・コルト",
-                "vsAR":"B+",
-                "vsMAG":"C",
-                "reload":"A",
+                "name":"ディトーレ",
+                "vsAR":"B",
+                "vsMAG":"B+",
+                "reload":"B+",
                 "usability":"B",
-                "weaponType":"実弾",
-                "ammo":30,
-                "attackType":"近距離射撃",
+                "weaponType":"ビーム",
+                "ammo":8,
+                "attackType":"中距離射撃",
                 "triggerType":"ホールド",
                 "target":"敵",
-                "reloadTiming":"弾切れ",
+                "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -342,22 +358,6 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"炎上",
-                "howToGet":"ドロップのみ(1400CP)"
-            },
-            {
-                "side":"R",
-                "name":"ディトーレ",
-                "vsAR":"B",
-                "vsMAG":"B+",
-                "reload":"B+",
-                "usability":"B",
-                "weaponType":"ビーム",
-                "ammo":8,
-                "attackType":"中距離射撃",
-                "triggerType":"ホールド",
-                "target":"敵",
-                "reloadTiming":"常時",
-                "feature":"",
                 "howToGet":"1400CP"
             },
             {
@@ -374,14 +374,14 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(4400CP)"
+                "howToGet":"2600CP"
             }
         ],
         Support:
         [
             {
                 "side":"L",
-                "name":"フォルツァA",
+                "name":"フォルツァ-A",
                 "vsAR":"-",
                 "vsMAG":"-",
                 "reload":"B",
@@ -393,7 +393,7 @@ const funcPageWeapon = () =>
                 "target":"味方",
                 "reloadTiming":"弾切れ",
                 "feature":"攻撃力上昇",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -450,7 +450,7 @@ const funcPageWeapon = () =>
                 "vsAR":"-",
                 "vsMAG":"-",
                 "reload":"B",
-                "usability":"A",
+                "usability":"B",
                 "weaponType":"設置/妨害",
                 "ammo":1,
                 "attackType":"投擲",
@@ -507,14 +507,14 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
                 "name":"ミトライユ・バル",
-                "vsAR":"B",
+                "vsAR":"C",
                 "vsMAG":"B",
-                "reload":"B+",
+                "reload":"A",
                 "usability":"A",
                 "weaponType":"実弾",
                 "ammo":35,
@@ -572,7 +572,7 @@ const funcPageWeapon = () =>
                 "target":"L: 自分、R: 味方",
                 "reloadTiming":"弾切れ",
                 "feature":"シールド",
-                "howToGet":"ドロップのみ(4400CP)"
+                "howToGet":"2600CP"
             }
         ]
     };
