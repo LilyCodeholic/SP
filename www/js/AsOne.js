@@ -8,18 +8,12 @@ const funcPageAsOne = () =>
             [
                 {
                     "skill":"武器切り替え速度上昇",
+                    "flag":"初期所持スキル",
                     "level":4
                 },
                 {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
+                    "skill":"？？？",
+                    "flag":"？？？",
                     "level":0
                 }
             ],
@@ -27,18 +21,12 @@ const funcPageAsOne = () =>
             [
                 {
                     "skill":"武器切り替え速度上昇",
+                    "flag":"初期所持スキル",
                     "level":4
                 },
                 {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
+                    "skill":"？？？",
+                    "flag":"？？？",
                     "level":0
                 }
             ],
@@ -46,18 +34,12 @@ const funcPageAsOne = () =>
             [
                 {
                     "skill":"武器切り替え速度上昇",
+                    "flag":"初期所持スキル",
                     "level":4
                 },
                 {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
+                    "skill":"？？？",
+                    "flag":"？？？",
                     "level":0
                 }
             ],
@@ -65,18 +47,12 @@ const funcPageAsOne = () =>
             [
                 {
                     "skill":"武器切り替え速度上昇",
+                    "flag":"初期所持スキル",
                     "level":4
                 },
                 {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
+                    "skill":"？？？",
+                    "flag":"？？？",
                     "level":0
                 }
             ],
@@ -84,18 +60,12 @@ const funcPageAsOne = () =>
             [
                 {
                     "skill":"武器切り替え速度上昇",
+                    "flag":"初期所持スキル",
                     "level":4
                 },
                 {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
+                    "skill":"？？？",
+                    "flag":"？？？",
                     "level":0
                 }
             ],
@@ -103,18 +73,12 @@ const funcPageAsOne = () =>
             [
                 {
                     "skill":"武器切り替え速度上昇",
+                    "flag":"初期所持スキル",
                     "level":4
                 },
                 {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
-                    "level":0
-                },
-                {
-                    "skill":"？",
+                    "skill":"？？？",
+                    "flag":"？？？",
                     "level":0
                 }
             ]
@@ -153,6 +117,14 @@ const funcPageAsOne = () =>
         {
             Hikari:
             [
+                {
+                    "when":"ログイン時",
+                    "quote":"「」"
+                },
+                {
+                    "when":"終了時",
+                    "quote":"「」"
+                }
             ],
             Reika:
             [
@@ -302,7 +274,23 @@ const funcPageAsOne = () =>
         // fragment.appendChild(form);
 
         // // SPDB.AsOne.Quotes
-        // {}
+        // {
+        //     const list_header = document.createElement("ons-list-header");
+        //     list_header.innerHTML = `セリフ`;
+        //     fragment.appendChild(list_header);
+        // }
+        // for(const items of SPDB.AsOne.Quotes[tab])
+        // {
+        //     const list_item = document.createElement("ons-list-item");
+        //     list_item.setAttribute("expandable", "");
+        //     list_item.innerHTML = `
+        //         ${items.when}
+        //         <div class="expandable-content">
+        //             ${items.quote}
+        //         </div>
+        //     `;
+        //     fragment.appendChild(list_item);
+        // }
 
         const findElement = (query) =>
         {

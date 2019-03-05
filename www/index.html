@@ -105,9 +105,6 @@
             <ons-list class="Main_Main">
                 <ons-list-header>メインメニュー</ons-list-header>
 
-                <ons-list-item id="gotoTitle" modifier="chevron"
-                 onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
-                    称号</ons-list-item>
                 <ons-list-item id="gotoWeapon" modifier="chevron"
                  onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
                     武器</ons-list-item>
@@ -123,6 +120,11 @@
                 <ons-list-item id="gotoCustomize" modifier="chevron"
                  onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'});">
                     カスタマイズ</ons-list-item>
+                <ons-list-item id="gotoTitle" modifier="chevron"
+                 onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
+                    称号</ons-list-item>
+                <ons-list-item id="gotoMission">
+                    ミッション・クエスト(作成中)</ons-list-item>
                 <ons-list-item id="gotoAck" modifier="chevron"
                  onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
                     謝辞・問い合わせ</ons-list-item>
@@ -144,6 +146,7 @@
                 <ons-tab label="プレイ" page="Title_Play.html" active></ons-tab>
                 <ons-tab label="バトル" page="Title_Battle.html"></ons-tab>
                 <ons-tab label="アズワン" page="Title_AsOne.html"></ons-tab>
+                <ons-tab label="スペシャル" page="Title_Special.html"></ons-tab>
             </ons-tabbar>
         </ons-page>
     </ons-template>
@@ -162,6 +165,12 @@
     <ons-template id="Title_AsOne.html">
         <ons-page id="pageTitle_AsOne">
             <ons-list id="listTitle_AsOne">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Title_Special.html">
+        <ons-page id="pageTitle_Special">
+            <ons-list id="listTitle_Special">
             </ons-list>
         </ons-page>
     </ons-template>

@@ -6,22 +6,6 @@ const funcPageWeapon = () =>
         [
             {
                 "side":"L",
-                "name":"ボンバルド",
-                "vsAR":"C",
-                "vsMAG":"C",
-                "reload":"B+",
-                "usability":"A",
-                "weaponType":"実弾/妨害",
-                "ammo":1,
-                "attackType":"投擲",
-                "triggerType":"リリース",
-                "target":"敵",
-                "reloadTiming":"弾切れ",
-                "feature":"炎上",
-                "howToGet":"4400CP"
-            },
-            {
-                "side":"L",
                 "name":"拳銃 天火",
                 "vsAR":"D",
                 "vsMAG":"C",
@@ -59,7 +43,7 @@ const funcPageWeapon = () =>
                 "vsMAG":"B",
                 "reload":"B+",
                 "usability":"B",
-                "weaponType":"？",
+                "weaponType":"実弾",
                 "ammo":3,
                 "attackType":"投擲",
                 "triggerType":"リリース",
@@ -67,6 +51,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
                 "howToGet":"ドロップのみ(1400CP)"
+            },
+            {
+                "side":"L",
+                "name":"ボンバルド",
+                "vsAR":"C",
+                "vsMAG":"C",
+                "reload":"B+",
+                "usability":"A",
+                "weaponType":"実弾/妨害",
+                "ammo":1,
+                "attackType":"投擲",
+                "triggerType":"リリース",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"炎上",
+                "howToGet":"4400CP"
             },
             {
                 "side":"R",
@@ -162,7 +162,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"現在入手不可(2/1-14までにチーム内5位以上を15回獲得する)"
+                "howToGet":"現在入手不可(2/1-15までに全国対戦でチーム内5位以上を15回獲得する)"
             },
             {
                 "side":"LR",
@@ -587,8 +587,7 @@ const funcPageWeapon = () =>
     {
         document.getElementById("textToast").innerHTML = `
             ステータス:<br>
-            　武器: 埋まっています<br>
-            　武器情報: 武器属性が一部足りていないか、埋まっていません<br>
+            　武器情報: すべて埋まっています<br>
             <br>
             「使いやすさ」はデータとしては持っていますが現在記載していません。`;
         toast.toggle();

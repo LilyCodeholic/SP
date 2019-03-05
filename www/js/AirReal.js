@@ -111,7 +111,7 @@ const funcPageAirReal = () =>
                 "name":"ディスドス",
                 "durability":180,
                 "weight":2200,
-                "feature":"状態異常攻撃時間延長>>>"
+                "feature":["状態異常攻撃時間延長>>>", "設置時間延長>>>"]
             },
             {
                 "name":"サブライガ",
@@ -183,7 +183,7 @@ const funcPageAirReal = () =>
                 "repairSpeed":"E",
                 "repairLatency":"A+",
                 "weight":2200,
-                "feature":"-"
+                "feature":"ダウン耐性>>"
             },
             {
                 "name":"サブライガ",
@@ -192,7 +192,7 @@ const funcPageAirReal = () =>
                 "repairSpeed":"A",
                 "repairLatency":"B+",
                 "weight":2000,
-                "feature":"-"
+                "feature":"ダウン耐性>>"
             }
         ],
         Wing:
@@ -211,8 +211,8 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"カーディナル",
-                "durability":200,
-                "weight":2000,
+                "durability":170,
+                "weight":1800,
                 "dashType":"高速ダッシュ",
                 "dodge":"C",
                 "dash":"D",
@@ -283,8 +283,8 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サブライガ",
-                "durability":190,
-                "weight":2200,
+                "durability":200,
+                "weight":2000,
                 "dashType":"高速ダッシュ",
                 "dodge":"B",
                 "dash":"A",
