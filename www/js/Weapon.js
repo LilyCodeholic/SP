@@ -50,7 +50,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -66,7 +66,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"炎上",
-                "howToGet":"4400CP"
+                "howToGet":"2600CP"
             },
             {
                 "side":"R",
@@ -98,7 +98,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -146,7 +146,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"R",
@@ -194,7 +194,23 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"スコープ、ダウン特性",
-                "howToGet":"4400CP"
+                "howToGet":"ドロップのみ(4400CP)"
+            },
+            {
+                "side":"LR",
+                "name":"ファイアサイス",
+                "vsAR":"B",
+                "vsMAG":"B",
+                "reload":"B",
+                "usability":"A",
+                "weaponType":"格闘？/ビーム？",
+                "ammo":"L: 1, R: 9",
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"",
+                "howToGet":"ドロップのみ"
             }
         ],
         Vanguard:
@@ -229,7 +245,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -245,7 +261,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
-                "howToGet":"ドロップのみ(4400CP)"
+                "howToGet":"2600CP"
             },
             {
                 "side":"L",
@@ -358,7 +374,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"炎上",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"LR",
@@ -374,7 +390,23 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
+            },
+            {
+                "side":"LR",
+                "name":"ブラックスミス",
+                "vsAR":"A",
+                "vsMAG":"B",
+                "reload":"C",
+                "usability":"B",
+                "weaponType":"格闘？/実弾？",
+                "ammo":"L: 1, R: 1",
+                "attackType":"中距離射撃",
+                "triggerType":"1トリガー",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"ダウン特性",
+                "howToGet":"ドロップのみ"
             }
         ],
         Support:
@@ -393,7 +425,7 @@ const funcPageWeapon = () =>
                 "target":"味方",
                 "reloadTiming":"弾切れ",
                 "feature":"攻撃力上昇",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -442,7 +474,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"ジャミング",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -458,7 +490,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"麻痺",
-                "howToGet":"4400CP"
+                "howToGet":"2600CP"
             },
             {
                 "side":"R",
@@ -507,7 +539,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -572,7 +604,23 @@ const funcPageWeapon = () =>
                 "target":"L: 自分、R: 味方",
                 "reloadTiming":"弾切れ",
                 "feature":"シールド",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
+            },
+            {
+                "side":"LR",
+                "name":"エステジオンボム",
+                "vsAR":"B",
+                "vsMAG":"D",
+                "reload":"E",
+                "usability":"A",
+                "weaponType":"？？？",
+                "ammo":"L: 1, R: 1",
+                "attackType":"その他",
+                "triggerType":"サブモニター",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"ダウン特性",
+                "howToGet":"ドロップのみ"
             }
         ]
     };
