@@ -65,7 +65,7 @@ const funcPageAirReal = () =>
                 "durability":180,
                 "length":"D",
                 "range":"B",
-                "weight":200,
+                "weight":2000,
                 "feature":"(クリティカルの範囲が広い)"
             }
         ],
