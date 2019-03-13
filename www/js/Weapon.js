@@ -203,7 +203,7 @@ const funcPageWeapon = () =>
                 "vsMAG":"B",
                 "reload":"B",
                 "usability":"A",
-                "weaponType":"格闘？/ビーム？",
+                "weaponType":"格闘/ビーム",
                 "ammo":"L: 1, R: 9",
                 "attackType":"中距離射撃",
                 "triggerType":"ホールド",
