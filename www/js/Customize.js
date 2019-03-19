@@ -2,6 +2,14 @@ const funcPageCustomize = () =>
 {
     SPDB.Customize =
     {
+        Status:`
+            ステータス<br>
+            　勝利ポーズ　: 埋まっています<br>
+            　ラインカラー: 埋まっています<br>
+            　パーツカラー: 埋まっています<br>
+            <br>
+            順番はアプリ、ゲームに準拠しています。<br>
+            色は正確ではありません。`,
         VictoryPose:
         [
             {
@@ -173,14 +181,7 @@ const funcPageCustomize = () =>
     }, false);
     document.querySelector("#pageCustomize ons-toolbar-button").onclick = () =>
     {
-        document.getElementById("textToast").innerHTML = `
-            ステータス:<br>
-            　勝利ポーズ　: 埋まっています<br>
-            　ラインカラー: 埋まっています<br>
-            　パーツカラー: 埋まっています<br>
-            <br>
-            順番はアプリ、ゲームに準拠して記載しています。<br>
-            色は正確ではありません。`;
+        document.getElementById("textToast").innerHTML = SPDB.Customize.Status;
         toast.toggle();
     };
 

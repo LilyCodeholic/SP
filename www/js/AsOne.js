@@ -2,6 +2,14 @@ const funcPageAsOne = () =>
 {
     SPDB.AsOne =
     {
+        Status:`
+            ステータス<br>
+            　ヒカリ　　: 特定DePS達成時のスキルが埋まっていません。<br>
+            　レイカ　　: 特定DePS達成時のスキルが埋まっていません。<br>
+            　シャーリー: 特定DePS達成時のスキルが埋まっていません。<br>
+            　イサドラ　: 特定DePS達成時のスキルが埋まっていません。<br>
+            　ナギ　　　: 特定DePS達成時のスキル、クエストでもらえるスキルが埋まっていません。<br>
+            　カズマ　　: 特定DePS達成時のスキルが埋まっていません。`,
         Skill:
         {
             Hikari:
@@ -30,6 +38,26 @@ const funcPageAsOne = () =>
                     "skill":"対ビーム防御力上昇",
                     "flag":"DePS1500を達成",
                     "level":3
+                },
+                {
+                    "skill":"ポート占拠速度上昇",
+                    "flag":"DePS3500を達成",
+                    "level":6
+                },
+                {
+                    "skill":"ビーム攻撃力上昇",
+                    "flag":"DePS5500を達成",
+                    "level":5
+                },
+                {
+                    "skill":"ブースと消費量減少",
+                    "flag":"DePS7500を達成",
+                    "level":7
+                },
+                {
+                    "skill":"経験値取得量上昇",
+                    "flag":"DePS9500を達成",
+                    "level":1
                 },
                 {
                     "skill":"？？？",
@@ -75,6 +103,26 @@ const funcPageAsOne = () =>
                     "level":3
                 },
                 {
+                    "skill":"状態異常時間延長",
+                    "flag":"DePS3500を達成",
+                    "level":4
+                },
+                {
+                    "skill":"実弾攻撃力上昇",
+                    "flag":"DePS5500を達成",
+                    "level":5
+                },
+                {
+                    "skill":"回復量上昇",
+                    "flag":"DePS7500を達成",
+                    "level":2
+                },
+                {
+                    "skill":"経験値取得量上昇",
+                    "flag":"DePS9500を達成",
+                    "level":1
+                },
+                {
                     "skill":"？？？",
                     "flag":"DePS？？？を達成",
                     "level":"？？？"
@@ -116,6 +164,26 @@ const funcPageAsOne = () =>
                     "skill":"対格闘防御力上昇",
                     "flag":"DePS1500を達成",
                     "level":3
+                },
+                {
+                    "skill":"ポート占拠速度上昇",
+                    "flag":"DePS3500を達成",
+                    "level":6
+                },
+                {
+                    "skill":"ビーム攻撃力上昇",
+                    "flag":"DePS5500を達成",
+                    "level":5
+                },
+                {
+                    "skill":"アーマー値最大量上昇",
+                    "flag":"DePS7500を達成",
+                    "level":7
+                },
+                {
+                    "skill":"経験値取得量上昇",
+                    "flag":"DePS9500を達成",
+                    "level":1
                 },
                 {
                     "skill":"？？？",
@@ -161,6 +229,26 @@ const funcPageAsOne = () =>
                     "level":3
                 },
                 {
+                    "skill":"状態異常時間延長",
+                    "flag":"DePS3500を達成",
+                    "level":4
+                },
+                {
+                    "skill":"実弾攻撃力上昇",
+                    "flag":"DePS5500を達成",
+                    "level":5
+                },
+                {
+                    "skill":"？？？",
+                    "flag":"DePS7500を達成",
+                    "level":0
+                },
+                {
+                    "skill":"経験値取得量上昇",
+                    "flag":"DePS9500を達成",
+                    "level":1
+                },
+                {
                     "skill":"？？？",
                     "flag":"DePS？？？を達成",
                     "level":"？？？"
@@ -189,9 +277,9 @@ const funcPageAsOne = () =>
                     "level":5
                 },
                 {
-                    "skill":"？？？",
+                    "skill":"ダッシュ速度上昇？",
                     "flag":"クエスト「ナギからの依頼2」をクリア",
-                    "level":"？？？"
+                    "level":6
                 },
                 {
                     "skill":"？？？",
@@ -204,14 +292,34 @@ const funcPageAsOne = () =>
                     "level":3
                 },
                 {
+                    "skill":"ポート占拠速度上昇",
+                    "flag":"DePS3500を達成",
+                    "level":6
+                },
+                {
+                    "skill":"ビーム攻撃力上昇",
+                    "flag":"DePS5500を達成",
+                    "level":5
+                },
+                {
+                    "skill":"格闘攻撃力上昇",
+                    "flag":"DePS7500を達成",
+                    "level":5
+                },
+                {
+                    "skill":"経験値取得量上昇",
+                    "flag":"DePS9500を達成",
+                    "level":1
+                },
+                {
                     "skill":"？？？",
                     "flag":"DePS？？？を達成",
                     "level":"？？？"
                 },
                 {
-                    "skill":"？？？",
+                    "skill":"ロックオンエリア拡大",
                     "flag":"クエスト「ナギとスキルアップ1」をクリア",
-                    "level":"？？？"
+                    "level":6
                 },
                 {
                     "skill":"？？？",
@@ -232,7 +340,7 @@ const funcPageAsOne = () =>
                     "level":6
                 },
                 {
-                    "skill":"アーマー回復速度上昇	",
+                    "skill":"アーマー回復速度上昇",
                     "flag":"クエスト「カズマからの依頼2」をクリア",
                     "level":7
                 },
@@ -245,6 +353,26 @@ const funcPageAsOne = () =>
                     "skill":"対実弾防御力上昇",
                     "flag":"DePS1500を達成",
                     "level":3
+                },
+                {
+                    "skill":"フルドライブ時間延長",
+                    "flag":"DePS3500を達成",
+                    "level":6
+                },
+                {
+                    "skill":"状態異常時間延長",
+                    "flag":"DePS5500を達成",
+                    "level":4
+                },
+                {
+                    "skill":"実弾攻撃力上昇",
+                    "flag":"DePS7500を達成",
+                    "level":5
+                },
+                {
+                    "skill":"経験値取得量上昇",
+                    "flag":"DePS9500を達成",
+                    "level":1
                 },
                 {
                     "skill":"？？？",
@@ -317,6 +445,11 @@ const funcPageAsOne = () =>
             ],
             Nagi:
             [
+                {
+                    "when":"ログイン時(誕生日)",
+                    "quote":
+                        ["誕生日おめでとうございます", "地球ではどんな風にお祝いするのでしょうか？"]
+                }
             ],
             Kazuma:
             [
@@ -341,14 +474,7 @@ const funcPageAsOne = () =>
     }, false);
     document.querySelector("#pageAsOne ons-toolbar-button").onclick = () =>
     {
-        document.getElementById("textToast").innerHTML = `
-            ステータス:<br>
-            　ヒカリ　　: 初期スキル以外埋まっていません。<br>
-            　レイカ　　: 初期スキル以外埋まっていません。<br>
-            　シャーリー: 初期スキル以外埋まっていません。<br>
-            　イサドラ　: 初期スキル以外埋まっていません。<br>
-            　ナギ　　　: 初期スキル以外埋まっていません。<br>
-            　カズマ　　: 初期スキル以外埋まっていません。`;
+        document.getElementById("textToast").innerHTML = SPDB.AsOne.Status;
         toast.toggle();
     };
 
@@ -369,13 +495,21 @@ const funcPageAsOne = () =>
         }
         for(const items of SPDB.AsOne.Skill[tab])
         {
+            if(items.skill == "？？？")
+            {
+                continue;
+            }
             const list_item = document.createElement("ons-list-item");
             list_item.innerHTML = `
                 <ons-row>
                     <ons-col width="75%">
                         ${items.skill}
+                        <br>
+                        <span style="font-size: small;">
+                            ${items.flag}
+                        </span>
                     </ons-col>
-                    <ons-col style="text-align: right;">
+                    <ons-col vertical-align="center" style="text-align: right;">
                         ${items.level}
                     </ons-col>
                 </ons-row>

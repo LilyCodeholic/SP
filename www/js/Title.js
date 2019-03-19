@@ -2,6 +2,13 @@ const funcPageTitle = () =>
 {
     SPDB.Title =
     {
+        Status:`
+            ステータス<br>
+            　プレイ　: 称号、条件共に埋まっていません<br>
+            　バトル　: 称号、条件共に埋まっていません<br>
+            　アズワン: 称号、条件共に埋まっていません<br>
+            <br>
+            称号と取得条件をアプリの通りに記載しています。`,
         Play:
         [
             {
@@ -113,12 +120,24 @@ const funcPageTitle = () =>
                 "flag":"願掛け100回成功"
             },
             {
+                "title":"無敗のお守り",
+                "flag":"願掛け500回成功"
+            },
+            {
+                "title":"大願成就",
+                "flag":"願掛け1000回成功"
+            },
+            {
                 "title":"？？？",
                 "flag":"願掛け？？？回成功"
             },
             {
                 "title":"期待のパイロット",
                 "flag":"累計25日ログイン"
+            },
+            {
+                "title":"エースパイロット",
+                "flag":"累計50日ログイン"
             },
             {
                 "title":"？？？",
@@ -153,6 +172,10 @@ const funcPageTitle = () =>
                 "flag":"メカパーツ40個獲得"
             },
             {
+                "title":"全機出撃",
+                "flag":"メカパーツ50個獲得"
+            },
+            {
                 "title":"？？？",
                 "flag":"メカパーツ？？？個獲得"
             },
@@ -173,8 +196,24 @@ const funcPageTitle = () =>
                 "flag":"称号50個獲得"
             },
             {
+                "title":"タイトルマニア",
+                "flag":"称号100個獲得"
+            },
+            {
                 "title":"？？？",
                 "flag":"称号？？？個獲得"
+            },
+            {
+                "title":"エンブレムコレクター",
+                "flag":"エンブレムパーツ50個獲得"
+            },
+            {
+                "title":"ラインコレクター",
+                "flag":"？？？"
+            },
+            {
+                "title":"クロックスター",
+                "flag":"全国対戦50時間プレイ"
             }
         ],
         Battle:
@@ -188,6 +227,10 @@ const funcPageTitle = () =>
                 "flag":"全国対戦10回勝利"
             },
             {
+                "title":"百の星を砕く猛者",
+                "flag":"全国対戦100回勝利"
+            },
+            {
                 "title":"？？？",
                 "flag":"全国対戦？回勝利"
             },
@@ -198,6 +241,14 @@ const funcPageTitle = () =>
             {
                 "title":"最高にハイスコア",
                 "flag":"累計リザルトスコア500000達成"
+            },
+            {
+                "title":"オールラウンダー",
+                "flag":"累計リザルトスコア1000000達成"
+            },
+            {
+                "title":"全知全能の神星",
+                "flag":"累計リザルトスコア5000000達成"
             },
             {
                 "title":"？？？",
@@ -244,6 +295,10 @@ const funcPageTitle = () =>
                 "flag":"累計アシストスコア30000達成"
             },
             {
+                "title":"影の暗躍者",
+                "flag":"累計アシストスコア75000達成"
+            },
+            {
                 "title":"？？？",
                 "flag":"累計アシストスコア？？？達成"
             },
@@ -284,12 +339,28 @@ const funcPageTitle = () =>
                 "flag":"マグを累計100機撃破"
             },
             {
+                "title":"マグマグハンター",
+                "flag":"マグを累計3000機撃破"
+            },
+            {
+                "title":"最強のマグキラー",
+                "flag":"マグを累計10000機撃破"
+            },
+            {
                 "title":"？？？",
                 "flag":"マグを累計？？？機撃破"
             },
             {
                 "title":"Sマグダメ",
                 "flag":"Sマグへ累計20000ダメージを与えた"
+            },
+            {
+                "title":"Sマグすげーダメ",
+                "flag":"Sマグへ累計300000ダメージを与えた"
+            },
+            {
+                "title":"Sマグ超ダメ",
+                "flag":"Sマグへ累計1000000ダメージを与えた"
             },
             {
                 "title":"？？？",
@@ -316,12 +387,24 @@ const funcPageTitle = () =>
                 "flag":"コアへ累計20000ダメージを与えた"
             },
             {
+                "title":"コアすげーダメ",
+                "flag":"コアへ累計300000ダメージを与えた"
+            },
+            {
+                "title":"コア超ダメ",
+                "flag":"コアへ累計1000000ダメージを与えた"
+            },
+            {
                 "title":"？？？",
                 "flag":"コアへ累計？？？ダメージを与えた"
             },
             {
                 "title":"アサルト使い",
                 "flag":"アサルトで累計60分対戦した"
+            },
+            {
+                "title":"ベテランアサルト",
+                "flag":"アサルトで累計450分対戦した"
             },
             {
                 "title":"？？？",
@@ -338,6 +421,14 @@ const funcPageTitle = () =>
             {
                 "title":"？？？",
                 "flag":"ヴァンガードで累計？？？分対戦した"
+            },
+            {
+                "title":"サポーター",
+                "flag":"サポートで累計60分対戦した"
+            },
+            {
+                "title":"ベテランサポート",
+                "flag":"サポートで累計450分対戦した"
             },
             {
                 "title":"？？？",
@@ -361,6 +452,22 @@ const funcPageTitle = () =>
             {
                 "title":"イサドラの同僚",
                 "flag":"イサドラとのDePSを500獲得"
+            },
+            {
+                "title":"イサドラのマブダチ",
+                "flag":"イサドラとのDePSを？？？獲得"
+            },
+            {
+                "title":"イサドラの相棒",
+                "flag":"イサドラとのDePSを？？？獲得"
+            },
+            {
+                "title":"謎深き誘惑の女王",
+                "flag":"イサドラとのDePSを？？？獲得"
+            },
+            {
+                "title":"ミステリアスなコンビ",
+                "flag":"イサドラとのDePSを？？？獲得"
             },
             {
                 "title":"？？？",
@@ -419,6 +526,10 @@ const funcPageTitle = () =>
                 "flag":"イサドラと全国対戦5連続勝利"
             },
             {
+                "title":"深緑に潜む狙撃手",
+                "flag":"イサドラと全国対戦？？？連続勝利"
+            },
+            {
                 "title":"？？？",
                 "flag":"イサドラと全国対戦？？？連続勝利"
             },
@@ -464,13 +575,7 @@ const funcPageTitle = () =>
     }, false);
     document.querySelector("#pageTitle ons-toolbar-button").onclick = () =>
     {
-        document.getElementById("textToast").innerHTML = `
-            ステータス:<br>
-            　プレイ　: 称号、条件共に埋まっていません<br>
-            　バトル　: 称号、条件共に埋まっていません<br>
-            　アズワン: 称号、条件共に埋まっていません<br>
-            <br>
-            称号と取得条件をアプリの通りに記載しています。`;
+        document.getElementById("textToast").innerHTML = SPDB.Title.Status;
         toast.toggle();
     };
 
@@ -479,6 +584,10 @@ const funcPageTitle = () =>
         const fragment = document.createDocumentFragment();
         for(const items of SPDB.Title[tab])
         {
+            if(items.title == "？？？")
+            {
+                continue;
+            }
             const list_item = document.createElement("ons-list-item");
             list_item.innerHTML = `
                 <span class="list-item__title">

@@ -2,6 +2,11 @@ const funcPageWeapon = () =>
 {
     SPDB.Weapon =
     {
+        Status:`
+            ステータス<br>
+            　武器情報: すべて埋まっています<br>
+            <br>
+            「使いやすさ」はデータとしては持っていますが現在記載していません。`,
         Assault:
         [
             {
@@ -633,11 +638,7 @@ const funcPageWeapon = () =>
     }, false);
     document.querySelector("#pageWeapon ons-toolbar-button").onclick = () =>
     {
-        document.getElementById("textToast").innerHTML = `
-            ステータス:<br>
-            　武器情報: すべて埋まっています<br>
-            <br>
-            「使いやすさ」はデータとしては持っていますが現在記載していません。`;
+        document.getElementById("textToast").innerHTML = SPDB.Weapon.Status;
         toast.toggle();
     };
 

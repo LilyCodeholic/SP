@@ -2,6 +2,11 @@ const funcPageAirReal = () =>
 {
     SPDB.AirReal =
     {
+        Status:`
+            ステータス<br>
+            　パーツ情報: すべて埋まっています。<br>
+            <br>
+            色違いのパーツについては元パーツと同じ性能のため記載していません。`,
         Head:
         [
             {
@@ -371,11 +376,7 @@ const funcPageAirReal = () =>
     }, false);
     document.querySelector("#pageAirReal ons-toolbar-button").onclick = () =>
     {
-        document.getElementById("textToast").innerHTML = `
-            ステータス:<br>
-            　パーツ情報: すべて埋まっています。<br>
-            <br>
-            色違いのパーツについては元パーツと同じ性能のため記載していません。`;
+        document.getElementById("textToast").innerHTML = SPDB.AirReal.Status;
         toast.toggle();
     };
 
@@ -499,7 +500,7 @@ const funcPageAirReal = () =>
                         <div class="expandable-content">
                             <ons-row>
                                 <ons-col width="25%">
-                                    特性
+                                    　特性
                                 </ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
@@ -527,7 +528,7 @@ const funcPageAirReal = () =>
                         <div class="expandable-content">
                             <ons-row>
                                 <ons-col width="25%">
-                                    特性
+                                    　特性
                                 </ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
@@ -560,17 +561,13 @@ const funcPageAirReal = () =>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
-                                <ons-col width="50%">
-                                    重量
-                                </ons-col>
+                                <ons-col width="50%">　重量</ons-col>
                                 <ons-col>
                                     ${items.weight}
                                 </ons-col>
                             </ons-row>
                             <ons-row>
-                                <ons-col width="25%">
-                                    特性
-                                </ons-col>
+                                <ons-col width="25%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
                                         `${items.feature[0]}<br>${items.feature[1]}`:
@@ -602,31 +599,31 @@ const funcPageAirReal = () =>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
-                                <ons-col width="50%">耐久値</ons-col>
+                                <ons-col width="50%">　耐久値</ons-col>
                                 <ons-col>
                                     ${items.durability}
                                 </ons-col>
                             </ons-row>
                             <ons-row>
-                                <ons-col width="50%">重量</ons-col>
+                                <ons-col width="50%">　重量</ons-col>
                                 <ons-col>
                                     ${items.weight}
                                 </ons-col>
                             </ons-row>
                             <ons-row>
-                                <ons-col width="50%">ダッシュタイプ</ons-col>
+                                <ons-col width="50%">　ダッシュタイプ</ons-col>
                                 <ons-col>
                                     ${items.dashType}
                                 </ons-col>
                             </ons-row>
                             <ons-row>
-                                <ons-col width="50%">フルドライブタイプ</ons-col>
+                                <ons-col width="50%">　フルドライブタイプ</ons-col>
                                 <ons-col>
                                     ${items.fdType}
                                 </ons-col>
                             </ons-row>
                             <ons-row>
-                                <ons-col width="25%">特性</ons-col>
+                                <ons-col width="25%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
                                         `${items.feature[0]}<br>${items.feature[1]}`:
