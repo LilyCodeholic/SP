@@ -646,7 +646,7 @@ const funcPageTitle = () =>
                 "flag":"ナギとのDePSを4500獲得"
             },
             {
-                "title":"？？？",
+                "title":"レッドハート",
                 "flag":"ナギとのDePSを6500獲得"
             },
             {
@@ -694,7 +694,7 @@ const funcPageTitle = () =>
                 "flag":"カズマとのDePSを4500獲得"
             },
             {
-                "title":"？？？",
+                "title":"グレイハート",
                 "flag":"カズマとのDePSを6500獲得"
             },
             {
