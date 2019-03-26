@@ -128,7 +128,7 @@ const funcPageWeapon = () =>
                 "vsMAG":"A",
                 "reload":"A",
                 "usability":"A",
-                "weaponType":"実弾",
+                "weaponType":"ビーム",
                 "ammo":28,
                 "attackType":"中距離射撃",
                 "triggerType":"ホールド",
@@ -215,7 +215,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             }
         ],
         Vanguard:
@@ -404,14 +404,14 @@ const funcPageWeapon = () =>
                 "vsMAG":"B",
                 "reload":"C",
                 "usability":"B",
-                "weaponType":"格闘？/実弾？",
+                "weaponType":"格闘/実弾",
                 "ammo":"L: 1, R: 1",
                 "attackType":"中距離射撃",
                 "triggerType":"1トリガー",
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             }
         ],
         Support:
@@ -618,14 +618,14 @@ const funcPageWeapon = () =>
                 "vsMAG":"D",
                 "reload":"E",
                 "usability":"A",
-                "weaponType":"？？？",
+                "weaponType":"実弾",
                 "ammo":"L: 1, R: 1",
                 "attackType":"その他",
                 "triggerType":"サブモニター",
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             }
         ]
     };
