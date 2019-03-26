@@ -14,12 +14,13 @@
         // namespaceを作成
         const SPDB = {};
     </script>
-    <script src="./js/Title.js"></script>
     <script src="./js/Weapon.js"></script>
     <script src="./js/AirReal.js"></script>
     <script src="./js/AsOne.js"></script>
     <script src="./js/NicePlay.js"></script>
     <script src="./js/Customize.js"></script>
+    <script src="./js/Title.js"></script>
+    <script src="./js/Task.js"></script>
     <script src="./js/Ack.js"></script>
 
     <script>
@@ -37,13 +38,9 @@
                 {
                     case "pageMain":
                         break;
-                    case "pageTitle":
-                        console.log("  call: funcPageTitle();");
-                        funcPageTitle();
-                        break;
-                    case "pageWeapon":
-                        console.log("  call: funcPageWeapon();");
-                        funcPageWeapon();
+                    case "pageAck":
+                        console.log("  call: funcPageAck();");
+                        funcPageAck();
                         break;
                     case "pageAirReal":
                         console.log("  call: funcPageAirReal();");
@@ -53,17 +50,25 @@
                         console.log("  call: funcPageAsOne();");
                         funcPageAsOne();
                         break;
-                    case "pageNicePlay":
-                        console.log("  call: funcPageNicePlay();");
-                        funcPageNicePlay();
-                        break;
                     case "pageCustomize":
                         console.log("  call: funcPageCustomize();");
                         funcPageCustomize();
                         break;
-                    case "pageAck":
-                        console.log("  call: funcPageAck();");
-                        funcPageAck();
+                    case "pageNicePlay":
+                        console.log("  call: funcPageNicePlay();");
+                        funcPageNicePlay();
+                        break;
+                    case "pageTask":
+                        console.log("  call: funcPageTask();");
+                        funcPageTask();
+                        break;
+                    case "pageTitle":
+                        console.log("  call: funcPageTitle();");
+                        funcPageTitle();
+                        break;
+                    case "pageWeapon":
+                        console.log("  call: funcPageWeapon();");
+                        funcPageWeapon();
                         break;
                     default:
                         break;
@@ -123,8 +128,9 @@
                 <ons-list-item id="gotoTitle" modifier="chevron"
                  onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
                     称号</ons-list-item>
-                <ons-list-item id="gotoMission">
-                    ミッション・クエスト(作成中)</ons-list-item>
+                <ons-list-item id="gotoMission" modifier="chevron"
+                 onclick="SPnavigator.pushPage('Task.html', {animation: 'slide'});">
+                    ミッション・クエスト</ons-list-item>
                 <ons-list-item id="gotoAck" modifier="chevron"
                  onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
                     謝辞・問い合わせ</ons-list-item>
@@ -401,6 +407,36 @@
     <ons-template id="Customize_PartsColor.html">
         <ons-page id="pageCustomize_PartsColor">
             <ons-list id="listCustomize_PartsColor">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="Task.html">
+        <ons-page id="pageTask">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
+                <div class="center">
+                    ミッション</div>
+                <div class="right">
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabTask">
+                <ons-tab label="ミッション" page="Task_Mission.html" active></ons-tab>
+                <ons-tab label="クエスト" page="Task_Quest.html"></ons-tab>
+            <ons-list>
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Task_Mission.html">
+        <ons-page id="pageTask_Mission">
+            <ons-list id="listTask_Mission">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="Task_Quest.html">
+        <ons-page id="pageTask_Quest">
+            <ons-list id="listTask_Quest">
             </ons-list>
         </ons-page>
     </ons-template>

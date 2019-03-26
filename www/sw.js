@@ -3,14 +3,14 @@ var urlsToCache =
 [
     "/www/",
     "/www/index.html",
-    "/www/js/Ack.js",
+    "/www/js/Weapon.js",
     "/www/js/AirReal.js",
     "/www/js/AsOne.js",
-    "/www/js/Customize.js",
     "/www/js/NicePlay.js",
-    "/www/js/Task.js",
+    "/www/js/Customize.js",
     "/www/js/Title.js",
-    "/www/js/Weapon.js",
+    "/www/js/Task.js",
+    "/www/js/Ack.js",
 ];
 
 self.addEventListener("install", (event) =>
