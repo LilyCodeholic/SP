@@ -45,7 +45,7 @@ const funcPageAsOne = () =>
                     "level":5
                 },
                 {
-                    "skill":"ブースと消費量減少",
+                    "skill":"ブースト消費量減少",
                     "flag":"DePS7500を達成",
                     "level":7
                 },
