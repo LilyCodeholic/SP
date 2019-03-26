@@ -14,3 +14,11 @@
 {
     display: none;
 }
+a:link
+{
+    color: lawngreen;
+}
+a:visited
+{
+    color: lightgreen;
+}
