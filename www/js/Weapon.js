@@ -187,22 +187,6 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"LR",
-                "name":"ラゼル",
-                "vsAR":"A",
-                "vsMAG":"A+",
-                "reload":"B",
-                "usability":"B",
-                "weaponType":"ビーム",
-                "ammo":3000,
-                "attackType":"中距離射撃",
-                "triggerType":"ホールド",
-                "target":"敵",
-                "reloadTiming":"常時",
-                "feature":"怯み特性",
-                "howToGet":"2回全国対戦する"
-            },
-            {
-                "side":"LR",
                 "name":"ブランキアル",
                 "vsAR":"A+",
                 "vsMAG":"C",
@@ -216,6 +200,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"スコープ、ダウン特性",
                 "howToGet":"2600CP"
+            },
+            {
+                "side":"LR",
+                "name":"ラゼル",
+                "vsAR":"A",
+                "vsMAG":"A+",
+                "reload":"B",
+                "usability":"B",
+                "weaponType":"ビーム",
+                "ammo":3000,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"怯み特性",
+                "howToGet":"2回全国対戦する"
             },
             {
                 "side":"LR",
@@ -628,6 +628,22 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"LR",
+                "name":"エステジオンボム",
+                "vsAR":"B",
+                "vsMAG":"D",
+                "reload":"E",
+                "usability":"A",
+                "weaponType":"実弾",
+                "ammo":1,
+                "attackType":"その他",
+                "triggerType":"サブモニター",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"ダウン特性",
+                "howToGet":"4400CP"
+            },
+            {
+                "side":"LR",
                 "name":"シールドヴァイト",
                 "vsAR":"-",
                 "vsMAG":"-",
@@ -642,22 +658,6 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"シールド",
                 "howToGet":"ドロップのみ(2600CP)"
-            },
-            {
-                "side":"LR",
-                "name":"エステジオンボム",
-                "vsAR":"B",
-                "vsMAG":"D",
-                "reload":"E",
-                "usability":"A",
-                "weaponType":"実弾",
-                "ammo":"L: 1, R: 1",
-                "attackType":"その他",
-                "triggerType":"サブモニター",
-                "target":"敵",
-                "reloadTiming":"弾切れ",
-                "feature":"ダウン特性",
-                "howToGet":"4400CP"
             }
         ]
     };
