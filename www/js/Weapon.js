@@ -55,7 +55,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -72,6 +72,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"炎上",
                 "howToGet":"2600CP"
+            },
+            {
+                "side":"L",
+                "name":"インパルスショット",
+                "vsAR":"E",
+                "vsMAG":"D",
+                "reload":"C",
+                "usability":"A",
+                "weaponType":"ビーム",
+                "ammo":6,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"怯み特性",
+                "howToGet":"ドロップのみ"
             },
             {
                 "side":"R",
@@ -103,7 +119,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -199,7 +215,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"スコープ、ダウン特性",
-                "howToGet":"ドロップのみ(4400CP)"
+                "howToGet":"2600CP"
             },
             {
                 "side":"LR",
@@ -216,6 +232,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"常時",
                 "feature":"",
                 "howToGet":"4400CP"
+            },
+            {
+                "side":"LR",
+                "name":"機関砲 騎神",
+                "vsAR":"A",
+                "vsMAG":"A",
+                "reload":"C",
+                "usability":"B",
+                "weaponType":"実弾",
+                "ammo":150,
+                "attackType":"遠距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"",
+                "howToGet":"ドロップのみ"
             }
         ],
         Vanguard:
@@ -250,7 +282,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -266,7 +298,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"L",
@@ -379,7 +411,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"炎上",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"LR",
@@ -430,7 +462,7 @@ const funcPageWeapon = () =>
                 "target":"味方",
                 "reloadTiming":"弾切れ",
                 "feature":"攻撃力上昇",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -479,7 +511,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"ジャミング",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -544,7 +576,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -630,6 +662,18 @@ const funcPageWeapon = () =>
         ]
     };
 
+    // ons.orientation.on("change", (event) =>
+    // {
+    //     if(event.isPortrait)
+    //     {
+    //         console.log("Portraited.");
+    //     }
+    //     else
+    //     {
+    //         console.log("Landscaped.");
+    //     }
+    // });
+
     const tabWeapon = document.getElementById("tabWeapon");
     tabWeapon.addEventListener("prechange", (event) =>
     {
@@ -690,58 +734,34 @@ const funcPageWeapon = () =>
                 <div class="expandable-content">
                     ${items.exParameter != undefined ?
                         `<ons-row>
-                            <ons-col>${items.exParameter[0]}</ons-col>
+                            <ons-col>　${items.exParameter[0]}</ons-col>
                             <ons-col>${items.exParameter[1]}</ons-col>
                         </ons-row>` :
                         ''
                     }
                     <ons-row>
-                        <ons-col>
-                            弾数
-                        </ons-col>
-                        <ons-col>
-                            ${items.ammo}
-                        </ons-col>
+                        <ons-col>　弾数</ons-col>
+                        <ons-col>${items.ammo}</ons-col>
                     </ons-row>
                     <ons-row>
-                        <ons-col>
-                            トリガータイプ
-                        </ons-col>
-                        <ons-col>
-                            ${items.triggerType}
-                        </ons-col>
+                        <ons-col>　トリガータイプ</ons-col>
+                        <ons-col>${items.triggerType}</ons-col>
                     </ons-row>
                     <ons-row>
-                        <ons-col>
-                            対象
-                        </ons-col>
-                        <ons-col>
-                            ${items.target}
-                        </ons-col>
+                        <ons-col>　対象</ons-col>
+                        <ons-col>${items.target}</ons-col>
                     </ons-row>
                     <ons-row>
-                        <ons-col>
-                            リロードタイミング
-                        </ons-col>
-                        <ons-col>
-                            ${items.reloadTiming}
-                        </ons-col>
+                        <ons-col>　リロードタイミング</ons-col>
+                        <ons-col>${items.reloadTiming}</ons-col>
                     </ons-row>
                     <ons-row>
-                        <ons-col>
-                            特性
-                        </ons-col>
-                        <ons-col>
-                            ${items.feature}
-                        </ons-col>
+                        <ons-col>　特性</ons-col>
+                        <ons-col>${items.feature}</ons-col>
                     </ons-row>
                     <ons-row>
-                        <ons-col>
-                            入手方法
-                        </ons-col>
-                        <ons-col>
-                            ${items.howToGet}
-                        </ons-col>
+                        <ons-col>　入手方法</ons-col>
+                        <ons-col>${items.howToGet}</ons-col>
                     </ons-row>
                 </div>
             `;

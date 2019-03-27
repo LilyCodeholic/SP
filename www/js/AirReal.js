@@ -92,7 +92,7 @@ const funcPageAirReal = () =>
                 "name":"スクラッパー",
                 "durability":210,
                 "weight":2100,
-                "feature":["ビーム武器リロード速度UP>", "ビーム攻撃力UP>>"]
+                "feature":["ビーム武器リロード速度UP>", "ビーム攻撃力UP>"]
             },
             {
                 "name":"サイトヘッド",
@@ -219,7 +219,7 @@ const funcPageAirReal = () =>
                 "durability":170,
                 "weight":1800,
                 "dashType":"高速ダッシュ",
-                "dodge":"C",
+                "dodge":"E",
                 "dash":"D",
                 "fdType":"短距離高速",
                 "fdCharge":"A",
