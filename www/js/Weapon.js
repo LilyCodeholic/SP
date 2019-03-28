@@ -107,22 +107,6 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
-                "name":"グレイン-AS",
-                "vsAR":"B",
-                "vsMAG":"B",
-                "reload":"B+",
-                "usability":"A",
-                "weaponType":"ビーム",
-                "ammo":10,
-                "attackType":"中距離射撃",
-                "triggerType":"ホールド",
-                "target":"敵",
-                "reloadTiming":"常時",
-                "feature":"-",
-                "howToGet":"ドロップのみ(1400CP)"
-            },
-            {
-                "side":"R",
                 "name":"多連装導弾 大蛇",
                 "vsAR":"B+",
                 "vsMAG":"A",
@@ -136,6 +120,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"マルチロック",
                 "howToGet":"初期所持武器"
+            },
+            {
+                "side":"R",
+                "name":"グレイン-AS",
+                "vsAR":"B",
+                "vsMAG":"B",
+                "reload":"B+",
+                "usability":"A",
+                "weaponType":"ビーム",
+                "ammo":10,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"-",
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -187,22 +187,6 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"LR",
-                "name":"ブランキアル",
-                "vsAR":"A+",
-                "vsMAG":"C",
-                "reload":"C",
-                "usability":"D",
-                "weaponType":"ビーム",
-                "ammo":1,
-                "attackType":"遠距離射撃",
-                "triggerType":"1トリガー",
-                "target":"敵",
-                "reloadTiming":"弾切れ",
-                "feature":"スコープ、ダウン特性",
-                "howToGet":"2600CP"
-            },
-            {
-                "side":"LR",
                 "name":"ラゼル",
                 "vsAR":"A",
                 "vsMAG":"A+",
@@ -216,6 +200,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"常時",
                 "feature":"怯み特性",
                 "howToGet":"2回全国対戦する"
+            },
+            {
+                "side":"LR",
+                "name":"ブランキアル",
+                "vsAR":"A+",
+                "vsMAG":"C",
+                "reload":"C",
+                "usability":"D",
+                "weaponType":"ビーム",
+                "ammo":1,
+                "attackType":"遠距離射撃",
+                "triggerType":"1トリガー",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"スコープ、ダウン特性",
+                "howToGet":"2600CP"
             },
             {
                 "side":"LR",
@@ -270,6 +270,23 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"L",
+                "name":"デ・ファンス",
+                "vsAR":"-",
+                "vsMAG":"-",
+                "reload":"D",
+                "usability":"A",
+                "exParameter":["耐久値", "B"],
+                "weaponType":"-",
+                "ammo":600,
+                "attackType":"その他",
+                "triggerType":"ホールド",
+                "target":"自分",
+                "reloadTiming":"常時",
+                "feature":"シールド",
+                "howToGet":"初期所持武器"
+            },
+            {
+                "side":"L",
                 "name":"拳銃 月牙",
                 "vsAR":"C",
                 "vsMAG":"D",
@@ -283,22 +300,6 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"",
                 "howToGet":"ドロップのみ(1400CP)"
-            },
-            {
-                "side":"L",
-                "name":"ブーメラング",
-                "vsAR":"C",
-                "vsMAG":"D",
-                "reload":"B+",
-                "usability":"B",
-                "weaponType":"ビーム",
-                "ammo":1,
-                "attackType":"近距離射撃",
-                "triggerType":"1トリガー",
-                "target":"敵",
-                "reloadTiming":"弾切れ",
-                "feature":"怯み特性",
-                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"L",
@@ -318,36 +319,19 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"L",
-                "name":"デ・ファンス",
-                "vsAR":"-",
-                "vsMAG":"-",
-                "reload":"D",
-                "usability":"A",
-                "exParameter":["耐久値", "B"],
-                "weaponType":"-",
-                "ammo":600,
-                "attackType":"その他",
-                "triggerType":"ホールド",
-                "target":"自分",
-                "reloadTiming":"常時",
-                "feature":"シールド",
-                "howToGet":"初期所持武器"
-            },
-            {
-                "side":"R",
-                "name":"ミトライユ・コルト",
-                "vsAR":"B",
-                "vsMAG":"C",
-                "reload":"A",
+                "name":"ブーメラング",
+                "vsAR":"C",
+                "vsMAG":"D",
+                "reload":"B+",
                 "usability":"B",
-                "weaponType":"実弾",
-                "ammo":30,
+                "weaponType":"ビーム",
+                "ammo":1,
                 "attackType":"近距離射撃",
-                "triggerType":"ホールド",
+                "triggerType":"1トリガー",
                 "target":"敵",
                 "reloadTiming":"弾切れ",
-                "feature":"",
-                "howToGet":"1400CP"
+                "feature":"怯み特性",
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"R",
@@ -380,6 +364,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
                 "howToGet":"初期所持武器"
+            },
+            {
+                "side":"R",
+                "name":"ミトライユ・コルト",
+                "vsAR":"B",
+                "vsMAG":"C",
+                "reload":"A",
+                "usability":"B",
+                "weaponType":"実弾",
+                "ammo":30,
+                "attackType":"近距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"",
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -450,22 +450,6 @@ const funcPageWeapon = () =>
         [
             {
                 "side":"L",
-                "name":"フォルツァ-A",
-                "vsAR":"-",
-                "vsMAG":"-",
-                "reload":"B",
-                "usability":"B",
-                "weaponType":"補助",
-                "ammo":1,
-                "attackType":"中距離射撃",
-                "triggerType":"1トリガー",
-                "target":"味方",
-                "reloadTiming":"弾切れ",
-                "feature":"攻撃力上昇",
-                "howToGet":"ドロップのみ(1400CP)"
-            },
-            {
-                "side":"L",
                 "name":"ターレットBR",
                 "vsAR":"C",
                 "vsMAG":"B",
@@ -496,6 +480,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"シールド",
                 "howToGet":"初期所持武器"
+            },
+            {
+                "side":"L",
+                "name":"フォルツァ-A",
+                "vsAR":"-",
+                "vsMAG":"-",
+                "reload":"B",
+                "usability":"B",
+                "weaponType":"補助",
+                "ammo":"2？",
+                "attackType":"中距離射撃",
+                "triggerType":"1トリガー",
+                "target":"味方",
+                "reloadTiming":"弾切れ",
+                "feature":"攻撃力上昇",
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -564,22 +564,6 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
-                "name":"デトネイトランス",
-                "vsAR":"B",
-                "vsMAG":"C",
-                "reload":"B+",
-                "usability":"B",
-                "weaponType":"格闘",
-                "ammo":1,
-                "attackType":"近距離格闘",
-                "triggerType":"1トリガー",
-                "target":"敵",
-                "reloadTiming":"弾切れ",
-                "feature":"ダウン特性",
-                "howToGet":"1400CP"
-            },
-            {
-                "side":"R",
                 "name":"ミトライユ・バル",
                 "vsAR":"C",
                 "vsMAG":"B",
@@ -612,6 +596,22 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
+                "name":"デトネイトランス",
+                "vsAR":"B",
+                "vsMAG":"C",
+                "reload":"B+",
+                "usability":"B",
+                "weaponType":"格闘",
+                "ammo":1,
+                "attackType":"近距離格闘",
+                "triggerType":"1トリガー",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"ダウン特性",
+                "howToGet":"1400CP"
+            },
+            {
+                "side":"R",
                 "name":"ベツレヘイム-X",
                 "vsAR":"B",
                 "vsMAG":"C",
@@ -625,22 +625,6 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
                 "howToGet":"現在入手不可(12/12-25までにチーム内5位以上を10回獲得する)"
-            },
-            {
-                "side":"LR",
-                "name":"エステジオンボム",
-                "vsAR":"B",
-                "vsMAG":"D",
-                "reload":"E",
-                "usability":"A",
-                "weaponType":"実弾",
-                "ammo":1,
-                "attackType":"その他",
-                "triggerType":"サブモニター",
-                "target":"敵",
-                "reloadTiming":"弾切れ",
-                "feature":"ダウン特性",
-                "howToGet":"4400CP"
             },
             {
                 "side":"LR",
@@ -658,21 +642,25 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"シールド",
                 "howToGet":"ドロップのみ(2600CP)"
+            },
+            {
+                "side":"LR",
+                "name":"エステジオンボム",
+                "vsAR":"B",
+                "vsMAG":"D",
+                "reload":"E",
+                "usability":"A",
+                "weaponType":"実弾",
+                "ammo":1,
+                "attackType":"その他",
+                "triggerType":"サブモニター",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"ダウン特性",
+                "howToGet":"4400CP"
             }
         ]
     };
-
-    // ons.orientation.on("change", (event) =>
-    // {
-    //     if(event.isPortrait)
-    //     {
-    //         console.log("Portraited.");
-    //     }
-    //     else
-    //     {
-    //         console.log("Landscaped.");
-    //     }
-    // });
 
     const tabWeapon = document.getElementById("tabWeapon");
     tabWeapon.addEventListener("prechange", (event) =>
@@ -688,28 +676,48 @@ const funcPageWeapon = () =>
 
     const appendData = (tab) =>
     {
-        const fragment = document.createDocumentFragment();
+        const portrait = document.createDocumentFragment();
+        const landscape = document.createDocumentFragment();
 
-        const fixedList_header = document.createElement("ons-list-header");
-        const backList_header = document.createElement("ons-list-header");
-        fixedList_header.setAttribute("class", "fixed");
-        fixedList_header.innerHTML = `
+        // ons-list-header
+        const pFixedList_header = document.createElement("ons-list-header");
+        const pBackList_header = document.createElement("ons-list-header");
+        pFixedList_header.setAttribute("class", "fixed");
+        pFixedList_header.innerHTML = `
             <ons-row>
                 <ons-col width="60%">武器名</ons-col>
-                <ons-col>AR</ons-col>
-                <ons-col>マグ</ons-col>
-                <ons-col>リロ</ons-col>
-                <ons-col></ons-col>
+                <ons-col style="text-align: center;">AR</ons-col>
+                <ons-col style="text-align: center;">マグ</ons-col>
+                <ons-col style="text-align: center;">リロ</ons-col>
+                <ons-col width="10%"></ons-col>
             </ons-row>
         `;
-        fragment.appendChild(fixedList_header);
-        fragment.appendChild(backList_header);
+        portrait.appendChild(pFixedList_header);
+        portrait.appendChild(pBackList_header);
 
+        const lFixedList_header = document.createElement("ons-list-header");
+        const lBackList_header = document.createElement("ons-list-header");
+        lFixedList_header.setAttribute("class", "fixed");
+        lFixedList_header.innerHTML = `
+            <ons-row>
+                <ons-col width="45%">武器名</ons-col>
+                <ons-col style="text-align: center;">対AR</ons-col>
+                <ons-col style="text-align: center;">対マグ</ons-col>
+                <ons-col style="text-align: center;">リロード</ons-col>
+                <ons-col style="text-align: center;">弾数</ons-col>
+                <ons-col width="20%" style="text-align: center;">特性</ons-col>
+                <ons-col width="5%"></ons-col>
+            </ons-row>
+        `;
+        landscape.appendChild(lFixedList_header);
+        landscape.appendChild(lBackList_header);
+
+        // ons-list-item
         for(const items of SPDB.Weapon[tab])
         {
-            const list_item = document.createElement("ons-list-item");
-            list_item.setAttribute("expandable", "");
-            list_item.innerHTML = `
+            const pList_item = document.createElement("ons-list-item");
+            pList_item.setAttribute("expandable", "");
+            pList_item.innerHTML = `
                 <ons-row>
                     <ons-col vertical-align="center">
                         ${items.side}
@@ -721,13 +729,13 @@ const funcPageWeapon = () =>
                             ${items.weaponType} ${items.attackType}
                         </span>
                     </ons-col>
-                    <ons-col vertical-align="center">
+                    <ons-col vertical-align="center" style="text-align: center;">
                         ${items.vsAR}
                     </ons-col>
-                    <ons-col vertical-align="center">
+                    <ons-col vertical-align="center" style="text-align: center;">
                         ${items.vsMAG}
                     </ons-col>
-                    <ons-col vertical-align="center">
+                    <ons-col vertical-align="center" style="text-align: center;">
                         ${items.reload}
                     </ons-col>
                 </ons-row>
@@ -765,7 +773,71 @@ const funcPageWeapon = () =>
                     </ons-row>
                 </div>
             `;
-            fragment.appendChild(list_item);
+            portrait.appendChild(pList_item);
+
+            const lList_item = document.createElement("ons-list-item");
+            lList_item.setAttribute("expandable", "");
+            lList_item.innerHTML = `
+                <ons-row>
+                    <ons-col vertical-align="center">
+                        ${items.side}
+                    </ons-col>
+                    <ons-col width="40%">
+                        ${items.name}
+                        <br>
+                        <span style="font-size:small">
+                            ${items.weaponType} ${items.attackType}
+                        </span>
+                    </ons-col>
+                    <ons-col vertical-align="center" style="text-align: center;">
+                        ${items.vsAR}
+                    </ons-col>
+                    <ons-col vertical-align="center" style="text-align: center;">
+                        ${items.vsMAG}
+                    </ons-col>
+                    <ons-col vertical-align="center" style="text-align: center;">
+                        ${items.reload}
+                    </ons-col>
+                    <ons-col vertical-align="center" style="text-align: right;">
+                        ${/, /.test(items.ammo) ?
+                            `${items.ammo.replace(/, /, '　<br>')}　` :
+                            `${items.ammo}　`
+                        }
+                    </ons-col>
+                    <ons-col width="20%" vertical-align="center">
+                        ${/、/.test(items.feature) ?
+                            `${items.feature.replace(/、/, '<br>')}` :
+                            `${items.feature}`
+                        }
+                    </ons-col>
+                </ons-row>
+                <div class="expandable-content">
+                    ${items.exParameter != undefined ?
+                        `<ons-row>
+                            <ons-col>　${items.exParameter[0]}</ons-col>
+                            <ons-col>${items.exParameter[1]}</ons-col>
+                        </ons-row>` :
+                        ''
+                    }
+                    <ons-row>
+                        <ons-col>　トリガータイプ</ons-col>
+                        <ons-col>${items.triggerType}</ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>　対象</ons-col>
+                        <ons-col>${items.target}</ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>　リロードタイミング</ons-col>
+                        <ons-col>${items.reloadTiming}</ons-col>
+                    </ons-row>
+                    <ons-row>
+                        <ons-col>　入手方法</ons-col>
+                        <ons-col>${items.howToGet}</ons-col>
+                    </ons-row>
+                </div>
+            `;
+            landscape.appendChild(lList_item);
         }
 
         const findElement = (query) =>
@@ -773,8 +845,31 @@ const funcPageWeapon = () =>
             const listTitle = document.getElementById(query);
             if(listTitle != null)
             {
+                ons.orientation.on("change", (event) =>
+                {
+                    if(event.isPortrait)
+                    {
+                        console.log("Portraited.");
+                        listTitle.replaceChild(portrait, landscape);
+                    }
+                    else
+                    {
+                        console.log("Landscaped.");
+                        listTitle.replaceChild(landscape, portrait);
+                    }
+                });
+
                 clearInterval(idSetInterval);
-                listTitle.appendChild(fragment);
+                if(ons.orientation.isPortrait())
+                {
+                    console.log("Portraiting.");
+                    listTitle.appendChild(portrait);
+                }
+                else
+                {
+                    console.log("Landscaping.");
+                    listTitle.appendChild(landscape);
+                }
             }
             else
             {
