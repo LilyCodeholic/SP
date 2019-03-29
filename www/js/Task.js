@@ -1,6 +1,7 @@
 const funcPageTask = () =>
 {
-    SPDB.Task = {
+    SPDB.Task =
+    {
         Status:`
             ■ステータス<br>
             　ミッション: 作成中<br>

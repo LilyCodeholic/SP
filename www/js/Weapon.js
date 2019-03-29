@@ -676,8 +676,12 @@ const funcPageWeapon = () =>
 
     const appendData = (tab) =>
     {
-        const portrait = document.createDocumentFragment();
-        const landscape = document.createDocumentFragment();
+        const fragment = document.createDocumentFragment();
+
+        const pSection = document.createElement("section");
+        pSection.setAttribute("class", "portrait");
+        const lSection = document.createElement("section");
+        lSection.setAttribute("class", "landscape");
 
         // ons-list-header
         const pFixedList_header = document.createElement("ons-list-header");
@@ -692,8 +696,8 @@ const funcPageWeapon = () =>
                 <ons-col width="10%"></ons-col>
             </ons-row>
         `;
-        portrait.appendChild(pFixedList_header);
-        portrait.appendChild(pBackList_header);
+        pSection.appendChild(pFixedList_header);
+        pSection.appendChild(pBackList_header);
 
         const lFixedList_header = document.createElement("ons-list-header");
         const lBackList_header = document.createElement("ons-list-header");
@@ -709,8 +713,8 @@ const funcPageWeapon = () =>
                 <ons-col width="5%"></ons-col>
             </ons-row>
         `;
-        landscape.appendChild(lFixedList_header);
-        landscape.appendChild(lBackList_header);
+        lSection.appendChild(lFixedList_header);
+        lSection.appendChild(lBackList_header);
 
         // ons-list-item
         for(const items of SPDB.Weapon[tab])
@@ -773,7 +777,7 @@ const funcPageWeapon = () =>
                     </ons-row>
                 </div>
             `;
-            portrait.appendChild(pList_item);
+            pSection.appendChild(pList_item);
 
             const lList_item = document.createElement("ons-list-item");
             lList_item.setAttribute("expandable", "");
@@ -837,38 +841,37 @@ const funcPageWeapon = () =>
                     </ons-row>
                 </div>
             `;
-            landscape.appendChild(lList_item);
+            lSection.appendChild(lList_item);
+
+            fragment.appendChild(pSection);
+            fragment.appendChild(lSection);
         }
 
         const findElement = (query) =>
         {
-            const listTitle = document.getElementById(query);
-            if(listTitle != null)
+            const listWeapon = document.getElementById(query);
+            if(listWeapon != null)
             {
-                ons.orientation.on("change", (event) =>
-                {
-                    if(event.isPortrait)
-                    {
-                        console.log("Portraited.");
-                        listTitle.replaceChild(portrait, landscape);
-                    }
-                    else
-                    {
-                        console.log("Landscaped.");
-                        listTitle.replaceChild(landscape, portrait);
-                    }
-                });
-
+                console.log(query);;
                 clearInterval(idSetInterval);
+                listWeapon.appendChild(fragment);
                 if(ons.orientation.isPortrait())
                 {
                     console.log("Portraiting.");
-                    listTitle.appendChild(portrait);
+                    const hideOrientation = document.getElementsByClassName("landscape");
+                    for(const section of hideOrientation)
+                    {
+                        section.classList.add("hidden");
+                    }
                 }
                 else
                 {
                     console.log("Landscaping.");
-                    listTitle.appendChild(landscape);
+                    const hideOrientation = document.getElementsByClassName("portrait");
+                    for(const section of hideOrientation)
+                    {
+                        section.classList.add("hidden");
+                    }
                 }
             }
             else
@@ -879,7 +882,41 @@ const funcPageWeapon = () =>
         const idSetInterval = setInterval(findElement, 100, `listWeapon_${tab}`);
     };
 
-    appendData("Assault");
-    appendData("Vanguard");
-    appendData("Support");
+    const tabs = ["Assault", "Vanguard", "Support"];
+    for(const tab of tabs)
+    {
+        appendData(tab);
+    }
+
+    ons.orientation.on("change", (event) =>
+    {
+        if(event.isPortrait)
+        {
+            console.log("Portraited.");
+            const hideOrientation = document.getElementsByClassName("landscape");
+            const showOrientation = document.getElementsByClassName("portrait");
+            for(const section of hideOrientation)
+            {
+                section.classList.add("hidden");
+            }
+            for(const section of showOrientation)
+            {
+                section.classList.remove("hidden");
+            }
+        }
+        else
+        {
+            console.log("Landscaped.");
+            const hideOrientation = document.getElementsByClassName("portrait");
+            const showOrientation = document.getElementsByClassName("landscape");
+            for(const section of hideOrientation)
+            {
+                section.classList.add("hidden");
+            }
+            for(const section of showOrientation)
+            {
+                section.classList.remove("hidden");
+            }
+        }
+    });
 };
