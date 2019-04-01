@@ -22,3 +22,7 @@ a:visited
 {
     color: lightgreen;
 }
+.list-item__center
+{
+    padding: 6px 6px 6px 0;
+}

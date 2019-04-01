@@ -704,7 +704,7 @@ const funcPageWeapon = () =>
         lFixedList_header.setAttribute("class", "fixed");
         lFixedList_header.innerHTML = `
             <ons-row>
-                <ons-col width="45%">武器名</ons-col>
+                <ons-col width="40%">武器名</ons-col>
                 <ons-col style="text-align: center;">対AR</ons-col>
                 <ons-col style="text-align: center;">対マグ</ons-col>
                 <ons-col style="text-align: center;">リロード</ons-col>
@@ -783,10 +783,10 @@ const funcPageWeapon = () =>
             lList_item.setAttribute("expandable", "");
             lList_item.innerHTML = `
                 <ons-row>
-                    <ons-col vertical-align="center">
+                    <ons-col vertical-align="center" style="text-align: center;">
                         ${items.side}
                     </ons-col>
-                    <ons-col width="40%">
+                    <ons-col width="35%">
                         ${items.name}
                         <br>
                         <span style="font-size:small">
@@ -852,7 +852,6 @@ const funcPageWeapon = () =>
             const listWeapon = document.getElementById(query);
             if(listWeapon != null)
             {
-                console.log(query);;
                 clearInterval(idSetInterval);
                 listWeapon.appendChild(fragment);
                 if(ons.orientation.isPortrait())

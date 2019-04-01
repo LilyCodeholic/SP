@@ -212,7 +212,7 @@ const funcPageAirReal = () =>
                 "fdType":"長距離スタンダード",
                 "fdCharge":"B",
                 "drift":"B",
-                "feature":""
+                "feature":"-"
             },
             {
                 "name":"カーディナル",
@@ -384,13 +384,19 @@ const funcPageAirReal = () =>
     {
         const fragment = document.createDocumentFragment();
 
-        const fixedList_header = document.createElement("ons-list-header");
-        const backList_header = document.createElement("ons-list-header");
-        fixedList_header.setAttribute("class", "fixed");
+        const pSection = document.createElement("section");
+        pSection.setAttribute("class", "portrait");
+        const lSection = document.createElement("section");
+        lSection.setAttribute("class", "landscape");
+
+        // ons-list-header
+        const pFixedList_header = document.createElement("ons-list-header");
+        const pBackList_header = document.createElement("ons-list-header");
+        pFixedList_header.setAttribute("class", "fixed");
         switch(tab)
         {
             case "Head":
-                fixedList_header.innerHTML = `
+                pFixedList_header.innerHTML = `
                     <ons-row>
                         <ons-col width="40%"></ons-col>
                         <ons-col></ons-col>
@@ -406,22 +412,25 @@ const funcPageAirReal = () =>
                         <ons-col width="5%"></ons-col>
                     </ons-row>
                 `;
-                backList_header.innerHTML = `
+                pBackList_header.innerHTML = `
                     <ons-row><ons-col>background</ons-col></ons-row>
                     <ons-row><ons-col>background</ons-col></ons-row>
                 `;
                 break;
             case "Arm":
-                fixedList_header.innerHTML = `
+                pFixedList_header.innerHTML = `
                     <ons-row>
                         <ons-col width="40%">パーツ名</ons-col>
                         <ons-col>耐久値</ons-col>
                         <ons-col>重量</ons-col>
                     </ons-row>
                 `;
+                pBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
                 break;
             case "Body":
-                fixedList_header.innerHTML = `
+                pFixedList_header.innerHTML = `
                     <ons-row>
                         <ons-col width="40%"></ons-col>
                         <ons-col></ons-col>
@@ -437,13 +446,13 @@ const funcPageAirReal = () =>
                         <ons-col width="5%"></ons-col>
                     </ons-row>
                 `;
-                backList_header.innerHTML = `
+                pBackList_header.innerHTML = `
                     <ons-row><ons-col>background</ons-col></ons-row>
                     <ons-row><ons-col>background</ons-col></ons-row>
                 `;
                 break;
             case "Wing":
-                fixedList_header.innerHTML = `
+                pFixedList_header.innerHTML = `
                     <ons-row>
                         <ons-col width="40%">パーツ名</ons-col>
                         <ons-col>回避</ons-col>
@@ -453,9 +462,12 @@ const funcPageAirReal = () =>
                         <ons-col width="5%"></ons-col>
                     </ons-row>
                 `;
+                pBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
                 break;
             case "Leg":
-                fixedList_header.innerHTML = `
+                pFixedList_header.innerHTML = `
                     <ons-row>
                         <ons-col width="40%">パーツ名</ons-col>
                         <ons-col>耐久値</ons-col>
@@ -464,22 +476,115 @@ const funcPageAirReal = () =>
                         <ons-col width="5%"></ons-col>
                     </ons-row>
                 `;
+                pBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
                 break;
             default:
                 console.error("AirReal: error");
                 break;
         }
-        fragment.appendChild(fixedList_header);
-        fragment.appendChild(backList_header);
+        pSection.appendChild(pFixedList_header);
+        pSection.appendChild(pBackList_header);
 
+        const lFixedList_header = document.createElement("ons-list-header");
+        const lBackList_header = document.createElement("ons-list-header");
+        lFixedList_header.setAttribute("class", "fixed");
+        switch(tab)
+        {
+            case "Head":
+                lFixedList_header.innerHTML = `
+                    <ons-row>
+                        <ons-col width="40%" vertical-align="bottom">パーツ名</ons-col>
+                        <ons-col vertical-align="bottom" style="text-align: center;">重量</ons-col>
+                        <ons-col vertical-align="bottom" style="text-align: center;">耐久値</ons-col>
+                        <ons-col style="text-align: center;">ロックオン<br>距離</ons-col>
+                        <ons-col vertical-align="bottom" style="text-align: center;">範囲</ons-col>
+                        <ons-col width="7%"></ons-col>
+                    </ons-row>
+                `;
+                lBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
+                break;
+            case "Arm":
+                lFixedList_header.innerHTML = `
+                    <ons-row>
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col style="text-align: center;">重量</ons-col>
+                        <ons-col style="text-align: center;">耐久値</ons-col>
+                        <ons-col width="40%" style="text-align: center;">特性</ons-col>
+                    </ons-row>
+                `;
+                lBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
+                break;
+            case "Body":
+                lFixedList_header.innerHTML = `
+                    <ons-row>
+                        <ons-col width="40%" vertical-align="bottom">パーツ名</ons-col>
+                        <ons-col vertical-align="bottom" style="text-align: center;">重量</ons-col>
+                        <ons-col vertical-align="bottom" style="text-align: center;">耐久値</ons-col>
+                        <ons-col vertical-align="bottom" style="text-align: center;">アーマー</ons-col>
+                        <ons-col style="text-align: center;">アーマー<br>全回復</ons-col>
+                        <ons-col vertical-align="bottom" style="text-align: center;">回復待機</ons-col>
+                        <ons-col width="7%"></ons-col>
+                    </ons-row>
+                `;
+                lBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
+                break;
+            case "Wing":
+                lFixedList_header.innerHTML = `
+                    <ons-row>
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col style="text-align: center;">重量</ons-col>
+                        <ons-col style="text-align: center;">耐久値</ons-col>
+                        <ons-col style="text-align: center;">回避</ons-col>
+                        <ons-col style="text-align: center;">ダッシュ</ons-col>
+                        <ons-col style="text-align: center;">FD溜め</ons-col>
+                        <ons-col style="text-align: center;">ドリフト</ons-col>
+                        <ons-col width="5%"></ons-col>
+                    </ons-row>
+                `;
+                lBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
+                break;
+            case "Leg":
+                lFixedList_header.innerHTML = `
+                    <ons-row>
+                        <ons-col width="30%">パーツ名</ons-col>
+                        <ons-col style="text-align: center;">重量</ons-col>
+                        <ons-col style="text-align: center;">耐久値</ons-col>
+                        <ons-col style="text-align: center;">ポート占拠</ons-col>
+                        <ons-col width="40%">特性</ons-col>
+                    </ons-row>
+                `;
+                lBackList_header.innerHTML = `
+                    <ons-row><ons-col>background</ons-col></ons-row>
+                `;
+                break;
+            default:
+                console.error("AirReal: error");
+                break;
+        }
+        lSection.appendChild(lFixedList_header);
+        lSection.appendChild(lBackList_header);
+
+        // ons-list-item
         for(const items of SPDB.AirReal[tab])
         {
-            const list_item = document.createElement("ons-list-item");
-            list_item.setAttribute("expandable", "");
+            const pList_item = document.createElement("ons-list-item");
+            pList_item.setAttribute("expandable", "");
             switch(tab)
             {
                 case "Head":
-                    list_item.innerHTML = `
+                    pList_item.innerHTML = `
                         <ons-row>
                             <ons-col width="40%">
                                 ${items.name}
@@ -513,7 +618,7 @@ const funcPageAirReal = () =>
                     `;
                     break;
                 case "Arm":
-                    list_item.innerHTML = `
+                    pList_item.innerHTML = `
                         <ons-row>
                             <ons-col width="40%">
                                 ${items.name}
@@ -541,7 +646,7 @@ const funcPageAirReal = () =>
                     `;
                     break;
                 case "Body":
-                    list_item.innerHTML = `
+                    pList_item.innerHTML = `
                         <ons-row>
                             <ons-col width="40%">
                                 ${items.name}
@@ -579,7 +684,7 @@ const funcPageAirReal = () =>
                     `;
                     break;
                 case "Wing":
-                    list_item.innerHTML = `
+                    pList_item.innerHTML = `
                         <ons-row>
                             <ons-col width="40%">
                                 ${items.name}
@@ -635,7 +740,7 @@ const funcPageAirReal = () =>
                     `;
                     break;
                 case "Leg":
-                    list_item.innerHTML = `
+                    pList_item.innerHTML = `
                         <ons-row>
                             <ons-col width="40%">
                                 ${items.name}
@@ -669,7 +774,187 @@ const funcPageAirReal = () =>
                     console.error("AirReal: error");
                     break;
             }
-            fragment.appendChild(list_item);
+            pSection.appendChild(pList_item);
+
+            const lList_item = document.createElement("ons-list-item");
+            switch(tab)
+            {
+                case "Head":
+                    lList_item.setAttribute("expandable", "");
+                    lList_item.innerHTML = `
+                        <ons-row>
+                            <ons-col width="45%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.length}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.range}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="50%">
+                                    　特性
+                                </ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
+                    `;
+                    break;
+                case "Arm":
+                    lList_item.innerHTML = `
+                        <ons-row>
+                            <ons-col vertical-align="center" width="35%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col width="5%"><br></ons-col>
+                            <ons-col vertical-align="center" style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                            <ons-col vertical-align="center" style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col vertical-align="center" width="40%">
+                                ${Array.isArray(items.feature) === true ?
+                                    `　${items.feature[0]}<br>　${items.feature[1]}`:
+                                    `　${items.feature}`
+                                }
+                            </ons-col>
+                        </ons-row>
+                    `;
+                    break;
+                case "Body":
+                    lList_item.setAttribute("expandable", "");
+                    lList_item.innerHTML = `
+                        <ons-row>
+                            <ons-col width="45%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.armor}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.repairSpeed}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.repairLatency}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="50%">　特性</ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
+                    `;
+                    break;
+                case "Wing":
+                    lList_item.setAttribute("expandable", "");
+                    lList_item.innerHTML = `
+                        <ons-row>
+                            <ons-col width="40%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.dodge}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.dash}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.fdCharge}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.drift}
+                            </ons-col>
+                        </ons-row>
+                        <div class="expandable-content">
+                            <ons-row>
+                                <ons-col width="50%">　ダッシュタイプ</ons-col>
+                                <ons-col>
+                                    ${items.dashType}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col width="50%">　フルドライブタイプ</ons-col>
+                                <ons-col>
+                                    ${items.fdType}
+                                </ons-col>
+                            </ons-row>
+                            <ons-row>
+                                <ons-col width="50%">　特性</ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.feature) === true ?
+                                        `${items.feature[0]}<br>${items.feature[1]}`:
+                                        `${items.feature}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                        </div>
+                    `;
+                    break;
+                case "Leg":
+                    lList_item.innerHTML = `
+                        <ons-row>
+                            <ons-col width="35%">
+                                ${items.name}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.weight}
+                            </ons-col>
+                            <ons-col style="text-align: right;">
+                                ${items.durability}
+                            </ons-col>
+                            <ons-col style="text-align: center;">
+                                ${items.occupation}
+                            </ons-col>
+                            <ons-col width="40%">
+                                ${Array.isArray(items.feature) === true ?
+                                    `　${items.feature[0]}<br>　${items.feature[1]}`:
+                                    `　${items.feature}`
+                                }
+                            </ons-col>
+                        </div>
+                    `;
+                    break;
+                default:
+                    console.error("AirReal: error");
+                    break;
+            }
+            lSection.appendChild(lList_item);
+
+            fragment.appendChild(pSection);
+            fragment.appendChild(lSection);
         }
 
         const findElement = (query) =>
@@ -679,6 +964,24 @@ const funcPageAirReal = () =>
             {
                 clearInterval(idSetInterval);
                 listAirReal.appendChild(fragment);
+                if(ons.orientation.isPortrait())
+                {
+                    console.log("Portraiting.");
+                    const hideOrientation = document.getElementsByClassName("landscape");
+                    for(const section of hideOrientation)
+                    {
+                        section.classList.add("hidden");
+                    }
+                }
+                else
+                {
+                    console.log("Landscaping.");
+                    const hideOrientation = document.getElementsByClassName("portrait");
+                    for(const section of hideOrientation)
+                    {
+                        section.classList.add("hidden");
+                    }
+                }
             }
             else
             {
@@ -688,9 +991,41 @@ const funcPageAirReal = () =>
         const idSetInterval = setInterval(findElement, 100, `listAirReal_${tab}`);
     };
 
-    appendData("Head");
-    appendData("Arm");
-    appendData("Body");
-    appendData("Wing");
-    appendData("Leg");
+    const tabs = ["Head", "Arm", "Body", "Wing", "Leg"];
+    for(const tab of tabs)
+    {
+        appendData(tab);
+    }
+
+    ons.orientation.on("change", (event) =>
+    {
+        if(event.isPortrait)
+        {
+            console.log("Portraited.");
+            const hideOrientation = document.getElementsByClassName("landscape");
+            const showOrientation = document.getElementsByClassName("portrait");
+            for(const section of hideOrientation)
+            {
+                section.classList.add("hidden");
+            }
+            for(const section of showOrientation)
+            {
+                section.classList.remove("hidden");
+            }
+        }
+        else
+        {
+            console.log("Landscaped.");
+            const hideOrientation = document.getElementsByClassName("portrait");
+            const showOrientation = document.getElementsByClassName("landscape");
+            for(const section of hideOrientation)
+            {
+                section.classList.add("hidden");
+            }
+            for(const section of showOrientation)
+            {
+                section.classList.remove("hidden");
+            }
+        }
+    });
 };
