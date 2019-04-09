@@ -562,6 +562,38 @@ const funcPageWeapon = () =>
                 "howToGet":"ドロップのみ(2600CP)"
             },
             {
+                "side":"L",
+                "name":"メディク",
+                "vsAR":"-",
+                "vsMAG":"-",
+                "reload":"？",
+                "usability":"？",
+                "weaponType":"補助",
+                "ammo":8,
+                "attackType":"その他？",
+                "triggerType":"ホールド？",
+                "target":"味方",
+                "reloadTiming":"弾切れ？",
+                "feature":"回復？",
+                "howToGet":"ドロップのみ"
+            },
+            {
+                "side":"L",
+                "name":"テレ・ヴニール",
+                "vsAR":"-",
+                "vsMAG":"-",
+                "reload":"？",
+                "usability":"？",
+                "weaponType":"補助",
+                "ammo":1,
+                "attackType":"その他？",
+                "triggerType":"？？？",
+                "target":"自分",
+                "reloadTiming":"弾切れ？",
+                "feature":"テレポート？",
+                "howToGet":"ドロップのみ"
+            },
+            {
                 "side":"R",
                 "name":"ラーゴ",
                 "vsAR":"B",
