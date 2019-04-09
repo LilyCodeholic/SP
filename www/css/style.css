@@ -1,19 +1,73 @@
-.scroller
-{
-    width: 0;
-    overflow-x: scroll;
-    white-space: nowrap;
-}
-.fixed
-{
-    position:fixed;
-    width:100%;
-    z-index:10;
-}
 .hidden
 {
     display: none;
 }
+
+/* 789 */
+/* 456 */
+/* 123 */
+.area1
+{
+    align-self: flex-end;
+}
+.area2
+{
+    align-self: flex-end;
+    text-align: center;
+}
+.area3
+{
+    align-self: flex-end;
+    text-align: right;
+}
+.area4
+{
+    align-self: center;
+}
+.area5
+{
+    align-self: center;
+    text-align: center;
+}
+.area6
+{
+    align-self: center;
+    text-align: right;
+}
+.area8
+{
+    text-align: center;
+}
+.area9
+{
+    text-align: right;
+}
+
+/* ons-list-header */
+.fixed
+{
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+}
+
+/* ons-list-item */
+.list-item__center
+{
+    padding: 6px 6px 6px 0;
+}
+
+/* ons-row */
+.expand
+{
+    padding-right: 28px;
+}
+.notexpand
+{
+    padding-right: 5px;
+}
+
+/* リンクテキスト用 */
 a:link
 {
     color: lawngreen;
@@ -22,7 +76,9 @@ a:visited
 {
     color: lightgreen;
 }
-.list-item__center
+
+/* デバッガー用 */
+::-webkit-scrollbar
 {
-    padding: 6px 6px 6px 0;
+    display: none;
 }

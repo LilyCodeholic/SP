@@ -413,9 +413,9 @@ const funcPageNicePlay = () =>
         const idSetInterval = setInterval(findElement, 100, `listNicePlay_${tab}`);
     };
 
-    appendData("AirReal");
-    appendData("Object");
-    appendData("Port");
-    appendData("Core");
-    appendData("Other");
+    const tabs = ["AirReal", "Object", "Port", "Core", "Other"];
+    for(const tab of tabs)
+    {
+        appendData(tab);
+    }
 };

@@ -169,6 +169,9 @@ const funcPageTask = () =>
         const idSetInterval = setInterval(findElement, 100, `listTask_${tab}`);
     };
 
-    appendData("Mission");
-    appendData("Quest");
+    const tabs = ["Mission", "Quest"];
+    for(const tab of tabs)
+    {
+        appendData(tab);
+    }
 };

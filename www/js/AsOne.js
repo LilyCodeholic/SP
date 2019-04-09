@@ -4,7 +4,7 @@ const funcPageAsOne = () =>
     {
         Status:`
             ステータス<br>
-            　すべて埋まっています。`,
+            　イサドラ: DePS5500で取得するスキルが記載されていません。`,
         Skill:
         {
             Hikari:
@@ -617,10 +617,9 @@ const funcPageAsOne = () =>
         const idSetInterval = setInterval(findElement, 100, `listAsOne_${tab}`);
     };
 
-    appendData("Hikari");
-    appendData("Reika");
-    appendData("Shirley");
-    appendData("Isadora");
-    appendData("Nagi");
-    appendData("Kazuma");
+    const tabs = ["Hikari", "Reika", "Shirley", "Isadora", "Nagi", "Kazuma"];
+    for(const tab of tabs)
+    {
+        appendData(tab);
+    }
 };

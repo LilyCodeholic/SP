@@ -107,7 +107,7 @@
                 <div class="right"></div>
             </ons-toolbar>
 
-            <ons-list class="Main_Main">
+            <ons-list class="listMain">
                 <ons-list-header>メインメニュー</ons-list-header>
 
                 <ons-list-item id="gotoWeapon" modifier="chevron"
@@ -388,8 +388,7 @@
                 <ons-tab label="勝利ポーズ" page="Customize_VictoryPose.html" active></ons-tab>
                 <ons-tab label="ラインカラー" page="Customize_LineColor.html"></ons-tab>
                 <ons-tab label="パーツカラー" page="Customize_PartsColor.html"></ons-tab>
-            <ons-list>
-            </ons-list>
+            </ons-tabbar>
         </ons-page>
     </ons-template>
     <ons-template id="Customize_VictoryPose.html">
@@ -424,8 +423,7 @@
             <ons-tabbar animation="none" id="tabTask">
                 <ons-tab label="ミッション" page="Task_Mission.html" active></ons-tab>
                 <ons-tab label="クエスト" page="Task_Quest.html"></ons-tab>
-            <ons-list>
-            </ons-list>
+            </ons-tabbar>
         </ons-page>
     </ons-template>
     <ons-template id="Task_Mission.html">
@@ -441,6 +439,21 @@
         </ons-page>
     </ons-template>
 
+    <ons-template id="Map.html">
+        <ons-page id="pageMap">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
+                <div class="center">
+                    マップ</div>
+                <div class="right">
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
+            </ons-toolbar>
+            <ons-list id="listMap">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
     <ons-template id="Ack.html">
         <ons-page id="pageAck">
             <ons-toolbar>
@@ -450,7 +463,7 @@
                     謝辞・問い合わせ</div>
                 <div class="right"></div>
             </ons-toolbar>
-            <ons-list>
+            <ons-list id="list_Ack">
                 <ons-list-item expandable>
                     5ch 星と翼のパラドクススレ
                     <div class="expandable-content">

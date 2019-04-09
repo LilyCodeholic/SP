@@ -55,7 +55,7 @@ const funcPageAirReal = () =>
                 "length":"C",
                 "range":"A",
                 "weight":2200,
-                "feature":"(ロックオンエリアが縦に広い)"
+                "feature":"(ロックオン範囲が縦に広い)"
             },
             {
                 "name":"ディスドス",
@@ -67,11 +67,11 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サブライガ",
-                "durability":180,
+                "durability":200,
                 "length":"D",
                 "range":"B",
                 "weight":2000,
-                "feature":"(クリティカルの範囲が広い)"
+                "feature":["対象ロスト耐性", "クリティカル範囲UP"]
             }
         ],
         Arm:
@@ -80,7 +80,7 @@ const funcPageAirReal = () =>
                 "name":"ソリディア",
                 "durability":200,
                 "weight":2000,
-                "feature":["両手武器リロード速度UP>>", "攻撃力アップ>"]
+                "feature":["両手武器リロード速度UP>>", "攻撃力UP>"]
             },
             {
                 "name":"カーディナル",
@@ -156,10 +156,10 @@ const funcPageAirReal = () =>
             },
             {
                 "name":"サイトヘッド",
-                "armor":230,
-                "durability":170,
-                "repairSpeed":"D",
-                "repairLatency":"D",
+                "armor":250,
+                "durability":150,
+                "repairSpeed":"E",
+                "repairLatency":"C",
                 "weight":2100,
                 "feature":"-"
             },
@@ -230,7 +230,7 @@ const funcPageAirReal = () =>
                 "name":"スクラッパー",
                 "durability":250,
                 "weight":2100,
-                "dashType":"短距離ダッシュ",
+                "dashType":"溜めダッシュ",
                 "dodge":"B",
                 "dash":"B",
                 "fdType":"長距離持続",
@@ -246,7 +246,7 @@ const funcPageAirReal = () =>
                 "dodge":"B+",
                 "dash":"A+",
                 "fdType":"長距離スタンダード",
-                "fdCharge":"B+",
+                "fdCharge":"B",
                 "drift":"C",
                 "feature":"-"
             },
@@ -397,19 +397,16 @@ const funcPageAirReal = () =>
         {
             case "Head":
                 pFixedList_header.innerHTML = `
-                    <ons-row>
-                        <ons-col width="40%"></ons-col>
-                        <ons-col></ons-col>
+                    <ons-row class="expand">
+                        <ons-col width="70%"></ons-col>
                         <ons-col>ロックオン</ons-col>
-                        <ons-col width="5%"></ons-col>
                     </ons-row>
-                    <ons-row>
+                    <ons-row class="expand">
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col>耐久値</ons-col>
-                        <ons-col>重量</ons-col>
-                        <ons-col>距離</ons-col>
-                        <ons-col>範囲</ons-col>
-                        <ons-col width="5%"></ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">重量</ons-col>
+                        <ons-col class="area5">距離</ons-col>
+                        <ons-col class="area5">範囲</ons-col>
                     </ons-row>
                 `;
                 pBackList_header.innerHTML = `
@@ -419,10 +416,10 @@ const funcPageAirReal = () =>
                 break;
             case "Arm":
                 pFixedList_header.innerHTML = `
-                    <ons-row>
+                    <ons-row class="expand">
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col>耐久値</ons-col>
-                        <ons-col>重量</ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">重量</ons-col>
                     </ons-row>
                 `;
                 pBackList_header.innerHTML = `
@@ -431,19 +428,16 @@ const funcPageAirReal = () =>
                 break;
             case "Body":
                 pFixedList_header.innerHTML = `
-                    <ons-row>
-                        <ons-col width="40%"></ons-col>
-                        <ons-col></ons-col>
+                    <ons-row class="expand">
+                        <ons-col width="70%"></ons-col>
                         <ons-col>アーマー</ons-col>
-                        <ons-col width="5%"></ons-col>
                     </ons-row>
-                    <ons-row>
+                    <ons-row class="expand">
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col>耐久値</ons-col>
-                        <ons-col>アーマー</ons-col>
-                        <ons-col>全回復</ons-col>
-                        <ons-col>回復待機</ons-col>
-                        <ons-col width="5%"></ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">アーマー</ons-col>
+                        <ons-col class="area5">全回復</ons-col>
+                        <ons-col class="area5">回復待機</ons-col>
                     </ons-row>
                 `;
                 pBackList_header.innerHTML = `
@@ -453,13 +447,12 @@ const funcPageAirReal = () =>
                 break;
             case "Wing":
                 pFixedList_header.innerHTML = `
-                    <ons-row>
+                    <ons-row class="expand">
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col>回避</ons-col>
-                        <ons-col>ダッシュ</ons-col>
-                        <ons-col>FD溜め</ons-col>
-                        <ons-col>ドリフト</ons-col>
-                        <ons-col width="5%"></ons-col>
+                        <ons-col class="area5">回避</ons-col>
+                        <ons-col class="area5">ダッシュ</ons-col>
+                        <ons-col class="area5">FD溜め</ons-col>
+                        <ons-col class="area5">ドリフト</ons-col>
                     </ons-row>
                 `;
                 pBackList_header.innerHTML = `
@@ -468,12 +461,11 @@ const funcPageAirReal = () =>
                 break;
             case "Leg":
                 pFixedList_header.innerHTML = `
-                    <ons-row>
+                    <ons-row class="expand">
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col>耐久値</ons-col>
-                        <ons-col>重量</ons-col>
-                        <ons-col>ポート占拠</ons-col>
-                        <ons-col width="5%"></ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">重量</ons-col>
+                        <ons-col class="area5">ポート占拠</ons-col>
                     </ons-row>
                 `;
                 pBackList_header.innerHTML = `
@@ -494,13 +486,16 @@ const funcPageAirReal = () =>
         {
             case "Head":
                 lFixedList_header.innerHTML = `
-                    <ons-row>
-                        <ons-col width="40%" vertical-align="bottom">パーツ名</ons-col>
-                        <ons-col vertical-align="bottom" style="text-align: center;">重量</ons-col>
-                        <ons-col vertical-align="bottom" style="text-align: center;">耐久値</ons-col>
-                        <ons-col style="text-align: center;">ロックオン<br>距離</ons-col>
-                        <ons-col vertical-align="bottom" style="text-align: center;">範囲</ons-col>
-                        <ons-col width="7%"></ons-col>
+                    <ons-row class="expand">
+                        <ons-col width="70%"></ons-col>
+                        <ons-col>ロックオン</ons-col>
+                    </ons-row>
+                    <ons-row class="expand">
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col class="area5">重量</ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">距離</ons-col>
+                        <ons-col class="area5">範囲</ons-col>
                     </ons-row>
                 `;
                 lBackList_header.innerHTML = `
@@ -510,11 +505,11 @@ const funcPageAirReal = () =>
                 break;
             case "Arm":
                 lFixedList_header.innerHTML = `
-                    <ons-row>
+                    <ons-row class="notexpand">
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col style="text-align: center;">重量</ons-col>
-                        <ons-col style="text-align: center;">耐久値</ons-col>
-                        <ons-col width="40%" style="text-align: center;">特性</ons-col>
+                        <ons-col class="area5">重量</ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col width="40%" class="area5">特性</ons-col>
                     </ons-row>
                 `;
                 lBackList_header.innerHTML = `
@@ -523,14 +518,17 @@ const funcPageAirReal = () =>
                 break;
             case "Body":
                 lFixedList_header.innerHTML = `
-                    <ons-row>
-                        <ons-col width="40%" vertical-align="bottom">パーツ名</ons-col>
-                        <ons-col vertical-align="bottom" style="text-align: center;">重量</ons-col>
-                        <ons-col vertical-align="bottom" style="text-align: center;">耐久値</ons-col>
-                        <ons-col vertical-align="bottom" style="text-align: center;">アーマー</ons-col>
-                        <ons-col style="text-align: center;">アーマー<br>全回復</ons-col>
-                        <ons-col vertical-align="bottom" style="text-align: center;">回復待機</ons-col>
-                        <ons-col width="7%"></ons-col>
+                    <ons-row class="expand">
+                        <ons-col width="76%"></ons-col>
+                        <ons-col>アーマー</ons-col>
+                    </ons-row>
+                    <ons-row class="expand">
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col class="area5">重量</ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">アーマー</ons-col>
+                        <ons-col class="area5">全回復</ons-col>
+                        <ons-col class="area5">回復待機</ons-col>
                     </ons-row>
                 `;
                 lBackList_header.innerHTML = `
@@ -540,15 +538,14 @@ const funcPageAirReal = () =>
                 break;
             case "Wing":
                 lFixedList_header.innerHTML = `
-                    <ons-row>
+                    <ons-row class="expand">
                         <ons-col width="40%">パーツ名</ons-col>
-                        <ons-col style="text-align: center;">重量</ons-col>
-                        <ons-col style="text-align: center;">耐久値</ons-col>
-                        <ons-col style="text-align: center;">回避</ons-col>
-                        <ons-col style="text-align: center;">ダッシュ</ons-col>
-                        <ons-col style="text-align: center;">FD溜め</ons-col>
-                        <ons-col style="text-align: center;">ドリフト</ons-col>
-                        <ons-col width="5%"></ons-col>
+                        <ons-col class="area5">重量</ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">回避</ons-col>
+                        <ons-col class="area5">ダッシュ</ons-col>
+                        <ons-col class="area5">FD溜め</ons-col>
+                        <ons-col class="area5">ドリフト</ons-col>
                     </ons-row>
                 `;
                 lBackList_header.innerHTML = `
@@ -557,12 +554,12 @@ const funcPageAirReal = () =>
                 break;
             case "Leg":
                 lFixedList_header.innerHTML = `
-                    <ons-row>
-                        <ons-col width="30%">パーツ名</ons-col>
-                        <ons-col style="text-align: center;">重量</ons-col>
-                        <ons-col style="text-align: center;">耐久値</ons-col>
-                        <ons-col style="text-align: center;">ポート占拠</ons-col>
-                        <ons-col width="40%">特性</ons-col>
+                    <ons-row class="notexpand">
+                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col class="area5">重量</ons-col>
+                        <ons-col class="area5">耐久値</ons-col>
+                        <ons-col class="area5">占拠</ons-col>
+                        <ons-col width="40%" class="area5">特性</ons-col>
                     </ons-row>
                 `;
                 lBackList_header.innerHTML = `
@@ -589,16 +586,16 @@ const funcPageAirReal = () =>
                             <ons-col width="40%">
                                 ${items.name}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.durability}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.weight}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.length}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.range}
                             </ons-col>
                         </ons-row>
@@ -623,10 +620,10 @@ const funcPageAirReal = () =>
                             <ons-col width="40%">
                                 ${items.name}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.durability}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.weight}
                             </ons-col>
                         </ons-row>
@@ -651,16 +648,16 @@ const funcPageAirReal = () =>
                             <ons-col width="40%">
                                 ${items.name}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.durability}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.armor}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.repairSpeed}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.repairLatency}
                             </ons-col>
                         </ons-row>
@@ -689,16 +686,16 @@ const funcPageAirReal = () =>
                             <ons-col width="40%">
                                 ${items.name}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.dodge}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.dash}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.fdCharge}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.drift}
                             </ons-col>
                         </ons-row>
@@ -745,13 +742,13 @@ const funcPageAirReal = () =>
                             <ons-col width="40%">
                                 ${items.name}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.durability}
                             </ons-col>
-                            <ons-col style="text-align: right;">
+                            <ons-col class="area6">
                                 ${items.weight}
                             </ons-col>
-                            <ons-col style="text-align: center;">
+                            <ons-col class="area5">
                                 ${items.occupation}
                             </ons-col>
                         </ons-row>
@@ -783,27 +780,15 @@ const funcPageAirReal = () =>
                     lList_item.setAttribute("expandable", "");
                     lList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="45%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.weight}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.length}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.range}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area5">${items.length}</ons-col>
+                            <ons-col class="area5">${items.range}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
-                                <ons-col width="50%">
-                                    　特性
-                                </ons-col>
+                                <ons-col width="50%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
                                         `${items.feature[0]}<br>${items.feature[1]}`:
@@ -817,17 +802,10 @@ const funcPageAirReal = () =>
                 case "Arm":
                     lList_item.innerHTML = `
                         <ons-row>
-                            <ons-col vertical-align="center" width="35%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col width="5%"><br></ons-col>
-                            <ons-col vertical-align="center" style="text-align: right;">
-                                ${items.weight}
-                            </ons-col>
-                            <ons-col vertical-align="center" style="text-align: right;">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col vertical-align="center" width="40%">
+                            <ons-col width="40%" class="area4">${items.name}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col width="40%">
                                 ${Array.isArray(items.feature) === true ?
                                     `　${items.feature[0]}<br>　${items.feature[1]}`:
                                     `　${items.feature}`
@@ -840,24 +818,12 @@ const funcPageAirReal = () =>
                     lList_item.setAttribute("expandable", "");
                     lList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="45%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.weight}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.armor}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.repairSpeed}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.repairLatency}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area6">${items.armor}</ons-col>
+                            <ons-col class="area5">${items.repairSpeed}</ons-col>
+                            <ons-col class="area5">${items.repairLatency}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
@@ -876,40 +842,22 @@ const funcPageAirReal = () =>
                     lList_item.setAttribute("expandable", "");
                     lList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="40%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.weight}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.dodge}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.dash}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.fdCharge}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.drift}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area5">${items.dodge}</ons-col>
+                            <ons-col class="area5">${items.dash}</ons-col>
+                            <ons-col class="area5">${items.fdCharge}</ons-col>
+                            <ons-col class="area5">${items.drift}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
                                 <ons-col width="50%">　ダッシュタイプ</ons-col>
-                                <ons-col>
-                                    ${items.dashType}
-                                </ons-col>
+                                <ons-col>${items.dashType}</ons-col>
                             </ons-row>
                             <ons-row>
                                 <ons-col width="50%">　フルドライブタイプ</ons-col>
-                                <ons-col>
-                                    ${items.fdType}
-                                </ons-col>
+                                <ons-col>${items.fdType}</ons-col>
                             </ons-row>
                             <ons-row>
                                 <ons-col width="50%">　特性</ons-col>
@@ -926,18 +874,10 @@ const funcPageAirReal = () =>
                 case "Leg":
                     lList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="35%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.weight}
-                            </ons-col>
-                            <ons-col style="text-align: right;">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col style="text-align: center;">
-                                ${items.occupation}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area5">${items.occupation}</ons-col>
                             <ons-col width="40%">
                                 ${Array.isArray(items.feature) === true ?
                                     `　${items.feature[0]}<br>　${items.feature[1]}`:

@@ -55,7 +55,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -71,7 +71,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"炎上",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"L",
@@ -135,7 +135,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -151,7 +151,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"-",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -167,7 +167,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -215,7 +215,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"スコープ、ダウン特性",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"LR",
@@ -231,7 +231,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"4400CP"
+                "howToGet":"2600CP"
             },
             {
                 "side":"LR",
@@ -299,7 +299,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -315,7 +315,7 @@ const funcPageWeapon = () =>
                 "target":"自分",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性、炎上",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"L",
@@ -332,6 +332,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
                 "howToGet":"ドロップのみ(2600CP)"
+            },
+            {
+                "side":"L",
+                "name":"マーノムガン",
+                "vsAR":"D",
+                "vsMAG":"B",
+                "reload":"A",
+                "usability":"A",
+                "weaponType":"ビーム",
+                "ammo":15,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"",
+                "howToGet":"ドロップのみ"
             },
             {
                 "side":"R",
@@ -395,7 +411,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -411,7 +427,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"炎上",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"LR",
@@ -443,7 +459,23 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"4400CP"
+                "howToGet":"2600CP"
+            },
+            {
+                "side":"LR",
+                "name":"飛翔拳 双天",
+                "vsAR":"B+",
+                "vsMAG":"D",
+                "reload":"C",
+                "usability":"A",
+                "weaponType":"実弾",
+                "ammo":"L: 1, R: 1",
+                "attackType":"中距離射撃",
+                "triggerType":"1トリガー",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"怯み特性",
+                "howToGet":"ドロップのみ"
             }
         ],
         Support:
@@ -495,7 +527,7 @@ const funcPageWeapon = () =>
                 "target":"味方",
                 "reloadTiming":"弾切れ",
                 "feature":"攻撃力上昇",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -527,7 +559,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"麻痺",
-                "howToGet":"2600CP"
+                "howToGet":"ドロップのみ(2600CP)"
             },
             {
                 "side":"R",
@@ -608,7 +640,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"1400CP"
+                "howToGet":"ドロップのみ(1400CP)"
             },
             {
                 "side":"R",
@@ -641,7 +673,7 @@ const funcPageWeapon = () =>
                 "target":"L: 自分、R: 味方",
                 "reloadTiming":"弾切れ",
                 "feature":"シールド",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"LR",
@@ -657,7 +689,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"4400CP"
+                "howToGet":"2600CP"
             }
         ]
     };
@@ -688,12 +720,11 @@ const funcPageWeapon = () =>
         const pBackList_header = document.createElement("ons-list-header");
         pFixedList_header.setAttribute("class", "fixed");
         pFixedList_header.innerHTML = `
-            <ons-row>
+            <ons-row class="expand">
                 <ons-col width="60%">武器名</ons-col>
                 <ons-col style="text-align: center;">AR</ons-col>
                 <ons-col style="text-align: center;">マグ</ons-col>
                 <ons-col style="text-align: center;">リロ</ons-col>
-                <ons-col width="10%"></ons-col>
             </ons-row>
         `;
         pSection.appendChild(pFixedList_header);
@@ -703,14 +734,13 @@ const funcPageWeapon = () =>
         const lBackList_header = document.createElement("ons-list-header");
         lFixedList_header.setAttribute("class", "fixed");
         lFixedList_header.innerHTML = `
-            <ons-row>
+            <ons-row class="expand">
                 <ons-col width="40%">武器名</ons-col>
                 <ons-col style="text-align: center;">対AR</ons-col>
                 <ons-col style="text-align: center;">対マグ</ons-col>
                 <ons-col style="text-align: center;">リロード</ons-col>
                 <ons-col style="text-align: center;">弾数</ons-col>
                 <ons-col width="20%" style="text-align: center;">特性</ons-col>
-                <ons-col width="5%"></ons-col>
             </ons-row>
         `;
         lSection.appendChild(lFixedList_header);
@@ -723,10 +753,10 @@ const funcPageWeapon = () =>
             pList_item.setAttribute("expandable", "");
             pList_item.innerHTML = `
                 <ons-row>
-                    <ons-col vertical-align="center">
+                    <ons-col width="5%" vertical-align="center">
                         ${items.side}
                     </ons-col>
-                    <ons-col width="60%">
+                    <ons-col width="55%">
                         ${items.name}
                         <br>
                         <span style="font-size:small">
@@ -783,7 +813,7 @@ const funcPageWeapon = () =>
             lList_item.setAttribute("expandable", "");
             lList_item.innerHTML = `
                 <ons-row>
-                    <ons-col vertical-align="center" style="text-align: center;">
+                    <ons-col width="5%" vertical-align="center">
                         ${items.side}
                     </ons-col>
                     <ons-col width="35%">
