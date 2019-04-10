@@ -4,7 +4,7 @@ const funcPageAsOne = () =>
     {
         Status:`
             ステータス<br>
-            　イサドラ: DePS5500で取得するスキルが記載されていません。`,
+            　すべて埋まっています。`,
         Skill:
         {
             Hikari:
@@ -234,9 +234,9 @@ const funcPageAsOne = () =>
                     "level":5
                 },
                 {
-                    "skill":"？？？",
+                    "skill":"ロックオン距離延長",
                     "flag":"DePS7500を達成",
-                    "level":0
+                    "level":6
                 },
                 {
                     "skill":"経験値取得量上昇",
