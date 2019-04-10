@@ -51,7 +51,7 @@
     z-index: 10;
 }
 
-/* ons-list-item */
+/* ons-list-item(オーバーライド) */
 .list-item__center
 {
     padding: 6px 6px 6px 0;
@@ -67,6 +67,17 @@
     padding-right: 5px;
 }
 
+/* expandable(オーバーライド) */
+.list-item__expand-chevron
+{
+    border-color: #ffa101;
+}
+
+/* toolbar-button(オーバーライド) */
+.toolbar-button
+{
+    font-weight: 900;
+}
 /* リンクテキスト用 */
 a:link
 {
