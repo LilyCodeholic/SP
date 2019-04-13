@@ -16,7 +16,7 @@ const funcPageNicePlay = () =>
             },
             {
                 "play":"ARをキル",
-                "point":10
+                "point":20
             },
             {
                 "play":"ARを3キル",
@@ -68,7 +68,7 @@ const funcPageNicePlay = () =>
             },
             {
                 "play":"ポート内でARをキル",
-                "point":50
+                "point":60
             },
             {
                 "play":"ポート外からARをキル",
@@ -143,7 +143,7 @@ const funcPageNicePlay = () =>
             },
             {
                 "play":"タワーを破壊",
-                "point":"75-100？"
+                "point":"50-100？"
             },
             {
                 "play":"グランデにダメージ",
@@ -213,6 +213,10 @@ const funcPageNicePlay = () =>
                 "point":120
             },
             {
+                "play":"ポートを中立化",
+                "point":10
+            },
+            {
                 "play":"ポートを5回中立化",
                 "point":100
             },
@@ -243,6 +247,18 @@ const funcPageNicePlay = () =>
             {
                 "play":"ポートを防衛",
                 "point":30
+            },
+            {
+                "play":"ポート占拠を阻止",
+                "point":80
+            },
+            {
+                "play":"ポートを中立化 劣勢時",
+                "point":20
+            },
+            {
+                "play":"？？？",
+                "point":0
             }
         ],
         Core:
