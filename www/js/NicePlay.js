@@ -372,14 +372,19 @@ const funcPageNicePlay = () =>
     const appendData = (tab) =>
     {
         const fragment = document.createDocumentFragment();
-        const list_header = document.createElement("ons-list-header");
-        list_header.innerHTML = `
+
+        // ons-list-header
+        const fixedList_header = document.createElement("ons-list-header");
+        const backList_header = document.createElement("ons-list-header");
+        fixedList_header.setAttribute("class", "fixed");
+        fixedList_header.innerHTML = `
             <ons-row>
                 <ons-col width="80%">ナイスプレイ</ons-col>
                 <ons-col>ポイント</ons-col>
             </ons-row>
         `;
-        fragment.appendChild(list_header);
+        fragment.appendChild(fixedList_header);
+        fragment.appendChild(backList_header);
 
         for(const items of SPDB.NicePlay[tab])
         {

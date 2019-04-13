@@ -555,7 +555,7 @@ const funcPageAirReal = () =>
             case "Leg":
                 lFixedList_header.innerHTML = `
                     <ons-row class="notexpand">
-                        <ons-col width="40%">パーツ名</ons-col>
+                        <ons-col width="35%">パーツ名</ons-col>
                         <ons-col class="area5">重量</ons-col>
                         <ons-col class="area5">耐久値</ons-col>
                         <ons-col class="area5">占拠</ons-col>
@@ -874,7 +874,7 @@ const funcPageAirReal = () =>
                 case "Leg":
                     lList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col width="35%">${items.name}</ons-col>
                             <ons-col class="area6">${items.weight}</ons-col>
                             <ons-col class="area6">${items.durability}</ons-col>
                             <ons-col class="area5">${items.occupation}</ons-col>
