@@ -583,27 +583,15 @@ const funcPageAirReal = () =>
                 case "Head":
                     pList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="40%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.weight}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.length}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.range}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
+                            <ons-col class="area5">${items.length}</ons-col>
+                            <ons-col class="area5">${items.range}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
-                                <ons-col width="25%">
-                                    　特性
-                                </ons-col>
+                                <ons-col width="25%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
                                         `${items.feature[0]}<br>${items.feature[1]}`:
@@ -617,21 +605,13 @@ const funcPageAirReal = () =>
                 case "Arm":
                     pList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="40%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.weight}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
-                                <ons-col width="25%">
-                                    　特性
-                                </ons-col>
+                                <ons-col width="25%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
                                         `${items.feature[0]}<br>${items.feature[1]}`:
@@ -645,28 +625,16 @@ const funcPageAirReal = () =>
                 case "Body":
                     pList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="40%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.armor}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.repairSpeed}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.repairLatency}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area6">${items.armor}</ons-col>
+                            <ons-col class="area5">${items.repairSpeed}</ons-col>
+                            <ons-col class="area5">${items.repairLatency}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
                                 <ons-col width="50%">　重量</ons-col>
-                                <ons-col>
-                                    ${items.weight}
-                                </ons-col>
+                                <ons-col>${items.weight}</ons-col>
                             </ons-row>
                             <ons-row>
                                 <ons-col width="25%">　特性</ons-col>
@@ -683,46 +651,28 @@ const funcPageAirReal = () =>
                 case "Wing":
                     pList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="40%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.dodge}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.dash}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.fdCharge}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.drift}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area5">${items.dodge}</ons-col>
+                            <ons-col class="area5">${items.dash}</ons-col>
+                            <ons-col class="area5">${items.fdCharge}</ons-col>
+                            <ons-col class="area5">${items.drift}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
                                 <ons-col width="50%">　耐久値</ons-col>
-                                <ons-col>
-                                    ${items.durability}
-                                </ons-col>
+                                <ons-col>${items.durability}</ons-col>
                             </ons-row>
                             <ons-row>
                                 <ons-col width="50%">　重量</ons-col>
-                                <ons-col>
-                                    ${items.weight}
-                                </ons-col>
+                                <ons-col>${items.weight}</ons-col>
                             </ons-row>
                             <ons-row>
                                 <ons-col width="50%">　ダッシュタイプ</ons-col>
-                                <ons-col>
-                                    ${items.dashType}
-                                </ons-col>
+                                <ons-col>${items.dashType}</ons-col>
                             </ons-row>
                             <ons-row>
                                 <ons-col width="50%">　フルドライブタイプ</ons-col>
-                                <ons-col>
-                                    ${items.fdType}
-                                </ons-col>
+                                <ons-col>${items.fdType}</ons-col>
                             </ons-row>
                             <ons-row>
                                 <ons-col width="25%">　特性</ons-col>
@@ -739,24 +689,14 @@ const funcPageAirReal = () =>
                 case "Leg":
                     pList_item.innerHTML = `
                         <ons-row>
-                            <ons-col width="40%">
-                                ${items.name}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.durability}
-                            </ons-col>
-                            <ons-col class="area6">
-                                ${items.weight}
-                            </ons-col>
-                            <ons-col class="area5">
-                                ${items.occupation}
-                            </ons-col>
+                            <ons-col width="40%">${items.name}</ons-col>
+                            <ons-col class="area6">${items.durability}</ons-col>
+                            <ons-col class="area6">${items.weight}</ons-col>
+                            <ons-col class="area5">${items.occupation}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
                             <ons-row>
-                                <ons-col width="25%">
-                                    特性
-                                </ons-col>
+                                <ons-col width="25%">特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
                                         `${items.feature[0]}<br>${items.feature[1]}`:

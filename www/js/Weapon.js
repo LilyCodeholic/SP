@@ -4,7 +4,7 @@ const funcPageWeapon = () =>
     {
         Status:`
             ステータス<br>
-            　武器情報: すべて埋まっています<br>
+            　武器情報: すべて埋まっています。<br>
             <br>
             「使いやすさ」はデータとしては持っていますが現在記載していません。`,
         Assault:
@@ -591,7 +591,7 @@ const funcPageWeapon = () =>
                 "triggerType":"1トリガー",
                 "target":"自分",
                 "reloadTiming":"弾切れ",
-                "feature":"(テレポート)",
+                "feature":"",
                 "howToGet":"ドロップのみ"
             },
             {
@@ -755,9 +755,9 @@ const funcPageWeapon = () =>
         pFixedList_header.innerHTML = `
             <ons-row class="expand">
                 <ons-col width="60%">武器名</ons-col>
-                <ons-col style="text-align: center;">AR</ons-col>
-                <ons-col style="text-align: center;">マグ</ons-col>
-                <ons-col style="text-align: center;">リロ</ons-col>
+                <ons-col class="area5">AR</ons-col>
+                <ons-col class="area5">マグ</ons-col>
+                <ons-col class="area5">リロ</ons-col>
             </ons-row>
         `;
         pSection.appendChild(pFixedList_header);
@@ -769,11 +769,11 @@ const funcPageWeapon = () =>
         lFixedList_header.innerHTML = `
             <ons-row class="expand">
                 <ons-col width="40%">武器名</ons-col>
-                <ons-col style="text-align: center;">対AR</ons-col>
-                <ons-col style="text-align: center;">対マグ</ons-col>
-                <ons-col style="text-align: center;">リロード</ons-col>
-                <ons-col style="text-align: center;">弾数</ons-col>
-                <ons-col width="20%" style="text-align: center;">特性</ons-col>
+                <ons-col class="area5">対AR</ons-col>
+                <ons-col class="area5">対マグ</ons-col>
+                <ons-col class="area5">リロード</ons-col>
+                <ons-col class="area5">弾数</ons-col>
+                <ons-col width="20%" class="area5">特性</ons-col>
             </ons-row>
         `;
         lSection.appendChild(lFixedList_header);
@@ -786,9 +786,7 @@ const funcPageWeapon = () =>
             pList_item.setAttribute("expandable", "");
             pList_item.innerHTML = `
                 <ons-row>
-                    <ons-col width="5%" vertical-align="center">
-                        ${items.side}
-                    </ons-col>
+                    <ons-col width="5%" class="area4">${items.side}</ons-col>
                     <ons-col width="55%">
                         ${items.name}
                         <br>
@@ -796,15 +794,9 @@ const funcPageWeapon = () =>
                             ${items.weaponType} ${items.attackType}
                         </span>
                     </ons-col>
-                    <ons-col vertical-align="center" style="text-align: center;">
-                        ${items.vsAR}
-                    </ons-col>
-                    <ons-col vertical-align="center" style="text-align: center;">
-                        ${items.vsMAG}
-                    </ons-col>
-                    <ons-col vertical-align="center" style="text-align: center;">
-                        ${items.reload}
-                    </ons-col>
+                    <ons-col class="area5">${items.vsAR}</ons-col>
+                    <ons-col class="area5">${items.vsMAG}</ons-col>
+                    <ons-col class="area5">${items.reload}</ons-col>
                 </ons-row>
                 <div class="expandable-content">
                     ${items.exParameter != undefined ?
@@ -846,9 +838,7 @@ const funcPageWeapon = () =>
             lList_item.setAttribute("expandable", "");
             lList_item.innerHTML = `
                 <ons-row>
-                    <ons-col width="5%" vertical-align="center">
-                        ${items.side}
-                    </ons-col>
+                    <ons-col width="5%" class="area4">${items.side}</ons-col>
                     <ons-col width="35%">
                         ${items.name}
                         <br>
@@ -856,22 +846,16 @@ const funcPageWeapon = () =>
                             ${items.weaponType} ${items.attackType}
                         </span>
                     </ons-col>
-                    <ons-col vertical-align="center" style="text-align: center;">
-                        ${items.vsAR}
-                    </ons-col>
-                    <ons-col vertical-align="center" style="text-align: center;">
-                        ${items.vsMAG}
-                    </ons-col>
-                    <ons-col vertical-align="center" style="text-align: center;">
-                        ${items.reload}
-                    </ons-col>
-                    <ons-col vertical-align="center" style="text-align: right;">
+                    <ons-col class="area5">${items.vsAR}</ons-col>
+                    <ons-col class="area5">${items.vsMAG}</ons-col>
+                    <ons-col class="area5">${items.reload}</ons-col>
+                    <ons-col class="area6">
                         ${/, /.test(items.ammo) ?
                             `${items.ammo.replace(/, /, '　<br>')}　` :
                             `${items.ammo}　`
                         }
                     </ons-col>
-                    <ons-col width="20%" vertical-align="center">
+                    <ons-col width="20%" class="area4">
                         ${/、/.test(items.feature) ?
                             `${items.feature.replace(/、/, '<br>')}` :
                             `${items.feature}`

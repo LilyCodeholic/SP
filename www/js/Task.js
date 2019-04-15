@@ -88,64 +88,64 @@ const funcPageTask = () =>
                 "name":"エア・リアル殲滅作戦1",
                 "difficulty":1,
                 "goal":"",
-                "prize":"CP",
-                "flag":"なし",
+                "prize":["CP", "CP"],
+                "flag":"初めから出現",
             },
             {
                 "name":"マグ殲滅作戦1",
                 "difficulty":1,
                 "goal":"",
-                "prize":"CP",
-                "flag":"なし"
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"ポート奪還作戦1",
                 "difficulty":1,
                 "goal":"",
-                "prize":"CP",
-                "flag":"なし"
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"Sマグ討伐作戦",
                 "difficulty":2,
                 "goal":"",
-                "prize":"",
-                "flag":""
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"アサルトの実戦1",
                 "difficulty":2,
                 "goal":"",
-                "prize":"",
-                "flag":""
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"ヴァンガードの実戦1",
                 "difficulty":2,
                 "goal":"",
-                "prize":"",
-                "flag":""
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"サポートの実戦1",
                 "difficulty":2,
                 "goal":"",
-                "prize":"",
-                "flag":""
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"射撃武器の訓練1",
                 "difficulty":3,
                 "goal":"",
-                "prize":"",
-                "flag":""
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"格闘武器の訓練1",
                 "difficulty":3,
                 "goal":"",
-                "prize":"",
-                "flag":""
+                "prize":["CP", "CP"],
+                "flag":"初めから出現"
             },
             {
                 "name":"戦略的撤退【1回限定】",
@@ -186,7 +186,7 @@ const funcPageTask = () =>
                 "name":"エア・グランデ討伐作戦",
                 "difficulty":2,
                 "goal":"",
-                "prize":"CP",
+                "prize":["CP", "CP"],
                 "flag":"クエスト「Sマグ討伐作戦」クリア"
             },
             {
@@ -213,21 +213,21 @@ const funcPageTask = () =>
             {
                 "name":"アサルトの実戦2",
                 "difficulty":2,
-                "goal":[["アサルトで5分対戦する", 5], ["ナイスプレイを30回達成する", 30]],
+                "goal":["アサルトで5分対戦する", "ナイスプレイを30回達成する"],
                 "prize":["200CP", "CP"],
                 "flag":""
             },
             {
                 "name":"ヴァンガードの実戦2",
                 "difficulty":2,
-                "goal":[["ヴァンガードで5分対戦する", 5], ["ナイスプレイを30回達成する", 30]],
+                "goal":["ヴァンガードで5分対戦する", "ナイスプレイを30回達成する"],
                 "prize":["200CP", "CP"],
                 "flag":""
             },
             {
                 "name":"サポートの実戦2",
                 "difficulty":2,
-                "goal":[["サポートで5分対戦する", 5], ["ナイスプレイを30回達成する", 30]],
+                "goal":["サポートで5分対戦する", "ナイスプレイを30回達成する"],
                 "prize":["200CP", "CP"],
                 "flag":""
             }
@@ -281,16 +281,41 @@ const funcPageTask = () =>
                     break;
                 case "Quest":
                     list_item.innerHTML = `
-                        <span class="list-item__title">
-                            ${items.name}
-                        </span>
-                        <span class="list-item__subtitle">
-                            ${items.flag}
-                        </span>
+                        ★${items.difficulty} ${items.name}
                         <div class="expandable-content">
                             <ons-row>
-                                <ons-col width="20%">報酬</ons-col>
-                                <ons-col>${items.prize}</ons-col>
+                                <ons-col width="25%">達成条件</ons-col>
+                                <ons-col>
+                                    ${Array.isArray(items.goal) ?
+                                        items.goal.length > 2 ?
+                                            `${items.goal[0]}<br>${items.goal[1]}<br>${items.goal[2]}` :
+                                            `${items.goal[0]}<br>${items.goal[1]}`
+                                        :
+                                        `${items.goal}`
+                                    }
+                                </ons-col>
+                            </ons-row>
+                            ${Array.isArray(items.prize) ?
+                                `
+                                    <ons-row>
+                                        <ons-col width="25%">初回報酬</ons-col>
+                                        <ons-col>${items.prize[0]}</ons-col>
+                                    </ons-row>
+                                    <ons-row>
+                                        <ons-col width="25%">2回目以降</ons-col>
+                                        <ons-col>${items.prize[1]}</ons-col>
+                                    </ons-row>
+                                ` :
+                                `
+                                    <ons-row>
+                                        <ons-col width="25%">報酬</ons-col>
+                                        <ons-col>${items.prize}</ons-col>
+                                    </ons-row>
+                                `
+                            }
+                            <ons-row>
+                                <ons-col width="25%">出現条件</ons-col>
+                                <ons-col>${items.flag}</ons-col>
                             </ons-row>
                         </div>
                     `;
