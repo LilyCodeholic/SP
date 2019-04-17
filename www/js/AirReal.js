@@ -72,6 +72,15 @@ const funcPageAirReal = () =>
                 "range":"B",
                 "weight":2000,
                 "feature":["対象ロスト耐性", "クリティカル範囲UP"]
+            },
+            {
+                "name":"ファルマコン",
+                "armor":10,
+                "durability":0,
+                "length":"E",
+                "range":"A",
+                "weight":0,
+                "feature":"ロックオン追従性能UP>"
             }
         ],
         Arm:
@@ -123,6 +132,13 @@ const funcPageAirReal = () =>
                 "durability":170,
                 "weight":2000,
                 "feature":"片手武器リロード速度UP>"
+            },
+            {
+                "name":"ファルマコン",
+                "armor":20,
+                "durability":0,
+                "weight":0,
+                "feature":["格闘武器リロード速度UP>>", "片手武器 左 リロード速度UP>>"]
             }
         ],
         Body:
@@ -198,6 +214,15 @@ const funcPageAirReal = () =>
                 "repairLatency":"B+",
                 "weight":2000,
                 "feature":"ダウン耐性>>"
+            },
+            {
+                "name":"ファルマコン",
+                "armor":160,
+                "durability":0,
+                "repairSpeed":"E",
+                "repairLatency":"A+",
+                "weight":0,
+                "feature":"状態異常耐性>>>"
             }
         ],
         Wing:
@@ -297,6 +322,19 @@ const funcPageAirReal = () =>
                 "fdCharge":"B",
                 "drift":"E",
                 "feature":"-"
+            },
+            {
+                "name":"ファルマコン",
+                "armor":20,
+                "durability":150,
+                "weight":1700,
+                "dashType":"短距離ダッシュ",
+                "dodge":"B",
+                "dash":"C",
+                "fdType":"短距離高速",
+                "fdCharge":"B+",
+                "drift":"D",
+                "feature":"-"
             }
         ],
         Leg:
@@ -356,6 +394,14 @@ const funcPageAirReal = () =>
                 "occupation":"B",
                 "weight":2000,
                 "feature":"ブースト消費軽減>>"
+            },
+            {
+                "name":"ファルマコン",
+                "armor":30,
+                "durability":0,
+                "occupation":"B",
+                "weight":0,
+                "feature":"-"
             }
         ]
     };
