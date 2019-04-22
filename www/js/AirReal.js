@@ -76,10 +76,10 @@ const funcPageAirReal = () =>
             {
                 "name":"ファルマコン",
                 "armor":10,
-                "durability":0,
+                "durability":200,
                 "length":"E",
                 "range":"A",
-                "weight":0,
+                "weight":1700,
                 "feature":"ロックオン追従性能UP>"
             }
         ],
@@ -136,8 +136,8 @@ const funcPageAirReal = () =>
             {
                 "name":"ファルマコン",
                 "armor":20,
-                "durability":0,
-                "weight":0,
+                "durability":160,
+                "weight":1700,
                 "feature":["格闘武器リロード速度UP>>", "片手武器 左 リロード速度UP>>"]
             }
         ],
@@ -218,10 +218,10 @@ const funcPageAirReal = () =>
             {
                 "name":"ファルマコン",
                 "armor":160,
-                "durability":0,
+                "durability":70,
                 "repairSpeed":"E",
                 "repairLatency":"A+",
-                "weight":0,
+                "weight":1700,
                 "feature":"状態異常耐性>>>"
             }
         ],
@@ -398,9 +398,9 @@ const funcPageAirReal = () =>
             {
                 "name":"ファルマコン",
                 "armor":30,
-                "durability":0,
+                "durability":160,
                 "occupation":"B",
-                "weight":0,
+                "weight":1700,
                 "feature":"-"
             }
         ]
