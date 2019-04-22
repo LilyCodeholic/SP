@@ -6,23 +6,23 @@ const funcPageStage = () =>
         Map:
         [
             {
-                "name":"平原",
+                "name":"アナトミア平静峡谷 平原地域",
                 "filename":"-"
             },
             {
-                "name":"台地",
+                "name":"アナトミア平静峡谷 台地地域",
                 "filename":"-"
             },
             {
-                "name":"滝",
+                "name":"シーボルト分泌海 シーボルト海台",
                 "filename":"-"
             },
             {
-                "name":"海",
+                "name":"シーボルト分泌海 シーボルト諸島",
                 "filename":"-"
             },
             {
-                "name":"洞窟",
+                "name":"ゲンタン膚化空洞 氷原区域",
                 "filename":"-"
             }
         ]
@@ -56,14 +56,14 @@ const funcPageStage = () =>
             if(listStage != null)
             {
                 clearInterval(idSetInterval);
-                listTitle.appendChild(fragment);
+                listStage.appendChild(fragment);
             }
             else
             {
                 console.log(`${query} not found yet...`);
             }
         };
-        const idSetInterval = setInterval(findElement, 100, `listStage_${tab}`);
+        const idSetInterval = setInterval(findElement, 100, `listStage`);
     };
 
     appendData("Map");

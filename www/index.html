@@ -21,6 +21,7 @@
     <script src="./js/Customize.js"></script>
     <script src="./js/Title.js"></script>
     <script src="./js/Task.js"></script>
+    <script src="./js/Stage.js"></script>
     <script src="./js/Ack.js"></script>
 
     <script>
@@ -57,6 +58,10 @@
                     case "pageNicePlay":
                         console.log("  call: funcPageNicePlay();");
                         funcPageNicePlay();
+                        break;
+                    case "pageStage":
+                        console.log("  call: funcPageStage();");
+                        funcPageStage();
                         break;
                     case "pageTask":
                         console.log("  call: funcPageTask();");
@@ -131,6 +136,9 @@
                 <ons-list-item id="gotoMission" modifier="chevron"
                  onclick="SPnavigator.pushPage('Task.html', {animation: 'slide'});">
                     ミッション・クエスト</ons-list-item>
+                <ons-list-item id="gotoMission" modifier="chevron"
+                 onclick="SPnavigator.pushPage('Stage.html', {animation: 'slide'});">
+                    ステージ(作成中)</ons-list-item>
                 <ons-list-item id="gotoAck" modifier="chevron"
                  onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
                     謝辞・問い合わせ</ons-list-item>
@@ -439,17 +447,17 @@
         </ons-page>
     </ons-template>
 
-    <ons-template id="Map.html">
-        <ons-page id="pageMap">
+    <ons-template id="Stage.html">
+        <ons-page id="pageStage">
             <ons-toolbar>
                 <div class="left">
                     <ons-back-button class="backtoMain"></ons-back-button></div>
                 <div class="center">
-                    マップ</div>
+                    ステージ(作成中)</div>
                 <div class="right">
                     <ons-toolbar-button>？</ons-toolbar-button></div>
             </ons-toolbar>
-            <ons-list id="listMap">
+            <ons-list id="listStage">
             </ons-list>
         </ons-page>
     </ons-template>
