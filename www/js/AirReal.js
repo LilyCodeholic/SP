@@ -283,7 +283,7 @@ const funcPageAirReal = () =>
                 "dodge":"A",
                 "dash":"A",
                 "fdType":"長距離スタンダード",
-                "fdCharge":"C",
+                "fdCharge":"B",
                 "drift":"D",
                 "feature":["(ジャンプ力が高い)", "(回避時のブースト消費が少ない)"]
             },
@@ -334,7 +334,7 @@ const funcPageAirReal = () =>
                 "fdType":"短距離高速",
                 "fdCharge":"B+",
                 "drift":"D",
-                "feature":"-"
+                "feature":"(回避行動の際に自身の機体を一時的に透明にする)"
             },
         ],
         Leg:
