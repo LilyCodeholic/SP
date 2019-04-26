@@ -224,7 +224,7 @@ const funcPageTitle = () =>
             {
                 "title":"？？？",
                 "flag":"全国対戦？？？時間プレイ"
-            }
+            },
         ],
         Battle:
         [
@@ -455,7 +455,7 @@ const funcPageTitle = () =>
             {
                 "title":"？？？",
                 "flag":"サポートで累計？？？分対戦した"
-            }
+            },
         ],
         AsOne:
         [
@@ -846,7 +846,7 @@ const funcPageTitle = () =>
             {
                 "title":"？？？",
                 "flag":"カズマと全国対戦？？？連続勝利"
-            }
+            },
         ],
         Special:
         [
@@ -909,7 +909,7 @@ const funcPageTitle = () =>
             {
                 "title":"あっちーぜカグラ",
                 "flag":"公式プレイヤー(花倉洸幸)とマッチングした試合で1回勝利する"
-            }
+            },
         ]
     };
 

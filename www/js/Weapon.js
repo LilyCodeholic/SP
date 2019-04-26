@@ -55,7 +55,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"L",
@@ -71,7 +71,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"炎上",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"(2600CP)"
             },
             {
                 "side":"L",
@@ -135,7 +135,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"-",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"R",
@@ -151,7 +151,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"-",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"R",
@@ -215,7 +215,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"スコープ、ダウン特性",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"(2600CP)"
             },
             {
                 "side":"LR",
@@ -248,7 +248,7 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"",
                 "howToGet":"4400CP"
-            }
+            },
         ],
         Vanguard:
         [
@@ -299,7 +299,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"L",
@@ -315,7 +315,7 @@ const funcPageWeapon = () =>
                 "target":"自分",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性、炎上",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"L",
@@ -331,7 +331,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"(2600CP)"
             },
             {
                 "side":"L",
@@ -395,7 +395,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"R",
@@ -411,7 +411,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"R",
@@ -459,7 +459,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"(2600CP)"
             },
             {
                 "side":"LR",
@@ -476,7 +476,7 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
                 "howToGet":"4400CP"
-            }
+            },
         ],
         Support:
         [
@@ -543,7 +543,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"ジャミング",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"L",
@@ -559,7 +559,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"麻痺",
-                "howToGet":"ドロップのみ(2600CP)"
+                "howToGet":"(2600CP)"
             },
             {
                 "side":"L",
@@ -641,7 +641,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"ドロップのみ(？CP)"
+                "howToGet":"(？CP)"
             },
             {
                 "side":"R",
@@ -673,7 +673,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"ドロップのみ(1400CP)"
+                "howToGet":"(1400CP)"
             },
             {
                 "side":"R",
@@ -723,7 +723,7 @@ const funcPageWeapon = () =>
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
                 "howToGet":"2600CP"
-            }
+            },
         ]
     };
 

@@ -68,7 +68,7 @@ const funcPageAsOne = () =>
                     "skill":"？？？",
                     "flag":"クエスト「ヒカリとスキルアップ？？？」をクリア",
                     "level":"？？？"
-                }
+                },
             ],
             Reika:
             [
@@ -131,7 +131,7 @@ const funcPageAsOne = () =>
                     "skill":"？？？",
                     "flag":"クエスト「レイカとスキルアップ？？？」をクリア",
                     "level":"？？？"
-                }
+                },
             ],
             Shirley:
             [
@@ -194,7 +194,7 @@ const funcPageAsOne = () =>
                     "skill":"？？？",
                     "flag":"クエスト「シャーリーとスキルアップ？？？」をクリア",
                     "level":"？？？"
-                }
+                },
             ],
             Isadora:
             [
@@ -257,7 +257,7 @@ const funcPageAsOne = () =>
                     "skill":"？？？",
                     "flag":"クエスト「イサドラとスキルアップ？？？」をクリア",
                     "level":"？？？"
-                }
+                },
             ],
             Nagi:
             [
@@ -320,7 +320,7 @@ const funcPageAsOne = () =>
                     "skill":"？？？",
                     "flag":"クエスト「ナギとスキルアップ？？？」をクリア",
                     "level":"？？？"
-                }
+                },
             ],
             Kazuma:
             [
@@ -383,7 +383,7 @@ const funcPageAsOne = () =>
                     "skill":"？？？",
                     "flag":"クエスト「カズマとスキルアップ？？？」をクリア",
                     "level":"？？？"
-                }
+                },
             ]
         },
         Story:
@@ -391,12 +391,12 @@ const funcPageAsOne = () =>
             Hikari:
             [
                 {
-                    "title":"aaa",
+                    "title":"こんな実装を予定しています",
                     "dialog":
                     [
-                        ["L", "1「」"],
-                        ["R", "2「」"],
-                        ["L", "1「」"]
+                        ["L", "1「この機能は」"],
+                        ["R", "2「開発中です」"],
+                        ["L", "1「実装予定は未定。」"]
                     ]
                 }
             ],
@@ -512,75 +512,75 @@ const funcPageAsOne = () =>
             fragment.appendChild(list_item);
         }
 
-        // // SPDB.AsOne.Story
-        // {
-        //     const list_header = document.createElement("ons-list-header");
-        //     list_header.innerHTML = `アズワンストーリー`;
-        //     fragment.appendChild(list_header);
-        // }
-        // const form = document.createElement("form");
-        // form.setAttribute("name", "story");
+        // SPDB.AsOne.Story
+        {
+            const list_header = document.createElement("ons-list-header");
+            list_header.innerHTML = `アズワンストーリー`;
+            fragment.appendChild(list_header);
+        }
+        const form = document.createElement("form");
+        form.setAttribute("name", "story");
 
-        // for(const items of SPDB.AsOne.Story[tab])
-        // {
-        //     const list_item = document.createElement("ons-list-item");
-        //     list_item.setAttribute("expandable", "");
+        for(const items of SPDB.AsOne.Story[tab])
+        {
+            const list_item = document.createElement("ons-list-item");
+            list_item.setAttribute("expandable", "");
 
-        //     const expandableContent = document.createElement("div");
-        //     expandableContent.setAttribute("class", "expandable-content");
-        //     for(const dialog of items.dialog)
-        //     {
-        //         const numStory = SPDB.AsOne.Story[tab].indexOf(items);
-        //         const numOrder = items.dialog.indexOf(dialog);
-        //         const nameRadio = `${tab}${numStory}`;
-        //         const idRadio = `${tab}${numStory}-${numOrder}`;
-        //         const idList_item = `li${tab}${numStory}-${numOrder}`;
+            const expandableContent = document.createElement("div");
+            expandableContent.setAttribute("class", "expandable-content");
+            for(const dialog of items.dialog)
+            {
+                const numStory = SPDB.AsOne.Story[tab].indexOf(items);
+                const numOrder = items.dialog.indexOf(dialog);
+                const nameRadio = `${tab}${numStory}`;
+                const idRadio = `${tab}${numStory}-${numOrder}`;
+                const idList_item = `li${tab}${numStory}-${numOrder}`;
 
-        //         const label = document.createElement("label");
-        //         label.setAttribute("for", idRadio);
+                const label = document.createElement("label");
+                label.setAttribute("for", idRadio);
 
-        //         const expandableList_item = document.createElement("ons-list-item");
-        //         expandableList_item.setAttribute("tappable", "");
-        //         expandableList_item.setAttribute("id", idList_item);
-        //         if(numOrder != 0)
-        //         {
-        //             expandableList_item.setAttribute("class", "hidden");
-        //         }
+                const expandableList_item = document.createElement("ons-list-item");
+                expandableList_item.setAttribute("tappable", "");
+                expandableList_item.setAttribute("id", idList_item);
+                if(numOrder != 0)
+                {
+                    expandableList_item.setAttribute("class", "hidden");
+                }
 
-        //         const input = document.createElement("input");
-        //         input.setAttribute("type", "radio");
-        //         input.setAttribute("name", nameRadio);
-        //         input.setAttribute("id", idRadio);
-        //         input.setAttribute("value", numOrder);
-        //         input.setAttribute("class", "hidden");
+                const input = document.createElement("input");
+                input.setAttribute("type", "radio");
+                input.setAttribute("name", nameRadio);
+                input.setAttribute("id", idRadio);
+                input.setAttribute("value", numOrder);
+                input.setAttribute("class", "hidden");
 
-        //         expandableList_item.innerHTML = `
-        //             ${dialog[0] === "R" ?
-        //                 `<div class="right">${dialog[1]}</div>`:
-        //                 `${dialog[1]}`}
-        //         `;
-        //         expandableList_item.appendChild(input);
+                expandableList_item.innerHTML = `
+                    ${dialog[0] === "R" ?
+                        `<div class="right">${dialog[1]}</div>`:
+                        `${dialog[1]}`}
+                `;
+                expandableList_item.appendChild(input);
 
-        //         input.onclick = () =>
-        //         {
-        //             const radioNodeList = document.forms.story[nameRadio];
-        //             const value = Number(document.forms.story[nameRadio].value);
-        //             const targetNum = value + 1;
-        //             if(radioNodeList.length > targetNum)
-        //             {
-        //                 const edit = document.getElementById(`li${tab}${numStory}-${targetNum}`);
-        //                 edit.removeAttribute("class");
-        //             }
-        //         };
+                input.onclick = () =>
+                {
+                    const radioNodeList = document.forms.story[nameRadio];
+                    const value = Number(document.forms.story[nameRadio].value);
+                    const targetNum = value + 1;
+                    if(radioNodeList.length > targetNum)
+                    {
+                        const edit = document.getElementById(`li${tab}${numStory}-${targetNum}`);
+                        edit.removeAttribute("class");
+                    }
+                };
 
-        //         label.appendChild(expandableList_item);
-        //         expandableContent.appendChild(label);
-        //     }
-        //     list_item.innerHTML = `${items.title}`;
-        //     list_item.appendChild(expandableContent);
-        //     form.appendChild(list_item);
-        // }
-        // fragment.appendChild(form);
+                label.appendChild(expandableList_item);
+                expandableContent.appendChild(label);
+            }
+            list_item.innerHTML = `${items.title}`;
+            list_item.appendChild(expandableContent);
+            form.appendChild(list_item);
+        }
+        fragment.appendChild(form);
 
         // // SPDB.AsOne.Quotes
         // {

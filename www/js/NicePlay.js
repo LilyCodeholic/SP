@@ -108,7 +108,7 @@ const funcPageNicePlay = () =>
             {
                 "play":"チームでARを合計30キル",
                 "point":150
-            }
+            },
         ],
         Object:
         [
@@ -155,7 +155,7 @@ const funcPageNicePlay = () =>
             {
                 "play":"グランデを破壊",
                 "point":120
-            }
+            },
         ],
         Port:
         [
@@ -258,7 +258,7 @@ const funcPageNicePlay = () =>
             {
                 "play":"？？？",
                 "point":0
-            }
+            },
         ],
         Core:
         [
@@ -301,7 +301,7 @@ const funcPageNicePlay = () =>
             {
                 "play":"ラストアタックに成功",
                 "point":100
-            }
+            },
         ],
         Other:
         [
@@ -360,7 +360,7 @@ const funcPageNicePlay = () =>
             {
                 "play":"勝利チームでスコア4位",
                 "point":30
-            }
+            },
         ]
     };
 

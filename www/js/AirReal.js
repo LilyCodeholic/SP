@@ -81,7 +81,7 @@ const funcPageAirReal = () =>
                 "range":"A",
                 "weight":1700,
                 "feature":"ロックオン追従性能UP>"
-            }
+            },
         ],
         Arm:
         [
@@ -139,7 +139,7 @@ const funcPageAirReal = () =>
                 "durability":160,
                 "weight":1700,
                 "feature":["格闘武器リロード速度UP>>", "片手武器 左 リロード速度UP>>"]
-            }
+            },
         ],
         Body:
         [
@@ -223,7 +223,7 @@ const funcPageAirReal = () =>
                 "repairLatency":"A+",
                 "weight":1700,
                 "feature":"状態異常耐性>>>"
-            }
+            },
         ],
         Wing:
         [
@@ -335,7 +335,7 @@ const funcPageAirReal = () =>
                 "fdCharge":"B+",
                 "drift":"D",
                 "feature":"-"
-            }
+            },
         ],
         Leg:
         [
@@ -402,7 +402,7 @@ const funcPageAirReal = () =>
                 "occupation":"B",
                 "weight":1700,
                 "feature":"-"
-            }
+            },
         ]
     };
 

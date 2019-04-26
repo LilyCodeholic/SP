@@ -2,7 +2,8 @@ const funcPageStage = () =>
 {
     SPDB.Stage =
     {
-        Status:`作成中`,
+        Status:`
+            作成中`,
         Map:
         [
             {
@@ -24,7 +25,7 @@ const funcPageStage = () =>
             {
                 "name":"ゲンタン膚化空洞 氷原区域",
                 "filename":"-"
-            }
+            },
         ]
     };
 

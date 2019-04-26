@@ -94,7 +94,7 @@ const funcPageCustomize = () =>
             {
                 "color":"ヴァイオレット",
                 "RGB": "#5a4498"
-            }
+            },
         ],
         PartsColor:
         [
@@ -169,7 +169,7 @@ const funcPageCustomize = () =>
             {
                 "color":"ブラック",
                 "RGB": "#000000"
-            }
+            },
         ]
     };
 
