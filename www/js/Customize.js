@@ -21,6 +21,10 @@ const funcPageCustomize = () =>
                 "who": "共通"
             },
             {
+                "pose":"余裕 旗なし",
+                "who":"共通？"
+            },
+            {
                 "pose":"ダブルピース！",
                 "who": "ヒカリ専用"
             },

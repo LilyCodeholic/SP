@@ -55,7 +55,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"(1400CP)"
+                "howToGet":"750CP"
             },
             {
                 "side":"L",
@@ -71,7 +71,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"炎上",
-                "howToGet":"(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -87,9 +87,25 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"怯み特性",
-                "howToGet":"4400CP"
+                "howToGet":"2600CP"
             },
             {
+                "side":"L",
+                "name":"ターレットMI",
+                "vsAR":"B",
+                "vsMAG":"A+",
+                "reload":"D",
+                "usability":"A",
+                "weaponType":"設置/実弾",
+                "ammo":1,
+                "attackType":"投擲",
+                "triggerType":"リリース",
+                "target":"敵",
+                "reloadTiming":"弾切れ",
+                "feature":"-",
+                "howToGet":"ドロップのみ"
+            },
+{
                 "side":"R",
                 "name":"ミトライユ",
                 "vsAR":"B",
@@ -123,22 +139,6 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
-                "name":"グレイン-AS",
-                "vsAR":"B",
-                "vsMAG":"B",
-                "reload":"B+",
-                "usability":"A",
-                "weaponType":"ビーム",
-                "ammo":10,
-                "attackType":"中距離射撃",
-                "triggerType":"ホールド",
-                "target":"敵",
-                "reloadTiming":"常時",
-                "feature":"-",
-                "howToGet":"(1400CP)"
-            },
-            {
-                "side":"R",
                 "name":"ミトラーム",
                 "vsAR":"C",
                 "vsMAG":"A",
@@ -151,7 +151,23 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"-",
-                "howToGet":"(1400CP)"
+                "howToGet":"750CP"
+            },
+            {
+                "side":"R",
+                "name":"グレイン-AS",
+                "vsAR":"B",
+                "vsMAG":"B",
+                "reload":"B+",
+                "usability":"A",
+                "weaponType":"ビーム",
+                "ammo":10,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"-",
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -215,7 +231,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"スコープ、ダウン特性",
-                "howToGet":"(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"LR",
@@ -231,7 +247,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"2600CP"
+                "howToGet":"1400CP"
             },
             {
                 "side":"LR",
@@ -247,7 +263,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"4400CP"
+                "howToGet":"2600CP"
             },
         ],
         Vanguard:
@@ -299,7 +315,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"(1400CP)"
+                "howToGet":"750CP"
             },
             {
                 "side":"L",
@@ -315,7 +331,7 @@ const funcPageWeapon = () =>
                 "target":"自分",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性、炎上",
-                "howToGet":"(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -331,7 +347,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"怯み特性",
-                "howToGet":"(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -383,6 +399,22 @@ const funcPageWeapon = () =>
             },
             {
                 "side":"R",
+                "name":"烈火弾 煉獄",
+                "vsAR":"B+",
+                "vsMAG":"C",
+                "reload":"B",
+                "usability":"B",
+                "weaponType":"ビーム/妨害",
+                "ammo":4,
+                "attackType":"中距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"炎上",
+                "howToGet":"750CP"
+            },
+            {
+                "side":"R",
                 "name":"ミトライユ・コルト",
                 "vsAR":"B",
                 "vsMAG":"C",
@@ -395,7 +427,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -411,24 +443,24 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
-                "name":"烈火弾 煉獄",
-                "vsAR":"B+",
-                "vsMAG":"C",
-                "reload":"B",
-                "usability":"B",
-                "weaponType":"ビーム/妨害",
-                "ammo":4,
-                "attackType":"中距離射撃",
-                "triggerType":"ホールド",
-                "target":"敵",
-                "reloadTiming":"常時",
-                "feature":"炎上",
-                "howToGet":"1400CP"
-            },
+                "name":"火炎砲 散華",
+                "vsAR":"？",
+                "vsMAG":"？",
+                "reload":"？",
+                "usability":"？",
+                "weaponType":"ビーム/妨害？",
+                "ammo":60,
+                "attackType":"中距離射撃？",
+                "triggerType":"ホールド？",
+                "target":"敵？",
+                "reloadTiming":"常時？",
+                "feature":"炎上？",
+                "howToGet":"ドロップのみ"
+            },            
             {
                 "side":"LR",
                 "name":"ブレードジップ",
@@ -459,7 +491,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"LR",
@@ -543,7 +575,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"ジャミング",
-                "howToGet":"(1400CP)"
+                "howToGet":"750CP"
             },
             {
                 "side":"L",
@@ -559,7 +591,7 @@ const funcPageWeapon = () =>
                 "target":"対AR",
                 "reloadTiming":"弾切れ",
                 "feature":"麻痺",
-                "howToGet":"(2600CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"L",
@@ -576,7 +608,7 @@ const funcPageWeapon = () =>
                 "target":"味方",
                 "reloadTiming":"常時",
                 "feature":"回復",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             },
             {
                 "side":"L",
@@ -592,7 +624,7 @@ const funcPageWeapon = () =>
                 "target":"自分",
                 "reloadTiming":"弾切れ",
                 "feature":"",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             },
             {
                 "side":"R",
@@ -657,7 +689,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"常時",
                 "feature":"",
-                "howToGet":"1400CP"
+                "howToGet":"750CP"
             },
             {
                 "side":"R",
@@ -673,7 +705,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"(1400CP)"
+                "howToGet":"1400CP"
             },
             {
                 "side":"R",
@@ -722,7 +754,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"ダウン特性",
-                "howToGet":"2600CP"
+                "howToGet":"1400CP"
             },
         ]
     };
