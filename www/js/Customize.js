@@ -14,39 +14,103 @@ const funcPageCustomize = () =>
         [
             {
                 "pose":"旗あり",
-                "who": "共通"
+                "who":"共通",
+                "flag":"初めから所持"
             },
             {
                 "pose":"旗なし",
-                "who": "共通"
+                "who":"共通",
+                "flag":"初めから所持"
             },
             {
-                "pose":"余裕 旗なし",
-                "who":"共通？"
+                "pose":"？？？",
+                "who":"ヒカリ専用",
+                "flag":"クエスト「アクロバティック飛行」をクリア"
+            },
+            {
+                "pose":"？？？",
+                "who":"ヒカリ専用",
+                "flag":"DePS 7000を達成"
             },
             {
                 "pose":"ダブルピース！",
-                "who": "ヒカリ専用"
+                "who":"ヒカリ専用",
+                "flag":"20000CPで購入"
+            },
+            {
+                "pose":"？？？",
+                "who":"レイカ専用",
+                "flag":"クエスト「アクロバティック飛行」をクリア"
+            },
+            {
+                "pose":"優雅に翻す",
+                "who":"レイカ専用",
+                "flag":"DePS 7000を達成"
             },
             {
                 "pose":"ジャンプ！",
-                "who": "レイカ専用"
+                "who":"レイカ専用",
+                "flag":"20000CPで購入"
+            },
+            {
+                "pose":"私が一番！",
+                "who":"シャーリー専用",
+                "flag":"クエスト「アクロバティック飛行」をクリア"
+            },
+            {
+                "pose":"まだまだね",
+                "who":"シャーリー専用",
+                "flag":"DePS 7000を達成"
             },
             {
                 "pose":"大勝利！",
-                "who": "シャーリー専用"
+                "who":"シャーリー専用",
+                "flag":"20000CPで購入"
+            },
+            {
+                "pose":"余裕 旗なし",
+                "who":"イサドラ専用",
+                "flag":"クエスト「アクロバティック飛行」をクリア"
+            },
+            {
+                "pose":"妖艶",
+                "who":"イサドラ専用",
+                "flag":"DePS 7000を達成"
             },
             {
                 "pose":"最高！",
-                "who": "イサドラ専用"
+                "who":"イサドラ専用",
+                "flag":"20000CPで購入"
+            },
+            {
+                "pose":"？？？",
+                "who":"ナギ専用",
+                "flag":"クエスト「アクロバティック飛行」をクリア"
+            },
+            {
+                "pose":"？？？",
+                "who":"ナギ専用",
+                "flag":"DePS 7000を達成"
             },
             {
                 "pose":"もっと上を！",
-                "who": "ナギ専用"
+                "who":"ナギ専用",
+                "flag":"20000CPで購入"
+            },
+            {
+                "pose":"？？？",
+                "who":"カズマ専用",
+                "flag":"クエスト「アクロバティック飛行」をクリア"
+            },
+            {
+                "pose":"余裕",
+                "who":"カズマ専用",
+                "flag":"DePS 7000を達成"
             },
             {
                 "pose":"テッペン獲るぜ！",
-                "who": "カズマ専用"
+                "who":"カズマ専用",
+                "flag":"20000CPで購入"
             },
         ],
         LineColor:
@@ -191,22 +255,41 @@ const funcPageCustomize = () =>
 
     const appendData = (tab) =>
     {
+
         const fragment = document.createDocumentFragment();
+
+        let headerWho = "";
         for(const items of SPDB.Customize[tab])
         {
+            const list_header = document.createElement("ons-list-header");
+            switch(tab)
+            {
+                case "VictoryPose":
+                    if(headerWho == "" || headerWho != items.who)
+                    {
+                        list_header.innerHTML = `
+                            ${items.who}
+                        `;
+                        fragment.appendChild(list_header);
+                    }
+                    headerWho = items.who;
+                    break;
+                default:
+                    console.error("Customize: error");
+                    break;
+            }
+
             const list_item = document.createElement("ons-list-item");
             switch(tab)
             {
                 case "VictoryPose":
                     list_item.innerHTML = `
-                        <ons-row>
-                            <ons-col>
-                                ${items.pose}
-                            </ons-col>
-                            <ons-col>
-                                ${items.who}
-                            </ons-col>
-                        </ons-row>
+                        <span class="list-item__title">
+                            ${items.pose}
+                        </span>
+                        <span class="list-item__subtitle">
+                            　${items.flag}
+                        </span>
                     `;
                     break;
                 case "LineColor":

@@ -512,8 +512,8 @@ const funcPageAsOne = () =>
             const list_header = document.createElement("ons-list-header");
             list_header.innerHTML = `
                 <ons-row>
-                    <ons-col width="75%">アズワンスキル</ons-col>
-                    <ons-col>チームレベル</ons-col>
+                    <ons-col width="85%">アズワンスキル</ons-col>
+                    <ons-col>チームLv</ons-col>
                 </ons-row>
             `;
             fragment.appendChild(list_header);
@@ -527,7 +527,7 @@ const funcPageAsOne = () =>
             const list_item = document.createElement("ons-list-item");
             list_item.innerHTML = `
                 <ons-row>
-                    <ons-col width="75%">
+                    <ons-col width="85%">
                         ${items.skill}
                         <br>
                         <span style="font-size: small;">
