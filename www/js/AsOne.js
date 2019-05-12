@@ -522,7 +522,7 @@ const funcPageAsOne = () =>
                 },
                 {
                     "category":"",
-                    "title":"",
+                    "title":"？？？",
                     "dialog":
                     [
                         ["", "", "「」"],
@@ -652,6 +652,11 @@ const funcPageAsOne = () =>
 
         for(const items of SPDB.AsOne.Story[tab])
         {
+            if(items.title == "？？？")
+            {
+                continue;
+            }
+
             const list_item = document.createElement("ons-list-item");
             list_item.setAttribute("expandable", "");
 
