@@ -112,63 +112,63 @@ const funcPageTask = () =>
                 "name":"エア・リアル殲滅作戦1",
                 "difficulty":1,
                 "goal":"",
-                "prize":["100CP", "CP"],
+                "prize":["100CP", "20CP"],
                 "flag":"初めから出現",
             },
             {
                 "name":"マグ殲滅作戦1",
                 "difficulty":1,
                 "goal":"敵マグを30体撃破する",
-                "prize":["100CP", "CP"],
+                "prize":["100CP", "20CP"],
                 "flag":"初めから出現"
             },
             {
                 "name":"ポート奪還作戦1",
                 "difficulty":1,
                 "goal":"ポート占拠時間を50秒達成する",
-                "prize":["100CP", "CP"],
+                "prize":["100CP", "20CP"],
                 "flag":"初めから出現"
             },
             {
                 "name":"Sマグ討伐作戦",
                 "difficulty":2,
                 "goal":"敵Sマグに2000ダメージ与える",
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":"初めから出現"
             },
             {
                 "name":"アサルトの実戦1",
                 "difficulty":2,
                 "goal":"アサルトで5000ダメージ与える",
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":"初めから出現"
             },
             {
                 "name":"ヴァンガードの実戦1",
                 "difficulty":2,
                 "goal":"ヴァンガードで5000ダメージ与える",
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":"初めから出現"
             },
             {
                 "name":"サポートの実戦1",
                 "difficulty":2,
                 "goal":"味方ARの耐久値を1500回復する",
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":"初めから出現"
             },
             {
                 "name":"射撃武器の訓練1",
                 "difficulty":3,
                 "goal":"射撃武器で30000ダメージ与える",
-                "prize":["300CP", "CP"],
+                "prize":["300CP", "60CP"],
                 "flag":"初めから出現"
             },
             {
                 "name":"格闘武器の訓練1",
                 "difficulty":3,
                 "goal":"格闘武器で30000ダメージ与える",
-                "prize":["300CP", "CP"],
+                "prize":["300CP", "60CP"],
                 "flag":"初めから出現"
             },
             {
@@ -183,34 +183,34 @@ const funcPageTask = () =>
                 "difficulty":1,
                 "goal":"",
                 "prize":"アズワンスキル",
-                "flag":""
+                "flag":"DePS 1000を達成"
             },
             {
                 "name":"コミュニケーション【1回限定】",
                 "difficulty":1,
                 "goal":"",
                 "prize":"称号「[アズワン]の物語」",
-                "flag":""
+                "flag":"？？？"
             },
             {
                 "name":"作戦報告【1回限定】",
                 "difficulty":1,
                 "goal":"",
                 "prize":"エンブレム",
-                "flag":""
+                "flag":"？？？"
             },
             {
                 "name":"[アズワン]からの依頼2【1回限定】",
                 "difficulty":2,
                 "goal":"",
                 "prize":"アズワンスキル",
-                "flag":""
+                "flag":"DePS 1500を達成"
             },
             {
                 "name":"エア・グランデ討伐作戦",
                 "difficulty":2,
                 "goal":"",
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":"クエスト「Sマグ討伐作戦」クリア"
             },
             {
@@ -231,7 +231,7 @@ const funcPageTask = () =>
                 "name":"戦術的戦闘訓練1",
                 "difficulty":2,
                 "goal":"ナイスプレイを70回達成する",
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":"初めから出現？"
             },
             {
@@ -245,21 +245,21 @@ const funcPageTask = () =>
                 "name":"アサルトの実戦2",
                 "difficulty":2,
                 "goal":["アサルトで5分対戦する", "ナイスプレイを30回達成する"],
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":""
             },
             {
                 "name":"ヴァンガードの実戦2",
                 "difficulty":2,
                 "goal":["ヴァンガードで5分対戦する", "ナイスプレイを30回達成する"],
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":""
             },
             {
                 "name":"サポートの実戦2",
                 "difficulty":2,
                 "goal":["サポートで5分対戦する", "ナイスプレイを30回達成する"],
-                "prize":["200CP", "CP"],
+                "prize":["200CP", "40CP"],
                 "flag":""
             },
             {
@@ -268,6 +268,34 @@ const funcPageTask = () =>
                 "goal":"",
                 "prize":"アズワンスキル",
                 "flag":"[アズワン]とスキルアップ1をクリアする？"
+            },
+            {
+                "name":"[アズワン]の誕生日1【1回限定】",
+                "difficulty":1,
+                "goal":"全国対戦に2回出撃する",
+                "prize":"CP",
+                "flag":"誕生日キャンペーン期間中のみ開放"
+            },
+            {
+                "name":"[アズワン]の誕生日2【1回限定】",
+                "difficulty":0,
+                "goal":"",
+                "prize":"CP",
+                "flag":"誕生日キャンペーン期間中のみ開放"
+            },
+            {
+                "name":"[アズワン]の誕生日3【1回限定】",
+                "difficulty":2,
+                "goal":"",
+                "prize":"CP",
+                "flag":"誕生日キャンペーン期間中のみ開放"
+            },
+            {
+                "name":"[アズワン]の誕生日4【1回限定】",
+                "difficulty":3,
+                "goal":"",
+                "prize":"300CP",
+                "flag":"誕生日キャンペーン期間中のみ開放"
             },
         ]
     };

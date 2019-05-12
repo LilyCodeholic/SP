@@ -6,6 +6,10 @@
 /* 789 */
 /* 456 */
 /* 123 */
+.area7
+{
+    text-align: left;
+}
 .area8
 {
     text-align: center;
@@ -55,6 +59,12 @@
 .list-item__center
 {
     padding: 6px 6px 6px 0;
+}
+/* ons-list-item */
+.asoneStory .list-item__center
+{
+    padding: 0;
+    font-size: 0.75rem;
 }
 
 /* ons-row */
