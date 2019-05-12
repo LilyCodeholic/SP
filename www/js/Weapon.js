@@ -105,7 +105,7 @@ const funcPageWeapon = () =>
                 "feature":"-",
                 "howToGet":"ドロップのみ"
             },
-{
+            {
                 "side":"R",
                 "name":"ミトライユ",
                 "vsAR":"B",
@@ -448,17 +448,17 @@ const funcPageWeapon = () =>
             {
                 "side":"R",
                 "name":"火炎砲 散華",
-                "vsAR":"？",
-                "vsMAG":"？",
-                "reload":"？",
-                "usability":"？",
-                "weaponType":"ビーム/妨害？",
+                "vsAR":"B+",
+                "vsMAG":"C",
+                "reload":"B+",
+                "usability":"B",
+                "weaponType":"妨害",
                 "ammo":60,
-                "attackType":"中距離射撃？",
-                "triggerType":"ホールド？",
-                "target":"敵？",
-                "reloadTiming":"常時？",
-                "feature":"炎上？",
+                "attackType":"近距離射撃",
+                "triggerType":"ホールド",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"炎上",
                 "howToGet":"ドロップのみ"
             },            
             {
@@ -818,8 +818,8 @@ const funcPageWeapon = () =>
             pList_item.setAttribute("expandable", "");
             pList_item.innerHTML = `
                 <ons-row>
-                    <ons-col width="5%" class="area4">${items.side}</ons-col>
-                    <ons-col width="55%">
+                    <ons-col width="7%" class="area4">${items.side}</ons-col>
+                    <ons-col width="53%">
                         ${items.name}
                         <br>
                         <span style="font-size:small">
@@ -870,8 +870,8 @@ const funcPageWeapon = () =>
             lList_item.setAttribute("expandable", "");
             lList_item.innerHTML = `
                 <ons-row>
-                    <ons-col width="5%" class="area4">${items.side}</ons-col>
-                    <ons-col width="35%">
+                    <ons-col width="7%" class="area4">${items.side}</ons-col>
+                    <ons-col width="33%">
                         ${items.name}
                         <br>
                         <span style="font-size:small">
