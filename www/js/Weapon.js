@@ -627,6 +627,22 @@ const funcPageWeapon = () =>
                 "howToGet":"4400CP"
             },
             {
+                "side":"L",
+                "name":"ラジオパレット",
+                "vsAR":"？",
+                "vsMAG":"？",
+                "reload":"？",
+                "usability":"？",
+                "weaponType":"ビーム",
+                "ammo":4,
+                "attackType":"近距離射撃？",
+                "triggerType":"ホールド？",
+                "target":"敵？",
+                "reloadTiming":"常時？",
+                "feature":"吹き飛ばし？",
+                "howToGet":"ドロップのみ？"
+            },
+            {
                 "side":"R",
                 "name":"ラーゴ",
                 "vsAR":"B",
