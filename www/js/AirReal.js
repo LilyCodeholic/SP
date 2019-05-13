@@ -636,6 +636,13 @@ const funcPageAirReal = () =>
                             <ons-col class="area5">${items.range}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
+                            ${items.armor ?
+                                `<ons-row>
+                                    <ons-col width="25%">アーマー</ons-col>
+                                    <ons-col>${items.armor}</ons-col>
+                                </ons-row>`:
+                                ``
+                            }
                             <ons-row>
                                 <ons-col width="25%">　特性</ons-col>
                                 <ons-col>
@@ -656,6 +663,13 @@ const funcPageAirReal = () =>
                             <ons-col class="area6">${items.weight}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
+                            ${items.armor ?
+                                `<ons-row>
+                                    <ons-col width="25%">アーマー</ons-col>
+                                    <ons-col>${items.armor}</ons-col>
+                                </ons-row>`:
+                                ``
+                            }
                             <ons-row>
                                 <ons-col width="25%">　特性</ons-col>
                                 <ons-col>
@@ -704,6 +718,13 @@ const funcPageAirReal = () =>
                             <ons-col class="area5">${items.drift}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
+                            ${items.armor ?
+                                `<ons-row>
+                                    <ons-col width="25%">アーマー</ons-col>
+                                    <ons-col>${items.armor}</ons-col>
+                                </ons-row>`:
+                                ``
+                            }
                             <ons-row>
                                 <ons-col width="50%">　耐久値</ons-col>
                                 <ons-col>${items.durability}</ons-col>
@@ -741,6 +762,13 @@ const funcPageAirReal = () =>
                             <ons-col class="area5">${items.occupation}</ons-col>
                         </ons-row>
                         <div class="expandable-content">
+                            ${items.armor ?
+                                `<ons-row>
+                                    <ons-col width="25%">アーマー</ons-col>
+                                    <ons-col>${items.armor}</ons-col>
+                                </ons-row>`:
+                                ``
+                            }
                             <ons-row>
                                 <ons-col width="25%">特性</ons-col>
                                 <ons-col>
@@ -777,8 +805,16 @@ const funcPageAirReal = () =>
                                 <ons-col width="50%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
-                                        `${items.feature[0]}<br>${items.feature[1]}`:
-                                        `${items.feature}`
+                                        items.armor ?
+                                            `${items.feature[0]}<br>${items.feature[1]}<br>アーマー +${items.armor}`:
+                                            `${items.feature[0]}<br>${items.feature[1]}`
+                                        :
+                                        items.armor ?
+                                            items.feature !== "-" ?
+                                                `${items.feature}<br>アーマー +${items.armor}`:
+                                                `アーマー +${items.armor}`
+                                            :
+                                            `${items.feature}`
                                     }
                                 </ons-col>
                             </ons-row>
@@ -793,8 +829,16 @@ const funcPageAirReal = () =>
                             <ons-col class="area6">${items.durability}</ons-col>
                             <ons-col width="40%">
                                 ${Array.isArray(items.feature) === true ?
-                                    `　${items.feature[0]}<br>　${items.feature[1]}`:
-                                    `　${items.feature}`
+                                    items.armor ?
+                                        `　${items.feature[0]}<br>　${items.feature[1]}<br>　アーマー +${items.armor}`:
+                                        `　${items.feature[0]}<br>　${items.feature[1]}`
+                                    :
+                                    items.armor ?
+                                        items.feature !== "-" ?
+                                            `　${items.feature}<br>　アーマー +${items.armor}`:
+                                            `　アーマー +${items.armor}`
+                                        :
+                                        `　${items.feature}`
                                 }
                             </ons-col>
                         </ons-row>
@@ -849,8 +893,16 @@ const funcPageAirReal = () =>
                                 <ons-col width="50%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
-                                        `${items.feature[0]}<br>${items.feature[1]}`:
-                                        `${items.feature}`
+                                        items.armor ?
+                                            `${items.feature[0]}<br>${items.feature[1]}<br>アーマー +${items.armor}`:
+                                            `${items.feature[0]}<br>${items.feature[1]}`
+                                        :
+                                        items.armor ?
+                                            items.feature !== "-" ?
+                                                `${items.feature}<br>アーマー +${items.armor}`:
+                                                `アーマー +${items.armor}`
+                                            :
+                                            `${items.feature}`
                                     }
                                 </ons-col>
                             </ons-row>
@@ -866,8 +918,16 @@ const funcPageAirReal = () =>
                             <ons-col class="area5">${items.occupation}</ons-col>
                             <ons-col width="40%">
                                 ${Array.isArray(items.feature) === true ?
-                                    `　${items.feature[0]}<br>　${items.feature[1]}`:
-                                    `　${items.feature}`
+                                    items.armor ?
+                                        `　${items.feature[0]}<br>　${items.feature[1]}<br>　アーマー +${items.armor}`:
+                                        `　${items.feature[0]}<br>　${items.feature[1]}`
+                                    :
+                                    items.armor ?
+                                        items.feature !== "-" ?
+                                            `　${items.feature}<br>　アーマー +${items.armor}`:
+                                            `　アーマー +${items.armor}`
+                                        :
+                                        `　${items.feature}`
                                 }
                             </ons-col>
                         </div>
