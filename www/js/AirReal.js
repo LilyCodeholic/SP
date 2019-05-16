@@ -638,8 +638,8 @@ const funcPageAirReal = () =>
                         <div class="expandable-content">
                             ${items.armor ?
                                 `<ons-row>
-                                    <ons-col width="25%">アーマー</ons-col>
-                                    <ons-col>${items.armor}</ons-col>
+                                    <ons-col width="25%">　アーマー</ons-col>
+                                    <ons-col>+ ${items.armor}</ons-col>
                                 </ons-row>`:
                                 ``
                             }
@@ -665,8 +665,8 @@ const funcPageAirReal = () =>
                         <div class="expandable-content">
                             ${items.armor ?
                                 `<ons-row>
-                                    <ons-col width="25%">アーマー</ons-col>
-                                    <ons-col>${items.armor}</ons-col>
+                                    <ons-col width="25%">　アーマー</ons-col>
+                                    <ons-col>+ ${items.armor}</ons-col>
                                 </ons-row>`:
                                 ``
                             }
@@ -720,8 +720,8 @@ const funcPageAirReal = () =>
                         <div class="expandable-content">
                             ${items.armor ?
                                 `<ons-row>
-                                    <ons-col width="25%">アーマー</ons-col>
-                                    <ons-col>${items.armor}</ons-col>
+                                    <ons-col width="50%">　アーマー</ons-col>
+                                    <ons-col>+ ${items.armor}</ons-col>
                                 </ons-row>`:
                                 ``
                             }
@@ -764,13 +764,13 @@ const funcPageAirReal = () =>
                         <div class="expandable-content">
                             ${items.armor ?
                                 `<ons-row>
-                                    <ons-col width="25%">アーマー</ons-col>
-                                    <ons-col>${items.armor}</ons-col>
+                                    <ons-col width="25%">　アーマー</ons-col>
+                                    <ons-col>+ ${items.armor}</ons-col>
                                 </ons-row>`:
                                 ``
                             }
                             <ons-row>
-                                <ons-col width="25%">特性</ons-col>
+                                <ons-col width="25%">　特性</ons-col>
                                 <ons-col>
                                     ${Array.isArray(items.feature) === true ?
                                         `${items.feature[0]}<br>${items.feature[1]}`:

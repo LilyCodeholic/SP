@@ -629,18 +629,18 @@ const funcPageWeapon = () =>
             {
                 "side":"L",
                 "name":"ラジオパレット",
-                "vsAR":"？",
-                "vsMAG":"？",
-                "reload":"？",
-                "usability":"？",
+                "vsAR":"C",
+                "vsMAG":"C",
+                "reload":"B",
+                "usability":"B",
                 "weaponType":"ビーム",
                 "ammo":4,
-                "attackType":"近距離射撃？",
-                "triggerType":"ホールド？",
-                "target":"敵？",
-                "reloadTiming":"常時？",
-                "feature":"吹き飛ばし？",
-                "howToGet":"ドロップのみ？"
+                "attackType":"近距離射撃",
+                "triggerType":"1トリガー",
+                "target":"敵",
+                "reloadTiming":"常時",
+                "feature":"(吹き飛ばし)",
+                "howToGet":"ドロップのみ"
             },
             {
                 "side":"R",
