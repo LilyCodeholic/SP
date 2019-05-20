@@ -82,6 +82,14 @@
 {
     align-self: center;
 }
+.bold
+{
+    font-weight: bold;
+}
+.large
+{
+    font-size: large;
+}
 
 /* expandable(オーバーライド) */
 .list-item__expand-chevron

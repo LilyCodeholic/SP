@@ -1379,7 +1379,7 @@ const funcPageAsOne = () =>
                 },
                 {
                     "category":"DePSログ",
-                    "title":"",
+                    "title":"？？？",
                     "flag":"DePS？？？を達成",
                     "dialog":
                     [
@@ -1388,7 +1388,7 @@ const funcPageAsOne = () =>
                 },
                 {
                     "category":"DePSログ",
-                    "title":"",
+                    "title":"？？？",
                     "flag":"DePS？？？を達成",
                     "dialog":
                     [
@@ -1537,7 +1537,7 @@ const funcPageAsOne = () =>
                     [
                         ["C", "", "ジ・オーダー本部"],
                         ["R", "カズマ", "お、シャーリー発見！ こんなところで何してんだぁ？"],
-                        ["L", "シャーリー", "んぎゃー、カズマ！"],
+                        ["LBigLarge", "シャーリー", "んぎゃー、カズマ！"],
                         ["L", "シャーリー", "いきなり髪引っ掻き回さないでよ！ 髪型崩れるでしょ！"],
                         ["R", "カズマ", "そう怒るなって。ただの愛情表現だろ？"],
                         ["L", "シャーリー", "なにが愛情表現よ！ アンタからの愛情なんてまっぴらごめんだわ！"],
@@ -1551,7 +1551,7 @@ const funcPageAsOne = () =>
                         ["R", "カズマ", "俺より年下のくせに、よく言うぜ。"],
                         ["L", "シャーリー", "ふんだ。心はカズマなんかより大人なんだから。"],
                         ["R", "カズマ", "でも見た目は子供だろ～。"],
-                        ["L", "シャーリー", "んぎゃー！"],
+                        ["LBigLarge", "シャーリー", "んぎゃー！"],
                         ["L", "シャーリー", "だから、髪引っ掻くなって何回言えば分かるのよ、このバカカズマ～！"],
                     ]
                 },
@@ -2479,7 +2479,7 @@ const funcPageAsOne = () =>
             fragment.appendChild(list_header);
         }
         const form = document.createElement("form");
-        form.setAttribute("name", "story");
+        form.setAttribute("name", `story${tab}`);
 
         for(const items of SPDB.AsOne.Story[tab])
         {
@@ -2523,39 +2523,49 @@ const funcPageAsOne = () =>
                 input.setAttribute("value", numOrder);
                 input.setAttribute("class", "hidden");
 
-                // expandableList_item.innerHTML = `
-                //     <ons-row>
-                //         ${dialog[0] === "R" ?
-                //             `<ons-col class="area9">${dialog[1]}<br>「${dialog[2]}」</ons-col>`:
-                //             dialog[0] === "C" ?
-                //                 `<ons-col class="area8">${dialog[2]}</ons-col>`:
-                //                 `<ons-col class="area7">${dialog[1]}<br>「${dialog[2]}」</ons-col>`
-                //         }
-                //     </ons-row>
-                // `;
-                const a = () =>
+                const alignDialog = () =>
                 {
-                    switch(dialog[0])
+                    const area =
+                        dialog[0][0] === "C" ? "area8":
+                        dialog[0][0] === "R" ? "area9":
+                        dialog[0][0] === "L" ? "area7":"";
+
+                    if(area === "")
                     {
-                        case "R":
-                            return `<ons-col class="area9">${dialog[1]}<br>「${dialog[2]}」</ons-col>`;
-                        case "C":
-                            return `<ons-col class="area8">${dialog[2]}</ons-col>`;
-                        case "L":
-                            return `<ons-col class="area7">${dialog[1]}<br>「${dialog[2]}」</ons-col>`;
+                        return "<ons-col>このアズワンストーリーはまだ入力されていません。</ons-col>";
+                    }
+                    else
+                    {
+                        const decolate = [];
+                        if(dialog[0].includes("Bold"))
+                        {
+                            decolate.push("bold");
+                        }
+                        if(dialog[0].includes("Large"))
+                        {
+                            decolate.push("large");
+                        }
+
+                        const dialogHtml = decolate === "" ?
+                            area === "area8" ?
+                                `${dialog[2]}`:
+                                `${dialog[1]}<br>「${dialog[2]}」`:
+                            `${dialog[1]}<br><span class="${decolate.join(" ")}">「${dialog[2]}」</span>`;
+                        return `<ons-col class="${area}">${dialogHtml}</ons-col>`;
                     }
                 };
                 expandableList_item.innerHTML = `
                     <ons-row>
-                        ${a()}
+                        ${alignDialog()}
                     </ons-row>
                 `;
+
                 expandableList_item.appendChild(input);
 
                 input.onclick = () =>
                 {
-                    const radioNodeList = document.forms.story[nameRadio];
-                    const value = Number(document.forms.story[nameRadio].value);
+                    const radioNodeList = document.forms[`story${tab}`][nameRadio];
+                    const value = Number(document.forms[`story${tab}`][nameRadio].value);
                     const targetNum = value + 1;
                     if(radioNodeList.length > targetNum)
                     {
