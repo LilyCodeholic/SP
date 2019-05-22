@@ -210,7 +210,7 @@ const funcPageStage = () =>
 
             const expandableContent = document.createElement("div");
             expandableContent.setAttribute("class", "expandable-content");
-            expandableContent.innerHTML = items.svg;
+//            expandableContent.innerHTML = items.svg;
 
             list_item.appendChild(expandableContent);
             fragment.appendChild(list_item);

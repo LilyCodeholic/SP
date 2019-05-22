@@ -103,7 +103,7 @@ const funcPageWeapon = () =>
                 "target":"敵",
                 "reloadTiming":"弾切れ",
                 "feature":"-",
-                "howToGet":"ドロップのみ"
+                "howToGet":"4400CP"
             },
             {
                 "side":"R",
@@ -200,6 +200,22 @@ const funcPageWeapon = () =>
                 "reloadTiming":"常時",
                 "feature":"-",
                 "howToGet":"現在入手不可(2/1-15までに全国対戦でチーム内5位以上を15回獲得する)"
+            },
+            {
+                "side":"R",
+                "name":"単装導弾 三皇",
+                "vsAR":"？",
+                "vsMAG":"？",
+                "reload":"？",
+                "usability":"？",
+                "weaponType":"実弾",
+                "ammo":12,
+                "attackType":"中距離射撃？",
+                "triggerType":"ホールド？",
+                "target":"敵？",
+                "reloadTiming":"弾切れ？",
+                "feature":"-",
+                "howToGet":"ドロップのみ"
             },
             {
                 "side":"LR",
