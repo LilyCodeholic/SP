@@ -7,10 +7,13 @@
     <script src="components/loader.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140343697-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-140343697-1');
+        if(document.location.origin.indexOf("monaca.mobi") == -1)
+        {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-140343697-1');
+        }
     </script>
 
     <link rel="manifest" href="manifest.json">
@@ -24,6 +27,7 @@
     <script src="./js/Ack.js"></script>
     <script src="./js/AirReal.js"></script>
     <script src="./js/AsOne.js"></script>
+    <script src="./js/AsOneStory.js"></script>
     <script src="./js/Customize.js"></script>
     <script src="./js/NicePlay.js"></script>
     <script src="./js/Stage.js"></script>
@@ -57,6 +61,10 @@
                     case "pageAsOne":
                         console.log("  call: funcPageAsOne();");
                         funcPageAsOne();
+                        break;
+                    case "pageAsOneStory":
+                        console.log("  call: funcPageAsOneStory();");
+                        funcPageAsOneStory();
                         break;
                     case "pageCustomize":
                         console.log("  call: funcPageCustomize();");
@@ -120,7 +128,7 @@
             </ons-toolbar>
 
             <ons-list class="listMain">
-                <ons-list-header>メインメニュー</ons-list-header>
+                <ons-list-header>カスタマイズ</ons-list-header>
 
                 <ons-list-item id="gotoWeapon" modifier="chevron"
                  onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
@@ -130,19 +138,25 @@
                     エア・リアル</ons-list-item>
                 <ons-list-item id="gotoAsOne" modifier="chevron"
                  onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'});">
-                    アズワン</ons-list-item>
-                <ons-list-item id="gotoNicePlay" modifier="chevron"
-                 onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
-                    ナイスプレイ一覧</ons-list-item>
+                    アズワンスキル</ons-list-item>
                 <ons-list-item id="gotoCustomize" modifier="chevron"
                  onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'});">
-                    カスタマイズ</ons-list-item>
+                    勝利ポーズ・カラー</ons-list-item>
+
+                <ons-list-header>データ</ons-list-header>
+
                 <ons-list-item id="gotoTitle" modifier="chevron"
                  onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
                     称号</ons-list-item>
                 <ons-list-item id="gotoMission" modifier="chevron"
                  onclick="SPnavigator.pushPage('Task.html', {animation: 'slide'});">
                     ミッション・クエスト</ons-list-item>
+                <ons-list-item id="gotoNicePlay" modifier="chevron"
+                 onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
+                    ナイスプレイ一覧</ons-list-item>
+                <ons-list-item id="gotoAsOneStory" modifier="chevron"
+                 onclick="SPnavigator.pushPage('AsOneStory.html', {animation: 'slide'});">
+                    アズワンストーリー</ons-list-item>
                 <ons-list-item id="gotoMission" modifier="chevron"
                  onclick="SPnavigator.pushPage('Stage.html', {animation: 'slide'});">
                     ステージ(作成中)</ons-list-item>
@@ -335,6 +349,63 @@
     <ons-template id="AsOne_Kazuma.html">
         <ons-page id="pageAsOne_Kazuma">
             <ons-list id="listAsOne_Kazuma">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="AsOneStory.html">
+        <ons-page id="pageAsOneStory">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button class="backtoMain"></ons-back-button></div>
+                <div class="center">
+                    ヒカリ・ソラ</div>
+                <div class="right">
+                    <ons-toolbar-button>？</ons-toolbar-button></div>
+            </ons-toolbar>
+            <ons-tabbar animation="none" id="tabAsOneStory">
+                <ons-tab label="ヒカリ" page="AsOneStory_Hikari.html" active></ons-tab>
+                <ons-tab label="レイカ" page="AsOneStory_Reika.html"></ons-tab>
+                <ons-tab label="シャーリー" page="AsOneStory_Shirley.html"></ons-tab>
+                <ons-tab label="イサドラ" page="AsOneStory_Isadora.html"></ons-tab>
+                <ons-tab label="ナギ" page="AsOneStory_Nagi.html"></ons-tab>
+                <ons-tab label="カズマ" page="AsOneStory_Kazuma.html"></ons-tab>
+            </ons-tabbar>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOneStory_Hikari.html">
+        <ons-page id="pageAsOneStory_Hikari">
+            <ons-list id="listAsOneStory_Hikari">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOneStory_Reika.html">
+        <ons-page id="pageAsOneStory_Reika">
+            <ons-list id="listAsOneStory_Reika">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOneStory_Shirley.html">
+        <ons-page id="pageAsOneStory_Shirley">
+            <ons-list id="listAsOneStory_Shirley">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOneStory_Isadora.html">
+        <ons-page id="pageAsOneStory_Isadora">
+            <ons-list id="listAsOneStory_Isadora">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOneStory_Nagi.html">
+        <ons-page id="pageAsOneStory_Nagi">
+            <ons-list id="listAsOneStory_Nagi">
+            </ons-list>
+        </ons-page>
+    </ons-template>
+    <ons-template id="AsOneStory_Kazuma.html">
+        <ons-page id="pageAsOneStory_Kazuma">
+            <ons-list id="listAsOneStory_Kazuma">
             </ons-list>
         </ons-page>
     </ons-template>
