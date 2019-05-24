@@ -87,7 +87,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"常時",
             "feature":"怯み特性",
-            "howToGet":"2600CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"L",
@@ -204,16 +204,16 @@ SPDB.Weapon =
         {
             "side":"R",
             "name":"単装導弾 三皇",
-            "vsAR":"？",
-            "vsMAG":"？",
-            "reload":"？",
-            "usability":"？",
+            "vsAR":"A",
+            "vsMAG":"A",
+            "reload":"B+",
+            "usability":"A",
             "weaponType":"実弾",
             "ammo":12,
-            "attackType":"中距離射撃？",
-            "triggerType":"ホールド？",
-            "target":"敵？",
-            "reloadTiming":"弾切れ？",
+            "attackType":"中距離射撃",
+            "triggerType":"ホールド",
+            "target":"敵",
+            "reloadTiming":"弾切れ",
             "feature":"-",
             "howToGet":"ドロップのみ"
         },
@@ -279,7 +279,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"",
-            "howToGet":"2600CP"
+            "howToGet":"1400CP"
         },
     ],
     Vanguard:
@@ -379,7 +379,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"常時",
             "feature":"",
-            "howToGet":"4400CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"R",
@@ -475,7 +475,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"常時",
             "feature":"炎上",
-            "howToGet":"ドロップのみ"
+            "howToGet":"4400CP"
         },            
         {
             "side":"LR",
@@ -523,7 +523,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"怯み特性",
-            "howToGet":"4400CP"
+            "howToGet":"1400CP"
         },
     ],
     Support:
@@ -624,7 +624,7 @@ SPDB.Weapon =
             "target":"味方",
             "reloadTiming":"常時",
             "feature":"回復",
-            "howToGet":"4400CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"L",
@@ -786,7 +786,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"ダウン特性",
-            "howToGet":"1400CP"
+            "howToGet":"750CP"
         },
     ]
 };
