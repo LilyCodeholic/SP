@@ -2380,7 +2380,7 @@ SPDB.AsOneStory =
         [
         ],
     }
-    };
+};
 
 const fullName =
 {
