@@ -150,7 +150,7 @@ SPDB.AirReal =
         },
         {
             "name":"ラピスヘッジ",
-            "durability":210,
+            "durability":250,
             "weight":2500,
             "feature":["射撃武器弾数UP>", "射撃攻撃力DOWN<"]
         },
@@ -361,14 +361,14 @@ SPDB.AirReal =
         },
         {
             "name":"ラピスヘッジ",
-            "durability":350,
+            "durability":310,
             "weight":2500,
-            "dashType":"",
-            "dodge":"",
-            "dash":"",
-            "fdType":"",
-            "fdCharge":"",
-            "drift":"",
+            "dashType":"加速ダッシュ",
+            "dodge":"E",
+            "dash":"D",
+            "fdType":"短距離加速",
+            "fdCharge":"B+",
+            "drift":"B",
             "feature":"-"
         },
     ],
