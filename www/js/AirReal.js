@@ -82,6 +82,14 @@ SPDB.AirReal =
             "weight":1700,
             "feature":"ロックオン追従性能UP>"
         },
+        {
+            "name":"ラピスヘッジ",
+            "durability":250,
+            "length":"B+",
+            "range":"D",
+            "weight":2500,
+            "feature":"ロックAR優先"
+        },
     ],
     Arm:
     [
@@ -140,6 +148,12 @@ SPDB.AirReal =
             "weight":1700,
             "feature":["格闘武器リロード速度UP>>", "片手武器 左 リロード速度UP>>"]
         },
+        {
+            "name":"ラピスヘッジ",
+            "durability":210,
+            "weight":2500,
+            "feature":["射撃武器弾数UP>", "射撃攻撃力DOWN<"]
+        },
     ],
     Body:
     [
@@ -159,7 +173,7 @@ SPDB.AirReal =
             "repairSpeed":"A",
             "repairLatency":"B+",
             "weight":1800,
-            "feature":"状態異常耐性>>>"
+            "feature":"状態異常耐性>>"
         },
         {
             "name":"スクラッパー",
@@ -223,6 +237,15 @@ SPDB.AirReal =
             "repairLatency":"A+",
             "weight":1700,
             "feature":"状態異常耐性>>>"
+        },
+        {
+            "name":"ラピスヘッジ",
+            "armor":0,
+            "durability":550,
+            "repairSpeed":"A+",
+            "repairLatency":"C",
+            "weight":2500,
+            "feature":"-"
         },
     ],
     Wing:
@@ -336,6 +359,18 @@ SPDB.AirReal =
             "drift":"D",
             "feature":"(回避行動の際に自身の機体を一時的に透明にする)"
         },
+        {
+            "name":"ラピスヘッジ",
+            "durability":350,
+            "weight":2500,
+            "dashType":"",
+            "dodge":"",
+            "dash":"",
+            "fdType":"",
+            "fdCharge":"",
+            "drift":"",
+            "feature":"-"
+        },
     ],
     Leg:
     [
@@ -402,6 +437,13 @@ SPDB.AirReal =
             "occupation":"B",
             "weight":1700,
             "feature":"-"
+        },
+        {
+            "name":"ラピスヘッジ",
+            "durability":220,
+            "occupation":"C",
+            "weight":2500,
+            "feature":"オーバーヒート時間短縮"
         },
     ]
 };

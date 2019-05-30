@@ -55,7 +55,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"ダウン特性",
-            "howToGet":"750CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"L",
@@ -103,7 +103,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"-",
-            "howToGet":"4400CP"
+            "howToGet":"2600CP"
         },
         {
             "side":"R",
@@ -151,7 +151,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"-",
-            "howToGet":"750CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"R",
@@ -183,7 +183,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"常時",
             "feature":"-",
-            "howToGet":"1400CP"
+            "howToGet":"750CP"
         },
         {
             "side":"R",
@@ -247,7 +247,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"スコープ、ダウン特性",
-            "howToGet":"1400CP"
+            "howToGet":"750CP"
         },
         {
             "side":"LR",
@@ -331,7 +331,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"",
-            "howToGet":"750CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"L",
@@ -347,7 +347,7 @@ SPDB.Weapon =
             "target":"自分",
             "reloadTiming":"弾切れ",
             "feature":"ダウン特性、炎上",
-            "howToGet":"1400CP"
+            "howToGet":"750CP"
         },
         {
             "side":"L",
@@ -427,7 +427,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"常時",
             "feature":"炎上",
-            "howToGet":"750CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"R",
@@ -459,7 +459,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"常時",
             "feature":"",
-            "howToGet":"1400CP"
+            "howToGet":"750CP"
         },
         {
             "side":"R",
@@ -575,7 +575,7 @@ SPDB.Weapon =
             "target":"味方",
             "reloadTiming":"弾切れ",
             "feature":"攻撃力上昇",
-            "howToGet":"1400CP"
+            "howToGet":"750CP"
         },
         {
             "side":"L",
@@ -591,7 +591,7 @@ SPDB.Weapon =
             "target":"対AR",
             "reloadTiming":"弾切れ",
             "feature":"ジャミング",
-            "howToGet":"750CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"L",
@@ -640,7 +640,7 @@ SPDB.Weapon =
             "target":"自分",
             "reloadTiming":"弾切れ",
             "feature":"",
-            "howToGet":"4400CP"
+            "howToGet":"1400CP"
         },
         {
             "side":"L",
@@ -656,7 +656,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"常時",
             "feature":"(吹き飛ばし)",
-            "howToGet":"ドロップのみ"
+            "howToGet":"4400CP"
         },
         {
             "side":"R",
@@ -705,7 +705,7 @@ SPDB.Weapon =
             "target":"敵",
             "reloadTiming":"弾切れ",
             "feature":"",
-            "howToGet":"(？CP)"
+            "howToGet":"？"
         },
         {
             "side":"R",
@@ -756,6 +756,22 @@ SPDB.Weapon =
             "howToGet":"現在入手不可(12/12-25までにチーム内5位以上を10回獲得する)"
         },
         {
+            "side":"R",
+            "name":"エステジオンボム",
+            "vsAR":"B",
+            "vsMAG":"D",
+            "reload":"E",
+            "usability":"A",
+            "weaponType":"実弾",
+            "ammo":1,
+            "attackType":"その他",
+            "triggerType":"サブモニター",
+            "target":"敵",
+            "reloadTiming":"弾切れ",
+            "feature":"ダウン特性",
+            "howToGet":"750CP"
+        },
+        {
             "side":"LR",
             "name":"シールドヴァイト",
             "vsAR":"-",
@@ -771,22 +787,6 @@ SPDB.Weapon =
             "reloadTiming":"弾切れ",
             "feature":"シールド",
             "howToGet":"1400CP"
-        },
-        {
-            "side":"LR",
-            "name":"エステジオンボム",
-            "vsAR":"B",
-            "vsMAG":"D",
-            "reload":"E",
-            "usability":"A",
-            "weaponType":"実弾",
-            "ammo":1,
-            "attackType":"その他",
-            "triggerType":"サブモニター",
-            "target":"敵",
-            "reloadTiming":"弾切れ",
-            "feature":"ダウン特性",
-            "howToGet":"750CP"
         },
     ]
 };
