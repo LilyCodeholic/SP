@@ -568,7 +568,7 @@ SPDB.Weapon =
 			"reload":"B",
 			"usability":"B",
 			"weaponType":"補助",
-			"ammo":"2？",
+			"ammo":2,
 			"attackType":"中距離射撃",
 			"triggerType":"1トリガー",
 			"target":"味方",
