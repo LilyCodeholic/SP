@@ -1,108 +1,108 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <script src="components/loader.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+	<script src="components/loader.js"></script>
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="components/loader.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="css/style.css">
 
-    <script>
-        // namespaceを作成
-        const SPDB = {};
-    </script>
-    <script src="./js/Ack.js"></script>
-    <script src="./js/AirReal.js"></script>
-    <script src="./js/AsOne.js"></script>
-    <script src="./js/AsOneStory.js"></script>
-    <script src="./js/Customize.js"></script>
-    <script src="./js/NicePlay.js"></script>
-    <script src="./js/Stage.js"></script>
-    <script src="./js/Task.js"></script>
-    <script src="./js/Title.js"></script>
-    <script src="./js/Weapon.js"></script>
+	<script>
+		// namespaceを作成
+		const SPDB = {};
+	</script>
+	<script src="./js/Ack.js"></script>
+	<script src="./js/AirReal.js"></script>
+	<script src="./js/AsOne.js"></script>
+	<script src="./js/AsOneStory.js"></script>
+	<script src="./js/Customize.js"></script>
+	<script src="./js/NicePlay.js"></script>
+	<script src="./js/Stage.js"></script>
+	<script src="./js/Task.js"></script>
+	<script src="./js/Title.js"></script>
+	<script src="./js/Weapon.js"></script>
 
-    <script>
-        "use strict";
-        //AutoStyling 機能を無効にしたい場合、以下のコードを後述の onseui.js を読み込んだ直後に記述します。
-        ons.disableAutoStyling();
+	<script>
+		"use strict";
+		//AutoStyling 機能を無効にしたい場合、以下のコードを後述の onseui.js を読み込んだ直後に記述します。
+		ons.disableAutoStyling();
 
-        ons.ready(() =>
-        {
-            console.log("ons.ready:");
-            document.addEventListener("init", (event) =>
-            {
-                console.log(` init: ${event.target.id}`);
-                switch(event.target.id)
-                {
-                    case "pageMain":
-                        break;
-                    case "pageAck":
-                        console.log("  call: funcPageAck();");
-                        funcPageAck();
-                        break;
-                    case "pageAirReal":
-                        console.log("  call: funcPageAirReal();");
-                        funcPageAirReal();
-                        break;
-                    case "pageAsOne":
-                        console.log("  call: funcPageAsOne();");
-                        funcPageAsOne();
-                        break;
-                    case "pageAsOneStory":
-                        console.log("  call: funcPageAsOneStory();");
-                        funcPageAsOneStory();
-                        break;
-                    case "pageCustomize":
-                        console.log("  call: funcPageCustomize();");
-                        funcPageCustomize();
-                        break;
-                    case "pageNicePlay":
-                        console.log("  call: funcPageNicePlay();");
-                        funcPageNicePlay();
-                        break;
-                    case "pageStage":
-                        console.log("  call: funcPageStage();");
-                        funcPageStage();
-                        break;
-                    case "pageTask":
-                        console.log("  call: funcPageTask();");
-                        funcPageTask();
-                        break;
-                    case "pageTitle":
-                        console.log("  call: funcPageTitle();");
-                        funcPageTitle();
-                        break;
-                    case "pageWeapon":
-                        console.log("  call: funcPageWeapon();");
-                        funcPageWeapon();
-                        break;
-                    default:
-                        break;
-                }
-            }, false);
+		ons.ready(() =>
+		{
+			console.log("ons.ready:");
+			document.addEventListener("init", (event) =>
+			{
+				console.log(` init: ${event.target.id}`);
+				switch(event.target.id)
+				{
+					case "pageMain":
+						break;
+					case "pageAck":
+						console.log("  call: funcPageAck();");
+						funcPageAck();
+						break;
+					case "pageAirReal":
+						console.log("  call: funcPageAirReal();");
+						funcPageAirReal();
+						break;
+					case "pageAsOne":
+						console.log("  call: funcPageAsOne();");
+						funcPageAsOne();
+						break;
+					case "pageAsOneStory":
+						console.log("  call: funcPageAsOneStory();");
+						funcPageAsOneStory();
+						break;
+					case "pageCustomize":
+						console.log("  call: funcPageCustomize();");
+						funcPageCustomize();
+						break;
+					case "pageNicePlay":
+						console.log("  call: funcPageNicePlay();");
+						funcPageNicePlay();
+						break;
+					case "pageStage":
+						console.log("  call: funcPageStage();");
+						funcPageStage();
+						break;
+					case "pageTask":
+						console.log("  call: funcPageTask();");
+						funcPageTask();
+						break;
+					case "pageTitle":
+						console.log("  call: funcPageTitle();");
+						funcPageTitle();
+						break;
+					case "pageWeapon":
+						console.log("  call: funcPageWeapon();");
+						funcPageWeapon();
+						break;
+					default:
+						break;
+				}
+			}, false);
 
-            // 初期ページを設定
-            SPnavigator.pushPage("Main.html");
-        });
+			// 初期ページを設定
+			SPnavigator.pushPage("Main.html");
+		});
 
-        // PWAに対応
-        if("serviceWorker" in navigator)
-        {
-            navigator.serviceWorker.register("./sw.js").then((registration) =>
-            {
-                // 登録成功
-                console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
-            }).catch((err) =>
-            {
-                // 登録失敗
-                console.error(`ServiceWorker registration failed: ${err}`);
-            });
-        }
-    </script>
+		// PWAに対応
+		if("serviceWorker" in navigator)
+		{
+			navigator.serviceWorker.register("./sw.js").then((registration) =>
+			{
+				// 登録成功
+				console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
+			}).catch((err) =>
+			{
+				// 登録失敗
+				console.error(`ServiceWorker registration failed: ${err}`);
+			});
+		}
+	</script>
 </head>
 
 <body>
@@ -111,454 +111,454 @@
 </ons-navigator>
 
 <ons-template id="Main.html">
-    <ons-page id="pageMain">
-        <ons-toolbar>
-            <div class="left"></div>
-            <div class="center">星と翼のパラドクス ver1.07</div>
-            <div class="right"></div>
-        </ons-toolbar>
+	<ons-page id="pageMain">
+		<ons-toolbar>
+			<div class="left"></div>
+			<div class="center">星と翼のパラドクス ver1.07</div>
+			<div class="right"></div>
+		</ons-toolbar>
 
-        <ons-list class="listMain">
-            <ons-list-header>カスタマイズ</ons-list-header>
+		<ons-list class="listMain">
+			<ons-list-header>カスタマイズ</ons-list-header>
 
-            <ons-list-item id="gotoWeapon" modifier="chevron"
-                onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
-                武器</ons-list-item>
-            <ons-list-item id="gotoAirReal" modifier="chevron"
-                onclick="SPnavigator.pushPage('AirReal.html', {animation: 'slide'});">
-                エア・リアル</ons-list-item>
-            <ons-list-item id="gotoAsOne" modifier="chevron"
-                onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'});">
-                アズワンスキル</ons-list-item>
-            <ons-list-item id="gotoTitle" modifier="chevron"
-                onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
-                称号</ons-list-item>
-            <ons-list-item id="gotoCustomize" modifier="chevron"
-                onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'});">
-                勝利ポーズ・カラー</ons-list-item>
+			<ons-list-item id="gotoWeapon" modifier="chevron"
+				onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
+				武器</ons-list-item>
+			<ons-list-item id="gotoAirReal" modifier="chevron"
+				onclick="SPnavigator.pushPage('AirReal.html', {animation: 'slide'});">
+				エア・リアル</ons-list-item>
+			<ons-list-item id="gotoAsOne" modifier="chevron"
+				onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'});">
+				アズワンスキル</ons-list-item>
+			<ons-list-item id="gotoTitle" modifier="chevron"
+				onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
+				称号</ons-list-item>
+			<ons-list-item id="gotoCustomize" modifier="chevron"
+				onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'});">
+				勝利ポーズ・カラー</ons-list-item>
 
-            <ons-list-header>データ</ons-list-header>
+			<ons-list-header>データ</ons-list-header>
 
-            <ons-list-item id="gotoMission" modifier="chevron"
-                onclick="SPnavigator.pushPage('Task.html', {animation: 'slide'});">
-                ミッション・クエスト</ons-list-item>
-            <ons-list-item id="gotoNicePlay" modifier="chevron"
-                onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
-                ナイスプレイ一覧</ons-list-item>
-            <ons-list-item id="gotoAsOneStory" modifier="chevron"
-                onclick="SPnavigator.pushPage('AsOneStory.html', {animation: 'slide'});">
-                アズワンストーリー</ons-list-item>
-            <ons-list-item id="gotoMission" modifier="chevron"
-                onclick="SPnavigator.pushPage('Stage.html', {animation: 'slide'});">
-                ステージ(作成中)</ons-list-item>
-            <ons-list-item id="gotoAck" modifier="chevron"
-                onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
-                謝辞・問い合わせ</ons-list-item>
-        </ons-list>
-    </ons-page>
+			<ons-list-item id="gotoMission" modifier="chevron"
+				onclick="SPnavigator.pushPage('Task.html', {animation: 'slide'});">
+				ミッション・クエスト</ons-list-item>
+			<ons-list-item id="gotoNicePlay" modifier="chevron"
+				onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
+				ナイスプレイ一覧</ons-list-item>
+			<ons-list-item id="gotoAsOneStory" modifier="chevron"
+				onclick="SPnavigator.pushPage('AsOneStory.html', {animation: 'slide'});">
+				アズワンストーリー</ons-list-item>
+			<ons-list-item id="gotoMission" modifier="chevron"
+				onclick="SPnavigator.pushPage('Stage.html', {animation: 'slide'});">
+				ステージ(作成中)</ons-list-item>
+			<ons-list-item id="gotoAck" modifier="chevron"
+				onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
+				謝辞・問い合わせ</ons-list-item>
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="Title.html">
-    <ons-page id="pageTitle">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                称号 - プレイ</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabTitle">
-            <ons-tab label="プレイ" page="Title_Play.html" active></ons-tab>
-            <ons-tab label="バトル" page="Title_Battle.html"></ons-tab>
-            <ons-tab label="アズワン" page="Title_AsOne.html"></ons-tab>
-            <ons-tab label="スペシャル" page="Title_Special.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageTitle">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				称号 - プレイ</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabTitle">
+			<ons-tab label="プレイ" page="Title_Play.html" active></ons-tab>
+			<ons-tab label="バトル" page="Title_Battle.html"></ons-tab>
+			<ons-tab label="アズワン" page="Title_AsOne.html"></ons-tab>
+			<ons-tab label="スペシャル" page="Title_Special.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="Title_Play.html">
-    <ons-page id="pageTitle_Play">
-        <ons-list id="listTitle_Play">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageTitle_Play">
+		<ons-list id="listTitle_Play">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Title_Battle.html">
-    <ons-page id="pageTitle_Battle">
-        <ons-list id="listTitle_Battle">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageTitle_Battle">
+		<ons-list id="listTitle_Battle">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Title_AsOne.html">
-    <ons-page id="pageTitle_AsOne">
-        <ons-list id="listTitle_AsOne">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageTitle_AsOne">
+		<ons-list id="listTitle_AsOne">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Title_Special.html">
-    <ons-page id="pageTitle_Special">
-        <ons-list id="listTitle_Special">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageTitle_Special">
+		<ons-list id="listTitle_Special">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="Weapon.html">
-    <ons-page id="pageWeapon">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                武器 - アサルト</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabWeapon">
-            <ons-tab label="アサルト" page="Weapon_Assault.html" active></ons-tab>
-            <ons-tab label="ヴァンガード" page="Weapon_Vanguard.html"></ons-tab>
-            <ons-tab label="サポート" page="Weapon_Support.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageWeapon">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				武器 - アサルト</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabWeapon">
+			<ons-tab label="アサルト" page="Weapon_Assault.html" active></ons-tab>
+			<ons-tab label="ヴァンガード" page="Weapon_Vanguard.html"></ons-tab>
+			<ons-tab label="サポート" page="Weapon_Support.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="Weapon_Assault.html">
-    <ons-page id="pageWeapon_Assault">
-        <ons-list id="listWeapon_Assault">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageWeapon_Assault">
+		<ons-list id="listWeapon_Assault">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Weapon_Vanguard.html">
-    <ons-page id="pageWeapon_Vanguard">
-        <ons-list id="listWeapon_Vanguard">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageWeapon_Vanguard">
+		<ons-list id="listWeapon_Vanguard">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Weapon_Support.html">
-    <ons-page id="pageWeapon_Support">
-        <ons-list id="listWeapon_Support">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageWeapon_Support">
+		<ons-list id="listWeapon_Support">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="AirReal.html">
-    <ons-page id="pageAirReal">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                エア・リアル - ヘッド</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabAirReal">
-            <ons-tab label="頭" page="AirReal_Head.html" active></ons-tab>
-            <ons-tab label="腕" page="AirReal_Arm.html"></ons-tab>
-            <ons-tab label="胴" page="AirReal_Body.html"></ons-tab>
-            <ons-tab label="翼" page="AirReal_Wing.html"></ons-tab>
-            <ons-tab label="脚" page="AirReal_Leg.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageAirReal">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				エア・リアル - ヘッド</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabAirReal">
+			<ons-tab label="頭" page="AirReal_Head.html" active></ons-tab>
+			<ons-tab label="腕" page="AirReal_Arm.html"></ons-tab>
+			<ons-tab label="胴" page="AirReal_Body.html"></ons-tab>
+			<ons-tab label="翼" page="AirReal_Wing.html"></ons-tab>
+			<ons-tab label="脚" page="AirReal_Leg.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="AirReal_Head.html">
-    <ons-page id="pageAirReal_Head">
-        <ons-list id="listAirReal_Head">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAirReal_Head">
+		<ons-list id="listAirReal_Head">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AirReal_Arm.html">
-    <ons-page id="pageAirReal_Arm">
-        <ons-list id="listAirReal_Arm">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAirReal_Arm">
+		<ons-list id="listAirReal_Arm">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AirReal_Body.html">
-    <ons-page id="pageAirReal_Body">
-        <ons-list id="listAirReal_Body">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAirReal_Body">
+		<ons-list id="listAirReal_Body">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AirReal_Wing.html">
-    <ons-page id="pageAirReal_Wing">
-        <ons-list id="listAirReal_Wing">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAirReal_Wing">
+		<ons-list id="listAirReal_Wing">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AirReal_Leg.html">
-    <ons-page id="pageAirReal_Leg">
-        <ons-list id="listAirReal_Leg">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAirReal_Leg">
+		<ons-list id="listAirReal_Leg">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="AsOne.html">
-    <ons-page id="pageAsOne">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                ヒカリ・ソラ</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabAsOne">
-            <ons-tab label="ヒカリ" page="AsOne_Hikari.html" active></ons-tab>
-            <ons-tab label="レイカ" page="AsOne_Reika.html"></ons-tab>
-            <ons-tab label="シャーリー" page="AsOne_Shirley.html"></ons-tab>
-            <ons-tab label="イサドラ" page="AsOne_Isadora.html"></ons-tab>
-            <ons-tab label="ナギ" page="AsOne_Nagi.html"></ons-tab>
-            <ons-tab label="カズマ" page="AsOne_Kazuma.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageAsOne">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				ヒカリ・ソラ</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabAsOne">
+			<ons-tab label="ヒカリ" page="AsOne_Hikari.html" active></ons-tab>
+			<ons-tab label="レイカ" page="AsOne_Reika.html"></ons-tab>
+			<ons-tab label="シャーリー" page="AsOne_Shirley.html"></ons-tab>
+			<ons-tab label="イサドラ" page="AsOne_Isadora.html"></ons-tab>
+			<ons-tab label="ナギ" page="AsOne_Nagi.html"></ons-tab>
+			<ons-tab label="カズマ" page="AsOne_Kazuma.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOne_Hikari.html">
-    <ons-page id="pageAsOne_Hikari">
-        <ons-list id="listAsOne_Hikari">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOne_Hikari">
+		<ons-list id="listAsOne_Hikari">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOne_Reika.html">
-    <ons-page id="pageAsOne_Reika">
-        <ons-list id="listAsOne_Reika">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOne_Reika">
+		<ons-list id="listAsOne_Reika">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOne_Shirley.html">
-    <ons-page id="pageAsOne_Shirley">
-        <ons-list id="listAsOne_Shirley">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOne_Shirley">
+		<ons-list id="listAsOne_Shirley">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOne_Isadora.html">
-    <ons-page id="pageAsOne_Isadora">
-        <ons-list id="listAsOne_Isadora">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOne_Isadora">
+		<ons-list id="listAsOne_Isadora">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOne_Nagi.html">
-    <ons-page id="pageAsOne_Nagi">
-        <ons-list id="listAsOne_Nagi">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOne_Nagi">
+		<ons-list id="listAsOne_Nagi">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOne_Kazuma.html">
-    <ons-page id="pageAsOne_Kazuma">
-        <ons-list id="listAsOne_Kazuma">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOne_Kazuma">
+		<ons-list id="listAsOne_Kazuma">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="AsOneStory.html">
-    <ons-page id="pageAsOneStory">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                ヒカリ・ソラ</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabAsOneStory">
-            <ons-tab label="ヒカリ" page="AsOneStory_Hikari.html" active></ons-tab>
-            <ons-tab label="レイカ" page="AsOneStory_Reika.html"></ons-tab>
-            <ons-tab label="シャーリー" page="AsOneStory_Shirley.html"></ons-tab>
-            <ons-tab label="イサドラ" page="AsOneStory_Isadora.html"></ons-tab>
-            <ons-tab label="ナギ" page="AsOneStory_Nagi.html"></ons-tab>
-            <ons-tab label="カズマ" page="AsOneStory_Kazuma.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageAsOneStory">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				ヒカリ・ソラ</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabAsOneStory">
+			<ons-tab label="ヒカリ" page="AsOneStory_Hikari.html" active></ons-tab>
+			<ons-tab label="レイカ" page="AsOneStory_Reika.html"></ons-tab>
+			<ons-tab label="シャーリー" page="AsOneStory_Shirley.html"></ons-tab>
+			<ons-tab label="イサドラ" page="AsOneStory_Isadora.html"></ons-tab>
+			<ons-tab label="ナギ" page="AsOneStory_Nagi.html"></ons-tab>
+			<ons-tab label="カズマ" page="AsOneStory_Kazuma.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOneStory_Hikari.html">
-    <ons-page id="pageAsOneStory_Hikari">
-        <ons-list id="listAsOneStory_Hikari">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOneStory_Hikari">
+		<ons-list id="listAsOneStory_Hikari">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOneStory_Reika.html">
-    <ons-page id="pageAsOneStory_Reika">
-        <ons-list id="listAsOneStory_Reika">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOneStory_Reika">
+		<ons-list id="listAsOneStory_Reika">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOneStory_Shirley.html">
-    <ons-page id="pageAsOneStory_Shirley">
-        <ons-list id="listAsOneStory_Shirley">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOneStory_Shirley">
+		<ons-list id="listAsOneStory_Shirley">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOneStory_Isadora.html">
-    <ons-page id="pageAsOneStory_Isadora">
-        <ons-list id="listAsOneStory_Isadora">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOneStory_Isadora">
+		<ons-list id="listAsOneStory_Isadora">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOneStory_Nagi.html">
-    <ons-page id="pageAsOneStory_Nagi">
-        <ons-list id="listAsOneStory_Nagi">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOneStory_Nagi">
+		<ons-list id="listAsOneStory_Nagi">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="AsOneStory_Kazuma.html">
-    <ons-page id="pageAsOneStory_Kazuma">
-        <ons-list id="listAsOneStory_Kazuma">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAsOneStory_Kazuma">
+		<ons-list id="listAsOneStory_Kazuma">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="NicePlay.html">
-    <ons-page id="pageNicePlay">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                ナイスプレイ - エア・リアル</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabNicePlay">
-            <ons-tab label="AR" page="NicePlay_AirReal.html" active></ons-tab>
-            <ons-tab label="敵勢力" page="NicePlay_Object.html"></ons-tab>
-            <ons-tab label="ポート" page="NicePlay_Port.html"></ons-tab>
-            <ons-tab label="コア" page="NicePlay_Core.html"></ons-tab>
-            <ons-tab label="他" page="NicePlay_Other.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageNicePlay">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				ナイスプレイ - エア・リアル</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabNicePlay">
+			<ons-tab label="AR" page="NicePlay_AirReal.html" active></ons-tab>
+			<ons-tab label="敵勢力" page="NicePlay_Object.html"></ons-tab>
+			<ons-tab label="ポート" page="NicePlay_Port.html"></ons-tab>
+			<ons-tab label="コア" page="NicePlay_Core.html"></ons-tab>
+			<ons-tab label="他" page="NicePlay_Other.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="NicePlay_AirReal.html">
-    <ons-page id="pageNicePlay_AirReal">
-        <ons-list id="listNicePlay_AirReal">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageNicePlay_AirReal">
+		<ons-list id="listNicePlay_AirReal">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="NicePlay_Object.html">
-    <ons-page id="pageNicePlay_Object">
-        <ons-list id="listNicePlay_Object">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageNicePlay_Object">
+		<ons-list id="listNicePlay_Object">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="NicePlay_Port.html">
-    <ons-page id="pageNicePlay_Port">
-        <ons-list id="listNicePlay_Port">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageNicePlay_Port">
+		<ons-list id="listNicePlay_Port">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="NicePlay_Core.html">
-    <ons-page id="pageNicePlay_Core">
-        <ons-list id="listNicePlay_Core">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageNicePlay_Core">
+		<ons-list id="listNicePlay_Core">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="NicePlay_Other.html">
-    <ons-page id="pageNicePlay_Other">
-        <ons-list id="listNicePlay_Other">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageNicePlay_Other">
+		<ons-list id="listNicePlay_Other">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="Customize.html">
-    <ons-page id="pageCustomize">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                勝利ポーズ</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabCustomize">
-            <ons-tab label="勝利ポーズ" page="Customize_VictoryPose.html" active></ons-tab>
-            <ons-tab label="ラインカラー" page="Customize_LineColor.html"></ons-tab>
-            <ons-tab label="パーツカラー" page="Customize_PartsColor.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageCustomize">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				勝利ポーズ</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabCustomize">
+			<ons-tab label="勝利ポーズ" page="Customize_VictoryPose.html" active></ons-tab>
+			<ons-tab label="ラインカラー" page="Customize_LineColor.html"></ons-tab>
+			<ons-tab label="パーツカラー" page="Customize_PartsColor.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="Customize_VictoryPose.html">
-    <ons-page id="pageCustomize_VictoryPose">
-        <ons-list id="listCustomize_VictoryPose">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageCustomize_VictoryPose">
+		<ons-list id="listCustomize_VictoryPose">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Customize_LineColor.html">
-    <ons-page id="pageCustomize_LineColor">
-        <ons-list id="listCustomize_LineColor">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageCustomize_LineColor">
+		<ons-list id="listCustomize_LineColor">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Customize_PartsColor.html">
-    <ons-page id="pageCustomize_PartsColor">
-        <ons-list id="listCustomize_PartsColor">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageCustomize_PartsColor">
+		<ons-list id="listCustomize_PartsColor">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="Task.html">
-    <ons-page id="pageTask">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                ミッション</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-tabbar animation="none" id="tabTask">
-            <ons-tab label="ミッション" page="Task_Mission.html" active></ons-tab>
-            <ons-tab label="クエスト" page="Task_Quest.html"></ons-tab>
-        </ons-tabbar>
-    </ons-page>
+	<ons-page id="pageTask">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				ミッション</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-tabbar animation="none" id="tabTask">
+			<ons-tab label="ミッション" page="Task_Mission.html" active></ons-tab>
+			<ons-tab label="クエスト" page="Task_Quest.html"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
 </ons-template>
 <ons-template id="Task_Mission.html">
-    <ons-page id="pageTask_Mission">
-        <ons-list id="listTask_Mission">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageTask_Mission">
+		<ons-list id="listTask_Mission">
+		</ons-list>
+	</ons-page>
 </ons-template>
 <ons-template id="Task_Quest.html">
-    <ons-page id="pageTask_Quest">
-        <ons-list id="listTask_Quest">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageTask_Quest">
+		<ons-list id="listTask_Quest">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="Stage.html">
-    <ons-page id="pageStage">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                ステージ(作成中)</div>
-            <div class="right">
-                <ons-toolbar-button>？</ons-toolbar-button></div>
-        </ons-toolbar>
-        <ons-list id="listStage">
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageStage">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				ステージ(作成中)</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-list id="listStage">
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-template id="Ack.html">
-    <ons-page id="pageAck">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button class="backtoMain"></ons-back-button></div>
-            <div class="center">
-                謝辞・問い合わせ</div>
-            <div class="right"></div>
-        </ons-toolbar>
-        <ons-list id="list_Ack">
-            <ons-list-item expandable>
-                5ch 星と翼のパラドクススレ
-                <div class="expandable-content">
-                    <a href="https://ff5ch.syoboi.jp/?q=星と翼のパラドクス">5chスレタイ検索</a>
-                </div>
-            </ons-list-item>
-            <ons-list-item expandable>
-                お問い合わせはこちら(匿名で投稿できます。)
-                <div class="expandable-content">
-                    <a href="https://marshmallow-qa.com/lilyc67608004">マシュマロ</a>
-                </div>
-            </ons-list-item>
-        </ons-list>
-    </ons-page>
+	<ons-page id="pageAck">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				謝辞・問い合わせ</div>
+			<div class="right"></div>
+		</ons-toolbar>
+		<ons-list id="list_Ack">
+			<ons-list-item expandable>
+				5ch 星と翼のパラドクススレ
+				<div class="expandable-content">
+					<a href="https://ff5ch.syoboi.jp/?q=星と翼のパラドクス">5chスレタイ検索</a>
+				</div>
+			</ons-list-item>
+			<ons-list-item expandable>
+				お問い合わせはこちら(匿名で投稿できます。)
+				<div class="expandable-content">
+					<a href="https://marshmallow-qa.com/lilyc67608004">マシュマロ</a>
+				</div>
+			</ons-list-item>
+		</ons-list>
+	</ons-page>
 </ons-template>
 
 <ons-toast id="toast" animation="fall">
-    <div id="textToast" onclick="toast.hide()"></div>
+	<div id="textToast" onclick="toast.hide()"></div>
 </ons-toast>
 
 </body>
