@@ -14,8 +14,10 @@
 		// namespaceを作成
 		const SPDB = {};
 	</script>
+	<script src="./js/json.js"></script>
 	<script src="./js/Ack.js"></script>
 	<script src="./js/AirReal.js"></script>
+	<script src="./js/Assemble.js"></script>
 	<script src="./js/AsOne.js"></script>
 	<script src="./js/AsOneStory.js"></script>
 	<script src="./js/Customize.js"></script>
@@ -47,6 +49,10 @@
 					case "pageAirReal":
 						console.log("  call: funcPageAirReal();");
 						funcPageAirReal();
+						break;
+					case "pageAssemble":
+						console.log("  call: funcPageAssemble();");
+						funcPageAssemble();
 						break;
 					case "pageAsOne":
 						console.log("  call: funcPageAsOne();");
@@ -120,7 +126,11 @@
 
 		<ons-list class="listMain">
 			<ons-list-header>カスタマイズ</ons-list-header>
-
+<!--
+			<ons-list-item id="gotoAssemble" modifier="chevron"
+				onclick="SPnavigator.pushPage('Assemble.html', {animation: 'slide'});">
+				アセンブル</ons-list-item>
+-->
 			<ons-list-item id="gotoWeapon" modifier="chevron"
 				onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
 				武器</ons-list-item>
@@ -148,12 +158,29 @@
 			<ons-list-item id="gotoAsOneStory" modifier="chevron"
 				onclick="SPnavigator.pushPage('AsOneStory.html', {animation: 'slide'});">
 				アズワンストーリー</ons-list-item>
+<!--
 			<ons-list-item id="gotoMission" modifier="chevron"
 				onclick="SPnavigator.pushPage('Stage.html', {animation: 'slide'});">
 				ステージ(作成中)</ons-list-item>
+-->
 			<ons-list-item id="gotoAck" modifier="chevron"
 				onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
 				謝辞・問い合わせ</ons-list-item>
+		</ons-list>
+	</ons-page>
+</ons-template>
+
+<ons-template id="Assemble.html">
+	<ons-page id="pageAssemble">
+		<ons-toolbar>
+			<div class="left">
+				<ons-back-button class="backtoMain"></ons-back-button></div>
+			<div class="center">
+				アセンブル</div>
+			<div class="right">
+				<ons-toolbar-button>？</ons-toolbar-button></div>
+		</ons-toolbar>
+		<ons-list id="listAssemble">
 		</ons-list>
 	</ons-page>
 </ons-template>

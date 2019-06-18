@@ -66,6 +66,10 @@
     padding: 0;
     font-size: 0.75rem;
 }
+#pageAssemble .list-item__center
+{
+    font-size: 0.75rem;
+}
 
 /* ons-row */
 .expand

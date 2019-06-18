@@ -8,6 +8,7 @@ var urlsToCache =
     "/www/js/AsOne.js",
     "/www/js/AsOneStory.js",
     "/www/js/Customize.js",
+    "/www/js/json.js",
     "/www/js/NicePlay.js",
     "/www/js/Stage.js",
     "/www/js/Task.js",
