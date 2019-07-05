@@ -10,7 +10,7 @@ SPDB.AirReal =
 	[
 		{
 			"name":"ソリディア",
-			"durability":200,
+			"durability":100,
 			"length":"B",
 			"range":"B",
 			"weight":2000,
@@ -18,7 +18,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"カーディナル",
-			"durability":200,
+			"durability":100,
 			"length":"C",
 			"range":"A+",
 			"weight":1800,
@@ -26,15 +26,15 @@ SPDB.AirReal =
 		},
 		{
 			"name":"スクラッパー",
-			"durability":200,
+			"durability":100,
 			"length":"B",
 			"range":"A",
 			"weight":2100,
-			"feature":"(ロックオン範囲が横に広い)"
+			"feature":"-"
 		},
 		{
 			"name":"サイトヘッド",
-			"durability":170,
+			"durability":70,
 			"length":"A+",
 			"range":"E",
 			"weight":2100,
@@ -42,7 +42,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"CU・レイター",
-			"durability":180,
+			"durability":80,
 			"length":"B+",
 			"range":"D",
 			"weight":1800,
@@ -50,23 +50,23 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ゴールテン・D",
-			"durability":220,
+			"durability":120,
 			"length":"C",
 			"range":"A",
 			"weight":2200,
-			"feature":"(ロックオン範囲が縦に広い)"
+			"feature":"-"
 		},
 		{
 			"name":"ディスドス",
-			"durability":170,
+			"durability":80,
 			"length":"B+",
 			"range":"D",
 			"weight":2200,
-			"feature":["対象ロスト耐性", "(ロックオンエリアが少し横に広い)"]
+			"feature":"対象ロスト耐性"
 		},
 		{
 			"name":"サブライガ",
-			"durability":200,
+			"durability":100,
 			"length":"D",
 			"range":"B",
 			"weight":2000,
@@ -75,15 +75,15 @@ SPDB.AirReal =
 		{
 			"name":"ファルマコン",
 			"armor":10,
-			"durability":200,
+			"durability":100,
 			"length":"E",
 			"range":"A",
 			"weight":1700,
-			"feature":"ロックオン追従性能UP>"
+			"feature":["ロックオン追従性能UP>", "ロックAR優先"]
 		},
 		{
 			"name":"ラピスヘッジ",
-			"durability":250,
+			"durability":150,
 			"length":"B+",
 			"range":"D",
 			"weight":2500,
@@ -114,7 +114,7 @@ SPDB.AirReal =
 			"name":"サイトヘッド",
 			"durability":170,
 			"weight":2100,
-			"feature":"両手武器リロード速度UP>>>"
+			"feature":["両手武器リロード速度UP>>>", "クリティカル攻撃力UP>>"]
 		},
 		{
 			"name":"CU・レイター",
@@ -158,7 +158,7 @@ SPDB.AirReal =
 	[
 		{
 			"name":"ソリディア",
-			"armor":200,
+			"armor":250,
 			"durability":200,
 			"repairSpeed":"B",
 			"repairLatency":"C",
@@ -167,7 +167,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"カーディナル",
-			"armor":170,
+			"armor":220,
 			"durability":100,
 			"repairSpeed":"A",
 			"repairLatency":"B+",
@@ -176,7 +176,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"スクラッパー",
-			"armor":150,
+			"armor":200,
 			"durability":250,
 			"repairSpeed":"B",
 			"repairLatency":"C",
@@ -185,7 +185,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"サイトヘッド",
-			"armor":250,
+			"armor":300,
 			"durability":150,
 			"repairSpeed":"E",
 			"repairLatency":"C",
@@ -194,7 +194,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"CU・レイター",
-			"armor":120,
+			"armor":170,
 			"durability":130,
 			"repairSpeed":"C",
 			"repairLatency":"A+",
@@ -203,7 +203,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ゴールテン・D",
-			"armor":300,
+			"armor":350,
 			"durability":130,
 			"repairSpeed":"E",
 			"repairLatency":"E",
@@ -212,7 +212,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ディスドス",
-			"armor":170,
+			"armor":220,
 			"durability":120,
 			"repairSpeed":"E",
 			"repairLatency":"A+",
@@ -221,7 +221,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"サブライガ",
-			"armor":180,
+			"armor":230,
 			"durability":160,
 			"repairSpeed":"A",
 			"repairLatency":"B+",
@@ -230,7 +230,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ファルマコン",
-			"armor":160,
+			"armor":210,
 			"durability":70,
 			"repairSpeed":"E",
 			"repairLatency":"A+",
@@ -240,7 +240,7 @@ SPDB.AirReal =
 		{
 			"name":"ラピスヘッジ",
 			"armor":0,
-			"durability":550,
+			"durability":600,
 			"repairSpeed":"A+",
 			"repairLatency":"C",
 			"weight":2500,
@@ -251,7 +251,7 @@ SPDB.AirReal =
 	[
 		{
 			"name":"ソリディア",
-			"durability":200,
+			"durability":250,
 			"weight":2000,
 			"dashType":"短距離ダッシュ",
 			"dodge":"B",
@@ -259,7 +259,7 @@ SPDB.AirReal =
 			"fdType":"長距離スタンダード",
 			"fdCharge":"B",
 			"drift":"B",
-			"feature":"-"
+			"feature":"根性値 UP"
 		},
 		{
 			"name":"カーディナル",
@@ -271,11 +271,11 @@ SPDB.AirReal =
 			"fdType":"短距離高速",
 			"fdCharge":"A",
 			"drift":"A",
-			"feature":"(格闘時にブースト消費しない)"
+			"feature":"格闘攻撃ブースト消費軽減>>>"
 		},
 		{
 			"name":"スクラッパー",
-			"durability":250,
+			"durability":320,
 			"weight":2100,
 			"dashType":"溜めダッシュ",
 			"dodge":"B",
@@ -287,7 +287,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"サイトヘッド",
-			"durability":250,
+			"durability":320,
 			"weight":2100,
 			"dashType":"加速ダッシュ",
 			"dodge":"B+",
@@ -295,11 +295,11 @@ SPDB.AirReal =
 			"fdType":"長距離スタンダード",
 			"fdCharge":"B",
 			"drift":"C",
-			"feature":"-"
+			"feature":"高速旋回速度UP>"
 		},
 		{
 			"name":"CU・レイター",
-			"durability":210,
+			"durability":270,
 			"weight":1800,
 			"dashType":"短距離ダッシュ",
 			"dodge":"A",
@@ -307,11 +307,11 @@ SPDB.AirReal =
 			"fdType":"長距離スタンダード",
 			"fdCharge":"B",
 			"drift":"D",
-			"feature":["(ジャンプ力が高い)", "(回避時のブースト消費が少ない)"]
+			"feature":"アーマー回復時間短縮>"
 		},
 		{
 			"name":"ゴールテン・D",
-			"durability":300,
+			"durability":360,
 			"weight":2500,
 			"dashType":"溜めダッシュ",
 			"dodge":"B+",
@@ -323,7 +323,7 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ディスドス",
-			"durability":220,
+			"durability":290,
 			"weight":2200,
 			"dashType":"短距離ダッシュ",
 			"dodge":"A",
@@ -331,24 +331,24 @@ SPDB.AirReal =
 			"fdType":"短距離スタンダード",
 			"fdCharge":"B",
 			"drift":"B+",
-			"feature":"(下方向への回避行動が可能)"
+			"feature":["アーマー回復時間短縮>", "(下方向への回避行動が可能)"]
 		},
 		{
 			"name":"サブライガ",
-			"durability":200,
+			"durability":280,
 			"weight":2000,
 			"dashType":"高速ダッシュ",
 			"dodge":"B",
 			"dash":"A",
-			"fdType":"長距離スタンダード",
+			"fdType":"短距離スタンダード",
 			"fdCharge":"B",
 			"drift":"E",
-			"feature":"-"
+			"feature":"格闘攻撃ブースト消費軽減>"
 		},
 		{
 			"name":"ファルマコン",
-			"armor":20,
-			"durability":150,
+			"armor":30,
+			"durability":200,
 			"weight":1700,
 			"dashType":"短距離ダッシュ",
 			"dodge":"B",
@@ -356,11 +356,11 @@ SPDB.AirReal =
 			"fdType":"短距離高速",
 			"fdCharge":"B+",
 			"drift":"D",
-			"feature":"(回避行動の際に自身の機体を一時的に透明にする)"
+			"feature":["格闘攻撃ブースト消費軽減>", "(回避行動の際に自身の機体を一時的に透明にする)"]
 		},
 		{
 			"name":"ラピスヘッジ",
-			"durability":310,
+			"durability":400,
 			"weight":2500,
 			"dashType":"加速ダッシュ",
 			"dodge":"E",
@@ -368,7 +368,7 @@ SPDB.AirReal =
 			"fdType":"短距離加速",
 			"fdCharge":"B+",
 			"drift":"B",
-			"feature":"-"
+			"feature":"高速旋回速度UP>"
 		},
 	],
 	Leg:
@@ -403,10 +403,10 @@ SPDB.AirReal =
 		},
 		{
 			"name":"CU・レイター",
-			"durability":130,
+			"durability":140,
 			"occupation":"A",
 			"weight":1800,
-			"feature":"-"
+			"feature":"ポート制圧範囲拡大>"
 		},
 		{
 			"name":"ゴールテン・D",
@@ -455,6 +455,15 @@ SPDB.AsOne =
 	Status:`
 		アズワンスキルとその出現条件、発動チームレベルを記載しています。
 	`,
+	Order:
+	[
+		{En: "Hikari", Ja: "ヒカリ"},
+		{En: "Reika", Ja: "レイカ"},
+		{En: "Shirley", Ja: "シャーリー"},
+		{En: "Isadora", Ja: "イサドラ"},
+		{En: "Kazuma", Ja: "カズマ"},
+		{En: "Nagi", Ja:"ナギ"},
+	],
 	Skill:
 	{
 		Hikari:
@@ -4411,6 +4420,41 @@ SPDB.Task =
 			"flag":"初めから出現"
 		},
 		{
+			"name":"エア・グランデ討伐作戦",
+			"difficulty":2,
+			"goal":"",
+			"prize":["200CP", "40CP"],
+			"flag":"クエスト「Sマグ討伐作戦」クリア"
+		},
+		{
+			"name":"戦術的戦闘訓練1",
+			"difficulty":2,
+			"goal":"ナイスプレイを70回達成する",
+			"prize":["200CP", "40CP"],
+			"flag":"初めから出現？"
+		},
+		{
+			"name":"アサルトの実戦2",
+			"difficulty":2,
+			"goal":["アサルトで5分対戦する", "ナイスプレイを30回達成する"],
+			"prize":["200CP", "40CP"],
+			"flag":""
+		},
+		{
+			"name":"ヴァンガードの実戦2",
+			"difficulty":2,
+			"goal":["ヴァンガードで5分対戦する", "ナイスプレイを30回達成する"],
+			"prize":["200CP", "40CP"],
+			"flag":""
+		},
+		{
+			"name":"サポートの実戦2",
+			"difficulty":2,
+			"goal":["サポートで5分対戦する", "ナイスプレイを30回達成する"],
+			"prize":["200CP", "40CP"],
+			"flag":""
+		},
+		{
 			"name":"戦略的撤退【1回限定】",
 			"difficulty":1,
 			"goal":"",
@@ -4446,13 +4490,6 @@ SPDB.Task =
 			"flag":"DePS 1500を達成"
 		},
 		{
-			"name":"エア・グランデ討伐作戦",
-			"difficulty":2,
-			"goal":"",
-			"prize":["200CP", "40CP"],
-			"flag":"クエスト「Sマグ討伐作戦」クリア"
-		},
-		{
 			"name":"飛行訓練【1回限定】",
 			"difficulty":2,
 			"goal":"",
@@ -4467,39 +4504,11 @@ SPDB.Task =
 			"flag":"？？？"
 		},
 		{
-			"name":"戦術的戦闘訓練1",
-			"difficulty":2,
-			"goal":"ナイスプレイを70回達成する",
-			"prize":["200CP", "40CP"],
-			"flag":"初めから出現？"
-		},
-		{
 			"name":"[アズワン]とスキルアップ1【1回限定】",
 			"difficulty":1,
 			"goal":"全国対戦に3回出撃する",
 			"prize":"アズワンスキル",
 			"flag":"ランク2☆>に到達する？"
-		},
-		{
-			"name":"アサルトの実戦2",
-			"difficulty":2,
-			"goal":["アサルトで5分対戦する", "ナイスプレイを30回達成する"],
-			"prize":["200CP", "40CP"],
-			"flag":""
-		},
-		{
-			"name":"ヴァンガードの実戦2",
-			"difficulty":2,
-			"goal":["ヴァンガードで5分対戦する", "ナイスプレイを30回達成する"],
-			"prize":["200CP", "40CP"],
-			"flag":""
-		},
-		{
-			"name":"サポートの実戦2",
-			"difficulty":2,
-			"goal":["サポートで5分対戦する", "ナイスプレイを30回達成する"],
-			"prize":["200CP", "40CP"],
-			"flag":""
 		},
 		{
 			"name":"[アズワン]とスキルアップ2【1回限定】",
@@ -4758,6 +4767,10 @@ SPDB.Title =
 		{
 			"title":"エンブレムコレクター",
 			"flag":"エンブレムパーツ50個獲得"
+		},
+		{
+			"title":"エンブレムマニア",
+			"flag":"エンブレムパーツ100個獲得"
 		},
 		{
 			"title":"？？？",
@@ -5517,7 +5530,7 @@ SPDB.Title =
 			"flag":"公式プレイヤー(佐藤美由希)とマッチングした試合で1回勝利する"
 		},
 		{
-			"title":"？？？",
+			"title":"君もチョコミン党",
 			"flag":"公式プレイヤー(佐藤美由希)とマッチングした試合で5回勝利する"
 		},
 		{
@@ -5644,7 +5657,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -5660,7 +5673,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"炎上",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -5676,7 +5689,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"怯み特性",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -5693,6 +5706,22 @@ SPDB.Weapon =
 			"reloadTiming":"弾切れ",
 			"feature":"-",
 			"howToGet":"2600CP"
+		},
+		{
+			"side":"L",
+			"name":"エスプロジオ",
+			"vsAR":"C",
+			"vsMAG":"B",
+			"reload":"C",
+			"usability":"B",
+			"weaponType":"ビーム",
+			"ammo":4,
+			"attackType":"中距離射撃",
+			"triggerType":"ホールド",
+			"target":"敵",
+			"reloadTiming":"常時",
+			"feature":"-",
+			"howToGet":"ドロップのみ？"
 		},
 		{
 			"side":"R",
@@ -5740,7 +5769,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"-",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -5756,7 +5785,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"-",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -5772,7 +5801,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"-",
-			"howToGet":"750CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -5836,7 +5865,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"スコープ、ダウン特性",
-			"howToGet":"750CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"LR",
@@ -5846,13 +5875,13 @@ SPDB.Weapon =
 			"reload":"B",
 			"usability":"A",
 			"weaponType":"格闘/ビーム",
-			"ammo":"L: 1, R: 9",
+			"ammo":"L: 1, R: 12",
 			"attackType":"中距離射撃",
 			"triggerType":"ホールド",
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"LR",
@@ -5868,7 +5897,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 	],
 	Vanguard:
@@ -5920,7 +5949,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -5936,7 +5965,7 @@ SPDB.Weapon =
 			"target":"自分",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性、炎上",
-			"howToGet":"750CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -5952,7 +5981,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"怯み特性",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -5968,7 +5997,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -6010,13 +6039,13 @@ SPDB.Weapon =
 			"reload":"B",
 			"usability":"B",
 			"weaponType":"ビーム/妨害",
-			"ammo":4,
+			"ammo":5,
 			"attackType":"中距離射撃",
 			"triggerType":"ホールド",
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"炎上",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -6032,7 +6061,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -6048,7 +6077,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"",
-			"howToGet":"750CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -6064,7 +6093,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"炎上",
-			"howToGet":"4400CP"
+			"howToGet":"2600CP"
 		},			
 		{
 			"side":"LR",
@@ -6080,7 +6109,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"LR",
@@ -6096,7 +6125,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"LR",
@@ -6112,7 +6141,23 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"怯み特性",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
+		},
+		{
+			"side":"LR",
+			"name":"デ・ディヴァルガン",
+			"vsAR":"-",
+			"vsMAG":"-",
+			"reload":"-",
+			"usability":"-",
+			"weaponType":"実弾",
+			"ammo":1,
+			"attackType":"-",
+			"triggerType":"-",
+			"target":"敵",
+			"reloadTiming":"弾切れ",
+			"feature":"-",
+			"howToGet":"ドロップのみ？"
 		},
 	],
 	Support:
@@ -6164,7 +6209,7 @@ SPDB.Weapon =
 			"target":"味方",
 			"reloadTiming":"弾切れ",
 			"feature":"攻撃力上昇",
-			"howToGet":"750CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -6180,7 +6225,7 @@ SPDB.Weapon =
 			"target":"対AR",
 			"reloadTiming":"弾切れ",
 			"feature":"ジャミング",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -6190,13 +6235,13 @@ SPDB.Weapon =
 			"reload":"B",
 			"usability":"B",
 			"weaponType":"設置/妨害",
-			"ammo":1,
+			"ammo":2,
 			"attackType":"投擲",
 			"triggerType":"リリース",
 			"target":"対AR",
 			"reloadTiming":"弾切れ",
 			"feature":"麻痺",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -6213,7 +6258,7 @@ SPDB.Weapon =
 			"target":"味方",
 			"reloadTiming":"常時",
 			"feature":"回復",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -6229,7 +6274,7 @@ SPDB.Weapon =
 			"target":"自分",
 			"reloadTiming":"弾切れ",
 			"feature":"",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -6245,7 +6290,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"(吹き飛ばし)",
-			"howToGet":"4400CP"
+			"howToGet":"2600CP"
 		},
 		{
 			"side":"R",
@@ -6294,7 +6339,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"",
-			"howToGet":"？"
+			"howToGet":"初期所持武器？"
 		},
 		{
 			"side":"R",
@@ -6310,7 +6355,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"",
-			"howToGet":"750CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -6326,7 +6371,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"R",
@@ -6358,7 +6403,23 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性",
-			"howToGet":"750CP"
+			"howToGet":"750-1400CP"
+		},
+		{
+			"side":"R",
+			"name":"斬縛弾 月読",
+			"vsAR":"E",
+			"vsMAG":"E",
+			"reload":"B",
+			"usability":"C",
+			"weaponType":"ビーム",
+			"ammo":1,
+			"attackType":"中距離射撃",
+			"triggerType":"1トリガー",
+			"target":"敵",
+			"reloadTiming":"弾切れ",
+			"feature":"攻撃不可",
+			"howToGet":"ドロップのみ？"
 		},
 		{
 			"side":"LR",
@@ -6375,7 +6436,7 @@ SPDB.Weapon =
 			"target":"L: 自分、R: 味方",
 			"reloadTiming":"弾切れ",
 			"feature":"シールド",
-			"howToGet":"1400CP"
+			"howToGet":"750-1400CP"
 		},
 	]
 };

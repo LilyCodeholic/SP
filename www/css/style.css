@@ -1,6 +1,6 @@
 .hidden
 {
-    display: none;
+	display: none;
 }
 
 /* 789 */
@@ -8,116 +8,130 @@
 /* 123 */
 .area7
 {
-    text-align: left;
+	text-align: left;
 }
 .area8
 {
-    text-align: center;
+	text-align: center;
 }
 .area9
 {
-    text-align: right;
+	text-align: right;
 }
 .area4
 {
-    align-self: center;
+	align-self: center;
 }
 .area5
 {
-    align-self: center;
-    text-align: center;
+	align-self: center;
+	text-align: center;
 }
 .area6
 {
-    align-self: center;
-    text-align: right;
+	align-self: center;
+	text-align: right;
 }
 .area1
 {
-    align-self: flex-end;
+	align-self: flex-end;
 }
 .area2
 {
-    align-self: flex-end;
-    text-align: center;
+	align-self: flex-end;
+	text-align: center;
 }
 .area3
 {
-    align-self: flex-end;
-    text-align: right;
+	align-self: flex-end;
+	text-align: right;
 }
 
 /* ons-list-header */
 .fixed
 {
-    position: fixed;
-    width: 100vw;
-    z-index: 10;
+	position: fixed;
+	width: 100vw;
+	z-index: 10;
+}
+#pageAssemble .list-header
+{
+	font-size: 0.5rem;
+	line-height: 1rem;
+	min-height: 1rem;
 }
 
 /* ons-list-item(オーバーライド) */
 .list-item__center
 {
-    padding: 6px 6px 6px 0;
+	padding: 6px 6px 6px 0;
 }
 /* ons-list-item */
 .asoneStory .list-item__center
 {
-    padding: 0;
-    font-size: 0.75rem;
+	padding: 0;
+	font-size: 0.75rem;
 }
 #pageAssemble .list-item__center
 {
-    font-size: 0.75rem;
+	padding: 0;
+	font-size: 0.75rem;
+	min-height: 1.75rem;
+}
+#pageAssemble .list-item__right
+{
+	padding: 0;
+	font-size: 0.75rem;
+	min-height: 1.75rem;
 }
 
 /* ons-row */
 .expand
 {
-    padding-right: 28px;
+	padding-right: 28px;
 }
 .notexpand
 {
-    padding-right: 5px;
+	padding-right: 5px;
 }
 
 /* ons-col */
 .expandable-content ons-col
 {
-    align-self: center;
+	align-self: center;
 }
 .bold
 {
-    font-weight: bold;
+	font-weight: bold;
 }
 .large
 {
-    font-size: large;
+	font-size: large;
 }
 
-/* expandable(オーバーライド) */
-.list-item__expand-chevron
+/* chevron, expandable(オーバーライド) */
+.list-item--chevron:before, .list-item__expand-chevron
 {
-    border-color: #ffa101;
+	border-color: #ffa101;
 }
 
 /* toolbar-button(オーバーライド) */
 .toolbar-button
 {
-    font-weight: 900;
+	font-weight: 900;
 }
 /* リンクテキスト用 */
 a:link
 {
-    color: lawngreen;
+	color: lawngreen;
 }
 a:visited
 {
-    color: lightgreen;
+	color: lightgreen;
 }
 
 /* デバッガー用 */
 ::-webkit-scrollbar
 {
-    display: none;
+	display: none;
 }
