@@ -383,7 +383,7 @@ SPDB.AirReal =
 		{
 			"name":"カーディナル",
 			"durability":130,
-			"occupation":"A",
+			"occupation":"B+",
 			"weight":1800,
 			"feature":"-"
 		},
@@ -397,14 +397,14 @@ SPDB.AirReal =
 		{
 			"name":"サイトヘッド",
 			"durability":170,
-			"occupation":"B+",
+			"occupation":"B",
 			"weight":2100,
 			"feature":"-"
 		},
 		{
 			"name":"CU・レイター",
 			"durability":140,
-			"occupation":"A",
+			"occupation":"B",
 			"weight":1800,
 			"feature":"ポート制圧範囲拡大>"
 		},

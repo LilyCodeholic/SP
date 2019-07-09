@@ -419,6 +419,10 @@ const appendData = () =>
 	pARList_header.innerHTML = `エア・リアルパーツ`;
 	const pHead = document.createElement("ons-list-item");
 	pHead.setAttribute("expandable", "");
+	pHead.onclick = () =>
+	{
+		pHead.scrollIntoView({block: "nearest", inline: "nearest"});
+	}
 	pHead.innerHTML = `
 		<ons-row>
 			<ons-col width="5%" class="area5">
@@ -521,35 +525,34 @@ const appendData = () =>
 
 	// Spec
 	const pSpec = document.createElement("ons-list-item");
+	pSpec.setAttribute("id", "pSpec");
 	pSpec.innerHTML = `
 		<ons-row>
-			<ons-col width="50%">
+			<ons-col width="25%">
 				アーマー
 			</ons-col>
-			<ons-col class="area6">
+			<ons-col class="area5">
 				${(SPDB.AirReal.Head[0].armor | 0) + (SPDB.AirReal.Arm[0].armor | 0) + (SPDB.AirReal.Body[0].armor | 0) + (SPDB.AirReal.Wing[0].armor | 0) + (SPDB.AirReal.Leg[0].armor | 0)}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
-				<ons-col class="area6">
+				<ons-col class="area5">
 					200
 				</ons-col>
 			</div>
-		</ons-row>
-		<ons-row>
-			<ons-col width="50%">
+			<ons-col width="25%">
 				耐久
 			</ons-col>
-			<ons-col class="area6">
+			<ons-col class="area5">
 				${SPDB.AirReal.Head[0].durability + SPDB.AirReal.Arm[0].durability + SPDB.AirReal.Body[0].durability + SPDB.AirReal.Wing[0].durability + SPDB.AirReal.Leg[0].durability}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
-				<ons-col class="area6">
+				<ons-col class="area5">
 					1000
 				</ons-col>
 			</div>
@@ -558,37 +561,37 @@ const appendData = () =>
 			<ons-col width="50%">
 				重量
 			</ons-col>
-			<ons-col class="area6">
+			<ons-col class="area5">
 				${SPDB.AirReal.Head[0].weight + SPDB.AirReal.Arm[0].weight + SPDB.AirReal.Body[0].weight + SPDB.AirReal.Wing[0].weight + SPDB.AirReal.Leg[0].weight}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
-				<ons-col class="area6">
+				<ons-col class="area5">
 					10000
 				</ons-col>
 			</div>
 		</ons-row>
 		<ons-row>
 			<ons-col>
-				アーマー全回復時間
+				アーマー<br>
+				　全回復時間
 			</ons-col>
 			<ons-col class="area5">
 				${SPDB.AirReal.Body[0].repairSpeed}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
 				</ons-col>
 			</div>
-		</ons-row>
-		<ons-row>
 			<ons-col>
-				アーマー回復待機
+				<br>
+				回復待機
 			</ons-col>
 			<ons-col class="area5">
 				${SPDB.AirReal.Body[0].repairLatency}
@@ -604,30 +607,30 @@ const appendData = () =>
 		</ons-row>
 		<ons-row>
 			<ons-col>
-				ロックオン距離
+				ロックオン<br>
+				　距離
 			</ons-col>
 			<ons-col class="area5">
 				${SPDB.AirReal.Head[0].length}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
 				</ons-col>
 			</div>
-		</ons-row>
-		<ons-row>
 			<ons-col>
-				ロックオン範囲
+				<br>
+				範囲
 			</ons-col>
 			<ons-col class="area5">
 				${SPDB.AirReal.Head[0].range}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
@@ -643,7 +646,7 @@ const appendData = () =>
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
@@ -654,12 +657,12 @@ const appendData = () =>
 			<ons-col>
 				ダッシュタイプ
 			</ons-col>
-			<ons-col class="area5">
+			<ons-col class="area4">
 				${SPDB.AirReal.Wing[0].dashType}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
@@ -668,21 +671,19 @@ const appendData = () =>
 		</ons-row>
 		<ons-row>
 			<ons-col>
-				回避回数
+				　回避回数
 			</ons-col>
 			<ons-col class="area5">
 				${SPDB.AirReal.Wing[0].dodge}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
 				</ons-col>
 			</div>
-		</ons-row>
-		<ons-row>
 			<ons-col>
 				ダッシュ回数
 			</ons-col>
@@ -691,7 +692,7 @@ const appendData = () =>
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
@@ -702,12 +703,12 @@ const appendData = () =>
 			<ons-col>
 				フルドライブタイプ
 			</ons-col>
-			<ons-col class="area5">
+			<ons-col class="area4">
 				${SPDB.AirReal.Wing[0].fdType}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
@@ -715,23 +716,21 @@ const appendData = () =>
 			</div>
 		</ons-row>
 		<ons-row>
-			<ons-col>
-				フルドライブ溜め時間
+			<ons-col width="25%">
+				　溜め時間
 			</ons-col>
 			<ons-col class="area5">
 				${SPDB.AirReal.Wing[0].fdCharge}
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
 				</ons-col>
 			</div>
-		</ons-row>
-		<ons-row>
-			<ons-col>
+			<ons-col width="25%">
 				ドリフト
 			</ons-col>
 			<ons-col class="area5">
@@ -739,7 +738,7 @@ const appendData = () =>
 			</ons-col>
 			<div class="hidden">
 				<ons-col class="area5">
-					->
+					 -> 
 				</ons-col>
 				<ons-col class="area5">
 					A
@@ -748,6 +747,8 @@ const appendData = () =>
 		</ons-row>
 	`;
 	pSection.appendChild(pSpec);
+
+pSection.style.marginBottom = "10em";
 
 	fragment.appendChild(pSection);
 
