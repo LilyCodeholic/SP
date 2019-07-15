@@ -5611,15 +5611,19 @@ SPDB.Title =
 			"flag":"公式プレイヤー(花倉洸幸)とマッチングした試合で10回勝利する"
 		},
 		{
-			"title":"翔握戦の覇者 優勝 YYYY #n",
+			"title":"星を巡る戦乙女",
+			"flag":"cafeメグリボシ 対戦会に参加する"
+		},
+		{
+			"title":"翔握戦の覇者 YYYY #n",
 			"flag":"翔握戦YYYY#n 優勝"
 		},
 		{
-			"title":"翔握戦の英雄 準優勝 YYYY #n",
+			"title":"翔握戦の英雄 YYYY #n",
 			"flag":"翔握戦YYYY#n 準優勝"
 		},
 		{
-			"title":"翔握戦の騎士 3位 YYYY #n",
+			"title":"翔握戦の騎士 YYYY #n",
 			"flag":"翔握戦YYYY#n 3位"
 		},
 		{
@@ -5627,11 +5631,11 @@ SPDB.Title =
 			"flag":"Round1 TournamentYYYY#n 優勝"
 		},
 		{
-			"title":"翔握戦の英雄 準優勝 YYYY #n",
+			"title":"Round1 Tournamen 準優勝 YYYY #n",
 			"flag":"Round1 TournamentYYYY#n 準優勝"
 		},
 		{
-			"title":"翔握戦の騎士 3位 YYYY #n",
+			"title":"Round1 Tournamen 3位 YYYY #n",
 			"flag":"Round1 TournamentYYYY#n 3位"
 		},
 	]
