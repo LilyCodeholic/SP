@@ -5,6 +5,8 @@ SPDB.AirReal =
 	Status:`
 		エア・リアルパーツの性能を部位ごとに記載しています。<br>
 		横画面にすると1行に表示される情報量が増えます。<br>
+		耐久値はソリディアの頭:100, 腕:200, 胴:250, 翼:250, 脚:200、<br>
+		重量はソリディアの各パーツを全て2000として計算しています。<br>
 		色違いのパーツについては元パーツと同じ性能のため記載していません。`,
 	Head:
 	[
@@ -158,8 +160,8 @@ SPDB.AirReal =
 	[
 		{
 			"name":"ソリディア",
-			"armor":250,
-			"durability":200,
+			"armor":200,
+			"durability":250,
 			"repairSpeed":"B",
 			"repairLatency":"C",
 			"weight":2000,
@@ -167,8 +169,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"カーディナル",
-			"armor":220,
-			"durability":100,
+			"armor":170,
+			"durability":150,
 			"repairSpeed":"A",
 			"repairLatency":"B+",
 			"weight":1800,
@@ -176,8 +178,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"スクラッパー",
-			"armor":200,
-			"durability":250,
+			"armor":150,
+			"durability":300,
 			"repairSpeed":"B",
 			"repairLatency":"C",
 			"weight":2100,
@@ -185,8 +187,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"サイトヘッド",
-			"armor":300,
-			"durability":150,
+			"armor":250,
+			"durability":200,
 			"repairSpeed":"E",
 			"repairLatency":"C",
 			"weight":2100,
@@ -194,8 +196,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"CU・レイター",
-			"armor":170,
-			"durability":130,
+			"armor":120,
+			"durability":180,
 			"repairSpeed":"C",
 			"repairLatency":"A+",
 			"weight":1800,
@@ -203,8 +205,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ゴールテン・D",
-			"armor":350,
-			"durability":130,
+			"armor":300,
+			"durability":180,
 			"repairSpeed":"E",
 			"repairLatency":"E",
 			"weight":2200,
@@ -212,8 +214,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ディスドス",
-			"armor":220,
-			"durability":120,
+			"armor":170,
+			"durability":170,
 			"repairSpeed":"E",
 			"repairLatency":"A+",
 			"weight":2200,
@@ -221,8 +223,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"サブライガ",
-			"armor":230,
-			"durability":160,
+			"armor":180,
+			"durability":210,
 			"repairSpeed":"A",
 			"repairLatency":"B+",
 			"weight":2000,
@@ -230,8 +232,8 @@ SPDB.AirReal =
 		},
 		{
 			"name":"ファルマコン",
-			"armor":210,
-			"durability":70,
+			"armor":160,
+			"durability":120,
 			"repairSpeed":"E",
 			"repairLatency":"A+",
 			"weight":1700,
@@ -259,7 +261,7 @@ SPDB.AirReal =
 			"fdType":"長距離スタンダード",
 			"fdCharge":"B",
 			"drift":"B",
-			"feature":"根性値 UP"
+			"feature":"根性値 UP>"
 		},
 		{
 			"name":"カーディナル",
@@ -295,7 +297,7 @@ SPDB.AirReal =
 			"fdType":"長距離スタンダード",
 			"fdCharge":"B",
 			"drift":"C",
-			"feature":"高速旋回速度UP>"
+			"feature":"高速旋回速度UP"
 		},
 		{
 			"name":"CU・レイター",
@@ -331,7 +333,7 @@ SPDB.AirReal =
 			"fdType":"短距離スタンダード",
 			"fdCharge":"B",
 			"drift":"B+",
-			"feature":["アーマー回復時間短縮>", "(下方向への回避行動が可能)"]
+			"feature":["後回避急降下", "アーマー回復時間短縮>"]
 		},
 		{
 			"name":"サブライガ",
@@ -356,7 +358,7 @@ SPDB.AirReal =
 			"fdType":"短距離高速",
 			"fdCharge":"B+",
 			"drift":"D",
-			"feature":["格闘攻撃ブースト消費軽減>", "(回避行動の際に自身の機体を一時的に透明にする)"]
+			"feature":["回避透明化", "格闘攻撃ブースト消費軽減>"]
 		},
 		{
 			"name":"ラピスヘッジ",
@@ -4548,6 +4550,7 @@ SPDB.Task =
 	]
 };
 };
+
 const loadTitle = () =>
 {
 SPDB.Title =
@@ -5705,7 +5708,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"-",
-			"howToGet":"2600CP"
+			"howToGet":"750-1400CP"
 		},
 		{
 			"side":"L",
@@ -5721,7 +5724,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"-",
-			"howToGet":"ドロップのみ？"
+			"howToGet":"2600CP"
 		},
 		{
 			"side":"R",
@@ -6093,7 +6096,7 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"常時",
 			"feature":"炎上",
-			"howToGet":"2600CP"
+			"howToGet":"750-1400CP"
 		},			
 		{
 			"side":"LR",
@@ -6146,18 +6149,18 @@ SPDB.Weapon =
 		{
 			"side":"LR",
 			"name":"デ・ディヴァルガン",
-			"vsAR":"-",
-			"vsMAG":"-",
-			"reload":"-",
-			"usability":"-",
+			"vsAR":"A",
+			"vsMAG":"B+",
+			"reload":"C",
+			"usability":"B+",
 			"weaponType":"実弾",
-			"ammo":1,
-			"attackType":"-",
-			"triggerType":"-",
+			"ammo":50,
+			"attackType":"中距離射撃",
+			"triggerType":"ホールド",
 			"target":"敵",
 			"reloadTiming":"弾切れ",
-			"feature":"-",
-			"howToGet":"ドロップのみ？"
+			"feature":"",
+			"howToGet":"2600CP"
 		},
 	],
 	Support:
