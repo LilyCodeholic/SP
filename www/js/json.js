@@ -4151,6 +4151,24 @@ SPDB.Task =
 			"term":""
 		},
 		{
+			"name":"夏休みキャンペーン1",
+			"flag":"",
+			"prize":"エンブレム,「かき氷」",
+			"term":"7/3-8/1"
+		},
+		{
+			"name":"夏休みキャンペーン2",
+			"flag":"7回、試合に勝利する",
+			"prize":"ヴァンガード用武器,「凍剣・氷菓」",
+			"term":"7/3-8/1"
+		},
+		{
+			"name":"夏休みキャンペーン3",
+			"flag":"自機がポート内にいる状態で敵ARに90000ダメージ与える",
+			"prize":"称号,「Everyday,夏休み」",
+			"term":"7/3-8/1"
+		},
+		{
 			"name":"ラピスヘッジキャンペーン1-1",
 			"flag":"全国対戦に3回出撃する",
 			"prize":"100CP",
@@ -4790,6 +4808,10 @@ SPDB.Title =
 		{
 			"title":"クロックスター",
 			"flag":"全国対戦50時間プレイ"
+		},
+		{
+			"title":"星の砂時計",
+			"flag":"全国対戦250時間プレイ？"
 		},
 		{
 			"title":"？？？",
@@ -5589,16 +5611,28 @@ SPDB.Title =
 			"flag":"公式プレイヤー(花倉洸幸)とマッチングした試合で10回勝利する"
 		},
 		{
-			"title":"翔握戦の覇者 YYYY #n",
+			"title":"翔握戦の覇者 優勝 YYYY #n",
 			"flag":"翔握戦YYYY#n 優勝"
 		},
 		{
-			"title":"翔握戦の英雄 YYYY #n",
+			"title":"翔握戦の英雄 準優勝 YYYY #n",
 			"flag":"翔握戦YYYY#n 準優勝"
 		},
 		{
-			"title":"翔握戦の騎士 YYYY #n",
+			"title":"翔握戦の騎士 3位 YYYY #n",
 			"flag":"翔握戦YYYY#n 3位"
+		},
+		{
+			"title":"Round1 Tournament 優勝 YYYY #n",
+			"flag":"Round1 TournamentYYYY#n 優勝"
+		},
+		{
+			"title":"翔握戦の英雄 準優勝 YYYY #n",
+			"flag":"Round1 TournamentYYYY#n 準優勝"
+		},
+		{
+			"title":"翔握戦の騎士 3位 YYYY #n",
+			"flag":"Round1 TournamentYYYY#n 3位"
 		},
 	]
 };
@@ -6098,6 +6132,22 @@ SPDB.Weapon =
 			"feature":"炎上",
 			"howToGet":"750-1400CP"
 		},			
+		{
+			"side":"R",
+			"name":"凍剣・氷菓",
+			"vsAR":"B+",
+			"vsMAG":"C",
+			"reload":"B+",
+			"usability":"A",
+			"weaponType":"格闘",
+			"ammo":1,
+			"attackType":"近距離格闘",
+			"triggerType":"1トリガー",
+			"target":"敵",
+			"reloadTiming":"弾切れ",
+			"feature":"ダウン特性",
+			"howToGet":"夏休みキャンペーン2(全国対戦7回勝利)をクリアする"
+		},
 		{
 			"side":"LR",
 			"name":"ブレードジップ",
