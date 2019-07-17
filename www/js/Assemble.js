@@ -432,7 +432,7 @@ const appendData = () =>
 	pHead.setAttribute("expandable", "");
 	pHead.onclick = (event) =>
 	{
-		if(event.srcElement.id == "pTxtHead" && document.getElementById("pList_itemHead").classList.contains("expanded"))
+		if(event.srcElement.id.startsWith("pTxtHead") && document.getElementById("pList_itemHead").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
 			const pArmor = document.getElementById("pArmor");
@@ -484,7 +484,7 @@ const appendData = () =>
 	pArm.setAttribute("expandable", "");
 	pArm.onclick = (event) =>
 	{
-		if(event.srcElement.id == "pTxtArm" && document.getElementById("pList_itemArm").classList.contains("expanded"))
+		if(event.srcElement.id.startsWith("pTxtArm") && document.getElementById("pList_itemArm").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
 			const pArmor = document.getElementById("pArmor");
@@ -526,7 +526,7 @@ const appendData = () =>
 	pBody.setAttribute("expandable", "");
 	pBody.onclick = (event) =>
 	{
-		if(event.srcElement.id == "pTxtBody" && document.getElementById("pList_itemBody").classList.contains("expanded"))
+		if(event.srcElement.id.startsWith("pTxtBody") && document.getElementById("pList_itemBody").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
 			const pArmor = document.getElementById("pArmor");
@@ -578,7 +578,7 @@ const appendData = () =>
 	pWing.setAttribute("expandable", "");
 	pWing.onclick = (event) =>
 	{
-		if(event.srcElement.id == "pTxtWing" && document.getElementById("pList_itemWing").classList.contains("expanded"))
+		if(event.srcElement.id.startsWith("pTxtWing") && document.getElementById("pList_itemWing").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
 			const pArmor = document.getElementById("pArmor");
@@ -650,7 +650,7 @@ const appendData = () =>
 	pLeg.setAttribute("expandable", "");
 	pLeg.onclick = (event) =>
 	{
-		if(event.srcElement.id == "pTxtLeg" && document.getElementById("pList_itemLeg").classList.contains("expanded"))
+		if(event.srcElement.id.startsWith("pTxtLeg") && document.getElementById("pList_itemLeg").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
 			const pArmor = document.getElementById("pArmor");
