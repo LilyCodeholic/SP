@@ -5940,6 +5940,22 @@ SPDB.Weapon =
 			"feature":"",
 			"howToGet":"750-1400CP"
 		},
+		{
+			"side":"LR",
+			"name":"ディオグラント",
+			"vsAR":"B+",
+			"vsMAG":"A+",
+			"reload":"A+",
+			"usability":"B+",
+			"weaponType":"ビーム",
+			"ammo":75,
+			"attackType":"遠距離射撃",
+			"triggerType":"ホールド",
+			"target":"敵",
+			"reloadTiming":"常時",
+			"feature":"",
+			"howToGet":"ドロップのみ"
+		},
 	],
 	Vanguard:
 	[
@@ -6153,6 +6169,22 @@ SPDB.Weapon =
 			"howToGet":"夏休みキャンペーン2(全国対戦7回勝利)をクリアする"
 		},
 		{
+			"side":"R",
+			"name":"ブリリオン",
+			"vsAR":"B+",
+			"vsMAG":"B",
+			"reload":"B+",
+			"usability":"A",
+			"weaponType":"ビーム",
+			"ammo":4,
+			"attackType":"中距離射撃",
+			"triggerType":"ホールド",
+			"target":"敵",
+			"reloadTiming":"常時",
+			"feature":"",
+			"howToGet":"ドロップのみ"
+		},
+		{
 			"side":"LR",
 			"name":"ブレードジップ",
 			"vsAR":"A",
@@ -6348,6 +6380,23 @@ SPDB.Weapon =
 			"reloadTiming":"常時",
 			"feature":"(吹き飛ばし)",
 			"howToGet":"2600CP"
+		},
+		{
+			"side":"L",
+			"name":"ソワン・ヒーリア",
+			"vsAR":"-",
+			"vsMAG":"-",
+			"reload":"",
+			"usability":"",
+			"exParameter":["回復量", ""],
+			"weaponType":"補助",
+			"ammo":"?",
+			"attackType":"その他",
+			"triggerType":"ホールド",
+			"target":"味方",
+			"reloadTiming":"常時",
+			"feature":"回復",
+			"howToGet":"ドロップのみ"
 		},
 		{
 			"side":"R",
