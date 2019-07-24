@@ -168,7 +168,7 @@ const appendData = () =>
 				<ons-list-item>
 					<label class="left">
 						<ons-radio name="p${role}${order}L" input-id="p${role}${order}L${weaponIndex}"
-						${weaponIndex == 0 ?
+						${(order == "1st" && weaponIndex == 0) || (order == "2nd" && weaponIndex == 1) ?
 							` checked`:
 							``
 						}></ons-radio>
@@ -183,7 +183,7 @@ const appendData = () =>
 				<ons-list-item>
 					<label class="left">
 						<ons-radio name="p${role}${order}R" input-id="p${role}${order}R${weaponIndex}"
-						${weaponIndex == 0 ?
+						${(order == "1st" && weaponIndex == 0) || (order == "2nd" && weaponIndex == 1) ?
 							` checked`:
 							``
 						}></ons-radio>
