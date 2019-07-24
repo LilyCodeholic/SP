@@ -67,6 +67,7 @@
 	height: auto;
 	bottom: 0;
 	z-index: 10;
+	background-color: #181818;
 }
 
 /* ons-list-item(オーバーライド) */
@@ -133,6 +134,13 @@
 {
 	font-weight: 900;
 }
+
+/* .page(オーバーライド) */
+.page__content
+{
+	background-color: #181818 !important;
+}
+
 /* リンクテキスト用 */
 a:link
 {
