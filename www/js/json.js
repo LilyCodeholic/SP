@@ -5,8 +5,6 @@ SPDB.AirReal =
 	Status:`
 		エア・リアルパーツの性能を部位ごとに記載しています。<br>
 		横画面にすると1行に表示される情報量が増えます。<br>
-		耐久値はソリディアの頭:100, 腕:200, 胴:250, 翼:250, 脚:200、<br>
-		重量はソリディアの各パーツを全て2000として計算しています。<br>
 		色違いのパーツについては元パーツと同じ性能のため記載していません。`,
 	Head:
 	[
@@ -91,69 +89,83 @@ SPDB.AirReal =
 			"weight":2500,
 			"feature":"ロックAR優先"
 		},
+		{
+			"name":"パ・フェクト",
+			"durability":70,
+			"length":"B",
+			"range":"C",
+			"weight":2000,
+			"feature":"アズワンスキル発動Lv減少"
+		},
 	],
 	Arm:
 	[
 		{
 			"name":"ソリディア",
-			"durability":200,
+			"durability":150,
 			"weight":2000,
 			"feature":["両手武器リロード速度UP>>", "攻撃力UP>"]
 		},
 		{
 			"name":"カーディナル",
-			"durability":150,
+			"durability":100,
 			"weight":1800,
 			"feature":["ビーム武器リロード速度UP>", "格闘武器リロード速度UP>>>"]
 		},
 		{
 			"name":"スクラッパー",
-			"durability":210,
+			"durability":160,
 			"weight":2100,
 			"feature":["ビーム武器リロード速度UP>", "ビーム攻撃力UP>"]
 		},
 		{
 			"name":"サイトヘッド",
-			"durability":170,
+			"durability":120,
 			"weight":2100,
 			"feature":["両手武器リロード速度UP>>>", "クリティカル攻撃力UP>>"]
 		},
 		{
 			"name":"CU・レイター",
-			"durability":170,
+			"durability":120,
 			"weight":1800,
 			"feature":["補助武器リロード速度UP>>>", "妨害武器リロード速度UP>>"]
 		},
 		{
 			"name":"ゴールテン・D",
-			"durability":220,
+			"durability":170,
 			"weight":2200,
 			"feature":"実弾武器リロード速度UP>"
 		},
 		{
 			"name":"ディスドス",
-			"durability":180,
+			"durability":130,
 			"weight":2200,
 			"feature":["状態異常攻撃時間延長>>>", "設置時間延長>>>"]
 		},
 		{
 			"name":"サブライガ",
-			"durability":170,
+			"durability":120,
 			"weight":2000,
 			"feature":"片手武器リロード速度UP>"
 		},
 		{
 			"name":"ファルマコン",
 			"armor":20,
-			"durability":160,
+			"durability":110,
 			"weight":1700,
 			"feature":["格闘武器リロード速度UP>>", "片手武器 左 リロード速度UP>>"]
 		},
 		{
 			"name":"ラピスヘッジ",
-			"durability":250,
+			"durability":200,
 			"weight":2500,
 			"feature":["射撃武器弾数UP>", "射撃攻撃力DOWN<"]
+		},
+		{
+			"name":"パ・フェクト",
+			"durability":150,
+			"weight":2000,
+			"feature":["1st片手武器リロード速度UP>>", "2nd両手武器リロード速度UP>>"]
 		},
 	],
 	Body:
@@ -161,7 +173,7 @@ SPDB.AirReal =
 		{
 			"name":"ソリディア",
 			"armor":200,
-			"durability":250,
+			"durability":300,
 			"repairSpeed":"B",
 			"repairLatency":"C",
 			"weight":2000,
@@ -170,7 +182,7 @@ SPDB.AirReal =
 		{
 			"name":"カーディナル",
 			"armor":170,
-			"durability":150,
+			"durability":200,
 			"repairSpeed":"A",
 			"repairLatency":"B+",
 			"weight":1800,
@@ -179,7 +191,7 @@ SPDB.AirReal =
 		{
 			"name":"スクラッパー",
 			"armor":150,
-			"durability":300,
+			"durability":350,
 			"repairSpeed":"B",
 			"repairLatency":"C",
 			"weight":2100,
@@ -188,7 +200,7 @@ SPDB.AirReal =
 		{
 			"name":"サイトヘッド",
 			"armor":250,
-			"durability":200,
+			"durability":250,
 			"repairSpeed":"E",
 			"repairLatency":"C",
 			"weight":2100,
@@ -197,7 +209,7 @@ SPDB.AirReal =
 		{
 			"name":"CU・レイター",
 			"armor":120,
-			"durability":180,
+			"durability":230,
 			"repairSpeed":"C",
 			"repairLatency":"A+",
 			"weight":1800,
@@ -206,7 +218,7 @@ SPDB.AirReal =
 		{
 			"name":"ゴールテン・D",
 			"armor":300,
-			"durability":180,
+			"durability":230,
 			"repairSpeed":"E",
 			"repairLatency":"E",
 			"weight":2200,
@@ -215,7 +227,7 @@ SPDB.AirReal =
 		{
 			"name":"ディスドス",
 			"armor":170,
-			"durability":170,
+			"durability":220,
 			"repairSpeed":"E",
 			"repairLatency":"A+",
 			"weight":2200,
@@ -224,7 +236,7 @@ SPDB.AirReal =
 		{
 			"name":"サブライガ",
 			"armor":180,
-			"durability":210,
+			"durability":260,
 			"repairSpeed":"A",
 			"repairLatency":"B+",
 			"weight":2000,
@@ -233,7 +245,7 @@ SPDB.AirReal =
 		{
 			"name":"ファルマコン",
 			"armor":160,
-			"durability":120,
+			"durability":170,
 			"repairSpeed":"E",
 			"repairLatency":"A+",
 			"weight":1700,
@@ -242,11 +254,20 @@ SPDB.AirReal =
 		{
 			"name":"ラピスヘッジ",
 			"armor":0,
-			"durability":600,
+			"durability":650,
 			"repairSpeed":"A+",
 			"repairLatency":"C",
 			"weight":2500,
 			"feature":"-"
+		},
+		{
+			"name":"パ・フェクト",
+			"armor":100,
+			"durability":240,
+			"repairSpeed":"A+",
+			"repairLatency":"A",
+			"weight":2000,
+			"feature":"実弾防御 UP>"
 		},
 	],
 	Wing:
@@ -372,6 +393,18 @@ SPDB.AirReal =
 			"drift":"B",
 			"feature":"高速旋回速度UP>"
 		},
+		{
+			"name":"パ・フェクト",
+			"durability":210,
+			"weight":2000,
+			"dashType":"加速ダッシュ",
+			"dodge":"B+",
+			"dash":"D",
+			"fdType":"長距離スタンダード",
+			"fdCharge":"B",
+			"drift":"E",
+			"feature":"フルドライブアタック"
+		},
 	],
 	Leg:
 	[
@@ -445,6 +478,13 @@ SPDB.AirReal =
 			"occupation":"C",
 			"weight":2500,
 			"feature":"オーバーヒート時間短縮"
+		},
+		{
+			"name":"パ・フェクト",
+			"durability":140,
+			"occupation":"B",
+			"weight":2000,
+			"feature":["フルドライブ消費軽減>", "ブースト消費軽減>"]
 		},
 	]
 };
