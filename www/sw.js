@@ -7,13 +7,22 @@ var urlsToCache =
     "/www/js/AirReal.js",
     "/www/js/AsOne.js",
     "/www/js/AsOneStory.js",
+	"/www/js/Assemble.js",
     "/www/js/Customize.js",
-    "/www/js/json.js",
     "/www/js/NicePlay.js",
     "/www/js/Stage.js",
     "/www/js/Task.js",
     "/www/js/Title.js",
-    "/www/js/Weapon.js"
+    "/www/js/Weapon.js",
+    "/www/json/AirReal.js",
+    "/www/json/AsOne.js",
+    "/www/json/AsOneStory.js",
+    "/www/json/Customize.js",
+    "/www/json/NicePlay.js",
+    "/www/json/Stage.js",
+    "/www/json/Task.js",
+    "/www/json/Title.js",
+    "/www/json/Weapon.js",
 ];
 
 self.addEventListener("install", (event) =>
