@@ -19,10 +19,10 @@ SPDB.AirReal =
 		{
 			"name":"カーディナル",
 			"durability":100,
-			"length":"C",
+			"length":"D",
 			"range":"A+",
 			"weight":1800,
-			"feature":"対象ロスト耐性"
+			"feature":"対象ロスト耐性>>"
 		},
 		{
 			"name":"スクラッパー",
@@ -52,17 +52,25 @@ SPDB.AirReal =
 			"name":"ゴールテン・D",
 			"durability":120,
 			"length":"C",
-			"range":"A",
+			"range":"A+",
 			"weight":2200,
 			"feature":"-"
+		},
+		{
+			"name":"アンゼロイ",
+			"durability":70,
+			"length":"C",
+			"range":"C",
+			"weight":1900,
+			"feature":["非攻撃時 カメラ速度UP>>", "攻撃時 カメラ速度DOWN<"]
 		},
 		{
 			"name":"ディスドス",
 			"durability":80,
 			"length":"B+",
-			"range":"D",
+			"range":"C",
 			"weight":2200,
-			"feature":"対象ロスト耐性"
+			"feature":"対象ロスト耐性>>"
 		},
 		{
 			"name":"サブライガ",
@@ -70,7 +78,7 @@ SPDB.AirReal =
 			"length":"D",
 			"range":"B",
 			"weight":2000,
-			"feature":["対象ロスト耐性", "クリティカル範囲UP"]
+			"feature":["対象ロスト耐性>>", "クリティカル範囲UP"]
 		},
 		{
 			"name":"ファルマコン",
@@ -95,7 +103,7 @@ SPDB.AirReal =
 			"length":"B",
 			"range":"C",
 			"weight":2000,
-			"feature":"アズワンスキル発動Lv減少"
+			"feature":["アズワンスキル発動Lv減少", "ロックオン追従性能UP>"]
 		},
 	],
 	Arm:
@@ -104,7 +112,7 @@ SPDB.AirReal =
 			"name":"ソリディア",
 			"durability":150,
 			"weight":2000,
-			"feature":["両手武器リロード速度UP>>", "攻撃力UP>"]
+			"feature":["両手武器リロード速度UP>>", "攻撃力UP>>"]
 		},
 		{
 			"name":"カーディナル",
@@ -135,6 +143,12 @@ SPDB.AirReal =
 			"durability":170,
 			"weight":2200,
 			"feature":"実弾武器リロード速度UP>"
+		},
+		{
+			"name":"アンゼロイ",
+			"durability":100,
+			"weight":1900,
+			"feature":["攻撃力UP>", "強制ダウン必要ヒット数増加"]
 		},
 		{
 			"name":"ディスドス",
@@ -174,17 +188,17 @@ SPDB.AirReal =
 			"name":"ソリディア",
 			"armor":200,
 			"durability":300,
-			"repairSpeed":"B",
-			"repairLatency":"C",
+			"repairSpeed":"C",
+			"repairLatency":"B+",
 			"weight":2000,
 			"feature":"-"
 		},
 		{
 			"name":"カーディナル",
-			"armor":170,
-			"durability":200,
+			"armor":180,
+			"durability":210,
 			"repairSpeed":"A",
-			"repairLatency":"B+",
+			"repairLatency":"A",
 			"weight":1800,
 			"feature":"状態異常耐性>>"
 		},
@@ -192,8 +206,8 @@ SPDB.AirReal =
 			"name":"スクラッパー",
 			"armor":150,
 			"durability":350,
-			"repairSpeed":"B",
-			"repairLatency":"C",
+			"repairSpeed":"E",
+			"repairLatency":"A",
 			"weight":2100,
 			"feature":"-"
 		},
@@ -202,15 +216,15 @@ SPDB.AirReal =
 			"armor":250,
 			"durability":250,
 			"repairSpeed":"E",
-			"repairLatency":"C",
+			"repairLatency":"B+",
 			"weight":2100,
 			"feature":"-"
 		},
 		{
 			"name":"CU・レイター",
-			"armor":120,
+			"armor":130,
 			"durability":230,
-			"repairSpeed":"C",
+			"repairSpeed":"D",
 			"repairLatency":"A+",
 			"weight":1800,
 			"feature":"状態異常耐性>"
@@ -223,6 +237,15 @@ SPDB.AirReal =
 			"repairLatency":"E",
 			"weight":2200,
 			"feature":"-"
+		},
+		{
+			"name":"アンゼロイ",
+			"armor":200,
+			"durability":180,
+			"repairSpeed":"A",
+			"repairLatency":"B+",
+			"weight":1900,
+			"feature":["ビーム防御UP>", "AR以外怯み耐性>"]
 		},
 		{
 			"name":"ディスドス",
@@ -262,12 +285,12 @@ SPDB.AirReal =
 		},
 		{
 			"name":"パ・フェクト",
-			"armor":100,
+			"armor":120,
 			"durability":240,
 			"repairSpeed":"A+",
 			"repairLatency":"A",
 			"weight":2000,
-			"feature":"実弾防御 UP>"
+			"feature":"実弾防御UP>"
 		},
 	],
 	Wing:
@@ -277,12 +300,12 @@ SPDB.AirReal =
 			"durability":250,
 			"weight":2000,
 			"dashType":"短距離ダッシュ",
-			"dodge":"B",
-			"dash":"C",
+			"dodge":"B+",
+			"dash":"B",
 			"fdType":"長距離スタンダード",
 			"fdCharge":"B",
 			"drift":"B",
-			"feature":"根性値 UP>"
+			"feature":"根性値UP>"
 		},
 		{
 			"name":"カーディナル",
@@ -292,19 +315,19 @@ SPDB.AirReal =
 			"dodge":"E",
 			"dash":"D",
 			"fdType":"短距離高速",
-			"fdCharge":"A",
+			"fdCharge":"A+",
 			"drift":"A",
-			"feature":"格闘攻撃ブースト消費軽減>>>"
+			"feature":["格闘攻撃ブースト消費軽減>>>", "フルドライブドッヂ"]
 		},
 		{
 			"name":"スクラッパー",
 			"durability":320,
 			"weight":2100,
 			"dashType":"溜めダッシュ",
-			"dodge":"B",
+			"dodge":"C",
 			"dash":"B",
 			"fdType":"長距離持続",
-			"fdCharge":"C",
+			"fdCharge":"E",
 			"drift":"B+",
 			"feature":"-"
 		},
@@ -316,7 +339,7 @@ SPDB.AirReal =
 			"dodge":"B+",
 			"dash":"A+",
 			"fdType":"長距離スタンダード",
-			"fdCharge":"B",
+			"fdCharge":"B+",
 			"drift":"C",
 			"feature":"高速旋回速度UP"
 		},
@@ -328,7 +351,7 @@ SPDB.AirReal =
 			"dodge":"A",
 			"dash":"A",
 			"fdType":"長距離スタンダード",
-			"fdCharge":"B",
+			"fdCharge":"C",
 			"drift":"D",
 			"feature":"アーマー回復時間短縮>"
 		},
@@ -342,11 +365,23 @@ SPDB.AirReal =
 			"fdType":"短距離加速",
 			"fdCharge":"B",
 			"drift":"B",
-			"feature":"-"
+			"feature":"ダウン耐性>"
+		},
+		{
+			"name":"アンゼロイ",
+			"durability":220,
+			"weight":1900,
+			"dashType":"高速ダッシュ",
+			"dodge":"C",
+			"dash":"E",
+			"fdType":"長距離高速",
+			"fdCharge":"C",
+			"drift":"B+",
+			"feature":"ブーストキャンセル"
 		},
 		{
 			"name":"ディスドス",
-			"durability":290,
+			"durability":300,
 			"weight":2200,
 			"dashType":"短距離ダッシュ",
 			"dodge":"A",
@@ -354,7 +389,7 @@ SPDB.AirReal =
 			"fdType":"短距離スタンダード",
 			"fdCharge":"B",
 			"drift":"B+",
-			"feature":["後回避急降下", "アーマー回復時間短縮>"]
+			"feature":["後回避急降下", "アーマー回復時間短縮>>"]
 		},
 		{
 			"name":"サブライガ",
@@ -364,7 +399,7 @@ SPDB.AirReal =
 			"dodge":"B",
 			"dash":"A",
 			"fdType":"短距離スタンダード",
-			"fdCharge":"B",
+			"fdCharge":"B+",
 			"drift":"E",
 			"feature":"格闘攻撃ブースト消費軽減>"
 		},
@@ -387,9 +422,9 @@ SPDB.AirReal =
 			"weight":2500,
 			"dashType":"加速ダッシュ",
 			"dodge":"E",
-			"dash":"D",
+			"dash":"E",
 			"fdType":"短距離加速",
-			"fdCharge":"B+",
+			"fdCharge":"A",
 			"drift":"B",
 			"feature":"高速旋回速度UP>"
 		},
@@ -397,9 +432,9 @@ SPDB.AirReal =
 			"name":"パ・フェクト",
 			"durability":210,
 			"weight":2000,
-			"dashType":"加速ダッシュ",
+			"dashType":"短距離ダッシュ",
 			"dodge":"B+",
-			"dash":"D",
+			"dash":"C",
 			"fdType":"長距離スタンダード",
 			"fdCharge":"B",
 			"drift":"E",
@@ -418,7 +453,7 @@ SPDB.AirReal =
 		{
 			"name":"カーディナル",
 			"durability":130,
-			"occupation":"B+",
+			"occupation":"A",
 			"weight":1800,
 			"feature":"-"
 		},
@@ -434,14 +469,14 @@ SPDB.AirReal =
 			"durability":170,
 			"occupation":"B",
 			"weight":2100,
-			"feature":"-"
+			"feature":"ダウン中ポート制圧可能>>>"
 		},
 		{
 			"name":"CU・レイター",
 			"durability":140,
 			"occupation":"B",
 			"weight":1800,
-			"feature":"ポート制圧範囲拡大>"
+			"feature":"ポート制圧範囲拡大>>"
 		},
 		{
 			"name":"ゴールテン・D",
@@ -451,11 +486,18 @@ SPDB.AirReal =
 			"feature":"地上ブースト回復速度UP>"
 		},
 		{
+			"name":"アンゼロイ",
+			"durability":130,
+			"occupation":"B+",
+			"weight":1900,
+			"feature":"オーバーヒート時間短縮>"
+		},
+		{
 			"name":"ディスドス",
-			"durability":120,
+			"durability":130,
 			"occupation":"B",
 			"weight":2200,
-			"feature":"フルドライブ消費軽減>"
+			"feature":"フルドライブ消費軽減>>"
 		},
 		{
 			"name":"サブライガ",
@@ -477,7 +519,7 @@ SPDB.AirReal =
 			"durability":220,
 			"occupation":"C",
 			"weight":2500,
-			"feature":"オーバーヒート時間短縮"
+			"feature":"オーバーヒート時間短縮>>"
 		},
 		{
 			"name":"パ・フェクト",
