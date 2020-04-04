@@ -719,19 +719,19 @@ SPDB.Weapon =
 		},
 		{
 			"side":"R",
-			"name":"三星 桜白蓮",
-			"vsAR":"",
-			"vsMAG":"",
-			"reload":"",
-			"usability":"",
-			"weaponType":"実弾",
-			"ammo":25,
-			"attackType":"中距離射撃",
+			"name":"三星 桜白蓬",
+			"vsAR":"B",
+			"vsMAG":"C",
+			"reload":"A+",
+			"usability":"B",
+			"weaponType":"格闘",
+			"ammo":1,
+			"attackType":"近距離格闘",
 			"triggerType":"1トリガー",
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"-",
-			"howToGet":"ドロップ、購入"
+			"howToGet":"クエスト「花より団子だべ4」をクリアする"
 		},
 		{
 			"side":"LR",
