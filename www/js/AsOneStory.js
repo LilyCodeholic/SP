@@ -90,6 +90,8 @@ const appendData = (tab) =>
 
 				const alignDialog = () =>
 				{
+					console.log(dialog[2])
+
 					const area =
 						dialog[0][0] === "C" ? "area8":
 						dialog[0][0] === "R" ? "area9":
