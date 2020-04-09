@@ -1,5 +1,3 @@
-const loadTitle = () =>
-{
 SPDB.Title =
 {
 	Status:`
@@ -1068,5 +1066,4 @@ SPDB.Title =
 			"flag":"Round1 TournamentYYYY#n 3位"
 		},
 	]
-};
 };

@@ -1,6 +1,6 @@
 const funcPageTask = () =>
 {
-loadTask();
+const Task = SPDB.Task;
 
 const tabTask = document.getElementById("tabTask");
 tabTask.addEventListener("prechange", (event) =>
@@ -10,14 +10,14 @@ tabTask.addEventListener("prechange", (event) =>
 }, false);
 document.querySelector("#pageTask ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = SPDB.Task.Status;
+	document.getElementById("textToast").innerHTML = Task.Status;
 	toast.toggle();
 };
 
 const appendData = (tab) =>
 {
 	const fragment = document.createDocumentFragment();
-	for(const items of SPDB.Task[tab])
+	for(const items of Task[tab])
 	{
 		if(items.name == "？？？")
 		{

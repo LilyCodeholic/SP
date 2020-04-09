@@ -1,6 +1,6 @@
 const funcPageCustomize = () =>
 {
-loadCustomize();
+const Customize = SPDB.Customize;
 
 const tabCustomize = document.getElementById("tabCustomize");
 tabCustomize.addEventListener("prechange", (event) =>

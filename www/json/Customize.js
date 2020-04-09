@@ -1,5 +1,3 @@
-const loadCustomize = () =>
-{
 SPDB.Customize =
 {
 	Status:`
@@ -308,5 +306,4 @@ SPDB.Customize =
 			"RGB": "#000000"
 		},
 	]
-};
 };

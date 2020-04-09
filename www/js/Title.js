@@ -1,6 +1,6 @@
 const funcPageTitle = () =>
 {
-loadTitle();
+const Title = SPDB.Title;
 
 const tabTitle = document.getElementById("tabTitle");
 tabTitle.addEventListener("prechange", (event) =>
@@ -10,14 +10,14 @@ tabTitle.addEventListener("prechange", (event) =>
 }, false);
 document.querySelector("#pageTitle ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = SPDB.Title.Status;
+	document.getElementById("textToast").innerHTML = Title.Status;
 	toast.toggle();
 };
 
 const appendData = (tab) =>
 {
 	const fragment = document.createDocumentFragment();
-	for(const items of SPDB.Title[tab])
+	for(const items of Title[tab])
 	{
 		if(items.title == "？？？")
 		{

@@ -1,6 +1,6 @@
 const funcPageAsOne = () =>
 {
-loadAsOne();
+const AsOne = SPDB.AsOne;
 
 const fullName =
 {

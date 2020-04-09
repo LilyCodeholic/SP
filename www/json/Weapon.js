@@ -1,5 +1,3 @@
-const loadWeapon = () =>
-{
 SPDB.Weapon =
 {
 	Status:`
@@ -1224,5 +1222,4 @@ SPDB.Weapon =
 			"howToGet":"？"
 		},
 	]
-};
 };

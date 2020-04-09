@@ -1,5 +1,3 @@
-const loadAirReal = () =>
-{
 SPDB.AirReal =
 {
 	Status:`
@@ -530,5 +528,3 @@ SPDB.AirReal =
 		},
 	]
 };
-};
-

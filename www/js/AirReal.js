@@ -1,6 +1,6 @@
 const funcPageAirReal = () =>
 {
-loadAirReal();
+const AirReal = SPDB.AirReal;
 
 const partsName =
 {

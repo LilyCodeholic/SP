@@ -1,6 +1,6 @@
 const funcPageNicePlay = () =>
 {
-loadNicePlay();
+const NicePlay = SPDB.NicePlay;
 
 const category =
 {
@@ -18,7 +18,7 @@ tabNicePlay.addEventListener("prechange", (event) =>
 }, false);
 document.querySelector("#pageNicePlay ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = SPDB.NicePlay.Status;
+	document.getElementById("textToast").innerHTML = NicePlay.Status;
 	toast.toggle();
 };
 
@@ -39,7 +39,7 @@ const appendData = (tab) =>
 	fragment.appendChild(fixedList_header);
 	fragment.appendChild(backList_header);
 
-	for(const items of SPDB.NicePlay[tab])
+	for(const items of NicePlay[tab])
 	{
 		const list_item = document.createElement("ons-list-item");
 		list_item.innerHTML = `

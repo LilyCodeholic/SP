@@ -1,5 +1,3 @@
-const loadNicePlay = () =>
-{
 SPDB.NicePlay =
 {
 	Status:`
@@ -360,5 +358,4 @@ SPDB.NicePlay =
 			"point":30
 		},
 	]
-};
 };

@@ -1,16 +1,16 @@
 const funcPageAssemble = () =>
 {
-loadAirReal();
-loadWeapon();
-loadAsOne();
+const AirReal = SPDB.AirReal;
+const Weapon = SPDB.Weapon;
+const AsOne = SPDB.AsOne;
 
 const appendData = () =>
 {
 	// AsOnes[0].En -> "Hikari", AsOnes[0].Ja -> "ヒカリ"
-	const AsOnes = Array.from(SPDB.AsOne.Order);
+	const AsOnes = Array.from(AsOne.Order);
 	// Skills.Hikari[0] -> "武器切り替え速度上昇"
 	const Skills = {}
-	for(const asone of Object.keys(SPDB.AsOne.Skill))
+	for(const asone of Object.keys(AsOne.Skill))
 	{
 		if(asone == "Status" || asone == "Order")
 		{
@@ -20,20 +20,20 @@ const appendData = () =>
 		{
 			Skills[asone] = [];
 		}
-		for(const skill of SPDB.AsOne.Skill[asone])
+		for(const skill of AsOne.Skill[asone])
 		{
 			Skills[asone].push(skill.skill);
 		}
 	}
 	// Weapons.Assault.L[0] -> "拳銃 天火", Weapons.Support.LR[0] -> "ヴァイト"
 	const Weapons = {Assault: {L: [], R: [], LR: []}, Vanguard: {L: [], R: [], LR: []}, Support: {L: [], R: [], LR: []}};
-	for(const role of Object.keys(SPDB.Weapon))
+	for(const role of Object.keys(Weapon))
 	{
 		if(role == "Status")
 		{
 			continue;
 		}
-		for(const weapon of SPDB.Weapon[role])
+		for(const weapon of Weapon[role])
 		{
 			switch(weapon.side)
 			{
@@ -51,7 +51,7 @@ const appendData = () =>
 	}
 	// AirReals[0] -> "ソリディア"
 	const AirReals = [];
-	for(const part of SPDB.AirReal.Head)
+	for(const part of AirReal.Head)
 	{
 		AirReals.push(part.name);
 	}
@@ -471,9 +471,9 @@ const appendData = () =>
 				${AirReals[0]}
 			</ons-col>
 			<ons-col id="pTxtHeadFeature" width="50%">
-				${Array.isArray(SPDB.AirReal.Head[0].feature) === true ?
-					`${SPDB.AirReal.Head[0].feature[0]}<br>${SPDB.AirReal.Head[0].feature[1]}`:
-					`${SPDB.AirReal.Head[0].feature}<br>-`
+				${Array.isArray(AirReal.Head[0].feature) === true ?
+					`${AirReal.Head[0].feature[0]}<br>${AirReal.Head[0].feature[1]}`:
+					`${AirReal.Head[0].feature}<br>-`
 				}
 			</ons-col>
 		</ons-row>
@@ -514,9 +514,9 @@ const appendData = () =>
 				${AirReals[0]}
 			</ons-col>
 			<ons-col id="pTxtArmFeature" width="50%">
-				${Array.isArray(SPDB.AirReal.Arm[0].feature) === true ?
-					`${SPDB.AirReal.Arm[0].feature[0]}<br>${SPDB.AirReal.Arm[0].feature[1]}`:
-					`${SPDB.AirReal.Arm[0].feature}<br>-`
+				${Array.isArray(AirReal.Arm[0].feature) === true ?
+					`${AirReal.Arm[0].feature[0]}<br>${AirReal.Arm[0].feature[1]}`:
+					`${AirReal.Arm[0].feature}<br>-`
 				}
 			</ons-col>
 		</ons-row>
@@ -566,9 +566,9 @@ const appendData = () =>
 				${AirReals[0]}
 			</ons-col>
 			<ons-col id="pTxtBodyFeature" width="50%">
-				${Array.isArray(SPDB.AirReal.Body[0].feature) === true ?
-					`${SPDB.AirReal.Body[0].feature[0]}<br>${SPDB.AirReal.Body[0].feature[1]}`:
-					`${SPDB.AirReal.Body[0].feature}<br>-`
+				${Array.isArray(AirReal.Body[0].feature) === true ?
+					`${AirReal.Body[0].feature[0]}<br>${AirReal.Body[0].feature[1]}`:
+					`${AirReal.Body[0].feature}<br>-`
 				}
 			</ons-col>
 		</ons-row>
@@ -638,9 +638,9 @@ const appendData = () =>
 				${AirReals[0]}
 			</ons-col>
 			<ons-col id="pTxtWingFeature" width="50%">
-				${Array.isArray(SPDB.AirReal.Wing[0].feature) === true ?
-					`${SPDB.AirReal.Wing[0].feature[0]}<br>${SPDB.AirReal.Wing[0].feature[1]}`:
-					`${SPDB.AirReal.Wing[0].feature}<br>-`
+				${Array.isArray(AirReal.Wing[0].feature) === true ?
+					`${AirReal.Wing[0].feature[0]}<br>${AirReal.Wing[0].feature[1]}`:
+					`${AirReal.Wing[0].feature}<br>-`
 				}
 			</ons-col>
 		</ons-row>
@@ -685,9 +685,9 @@ const appendData = () =>
 				${AirReals[0]}
 			</ons-col>
 			<ons-col id="pTxtLegFeature" width="50%">
-				${Array.isArray(SPDB.AirReal.Leg[0].feature) === true ?
-					`${SPDB.AirReal.Leg[0].feature[0]}<br>${SPDB.AirReal.Leg[0].feature[1]}`:
-					`${SPDB.AirReal.Leg[0].feature}<br>-`
+				${Array.isArray(AirReal.Leg[0].feature) === true ?
+					`${AirReal.Leg[0].feature[0]}<br>${AirReal.Leg[0].feature[1]}`:
+					`${AirReal.Leg[0].feature}<br>-`
 				}
 			</ons-col>
 		</ons-row>
@@ -707,77 +707,77 @@ const appendData = () =>
 		<ons-row>
 			<ons-col>アーマー</ons-col>
 			<ons-col id="pArmor" class="area5">
-				${(SPDB.AirReal.Head[0].armor | 0) + (SPDB.AirReal.Arm[0].armor | 0) + (SPDB.AirReal.Body[0].armor | 0) + (SPDB.AirReal.Wing[0].armor | 0) + (SPDB.AirReal.Leg[0].armor | 0)}
+				${(AirReal.Head[0].armor | 0) + (AirReal.Arm[0].armor | 0) + (AirReal.Body[0].armor | 0) + (AirReal.Wing[0].armor | 0) + (AirReal.Leg[0].armor | 0)}
 			</ons-col>
 			<ons-col>耐久</ons-col>
 			<ons-col id="pDurability" class="area5">
-				${SPDB.AirReal.Head[0].durability + SPDB.AirReal.Arm[0].durability + SPDB.AirReal.Body[0].durability + SPDB.AirReal.Wing[0].durability + SPDB.AirReal.Leg[0].durability}
+				${AirReal.Head[0].durability + AirReal.Arm[0].durability + AirReal.Body[0].durability + AirReal.Wing[0].durability + AirReal.Leg[0].durability}
 			</ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col>重量</ons-col>
 			<ons-col id="pWeight" class="area5">
-				${SPDB.AirReal.Head[0].weight + SPDB.AirReal.Arm[0].weight + SPDB.AirReal.Body[0].weight + SPDB.AirReal.Wing[0].weight + SPDB.AirReal.Leg[0].weight}
+				${AirReal.Head[0].weight + AirReal.Arm[0].weight + AirReal.Body[0].weight + AirReal.Wing[0].weight + AirReal.Leg[0].weight}
 			</ons-col>
 			<ons-col width="50%"></ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col>アーマー<br>全回復時間</ons-col>
 			<ons-col id="pRepairSpeed" class="area2">
-				${SPDB.AirReal.Body[0].repairSpeed}
+				${AirReal.Body[0].repairSpeed}
 			</ons-col>
 			<ons-col><br>回復待機</ons-col>
 			<ons-col id="pRepairLatency" class="area2">
-				${SPDB.AirReal.Body[0].repairLatency}
+				${AirReal.Body[0].repairLatency}
 			</ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col>ロックオン<br>距離</ons-col>
 			<ons-col id="pLength" class="area2">
-				${SPDB.AirReal.Head[0].length}
+				${AirReal.Head[0].length}
 			</ons-col>
 			<ons-col><br>範囲</ons-col>
 			<ons-col id="pRange" class="area2">
-				${SPDB.AirReal.Head[0].range}
+				${AirReal.Head[0].range}
 			</ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col>ポート占拠速度</ons-col>
 			<ons-col id="pOccupation" class="area5">
-				${SPDB.AirReal.Leg[0].occupation}
+				${AirReal.Leg[0].occupation}
 			</ons-col>
 			<ons-col width="50%"></ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col width="33%">ダッシュタイプ</ons-col>
 			<ons-col id="pDashType" class="area5">
-				${SPDB.AirReal.Wing[0].dashType}
+				${AirReal.Wing[0].dashType}
 			</ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col>回避回数</ons-col>
 			<ons-col id="pDodge" class="area5">
-				${SPDB.AirReal.Wing[0].dodge}
+				${AirReal.Wing[0].dodge}
 			</ons-col>
 			<ons-col>ダッシュ回数</ons-col>
 			<ons-col id="pDash" class="area5">
-				${SPDB.AirReal.Wing[0].dash}
+				${AirReal.Wing[0].dash}
 			</ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col width="33%">フルドライブタイプ</ons-col>
 			<ons-col id="pFdType" class="area5">
-				${SPDB.AirReal.Wing[0].fdType}
+				${AirReal.Wing[0].fdType}
 			</ons-col>
 		</ons-row>
 		<ons-row>
 			<ons-col width="25%">溜め時間</ons-col>
 			<ons-col id="pFdCharge" class="area5">
-				${SPDB.AirReal.Wing[0].fdCharge}
+				${AirReal.Wing[0].fdCharge}
 			</ons-col>
 			<ons-col width="25%">ドリフト</ons-col>
 			<ons-col id="pDrift" class="area5">
-				${SPDB.AirReal.Wing[0].drift}
+				${AirReal.Wing[0].drift}
 			</ons-col>
 		</ons-row>
 	`;
@@ -833,27 +833,27 @@ const appendData = () =>
 		{
 			case "armor":
 				return (
-				((part != "head" && SPDB.AirReal.Head[pHead.checked].armor | 0) | 0) +
-				((part != "arm" && SPDB.AirReal.Arm[pArm.checked].armor | 0) | 0) +
-				((part != "body" && SPDB.AirReal.Body[pBody.checked].armor | 0) | 0) +
-				((part != "wing" && SPDB.AirReal.Wing[pWing.checked].armor | 0) | 0) +
-				((part != "leg" && SPDB.AirReal.Leg[pLeg.checked].armor | 0) | 0)
+				((part != "head" && AirReal.Head[pHead.checked].armor | 0) | 0) +
+				((part != "arm" && AirReal.Arm[pArm.checked].armor | 0) | 0) +
+				((part != "body" && AirReal.Body[pBody.checked].armor | 0) | 0) +
+				((part != "wing" && AirReal.Wing[pWing.checked].armor | 0) | 0) +
+				((part != "leg" && AirReal.Leg[pLeg.checked].armor | 0) | 0)
 				);
 			case "durability":
 				return (
-				(part != "head" && SPDB.AirReal.Head[pHead.checked].durability | 0) +
-				(part != "arm" && SPDB.AirReal.Arm[pArm.checked].durability | 0) +
-				(part != "body" && SPDB.AirReal.Body[pBody.checked].durability | 0) +
-				(part != "wing" && SPDB.AirReal.Wing[pWing.checked].durability | 0) +
-				(part != "leg" && SPDB.AirReal.Leg[pLeg.checked].durability | 0)
+				(part != "head" && AirReal.Head[pHead.checked].durability | 0) +
+				(part != "arm" && AirReal.Arm[pArm.checked].durability | 0) +
+				(part != "body" && AirReal.Body[pBody.checked].durability | 0) +
+				(part != "wing" && AirReal.Wing[pWing.checked].durability | 0) +
+				(part != "leg" && AirReal.Leg[pLeg.checked].durability | 0)
 				);
 			case "weight":
 				return (
-				(part != "head" && SPDB.AirReal.Head[pHead.checked].weight | 0) +
-				(part != "arm" && SPDB.AirReal.Arm[pArm.checked].weight | 0) +
-				(part != "body" && SPDB.AirReal.Body[pBody.checked].weight | 0) +
-				(part != "wing" && SPDB.AirReal.Wing[pWing.checked].weight | 0) +
-				(part != "leg" && SPDB.AirReal.Leg[pLeg.checked].weight | 0)
+				(part != "head" && AirReal.Head[pHead.checked].weight | 0) +
+				(part != "arm" && AirReal.Arm[pArm.checked].weight | 0) +
+				(part != "body" && AirReal.Body[pBody.checked].weight | 0) +
+				(part != "wing" && AirReal.Wing[pWing.checked].weight | 0) +
+				(part != "leg" && AirReal.Leg[pLeg.checked].weight | 0)
 				);
 			default:
 				break;
@@ -901,26 +901,26 @@ const appendData = () =>
 					pTxtHead.innerHTML = AirReals[selectIndex];
 					const pTxtHeadFeature = document.getElementById("pTxtHeadFeature");
 					pTxtHeadFeature.innerHTML = `
-					${Array.isArray(SPDB.AirReal.Head[selectIndex].feature) === true ?
-						`${SPDB.AirReal.Head[selectIndex].feature[0]}<br>${SPDB.AirReal.Head[selectIndex].feature[1]}`:
-						`${SPDB.AirReal.Head[selectIndex].feature}<br>-`
+					${Array.isArray(AirReal.Head[selectIndex].feature) === true ?
+						`${AirReal.Head[selectIndex].feature[0]}<br>${AirReal.Head[selectIndex].feature[1]}`:
+						`${AirReal.Head[selectIndex].feature}<br>-`
 					}`;
 					// 性能の差分を表示する処理
 					const pArmor = document.getElementById("pArmor");
 					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					pArmor.innerHTML = `${pNowArmor} => ${(SPDB.AirReal.Head[selectIndex].armor | 0) + getOthersParameter("head", "armor")}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Head[selectIndex].armor | 0) + getOthersParameter("head", "armor")}`;
 					const pDurability = document.getElementById("pDurability");
 					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					pDurability.innerHTML = `${pNowDurability} => ${SPDB.AirReal.Head[selectIndex].durability + getOthersParameter("head", "durability")}`;
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Head[selectIndex].durability + getOthersParameter("head", "durability")}`;
 					const pWeight = document.getElementById("pWeight");
 					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					pWeight.innerHTML = `${pNowWeight} => ${SPDB.AirReal.Head[selectIndex].weight + getOthersParameter("head", "weight")}`;
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Head[selectIndex].weight + getOthersParameter("head", "weight")}`;
 					const pLength = document.getElementById("pLength");
 					const pNowLength = pLength.innerHTML.split(/ =&gt; /)[0];
-					pLength.innerHTML = `${pNowLength} => ${SPDB.AirReal.Head[selectIndex].length}`;
+					pLength.innerHTML = `${pNowLength} => ${AirReal.Head[selectIndex].length}`;
 					const pRange = document.getElementById("pRange");
 					const pNowRange = pRange.innerHTML.split(/ =&gt; /)[0];
-					pRange.innerHTML = `${pNowRange} => ${SPDB.AirReal.Head[selectIndex].range}`;
+					pRange.innerHTML = `${pNowRange} => ${AirReal.Head[selectIndex].range}`;
 				}
 				break;
 			case "parm":
@@ -931,20 +931,20 @@ const appendData = () =>
 					pTxtArm.innerHTML = AirReals[selectIndex];
 					const pTxtArmFeature = document.getElementById("pTxtArmFeature");
 					pTxtArmFeature.innerHTML = `
-					${Array.isArray(SPDB.AirReal.Arm[selectIndex].feature) === true ?
-						`${SPDB.AirReal.Arm[selectIndex].feature[0]}<br>${SPDB.AirReal.Arm[selectIndex].feature[1]}`:
-						`${SPDB.AirReal.Arm[selectIndex].feature}<br>-`
+					${Array.isArray(AirReal.Arm[selectIndex].feature) === true ?
+						`${AirReal.Arm[selectIndex].feature[0]}<br>${AirReal.Arm[selectIndex].feature[1]}`:
+						`${AirReal.Arm[selectIndex].feature}<br>-`
 					}`;
 					// 性能の差分を表示する処理
 					const pArmor = document.getElementById("pArmor");
 					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					pArmor.innerHTML = `${pNowArmor} => ${(SPDB.AirReal.Arm[selectIndex].armor | 0) + getOthersParameter("arm", "armor")}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Arm[selectIndex].armor | 0) + getOthersParameter("arm", "armor")}`;
 					const pDurability = document.getElementById("pDurability");
 					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					pDurability.innerHTML = `${pNowDurability} => ${SPDB.AirReal.Arm[selectIndex].durability + getOthersParameter("arm", "durability")}`;
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Arm[selectIndex].durability + getOthersParameter("arm", "durability")}`;
 					const pWeight = document.getElementById("pWeight");
 					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					pWeight.innerHTML = `${pNowWeight} => ${SPDB.AirReal.Arm[selectIndex].weight + getOthersParameter("arm", "weight")}`;
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Arm[selectIndex].weight + getOthersParameter("arm", "weight")}`;
 				}
 				break;
 			case "pbody":
@@ -955,26 +955,26 @@ const appendData = () =>
 					pTxtBody.innerHTML = AirReals[selectIndex];
 					const pTxtBodyFeature = document.getElementById("pTxtBodyFeature");
 					pTxtBodyFeature.innerHTML = `
-					${Array.isArray(SPDB.AirReal.Body[selectIndex].feature) === true ?
-						`${SPDB.AirReal.Body[selectIndex].feature[0]}<br>${SPDB.AirReal.Body[selectIndex].feature[1]}`:
-						`${SPDB.AirReal.Body[selectIndex].feature}<br>-`
+					${Array.isArray(AirReal.Body[selectIndex].feature) === true ?
+						`${AirReal.Body[selectIndex].feature[0]}<br>${AirReal.Body[selectIndex].feature[1]}`:
+						`${AirReal.Body[selectIndex].feature}<br>-`
 					}`;
 					// 性能の差分を表示する処理
 					const pArmor = document.getElementById("pArmor");
 					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					pArmor.innerHTML = `${pNowArmor} => ${(SPDB.AirReal.Body[selectIndex].armor | 0) + getOthersParameter("body", "armor")}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Body[selectIndex].armor | 0) + getOthersParameter("body", "armor")}`;
 					const pDurability = document.getElementById("pDurability");
 					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					pDurability.innerHTML = `${pNowDurability} => ${SPDB.AirReal.Body[selectIndex].durability + getOthersParameter("body", "durability")}`;
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Body[selectIndex].durability + getOthersParameter("body", "durability")}`;
 					const pWeight = document.getElementById("pWeight");
 					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					pWeight.innerHTML = `${pNowWeight} => ${SPDB.AirReal.Body[selectIndex].weight + getOthersParameter("body", "weight")}`;
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Body[selectIndex].weight + getOthersParameter("body", "weight")}`;
 					const pRepairSpeed = document.getElementById("pRepairSpeed");
 					const pNowRepairSpeed = pRepairSpeed.innerHTML.split(/ =&gt; /)[0];
-					pRepairSpeed.innerHTML = `${pNowRepairSpeed} => ${SPDB.AirReal.Body[selectIndex].repairSpeed}`;
+					pRepairSpeed.innerHTML = `${pNowRepairSpeed} => ${AirReal.Body[selectIndex].repairSpeed}`;
 					const pRepairLatency = document.getElementById("pRepairLatency");
 					const pNowRepairLatency = pRepairLatency.innerHTML.split(/ =&gt; /)[0];
-					pRepairLatency.innerHTML = `${pNowRepairLatency} => ${SPDB.AirReal.Body[selectIndex].repairLatency}`;
+					pRepairLatency.innerHTML = `${pNowRepairLatency} => ${AirReal.Body[selectIndex].repairLatency}`;
 				}
 				break;
 			case "pwing":
@@ -985,38 +985,38 @@ const appendData = () =>
 					pTxtWing.innerHTML = AirReals[selectIndex];
 					const pTxtWingFeature = document.getElementById("pTxtWingFeature");
 					pTxtWingFeature.innerHTML = `
-					${Array.isArray(SPDB.AirReal.Wing[selectIndex].feature) === true ?
-						`${SPDB.AirReal.Wing[selectIndex].feature[0]}<br>${SPDB.AirReal.Wing[selectIndex].feature[1]}`:
-						`${SPDB.AirReal.Wing[selectIndex].feature}<br>-`
+					${Array.isArray(AirReal.Wing[selectIndex].feature) === true ?
+						`${AirReal.Wing[selectIndex].feature[0]}<br>${AirReal.Wing[selectIndex].feature[1]}`:
+						`${AirReal.Wing[selectIndex].feature}<br>-`
 					}`;
 					// 性能の差分を表示する処理
 					const pArmor = document.getElementById("pArmor");
 					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					pArmor.innerHTML = `${pNowArmor} => ${(SPDB.AirReal.Wing[selectIndex].armor | 0) + getOthersParameter("wing", "armor")}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Wing[selectIndex].armor | 0) + getOthersParameter("wing", "armor")}`;
 					const pDurability = document.getElementById("pDurability");
 					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					pDurability.innerHTML = `${pNowDurability} => ${SPDB.AirReal.Wing[selectIndex].durability + getOthersParameter("wing", "durability")}`;
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Wing[selectIndex].durability + getOthersParameter("wing", "durability")}`;
 					const pWeight = document.getElementById("pWeight");
 					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					pWeight.innerHTML = `${pNowWeight} => ${SPDB.AirReal.Wing[selectIndex].weight + getOthersParameter("wing", "weight")}`;
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Wing[selectIndex].weight + getOthersParameter("wing", "weight")}`;
 					const pDashType = document.getElementById("pDashType");
 					const pNowDashType = pDashType.innerHTML.split(/ =&gt; /)[0];
-					pDashType.innerHTML = `${pNowDashType} => ${SPDB.AirReal.Wing[selectIndex].dashType}`;
+					pDashType.innerHTML = `${pNowDashType} => ${AirReal.Wing[selectIndex].dashType}`;
 					const pDodge = document.getElementById("pDodge");
 					const pNowDodge = pDodge.innerHTML.split(/ =&gt; /)[0];
-					pDodge.innerHTML = `${pNowDodge} => ${SPDB.AirReal.Wing[selectIndex].dodge}`;
+					pDodge.innerHTML = `${pNowDodge} => ${AirReal.Wing[selectIndex].dodge}`;
 					const pDash = document.getElementById("pDash");
 					const pNowDash = pDash.innerHTML.split(/ =&gt; /)[0];
-					pDash.innerHTML = `${pNowDash} => ${SPDB.AirReal.Wing[selectIndex].dash}`;
+					pDash.innerHTML = `${pNowDash} => ${AirReal.Wing[selectIndex].dash}`;
 					const pFdType = document.getElementById("pFdType");
 					const pNowFdType = pFdType.innerHTML.split(/ =&gt; /)[0];
-					pFdType.innerHTML = `${pNowFdType} => ${SPDB.AirReal.Wing[selectIndex].fdType}`;
+					pFdType.innerHTML = `${pNowFdType} => ${AirReal.Wing[selectIndex].fdType}`;
 					const pFdCharge = document.getElementById("pFdCharge");
 					const pNowFdCharge = pFdCharge.innerHTML.split(/ =&gt; /)[0];
-					pFdCharge.innerHTML = `${pNowFdCharge} => ${SPDB.AirReal.Wing[selectIndex].fdCharge}`;
+					pFdCharge.innerHTML = `${pNowFdCharge} => ${AirReal.Wing[selectIndex].fdCharge}`;
 					const pDrift = document.getElementById("pDrift");
 					const pNowDrift = pDrift.innerHTML.split(/ =&gt; /)[0];
-					pDrift.innerHTML = `${pNowDrift} => ${SPDB.AirReal.Wing[selectIndex].drift}`;
+					pDrift.innerHTML = `${pNowDrift} => ${AirReal.Wing[selectIndex].drift}`;
 				}
 				break;
 			case "pleg":
@@ -1027,23 +1027,23 @@ const appendData = () =>
 					pTxtLeg.innerHTML = AirReals[selectIndex];
 					const pTxtLegFeature = document.getElementById("pTxtLegFeature");
 					pTxtLegFeature.innerHTML = `
-					${Array.isArray(SPDB.AirReal.Leg[selectIndex].feature) === true ?
-						`${SPDB.AirReal.Leg[selectIndex].feature[0]}<br>${SPDB.AirReal.Leg[selectIndex].feature[1]}`:
-						`${SPDB.AirReal.Leg[selectIndex].feature}<br>-`
+					${Array.isArray(AirReal.Leg[selectIndex].feature) === true ?
+						`${AirReal.Leg[selectIndex].feature[0]}<br>${AirReal.Leg[selectIndex].feature[1]}`:
+						`${AirReal.Leg[selectIndex].feature}<br>-`
 					}`;
 					// 性能の差分を表示する処理
 					const pArmor = document.getElementById("pArmor");
 					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					pArmor.innerHTML = `${pNowArmor} => ${(SPDB.AirReal.Leg[selectIndex].armor | 0) + getOthersParameter("leg", "armor")}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Leg[selectIndex].armor | 0) + getOthersParameter("leg", "armor")}`;
 					const pDurability = document.getElementById("pDurability");
 					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					pDurability.innerHTML = `${pNowDurability} => ${SPDB.AirReal.Leg[selectIndex].durability + getOthersParameter("leg", "durability")}`;
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Leg[selectIndex].durability + getOthersParameter("leg", "durability")}`;
 					const pWeight = document.getElementById("pWeight");
 					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					pWeight.innerHTML = `${pNowWeight} => ${SPDB.AirReal.Leg[selectIndex].weight + getOthersParameter("leg", "weight")}`;
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Leg[selectIndex].weight + getOthersParameter("leg", "weight")}`;
 					const pOccupation = document.getElementById("pOccupation");
 					const pNowOccupation = pOccupation.innerHTML.split(/ =&gt; /)[0];
-					pOccupation.innerHTML = `${pNowOccupation} => ${SPDB.AirReal.Leg[selectIndex].occupation}`;
+					pOccupation.innerHTML = `${pNowOccupation} => ${AirReal.Leg[selectIndex].occupation}`;
 				}
 				break;
 			case "pAssault1stL":

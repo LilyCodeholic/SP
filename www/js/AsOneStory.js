@@ -1,6 +1,6 @@
 const funcPageAsOneStory = () =>
 {
-loadAsOneStory();
+const AsOneStory = SPDB.AsOneStory;
 
 const fullName =
 {
@@ -19,7 +19,7 @@ tabAsOneStory.addEventListener("prechange", (event) =>
 }, false);
 document.querySelector("#pageAsOneStory ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = SPDB.AsOneStory.Status;
+	document.getElementById("textToast").innerHTML = AsOneStory.Status;
 	toast.toggle();
 };
 
@@ -27,11 +27,11 @@ const appendData = (tab) =>
 {
 	const fragment = document.createDocumentFragment();
 
-	// SPDB.AsOneStory.Story
+	// AsOneStory.Story
 	const form = document.createElement("form");
 	form.setAttribute("name", `story${tab}`);
 
-	for(const [categoryOrder, categories] of SPDB.AsOneStory.Story[tab].entries())
+	for(const [categoryOrder, categories] of AsOneStory.Story[tab].entries())
 	{
 		const list_header = document.createElement("ons-list-header");
 		list_header.innerHTML = categories.category;
@@ -90,8 +90,6 @@ const appendData = (tab) =>
 
 				const alignDialog = () =>
 				{
-					console.log(dialog[2])
-
 					const area =
 						dialog[0][0] === "C" ? "area8":
 						dialog[0][0] === "R" ? "area9":
@@ -144,13 +142,13 @@ const appendData = (tab) =>
 	}
 	fragment.appendChild(form);
 
-	// // SPDB.AsOneStory.Quotes
+	// // AsOneStory.Quotes
 	// {
 	//	 const list_header = document.createElement("ons-list-header");
 	//	 list_header.innerHTML = `セリフ`;
 	//	 fragment.appendChild(list_header);
 	// }
-	// for(const items of SPDB.AsOne.Quotes[tab])
+	// for(const items of AsOne.Quotes[tab])
 	// {
 	//	 const list_item = document.createElement("ons-list-item");
 	//	 list_item.setAttribute("expandable", "");

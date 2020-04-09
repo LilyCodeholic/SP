@@ -1,5 +1,3 @@
-const loadAsOne = () =>
-{
 SPDB.AsOne =
 {
 	Status:`
@@ -425,5 +423,4 @@ SPDB.AsOne =
 			},
 		]
 	},
-};
 };

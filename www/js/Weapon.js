@@ -1,6 +1,6 @@
 const funcPageWeapon = () =>
 {
-loadWeapon();
+const Weapon = SPDB.Weapon;
 
 const tabWeapon = document.getElementById("tabWeapon");
 tabWeapon.addEventListener("prechange", (event) =>
@@ -10,7 +10,7 @@ tabWeapon.addEventListener("prechange", (event) =>
 }, false);
 document.querySelector("#pageWeapon ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = SPDB.Weapon.Status;
+	document.getElementById("textToast").innerHTML = Weapon.Status;
 	toast.toggle();
 };
 
@@ -55,7 +55,7 @@ const appendData = (tab) =>
 	lSection.appendChild(lBackList_header);
 
 	// ons-list-item
-	for(const items of SPDB.Weapon[tab])
+	for(const items of Weapon[tab])
 	{
 		const pList_item = document.createElement("ons-list-item");
 		pList_item.setAttribute("expandable", "");

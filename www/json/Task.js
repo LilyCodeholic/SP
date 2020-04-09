@@ -1,5 +1,3 @@
-const loadTask = () =>
-{
 SPDB.Task =
 {
 	Status:`
@@ -431,5 +429,4 @@ SPDB.Task =
 			"flag":"誕生日キャンペーン期間中のみ開放"
 		},
 	]
-};
 };
