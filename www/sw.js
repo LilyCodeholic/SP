@@ -30,7 +30,7 @@ self.addEventListener("install", (event) =>
     // インストール処理
     event.waitUntil(caches.open(CACHE_NAME).then((cache) =>
     {
-        console.log("Opened cache");
+        console.log("install: cache.addAll(urlsToCache)");
         return cache.addAll(urlsToCache);
     }));
 });
@@ -42,6 +42,7 @@ self.addEventListener("fetch", (event) =>
         // キャッシュがあったのでそのレスポンスを返す
         if(response)
         {
+			console.log("fetch: return response")
             return response;
         }
             return fetch(event.request);
