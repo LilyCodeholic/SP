@@ -9,7 +9,8 @@ const fullName =
 	"シャーリー":"シャルロッテ・ダヴェーヌ",
 	"イサドラ":"イサドラ・エザルタード",
 	"ナギ":"ナギ・オネス",
-	"カズマ":"カズマ・アブレイズ"
+	"カズマ":"カズマ・アブレイズ",
+	"他":"その他",
 };
 const tabAsOneStory = document.getElementById("tabAsOneStory");
 tabAsOneStory.addEventListener("prechange", (event) =>
@@ -177,7 +178,7 @@ const appendData = (tab) =>
 	const idSetInterval = setInterval(findElement, 100, `listAsOneStory_${tab}`);
 };
 
-const tabs = ["Hikari", "Reika", "Shirley", "Isadora", "Nagi", "Kazuma"];
+const tabs = ["Hikari", "Reika", "Shirley", "Isadora", "Nagi", "Kazuma", "Other"];
 for(const tab of tabs)
 {
 	appendData(tab);
