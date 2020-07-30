@@ -1,5 +1,6 @@
 const funcPageAsOneStory = () =>
 {
+performance.mark("S_funcPageAsOneStory");
 const AsOneStory = SPDB.AsOneStory;
 
 const fullName =
@@ -23,6 +24,42 @@ document.querySelector("#pageAsOneStory ons-toolbar-button").onclick = () =>
 	document.getElementById("textToast").innerHTML = AsOneStory.Status;
 	toast.toggle();
 };
+const alignDialog = (dialog) =>
+{
+	const align = dialog[0];
+	const actor = dialog[1];
+	const lines = dialog[2];
+
+	const area =
+		align[0] === "C" ? "area8":
+		align[0] === "R" ? "area9":
+		align[0] === "L" ? "area7":"";
+
+	if(area === "")
+	{
+		return "<ons-col>このアズワンストーリーはまだ入力されていません。</ons-col>";
+	}
+	else
+	{
+		const decolate = [];
+		if(align.includes("Bold"))
+		{
+			decolate.push("bold");
+		}
+		if(align.includes("Large"))
+		{
+			decolate.push("large");
+		}
+
+		const dialogHtml = decolate.length <= 0 ?
+			area === "area8" ?
+				`${lines}`:
+				`${actor}<br>「${lines}」`
+			:
+			`${actor}<br><span class="${decolate.join(" ")}">「${lines}」</span>`;
+		return `<ons-col class="${area}">${dialogHtml}</ons-col>`;
+	}
+};
 
 const appendData = (tab) =>
 {
@@ -32,16 +69,17 @@ const appendData = (tab) =>
 	const form = document.createElement("form");
 	form.setAttribute("name", `story${tab}`);
 
-	for(const [categoryOrder, categories] of AsOneStory.Story[tab].entries())
+	AsOneStory.Story[tab].forEach((categories, indexCategory) =>
 	{
 		const list_header = document.createElement("ons-list-header");
 		list_header.innerHTML = categories.category;
 		form.appendChild(list_header);
-		for(const [titleOrder, items] of categories.scene.entries())
+		categories.scene.forEach((titles, indexTitle) =>
 		{
-			if(items.title == "？？？")
+
+			if(titles.title == "？？？")
 			{
-				continue;
+				return;
 			}
 
 			const list_item = document.createElement("ons-list-item");
@@ -49,11 +87,12 @@ const appendData = (tab) =>
 			const expandableContent = document.createElement("div");
 			expandableContent.setAttribute("class", "expandable-content");
 
-			for(const [dialogOrder, dialog] of items.dialog.entries())
+			titles.dialog.forEach((dialog, indexDialog) =>
 			{
-				const nameRadio = `${tab}${categoryOrder}-${titleOrder}`;
-				const idRadio = `${tab}${categoryOrder}-${titleOrder}-${dialogOrder}`;
-				const idList_item = `li${tab}${categoryOrder}-${titleOrder}-${dialogOrder}`;
+
+				const nameRadio = `${tab}${indexCategory}-${indexTitle}`;
+				const idRadio = `${tab}${indexCategory}-${indexTitle}-${indexDialog}`;
+				const idList_item = `li${tab}${indexCategory}-${indexTitle}-${indexDialog}`;
 
 				const label = document.createElement("label");
 				label.setAttribute("for", idRadio);
@@ -61,7 +100,7 @@ const appendData = (tab) =>
 				const expandableList_item = document.createElement("ons-list-item");
 				expandableList_item.setAttribute("tappable", "");
 				expandableList_item.setAttribute("id", idList_item);
-				if(dialogOrder != 0)
+				if(indexDialog != 0)
 				{
 					expandableList_item.setAttribute("class", "hidden asoneStory");
 				}
@@ -74,7 +113,7 @@ const appendData = (tab) =>
 				input.setAttribute("type", "radio");
 				input.setAttribute("name", nameRadio);
 				input.setAttribute("id", idRadio);
-				input.setAttribute("value", dialogOrder);
+				input.setAttribute("value", indexDialog);
 				input.setAttribute("class", "hidden");
 				input.onclick = () =>
 				{
@@ -83,64 +122,32 @@ const appendData = (tab) =>
 					const targetNum = value + 1;
 					if(radioNodeList.length > targetNum)
 					{
-						const edit = document.getElementById(`li${tab}${categoryOrder}-${titleOrder}-${targetNum}`);
+						const edit = document.getElementById(`li${tab}${indexCategory}-${indexTitle}-${targetNum}`);
 						edit.setAttribute("class", "asoneStory");
 						edit.scrollIntoView(false);
 					}
 				};
 
-				const alignDialog = () =>
-				{
-					const area =
-						dialog[0][0] === "C" ? "area8":
-						dialog[0][0] === "R" ? "area9":
-						dialog[0][0] === "L" ? "area7":"";
-
-					if(area === "")
-					{
-						return "<ons-col>このアズワンストーリーはまだ入力されていません。</ons-col>";
-					}
-					else
-					{
-						const decolate = [];
-						if(dialog[0].includes("Bold"))
-						{
-							decolate.push("bold");
-						}
-						if(dialog[0].includes("Large"))
-						{
-							decolate.push("large");
-						}
-
-						const dialogHtml = decolate.length <= 0 ?
-							area === "area8" ?
-								`${dialog[2]}`:
-								`${dialog[1]}<br>「${dialog[2]}」`
-							:
-							`${dialog[1]}<br><span class="${decolate.join(" ")}">「${dialog[2]}」</span>`;
-						return `<ons-col class="${area}">${dialogHtml}</ons-col>`;
-					}
-				};
 				expandableList_item.innerHTML = `
 					<ons-row>
-						${alignDialog()}
+						${alignDialog(dialog)}
 					</ons-row>
 				`;
 
 				expandableList_item.appendChild(input);
 				label.appendChild(expandableList_item);
 				expandableContent.appendChild(label);
-			}
+			});
 			list_item.innerHTML = `
-				${items.title}
+				${titles.title}
 				<span class="list-item__subtitle">
-					　${items.flag}
+					　${titles.flag}
 				</span>
 			`;
 			list_item.appendChild(expandableContent);
 			form.appendChild(list_item);
-		}
-	}
+		});
+	});
 	fragment.appendChild(form);
 
 	// // AsOneStory.Quotes
@@ -154,9 +161,9 @@ const appendData = (tab) =>
 	//	 const list_item = document.createElement("ons-list-item");
 	//	 list_item.setAttribute("expandable", "");
 	//	 list_item.innerHTML = `
-	//		 ${items.when}
+	//		 ${titles.when}
 	//		 <div class="expandable-content">
-	//			 ${items.quote}
+	//			 ${titles.quote}
 	//		 </div>
 	//	 `;
 	//	 fragment.appendChild(list_item);
@@ -183,4 +190,7 @@ for(const tab of tabs)
 {
 	appendData(tab);
 }
+performance.mark("E_funcPageAsOneStory");
+performance.measure("funcPageAsOneStory", "S_funcPageAsOneStory", "E_funcPageAsOneStory");
+console.log(performance.getEntriesByName("funcPageAsOneStory")[0].duration);
 };

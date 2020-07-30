@@ -150,6 +150,22 @@ SPDB.Weapon =
 			"howToGet":"ドロップ、購入"
 		},
 		{
+			"side":"L",
+			"name":"エクステルス",
+			"vsAR":"-",
+			"vsMAG":"-",
+			"reload":"c",
+			"usability":"B+",
+			"weaponType":"補助",
+			"ammo":6000,
+			"attackType":"その他",
+			"triggerType":"1トリガー",
+			"target":"自分",
+			"reloadTiming":"弾切れ",
+			"feature":"-",
+			"howToGet":"ドロップ、購入"
+		},
+		{
 			"side":"R",
 			"name":"ミトライユ",
 			"vsAR":"B",
@@ -406,6 +422,70 @@ SPDB.Weapon =
 			"feature":"-",
 			"howToGet":"ドロップ、購入"
 		},
+		{
+			"side":"LR",
+			"name":"単装導弾 双撃",
+			"vsAR":"B+",
+			"vsMAG":"B+",
+			"reload":"C",
+			"usability":"B",
+			"weaponType":"実弾",
+			"ammo":"L: 2, R: 2",
+			"attackType":"中距離射撃",
+			"triggerType":"ホールド",
+			"target":"敵",
+			"reloadTiming":"弾切れ",
+			"feature":"ダウン特性",
+			"howToGet":"ドロップ、購入"
+		},
+		{
+			"side":"LR",
+			"name":"ブラストサイス",
+			"vsAR":"B/B+",
+			"vsMAG":"B+/A+",
+			"reload":"B+/B",
+			"usability":"B+/B",
+			"weaponType":"格闘/ビーム",
+			"ammo":"L: 1, R: 1000",
+			"attackType":"近距離格闘/中距離射撃",
+			"triggerType":"1トリガー/ホールド",
+			"target":"敵",
+			"reloadTiming":"弾切れ/常時",
+			"feature":"ダウン特性",
+			"howToGet":"ミッション「5000ナイスプレイチャレンジ4」クリア"
+		},
+		{
+			"side":"LR",
+			"name":"O.G. メテオライト(1st)",
+			"vsAR":"B+",
+			"vsMAG":"B+",
+			"reload":"A",
+			"usability":"A",
+			"weaponType":"ビーム",
+			"ammo":"L: 1, R: 1",
+			"attackType":"中距離射撃",
+			"triggerType":"1トリガー",
+			"target":"敵",
+			"reloadTiming":"常時",
+			"feature":"怯み特性",
+			"howToGet":"ミッション「O.G. メテオライト精製ミッション3」クリア"
+		},
+		{
+			"side":"LR",
+			"name":"O.G. メテオライト(2nd)",
+			"vsAR":"B/A",
+			"vsMAG":"B/A",
+			"reload":"C/C",
+			"usability":"B/C",
+			"weaponType":"ビーム",
+			"ammo":"L: 10, R: 1",
+			"attackType":"中距離射撃",
+			"triggerType":"1トリガー",
+			"target":"敵",
+			"reloadTiming":"常時",
+			"feature":"L: 怯み特性/マルチロック, R: -",
+			"howToGet":"ミッション「O.G. メテオライト精製ミッション3」クリア"
+		},
 	],
 	Vanguard:
 	[
@@ -568,6 +648,22 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"痺れ",
+			"howToGet":"ドロップ、購入"
+		},
+		{
+			"side":"L",
+			"name":"斬絶弾 幻月",
+			"vsAR":"B+",
+			"vsMAG":"B+",
+			"reload":"C",
+			"usability":"B",
+			"weaponType":"ビーム",
+			"ammo":3,
+			"attackType":"中距離射撃",
+			"triggerType":"1トリガー",
+			"target":"敵",
+			"reloadTiming":"常時",
+			"feature":"怯み特性",
 			"howToGet":"ドロップ、購入"
 		},
 		{
@@ -809,7 +905,24 @@ SPDB.Weapon =
 			"target":"敵",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性",
-			"howToGet":"4/28までにO.G. ティターン精製ミッション3をクリアする"
+			"oldHowToGet":"4/28までにO.G. ティターン精製ミッション3をクリアする",
+			"howToGet":"購入"
+		},
+		{
+			"side":"LR",
+			"name":"大刃 水薙",
+			"vsAR":"-/B+",
+			"vsMAG":"-/B+",
+			"reload":"D/B+",
+			"usability":"A/B",
+			"weaponType":"補助/格闘",
+			"ammo":"L: 1, R: 1",
+			"attackType":"その他/近距離格闘",
+			"triggerType":"1トリガー",
+			"target":"自分/敵",
+			"reloadTiming":"弾切れ",
+			"feature":"攻撃力上昇/ダウン特性",
+			"howToGet":"ドロップ、購入"
 		},
 	],
 	Support:
@@ -1011,6 +1124,22 @@ SPDB.Weapon =
 			"howToGet":"ドロップ、購入"
 		},
 		{
+			"side":"L",
+			"name":"テンペスト",
+			"vsAR":"C",
+			"vsMAG":"C",
+			"reload":"D",
+			"usability":"B",
+			"weaponType":"設置/妨害",
+			"ammo":1,
+			"attackType":"投擲",
+			"triggerType":"リリース",
+			"target":"敵",
+			"reloadTiming":"弾切れ",
+			"feature":"(移動力低下)",
+			"howToGet":"ドロップ、購入"
+		},
+		{
 			"side":"R",
 			"name":"ラーゴ",
 			"vsAR":"B",
@@ -1203,7 +1332,7 @@ SPDB.Weapon =
 			"target":"敵・味方",
 			"reloadTiming":"弾切れ",
 			"feature":"ダウン特性",
-			"howToGet":"？"
+			"howToGet":"ミッション「O.G. グングニル精製ミッション3」をクリア"
 		},
 		{
 			"side":"LR",
@@ -1212,14 +1341,30 @@ SPDB.Weapon =
 			"vsMAG":"D/B",
 			"reload":"A/B",
 			"usability":"B/B",
-			"weaponType":"？",
+			"weaponType":"妨害",
 			"ammo":"L: 70, R: 3",
 			"attackType":"近距離射撃/中距離射撃",
 			"triggerType":"ホールド",
 			"target":"敵",
 			"reloadTiming":"常時/弾切れ",
 			"feature":"氷結",
-			"howToGet":"？"
+			"howToGet":"ミッション「X7133精製ミッション3」をクリア"
+		},
+		{
+			"side":"LR",
+			"name":"爆撃砲 加具土",
+			"vsAR":"A+",
+			"vsMAG":"A+",
+			"reload":"E",
+			"usability":"D",
+			"weaponType":"実弾",
+			"ammo":1,
+			"attackType":"遠距離射撃",
+			"triggerType":"1トリガー",
+			"target":"敵・味方",
+			"reloadTiming":"弾切れ",
+			"feature":"ダウン特性",
+			"howToGet":"ドロップ、購入"
 		},
 	]
 };
