@@ -4,11 +4,12 @@ const NicePlay = SPDB.NicePlay;
 
 const category =
 {
-	"AR":"エア・リアル",
-	"敵勢力":"敵勢力",
-	"ポート":"ポート",
-	"コア":"コア",
-	"他":"その他"
+	"AR": "エア・リアル",
+	"敵勢力": "敵勢力",
+	"ポート": "ポート",
+	"コア": "コア",
+	"他": "その他",
+	"キザナ": "キザナ",
 };
 const tabNicePlay = document.getElementById("tabNicePlay");
 tabNicePlay.addEventListener("prechange", (event) =>
@@ -41,13 +42,25 @@ const appendData = (tab) =>
 
 	for(const items of NicePlay[tab])
 	{
+		if(items.play == "？？？")
+		{
+			continue;
+		}
 		const list_item = document.createElement("ons-list-item");
 		list_item.innerHTML = `
 			<ons-row>
 				<ons-col width="80%">
-					${items.play}
+					${items.play.includes("(") ?
+						`<span class="list-item__title">
+							${items.play.split(/\(|\)/)[0]}
+						</span><br>
+						<span class="list-item__subtitle">
+							${items.play.split(/\(|\)/)[1]}
+						</span>` :
+						`${items.play}`
+					}
 				</ons-col>
-				<ons-col style="text-align: right;">
+				<ons-col class="area6">
 					${items.point}
 				</ons-col>
 			</ons-row>
@@ -71,7 +84,7 @@ const appendData = (tab) =>
 	const idSetInterval = setInterval(findElement, 100, `listNicePlay_${tab}`);
 };
 
-const tabs = ["AirReal", "Object", "Port", "Core", "Other"];
+const tabs = ["AirReal", "Object", "Port", "Core", "Other", "Kizana"];
 for(const tab of tabs)
 {
 	appendData(tab);
