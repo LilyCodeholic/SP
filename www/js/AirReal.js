@@ -218,6 +218,11 @@ const appendData = (tab) =>
 	// ons-list-item
 	for(const items of SPDB.AirReal[tab])
 	{
+		if(items.name == "？？？")
+		{
+			continue;
+		}
+
 		const pList_item = document.createElement("ons-list-item");
 		pList_item.setAttribute("expandable", "");
 		switch(tab)
@@ -242,10 +247,7 @@ const appendData = (tab) =>
 						<ons-row>
 							<ons-col width="25%">　特性</ons-col>
 							<ons-col>
-								${Array.isArray(items.feature) === true ?
-									`${items.feature[0]}<br>${items.feature[1]}`:
-									`${items.feature}`
-								}
+								${items.feature.join('<br>')}
 							</ons-col>
 						</ons-row>
 					</div>
@@ -285,7 +287,7 @@ const appendData = (tab) =>
 						<ons-col class="area6">${items.durability}</ons-col>
 						<ons-col class="area6">${items.armor}</ons-col>
 						<ons-col class="area5">${items.repairSpeed}</ons-col>
-						<ons-col class="area5">${items.repairLatency}</ons-col>
+						<ons-col class="area5">${items.repairWaiting}</ons-col>
 					</ons-row>
 					<div class="expandable-content">
 						<ons-row>
@@ -295,10 +297,7 @@ const appendData = (tab) =>
 						<ons-row>
 							<ons-col width="25%">　特性</ons-col>
 							<ons-col>
-								${Array.isArray(items.feature) === true ?
-									`${items.feature[0]}<br>${items.feature[1]}`:
-									`${items.feature}`
-								}
+								${items.feature.join('<br>')}
 							</ons-col>
 						</ons-row>
 					</div>
@@ -340,10 +339,7 @@ const appendData = (tab) =>
 						<ons-row>
 							<ons-col width="25%">　特性</ons-col>
 							<ons-col>
-								${Array.isArray(items.feature) === true ?
-									`${items.feature[0]}<br>${items.feature[1]}`:
-									`${items.feature}`
-								}
+								${items.feature.join('<br>')}
 							</ons-col>
 						</ons-row>
 					</div>
@@ -368,10 +364,7 @@ const appendData = (tab) =>
 						<ons-row>
 							<ons-col width="25%">　特性</ons-col>
 							<ons-col>
-								${Array.isArray(items.feature) === true ?
-									`${items.feature[0]}<br>${items.feature[1]}`:
-									`${items.feature}`
-								}
+								${items.feature.join('<br>')}
 							</ons-col>
 						</ons-row>
 					</div>
@@ -397,22 +390,19 @@ const appendData = (tab) =>
 						<ons-col class="area5">${items.range}</ons-col>
 					</ons-row>
 					<div class="expandable-content">
+						${items.armor ?
+							`<ons-row>
+								<ons-col width="25%">　アーマー</ons-col>
+								<ons-col>+ ${items.armor}</ons-col>
+							</ons-row>`:
+							``
+						}
 						<ons-row>
-							<ons-col width="50%">　特性</ons-col>
+							<ons-col width="25%">　特性</ons-col>
 							<ons-col>
-								${Array.isArray(items.feature) === true ?
-									items.armor ?
-										`${items.feature[0]}<br>${items.feature[1]}<br>アーマー +${items.armor}`:
-										`${items.feature[0]}<br>${items.feature[1]}`
-									:
-									items.armor ?
-										items.feature !== "-" ?
-											`${items.feature}<br>アーマー +${items.armor}`:
-											`アーマー +${items.armor}`
-										:
-										`${items.feature}`
-								}
+								${items.feature.join('<br>')}
 							</ons-col>
+						</ons-row>
 						</ons-row>
 					</div>
 				`;
@@ -449,7 +439,7 @@ const appendData = (tab) =>
 						<ons-col class="area6">${items.durability}</ons-col>
 						<ons-col class="area6">${items.armor}</ons-col>
 						<ons-col class="area5">${items.repairSpeed}</ons-col>
-						<ons-col class="area5">${items.repairLatency}</ons-col>
+						<ons-col class="area5">${items.repairWaiting}</ons-col>
 					</ons-row>
 					<div class="expandable-content">
 						<ons-row>

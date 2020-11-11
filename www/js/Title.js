@@ -29,7 +29,7 @@ const appendData = (tab) =>
 				${items.title}
 			</span>
 			<span class="list-item__subtitle">
-				${items.flag}
+				　${items.flag}
 			</span>
 		`;
 		fragment.appendChild(list_item);

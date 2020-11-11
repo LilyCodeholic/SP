@@ -123,10 +123,18 @@
 	font-size: large;
 }
 
-/* chevron, expandable(オーバーライド) */
+/* カラー変更 chevron, expandable, backbutton, toolbarbutton(オーバーライド) */
 .list-item--chevron:before, .list-item__expand-chevron
 {
-	border-color: #ffa101;
+	border-color: #fff3b8;
+}
+.back-button__icon
+{
+	fill: #fff3b8;
+}
+.toolbar-button, :checked+.tabbar__button
+{
+	color: #fff3b8
 }
 
 /* toolbar-button(オーバーライド) */

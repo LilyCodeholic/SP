@@ -38,7 +38,7 @@ const appendData = (tab) =>
 					<div class="expandable-content">
 						<ons-row>
 							<ons-col width="20%">報酬</ons-col>
-							<ons-col>${items.prize.replace(/,/gi, "<br>")}</ons-col>
+							<ons-col>${items.prize.replace(/,「/gi, "<br>「")}</ons-col>
 						</ons-row>
 						<ons-row>
 							<ons-col width="20%">期間</ons-col>
