@@ -69,8 +69,8 @@ const appendData = (tab) =>
 						${items.weaponType} ${items.attackType}
 					</span>
 				</ons-col>
-				<ons-col class="area5">${items.vsAR}</ons-col>
-				<ons-col class="area5">${items.vsMAG}</ons-col>
+				<ons-col class="area5">${items.vsAr}</ons-col>
+				<ons-col class="area5">${items.vsMag}</ons-col>
 				<ons-col class="area5">${items.reload}</ons-col>
 			</ons-row>
 			<div class="expandable-content">
