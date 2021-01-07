@@ -8,45 +8,59 @@
 /* 123 */
 .area7
 {
+	width: 100%;
 	text-align: left;
 }
 .area8
 {
+	width: 100%;
 	text-align: center;
 }
 .area9
 {
+	width: 100%;
 	text-align: right;
 }
 .area4
 {
+	width: 100%;
 	align-self: center;
 }
 .area5
 {
+	width: 100%;
 	align-self: center;
 	text-align: center;
 }
 .area6
 {
+	width: 100%;
 	align-self: center;
 	text-align: right;
 }
 .area1
 {
+	width: 100%;
 	align-self: flex-end;
 }
 .area2
 {
+	width: 100%;
 	align-self: flex-end;
 	text-align: center;
 }
 .area3
 {
+	width: 100%;
 	align-self: flex-end;
 	text-align: right;
 }
 
+/* ons-list-header(オーバーライド) */
+.list-header
+{
+	text-transform: none;
+}
 /* ons-list-header */
 .fixed
 {
@@ -123,18 +137,25 @@
 	font-size: large;
 }
 
+/* AsOneStory */
+.asoneStory span
+{
+	display: inline-block;
+	text-align: left;
+}
+
 /* カラー変更 chevron, expandable, backbutton, toolbarbutton(オーバーライド) */
 .list-item--chevron:before, .list-item__expand-chevron
 {
-	border-color: #fff3b8;
+	border-color: #9b72b0;
 }
 .back-button__icon
 {
-	fill: #fff3b8;
+	fill: #9b72b0;
 }
 .toolbar-button, :checked+.tabbar__button
 {
-	color: #fff3b8
+	color: #9b72b0
 }
 
 /* toolbar-button(オーバーライド) */

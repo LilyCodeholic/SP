@@ -5,8 +5,6 @@
 
 /*** <GENERATED> ***/
 
-
-
 /*** <Start:onsenui> ***/
 /*** <Start:onsenui LoadCss:"components/onsenui/css/onsenui.min.css"> ***/
 @import url("onsenui/css/onsenui.min.css");
@@ -14,4 +12,7 @@
 /*** <Start:onsenui LoadCss:"components/onsenui/css/dark-onsen-css-components.min.css"> ***/
 @import url("onsenui/css/dark-onsen-css-components.min.css");
 /*** <End:onsenui LoadCss:"components/onsenui/css/dark-onsen-css-components.min.css"> ***/
+/*** <Start:onsenui LoadCss:"components/onsenui/css/onsenui-core.min.css"> ***/
+@import url("onsenui/css/onsenui-core.min.css");
+/*** <End:onsenui LoadCss:"components/onsenui/css/onsenui-core.min.css"> ***/
 /*** <End:onsenui> ***/

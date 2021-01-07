@@ -1,5 +1,5 @@
-var CACHE_NAME = "cachesSP";
-var urlsToCache =
+const CACHE_NAME = "cachesSP";
+const urlsToCache =
 [
     "/www/",
     "/www/index.html",

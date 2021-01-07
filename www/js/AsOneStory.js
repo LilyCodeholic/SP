@@ -19,64 +19,61 @@ tabAsOneStory.addEventListener("prechange", (event) =>
 	textToolbar = `${fullName[event.tabItem.textContent]}`;
 	document.querySelector("#pageAsOneStory .center").innerHTML = textToolbar;
 }, false);
+
 document.querySelector("#pageAsOneStory ons-toolbar-button").onclick = () =>
 {
 	document.getElementById("textToast").innerHTML = AsOneStory.Status;
 	toast.toggle();
 };
-const alignDialog = (dialog) =>
+/*
+const alignDialog = ([align, actor, lines]) =>
 {
-	const align = dialog[0];
-	const actor = dialog[1];
-	const lines = dialog[2];
-
-	const area =
-		align[0] === "C" ? "area8":
-		align[0] === "R" ? "area9":
-		align[0] === "L" ? "area7":"";
-
-	if(area === "")
+	const returnDialog = {decolate: []}
+	switch(align[0])
 	{
-		return "<ons-col>このアズワンストーリーはまだ入力されていません。</ons-col>";
+		case "C":
+			returnDialog.area = "area8";
+			returnDialog.html = lines;
+			break;
+		case "R":
+			returnDialog.area = "area9";
+			returnDialog.html = `${actor}<br>「${lines}」`;
+			break;
+		case "L":
+			returnDialog.area = "area7";
+			returnDialog.html = `${actor}<br>「${lines}」`;
+			break;
+		default:
+			returnDialog.area = "area5";
+			returnDialog.html = "このアズワンストーリーはまだ入力されていません。";
 	}
-	else
+	if(align.includes("Bold"))
 	{
-		const decolate = [];
-		if(align.includes("Bold"))
-		{
-			decolate.push("bold");
-		}
-		if(align.includes("Large"))
-		{
-			decolate.push("large");
-		}
-
-		const dialogHtml = decolate.length <= 0 ?
-			area === "area8" ?
-				`${lines}`:
-				`${actor}<br>「${lines}」`
-			:
-			`${actor}<br><span class="${decolate.join(" ")}">「${lines}」</span>`;
-		return `<ons-col class="${area}">${dialogHtml}</ons-col>`;
+		returnDialog.decolate.push("bold");
 	}
+	if(align.includes("Large"))
+	{
+		returnDialog.decolate.push("large");
+	}
+
+	return `<div class="${returnDialog.area} ${returnDialog.decolate.join(" ")}">${returnDialog.html}</div>`;
 };
-
+*/
 const appendData = (tab) =>
 {
 	const fragment = document.createDocumentFragment();
 
 	// AsOneStory.Story
-	const form = document.createElement("form");
-	form.setAttribute("name", `story${tab}`);
+	const article = document.createElement("article");
+	article.setAttribute("name", `story${tab}`);
 
 	AsOneStory.Story[tab].forEach((categories, indexCategory) =>
 	{
 		const list_header = document.createElement("ons-list-header");
 		list_header.innerHTML = categories.category;
-		form.appendChild(list_header);
+		article.appendChild(list_header);
 		categories.scene.forEach((titles, indexTitle) =>
 		{
-
 			if(titles.title == "？？？")
 			{
 				return;
@@ -89,85 +86,84 @@ const appendData = (tab) =>
 
 			titles.dialog.forEach((dialog, indexDialog) =>
 			{
+				const expandableDiv = document.createElement("div");
+				const expandableSpan = document.createElement("span");
 
-				const nameRadio = `${tab}${indexCategory}-${indexTitle}`;
-				const idRadio = `${tab}${indexCategory}-${indexTitle}-${indexDialog}`;
-				const idList_item = `li${tab}${indexCategory}-${indexTitle}-${indexDialog}`;
+				const decolate = [];
+				const [align, actor, lines] = dialog;
+				const area = (() =>
+				{
+					switch(align[0])
+					{
+						case "C": return "area5";
+						case "R": return "area6";
+						case "L": return "area4";
+						default : return "area5";
+					}
+				})();
+				const html = (() =>
+				{
+					switch(align[0])
+					{
+						case "C": return lines;
+						case "R": return `「${lines}」`;
+						case "L": return `「${lines}」`;
+						default : return "このアズワンストーリーはまだ入力されていません。";
+					}
+				})();
+				if(align.includes("Bold"))
+				{
+					decolate.push("bold");
+				}
+				if(align.includes("Large"))
+				{
+					decolate.push("large");
+				}
 
-				const label = document.createElement("label");
-				label.setAttribute("for", idRadio);
+				expandableSpan.setAttribute("class", decolate.join(" "));
+				expandableSpan.insertAdjacentHTML("beforeend", html);
+
+				expandableDiv.setAttribute("class", area);
 
 				const expandableList_item = document.createElement("ons-list-item");
 				expandableList_item.setAttribute("tappable", "");
-				expandableList_item.setAttribute("id", idList_item);
-				if(indexDialog != 0)
-				{
-					expandableList_item.setAttribute("class", "hidden asoneStory");
-				}
-				else
+				expandableList_item.setAttribute("id", `${tab}${indexCategory}-${indexTitle}-${indexDialog}`);
+				if(indexDialog === 0)
 				{
 					expandableList_item.setAttribute("class", "asoneStory");
 				}
-
-				const input = document.createElement("input");
-				input.setAttribute("type", "radio");
-				input.setAttribute("name", nameRadio);
-				input.setAttribute("id", idRadio);
-				input.setAttribute("value", indexDialog);
-				input.setAttribute("class", "hidden");
-				input.onclick = () =>
+				else
 				{
-					const radioNodeList = document.forms[`story${tab}`][nameRadio];
-					const value = Number(document.forms[`story${tab}`][nameRadio].value);
-					const targetNum = value + 1;
-					if(radioNodeList.length > targetNum)
+					expandableList_item.setAttribute("class", "hidden asoneStory");
+				}
+				expandableList_item.onclick = () =>
+				{
+					const targetNum = indexDialog + 1;
+					if(titles.dialog.length > targetNum)
 					{
-						const edit = document.getElementById(`li${tab}${indexCategory}-${indexTitle}-${targetNum}`);
+						const edit = document.getElementById(`${tab}${indexCategory}-${indexTitle}-${targetNum}`);
 						edit.setAttribute("class", "asoneStory");
 						edit.scrollIntoView(false);
 					}
 				};
 
-				expandableList_item.innerHTML = `
-					<ons-row>
-						${alignDialog(dialog)}
-					</ons-row>
-				`;
-
-				expandableList_item.appendChild(input);
-				label.appendChild(expandableList_item);
-				expandableContent.appendChild(label);
+				expandableDiv.appendChild(expandableSpan)
+				expandableDiv.insertAdjacentHTML("afterbegin", `${actor}<br>`);
+				expandableList_item.appendChild(expandableDiv);
+				expandableContent.appendChild(expandableList_item);
 			});
-			list_item.innerHTML = `
+
+			list_item.insertAdjacentHTML("beforeend", `
 				${titles.title}
 				<span class="list-item__subtitle">
 					　${titles.flag}
 				</span>
-			`;
+			`);
 			list_item.appendChild(expandableContent);
-			form.appendChild(list_item);
+			article.appendChild(list_item);
 		});
 	});
-	fragment.appendChild(form);
-
-	// // AsOneStory.Quotes
-	// {
-	//	 const list_header = document.createElement("ons-list-header");
-	//	 list_header.innerHTML = `セリフ`;
-	//	 fragment.appendChild(list_header);
-	// }
-	// for(const items of AsOne.Quotes[tab])
-	// {
-	//	 const list_item = document.createElement("ons-list-item");
-	//	 list_item.setAttribute("expandable", "");
-	//	 list_item.innerHTML = `
-	//		 ${titles.when}
-	//		 <div class="expandable-content">
-	//			 ${titles.quote}
-	//		 </div>
-	//	 `;
-	//	 fragment.appendChild(list_item);
-	// }
+	fragment.appendChild(article);
 
 	const findElement = (query) =>
 	{
