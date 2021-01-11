@@ -1,28 +1,28 @@
 const funcPageCustomize = () =>
 {
-const Customize = SPDB.Customize;
+const Customize = SPDB.Customize
 
-const tabCustomize = document.getElementById("tabCustomize");
+const tabCustomize = document.getElementById("tabCustomize")
 tabCustomize.addEventListener("prechange", (event) =>
 {
-	textToolbar = `${event.tabItem.textContent}`;
-	document.querySelector("#pageCustomize .center").innerHTML = textToolbar;
-}, false);
+	textToolbar = `${event.tabItem.textContent}`
+	document.querySelector("#pageCustomize .center").innerHTML = textToolbar
+}, false)
 document.querySelector("#pageCustomize ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = SPDB.Customize.Status;
-	toast.toggle();
-};
+	document.getElementById("textToast").innerHTML = SPDB.Customize.Status
+	toast.toggle()
+}
 
 const appendData = (tab) =>
 {
 
-	const fragment = document.createDocumentFragment();
+	const fragment = document.createDocumentFragment()
 
-	let headerWho = "";
+	let headerWho = ""
 	for(const items of SPDB.Customize[tab])
 	{
-		const list_header = document.createElement("ons-list-header");
+		const list_header = document.createElement("ons-list-header")
 		switch(tab)
 		{
 			case "VictoryPose":
@@ -30,17 +30,17 @@ const appendData = (tab) =>
 				{
 					list_header.innerHTML = `
 						${items.who}
-					`;
-					fragment.appendChild(list_header);
+					`
+					fragment.appendChild(list_header)
 				}
-				headerWho = items.who;
-				break;
+				headerWho = items.who
+				break
 			default:
-				console.error("Customize: error");
-				break;
+				console.error("Customize: error")
+				break
 		}
 
-		const list_item = document.createElement("ons-list-item");
+		const list_item = document.createElement("ons-list-item")
 		switch(tab)
 		{
 			case "VictoryPose":
@@ -51,54 +51,54 @@ const appendData = (tab) =>
 					<span class="list-item__subtitle">
 						　${items.flag}
 					</span>
-				`;
-				break;
+				`
+				break
 			case "LineColor":
 				list_item.innerHTML = `
 					<ons-row>
 						<ons-col>
 							${items.color}
 						</ons-col>
-						<ons-col style="background: linear-gradient(to bottom right, white 10%, ${items.RGB}, white 90%);">
+						<ons-col style="background: linear-gradient(to bottom right, white 10%, ${items.RGB}, white 90%)">
 						</ons-col>
 					</ons-row>
-				`;
-				break;
+				`
+				break
 			case "PartsColor":
 				list_item.innerHTML = `
 					<ons-row>
 						<ons-col>
 							${items.color}
 						</ons-col>
-						<ons-col style="background: ${items.RGB};">
+						<ons-col style="background: ${items.RGB}">
 						</ons-col>
 					</ons-row>
-				`;
-				break;
+				`
+				break
 			default:
-				console.error("Customize: error");
-				break;
+				console.error("Customize: error")
+				break
 		}
-		fragment.appendChild(list_item);
+		fragment.appendChild(list_item)
 	}
 
 	const findElement = (query) =>
 	{
-		const listTitle = document.getElementById(query);
+		const listTitle = document.getElementById(query)
 		if(listTitle != null)
 		{
-			clearInterval(idSetInterval);
-			listTitle.appendChild(fragment);
+			clearInterval(idSetInterval)
+			listTitle.appendChild(fragment)
 		}
 		else
 		{
-			console.log(`${query} not found yet...`);
+			console.log(`${query} not found yet...`)
 		}
-	};
-	const idSetInterval = setInterval(findElement, 100, `listCustomize_${tab}`);
-};
+	}
+	const idSetInterval = setInterval(findElement, 100, `listCustomize_${tab}`)
+}
 
-appendData("VictoryPose");
-appendData("LineColor");
-appendData("PartsColor");
-};
+appendData("VictoryPose")
+appendData("LineColor")
+appendData("PartsColor")
+}

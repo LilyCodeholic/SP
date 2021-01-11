@@ -557,4 +557,4 @@ SPDB.NicePlay =
 			"point":0
 		},
 	],
-};
+}

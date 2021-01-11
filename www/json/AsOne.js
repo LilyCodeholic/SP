@@ -5,12 +5,12 @@ SPDB.AsOne =
 	`,
 	Order:
 	[
-		{En: "Hikari", Ja: "ヒカリ"},
-		{En: "Reika", Ja: "レイカ"},
-		{En: "Shirley", Ja: "シャーリー"},
-		{En: "Isadora", Ja: "イサドラ"},
-		{En: "Kazuma", Ja: "カズマ"},
-		{En: "Nagi", Ja:"ナギ"},
+		{En:"Hikari", Ja:"ヒカリ"},
+		{En:"Reika", Ja:"レイカ"},
+		{En:"Shirley", Ja:"シャーリー"},
+		{En:"Isadora", Ja:"イサドラ"},
+		{En:"Kazuma", Ja:"カズマ"},
+		{En:"Nagi", Ja:"ナギ"},
 	],
 	Skill:
 	{
@@ -663,4 +663,4 @@ SPDB.AsOne =
 			},
 		]
 	},
-};
+}

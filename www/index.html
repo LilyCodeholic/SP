@@ -12,7 +12,7 @@
 
 	<script>
 		// namespaceを作成
-		const SPDB = {};
+		const SPDB = {}
 	</script>
 	<script src="./json/AirReal.js"></script>
 	<script src="./json/AsOne.js"></script>
@@ -36,72 +36,78 @@
 	<script src="./js/Weapon.js"></script>
 
 	<script>
-		"use strict";
+		"use strict"
 		//AutoStyling 機能を無効にしたい場合、以下のコードを後述の onseui.js を読み込んだ直後に記述します。
-		ons.disableAutoStyling();
+		ons.disableAutoStyling()
 
 		ons.ready(() =>
 		{
-			console.log("ons.ready:");
+			console.log("ons.ready:")
 			document.addEventListener("init", (event) =>
 			{
-				console.log(` init: ${event.target.id}`);
-				switch(event.target.id)
+				const eventId = event.target.id
+				console.log(` init: ${eventId}`)
+				performance.mark(`S_func${eventId}`)
+
+				switch(eventId)
 				{
 					case "pageMain":
-						break;
+						break
 					case "pageAck":
-						console.log("  call: funcPageAck();");
-						funcPageAck();
-						break;
+						console.log("  call: funcPageAck()")
+						funcPageAck()
+						break
 					case "pageAirReal":
-						console.log("  call: funcPageAirReal();");
-						funcPageAirReal();
-						break;
+						console.log("  call: funcPageAirReal()")
+						funcPageAirReal()
+						break
 					case "pageAssemble":
-						console.log("  call: funcPageAssemble();");
-						funcPageAssemble();
-						break;
+						console.log("  call: funcPageAssemble()")
+						funcPageAssemble()
+						break
 					case "pageAsOne":
-						console.log("  call: funcPageAsOne();");
-						funcPageAsOne();
-						break;
+						console.log("  call: funcPageAsOne()")
+						funcPageAsOne()
+						break
 					case "pageAsOneStory":
-						console.log("  call: funcPageAsOneStory();");
-						funcPageAsOneStory();
-						break;
+						console.log("  call: funcPageAsOneStory()")
+						funcPageAsOneStory()
+						break
 					case "pageCustomize":
-						console.log("  call: funcPageCustomize();");
-						funcPageCustomize();
-						break;
+						console.log("  call: funcPageCustomize()")
+						funcPageCustomize()
+						break
 					case "pageNicePlay":
-						console.log("  call: funcPageNicePlay();");
-						funcPageNicePlay();
-						break;
+						console.log("  call: funcPageNicePlay()")
+						funcPageNicePlay()
+						break
 					case "pageStage":
-						console.log("  call: funcPageStage();");
-						funcPageStage();
-						break;
+						console.log("  call: funcPageStage()")
+						funcPageStage()
+						break
 					case "pageTask":
-						console.log("  call: funcPageTask();");
-						funcPageTask();
-						break;
+						console.log("  call: funcPageTask()")
+						funcPageTask()
+						break
 					case "pageTitle":
-						console.log("  call: funcPageTitle();");
-						funcPageTitle();
-						break;
+						console.log("  call: funcPageTitle()")
+						funcPageTitle()
+						break
 					case "pageWeapon":
-						console.log("  call: funcPageWeapon();");
-						funcPageWeapon();
-						break;
+						console.log("  call: funcPageWeapon()")
+						funcPageWeapon()
+						break
 					default:
-						break;
+						break
 				}
-			}, false);
+				performance.mark(`E_func${eventId}`)
+				performance.measure(`func${eventId}`, `S_func${eventId}`, `E_func${eventId}`)
+				console.log(`  performance: ${eventId} ${performance.getEntriesByName(`func${eventId}`)[0].duration} ms.`)
+			}, false)
 
 			// 初期ページを設定
-			SPnavigator.pushPage("Main.html");
-		});
+			SPnavigator.pushPage("Main.html")
+		})
 
 		// PWAに対応
 		if("serviceWorker" in navigator)
@@ -109,12 +115,12 @@
 			navigator.serviceWorker.register("./sw.js").then((registration) =>
 			{
 				// 登録成功
-				console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
+				console.log(`ServiceWorker registration successful with scope: ${registration.scope}`)
 			}).catch((err) =>
 			{
 				// 登録失敗
-				console.error(`ServiceWorker registration failed: ${err}`);
-			});
+				console.error(`ServiceWorker registration failed: ${err}`)
+			})
 		}
 	</script>
 </head>
@@ -136,43 +142,43 @@
 			<ons-list-header>カスタマイズ</ons-list-header>
 
 			<ons-list-item id="gotoAssemble" modifier="chevron"
-				onclick="SPnavigator.pushPage('Assemble.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('Assemble.html', {animation: 'slide'})">
 				アセンブル</ons-list-item>
 
 			<ons-list-item id="gotoWeapon" modifier="chevron"
-				onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('Weapon.html', {animation: 'slide'})">
 				武器</ons-list-item>
 			<ons-list-item id="gotoAirReal" modifier="chevron"
-				onclick="SPnavigator.pushPage('AirReal.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('AirReal.html', {animation: 'slide'})">
 				エア・リアル</ons-list-item>
 			<ons-list-item id="gotoAsOne" modifier="chevron"
-				onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('AsOne.html', {animation: 'slide'})">
 				アズワンスキル</ons-list-item>
 			<ons-list-item id="gotoTitle" modifier="chevron"
-				onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('Title.html', {animation: 'slide'})">
 				称号</ons-list-item>
 			<ons-list-item id="gotoCustomize" modifier="chevron"
-				onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('Customize.html', {animation: 'slide'})">
 				勝利ポーズ・カラー</ons-list-item>
 
 			<ons-list-header>データ</ons-list-header>
 
 			<ons-list-item id="gotoMission" modifier="chevron"
-				onclick="SPnavigator.pushPage('Task.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('Task.html', {animation: 'slide'})">
 				ミッション・クエスト</ons-list-item>
 			<ons-list-item id="gotoNicePlay" modifier="chevron"
-				onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('NicePlay.html', {animation: 'slide'})">
 				ナイスプレイ一覧</ons-list-item>
 			<ons-list-item id="gotoAsOneStory" modifier="chevron"
-				onclick="SPnavigator.pushPage('AsOneStory.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('AsOneStory.html', {animation: 'slide'})">
 				アズワンストーリー</ons-list-item>
 <!--
-			<ons-list-item id="gotoMission" modifier="chevron"
-				onclick="SPnavigator.pushPage('Stage.html', {animation: 'slide'});">
+			<ons-list-item id="gotoStage" modifier="chevron"
+				onclick="SPnavigator.pushPage('Stage.html', {animation: 'slide'})">
 				ステージ(作成中)</ons-list-item>
 -->
 			<ons-list-item id="gotoAck" modifier="chevron"
-				onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'});">
+				onclick="SPnavigator.pushPage('Ack.html', {animation: 'slide'})">
 				謝辞・問い合わせ</ons-list-item>
 		</ons-list>
 	</ons-page>

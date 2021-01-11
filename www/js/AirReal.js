@@ -1,6 +1,6 @@
 const funcPageAirReal = () =>
 {
-const AirReal = SPDB.AirReal;
+const AirReal = SPDB.AirReal
 
 const partsName =
 {
@@ -9,32 +9,32 @@ const partsName =
 	"胴":"ボディ",
 	"翼":"ウィング",
 	"脚":"レッグ"
-};
-const tabAirReal = document.getElementById("tabAirReal");
+}
+const tabAirReal = document.getElementById("tabAirReal")
 tabAirReal.addEventListener("prechange", (event) =>
 {
-	textToolbar = `エア・リアル - ${partsName[event.tabItem.textContent]}`;
-	document.querySelector("#pageAirReal .center").innerHTML = textToolbar;
-}, false);
+	textToolbar = `エア・リアル - ${partsName[event.tabItem.textContent]}`
+	document.querySelector("#pageAirReal .center").innerHTML = textToolbar
+}, false)
 document.querySelector("#pageAirReal ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = SPDB.AirReal.Status;
-	toast.toggle();
-};
+	document.getElementById("textToast").innerHTML = SPDB.AirReal.Status
+	toast.toggle()
+}
 
 const appendData = (tab) =>
 {
-	const fragment = document.createDocumentFragment();
+	const fragment = document.createDocumentFragment()
 
-	const pSection = document.createElement("section");
-	pSection.setAttribute("class", "portrait");
-	const lSection = document.createElement("section");
-	lSection.setAttribute("class", "landscape");
+	const pSection = document.createElement("section")
+	pSection.setAttribute("class", "portrait")
+	const lSection = document.createElement("section")
+	lSection.setAttribute("class", "landscape")
 
 	// ons-list-header
-	const pFixedList_header = document.createElement("ons-list-header");
-	const pBackList_header = document.createElement("ons-list-header");
-	pFixedList_header.setAttribute("class", "fixed");
+	const pFixedList_header = document.createElement("ons-list-header")
+	const pBackList_header = document.createElement("ons-list-header")
+	pFixedList_header.setAttribute("class", "fixed")
 	switch(tab)
 	{
 		case "Head":
@@ -50,12 +50,12 @@ const appendData = (tab) =>
 					<ons-col class="area5">距離</ons-col>
 					<ons-col class="area5">範囲</ons-col>
 				</ons-row>
-			`;
+			`
 			pBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Arm":
 			pFixedList_header.innerHTML = `
 				<ons-row class="expand">
@@ -63,11 +63,11 @@ const appendData = (tab) =>
 					<ons-col class="area5">耐久値</ons-col>
 					<ons-col class="area5">重量</ons-col>
 				</ons-row>
-			`;
+			`
 			pBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Body":
 			pFixedList_header.innerHTML = `
 				<ons-row class="expand">
@@ -81,12 +81,12 @@ const appendData = (tab) =>
 					<ons-col class="area5">全回復</ons-col>
 					<ons-col class="area5">回復待機</ons-col>
 				</ons-row>
-			`;
+			`
 			pBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Wing":
 			pFixedList_header.innerHTML = `
 				<ons-row class="expand">
@@ -96,11 +96,11 @@ const appendData = (tab) =>
 					<ons-col class="area5">FD溜め</ons-col>
 					<ons-col class="area5">ドリフト</ons-col>
 				</ons-row>
-			`;
+			`
 			pBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Leg":
 			pFixedList_header.innerHTML = `
 				<ons-row class="expand">
@@ -109,21 +109,21 @@ const appendData = (tab) =>
 					<ons-col class="area5">重量</ons-col>
 					<ons-col class="area5">ポート占拠</ons-col>
 				</ons-row>
-			`;
+			`
 			pBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		default:
-			console.error("AirReal: error");
-			break;
+			console.error("AirReal: error")
+			break
 	}
-	pSection.appendChild(pFixedList_header);
-	pSection.appendChild(pBackList_header);
+	pSection.appendChild(pFixedList_header)
+	pSection.appendChild(pBackList_header)
 
-	const lFixedList_header = document.createElement("ons-list-header");
-	const lBackList_header = document.createElement("ons-list-header");
-	lFixedList_header.setAttribute("class", "fixed");
+	const lFixedList_header = document.createElement("ons-list-header")
+	const lBackList_header = document.createElement("ons-list-header")
+	lFixedList_header.setAttribute("class", "fixed")
 	switch(tab)
 	{
 		case "Head":
@@ -139,12 +139,12 @@ const appendData = (tab) =>
 					<ons-col class="area5">距離</ons-col>
 					<ons-col class="area5">範囲</ons-col>
 				</ons-row>
-			`;
+			`
 			lBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Arm":
 			lFixedList_header.innerHTML = `
 				<ons-row class="notexpand">
@@ -153,11 +153,11 @@ const appendData = (tab) =>
 					<ons-col class="area5">耐久値</ons-col>
 					<ons-col width="40%" class="area5">特性</ons-col>
 				</ons-row>
-			`;
+			`
 			lBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Body":
 			lFixedList_header.innerHTML = `
 				<ons-row class="expand">
@@ -172,12 +172,12 @@ const appendData = (tab) =>
 					<ons-col class="area5">全回復</ons-col>
 					<ons-col class="area5">回復待機</ons-col>
 				</ons-row>
-			`;
+			`
 			lBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Wing":
 			lFixedList_header.innerHTML = `
 				<ons-row class="expand">
@@ -189,11 +189,11 @@ const appendData = (tab) =>
 					<ons-col class="area5">FD溜め</ons-col>
 					<ons-col class="area5">ドリフト</ons-col>
 				</ons-row>
-			`;
+			`
 			lBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		case "Leg":
 			lFixedList_header.innerHTML = `
 				<ons-row class="notexpand">
@@ -203,28 +203,28 @@ const appendData = (tab) =>
 					<ons-col class="area5">占拠</ons-col>
 					<ons-col width="40%" class="area5">特性</ons-col>
 				</ons-row>
-			`;
+			`
 			lBackList_header.innerHTML = `
 				<ons-row><ons-col>background</ons-col></ons-row>
-			`;
-			break;
+			`
+			break
 		default:
-			console.error("AirReal: error");
-			break;
+			console.error("AirReal: error")
+			break
 	}
-	lSection.appendChild(lFixedList_header);
-	lSection.appendChild(lBackList_header);
+	lSection.appendChild(lFixedList_header)
+	lSection.appendChild(lBackList_header)
 
 	// ons-list-item
 	for(const items of SPDB.AirReal[tab])
 	{
 		if(items.name == "？？？")
 		{
-			continue;
+			continue
 		}
 
-		const pList_item = document.createElement("ons-list-item");
-		pList_item.setAttribute("expandable", "");
+		const pList_item = document.createElement("ons-list-item")
+		pList_item.setAttribute("expandable", "")
 		switch(tab)
 		{
 			case "Head":
@@ -251,8 +251,8 @@ const appendData = (tab) =>
 							</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Arm":
 				pList_item.innerHTML = `
 					<ons-row>
@@ -278,8 +278,8 @@ const appendData = (tab) =>
 							</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Body":
 				pList_item.innerHTML = `
 					<ons-row>
@@ -301,8 +301,8 @@ const appendData = (tab) =>
 							</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Wing":
 				pList_item.innerHTML = `
 					<ons-row>
@@ -343,8 +343,8 @@ const appendData = (tab) =>
 							</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Leg":
 				pList_item.innerHTML = `
 					<ons-row>
@@ -368,19 +368,19 @@ const appendData = (tab) =>
 							</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			default:
-				console.error("AirReal: error");
-				break;
+				console.error("AirReal: error")
+				break
 		}
-		pSection.appendChild(pList_item);
+		pSection.appendChild(pList_item)
 
-		const lList_item = document.createElement("ons-list-item");
+		const lList_item = document.createElement("ons-list-item")
 		switch(tab)
 		{
 			case "Head":
-				lList_item.setAttribute("expandable", "");
+				lList_item.setAttribute("expandable", "")
 				lList_item.innerHTML = `
 					<ons-row>
 						<ons-col width="40%">${items.name}</ons-col>
@@ -405,8 +405,8 @@ const appendData = (tab) =>
 						</ons-row>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Arm":
 				lList_item.innerHTML = `
 					<ons-row>
@@ -428,10 +428,10 @@ const appendData = (tab) =>
 							}
 						</ons-col>
 					</ons-row>
-				`;
-				break;
+				`
+				break
 			case "Body":
-				lList_item.setAttribute("expandable", "");
+				lList_item.setAttribute("expandable", "")
 				lList_item.innerHTML = `
 					<ons-row>
 						<ons-col width="40%">${items.name}</ons-col>
@@ -452,10 +452,10 @@ const appendData = (tab) =>
 							</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Wing":
-				lList_item.setAttribute("expandable", "");
+				lList_item.setAttribute("expandable", "")
 				lList_item.innerHTML = `
 					<ons-row>
 						<ons-col width="40%">${items.name}</ons-col>
@@ -493,8 +493,8 @@ const appendData = (tab) =>
 							</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Leg":
 				lList_item.innerHTML = `
 					<ons-row>
@@ -517,87 +517,87 @@ const appendData = (tab) =>
 							}
 						</ons-col>
 					</div>
-				`;
-				break;
+				`
+				break
 			default:
-				console.error("AirReal: error");
-				break;
+				console.error("AirReal: error")
+				break
 		}
-		lSection.appendChild(lList_item);
+		lSection.appendChild(lList_item)
 
-		fragment.appendChild(pSection);
-		fragment.appendChild(lSection);
+		fragment.appendChild(pSection)
+		fragment.appendChild(lSection)
 	}
 
 	const findElement = (query) =>
 	{
-		const listAirReal = document.getElementById(query);
+		const listAirReal = document.getElementById(query)
 		if(listAirReal != null)
 		{
-			clearInterval(idSetInterval);
-			listAirReal.appendChild(fragment);
+			clearInterval(idSetInterval)
+			listAirReal.appendChild(fragment)
 			if(ons.orientation.isPortrait())
 			{
-				console.log("Portraiting.");
-				const hideOrientation = document.getElementsByClassName("landscape");
+				console.log("Portraiting.")
+				const hideOrientation = document.getElementsByClassName("landscape")
 				for(const section of hideOrientation)
 				{
-					section.classList.add("hidden");
+					section.classList.add("hidden")
 				}
 			}
 			else
 			{
-				console.log("Landscaping.");
-				const hideOrientation = document.getElementsByClassName("portrait");
+				console.log("Landscaping.")
+				const hideOrientation = document.getElementsByClassName("portrait")
 				for(const section of hideOrientation)
 				{
-					section.classList.add("hidden");
+					section.classList.add("hidden")
 				}
 			}
 		}
 		else
 		{
-			console.log(`${query} not found yet...`);
+			console.log(`${query} not found yet...`)
 		}
-	};
-	const idSetInterval = setInterval(findElement, 100, `listAirReal_${tab}`);
-};
+	}
+	const idSetInterval = setInterval(findElement, 100, `listAirReal_${tab}`)
+}
 
-const tabs = ["Head", "Arm", "Body", "Wing", "Leg"];
+const tabs = ["Head", "Arm", "Body", "Wing", "Leg"]
 for(const tab of tabs)
 {
-	appendData(tab);
+	appendData(tab)
 }
 
 ons.orientation.on("change", (event) =>
 {
 	if(event.isPortrait)
 	{
-		console.log("Portraited.");
-		const hideOrientation = document.getElementsByClassName("landscape");
-		const showOrientation = document.getElementsByClassName("portrait");
+		console.log("Portraited.")
+		const hideOrientation = document.getElementsByClassName("landscape")
+		const showOrientation = document.getElementsByClassName("portrait")
 		for(const section of hideOrientation)
 		{
-			section.classList.add("hidden");
+			section.classList.add("hidden")
 		}
 		for(const section of showOrientation)
 		{
-			section.classList.remove("hidden");
+			section.classList.remove("hidden")
 		}
 	}
 	else
 	{
-		console.log("Landscaped.");
-		const hideOrientation = document.getElementsByClassName("portrait");
-		const showOrientation = document.getElementsByClassName("landscape");
+		console.log("Landscaped.")
+		const hideOrientation = document.getElementsByClassName("portrait")
+		const showOrientation = document.getElementsByClassName("landscape")
 		for(const section of hideOrientation)
 		{
-			section.classList.add("hidden");
+			section.classList.add("hidden")
 		}
 		for(const section of showOrientation)
 		{
-			section.classList.remove("hidden");
+			section.classList.remove("hidden")
 		}
 	}
-});
-};
+})
+}

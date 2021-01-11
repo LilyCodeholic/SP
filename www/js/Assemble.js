@@ -1,75 +1,75 @@
 const funcPageAssemble = () =>
 {
-const AirReal = SPDB.AirReal;
-const Weapon = SPDB.Weapon;
-const AsOne = SPDB.AsOne;
+const AirReal = SPDB.AirReal
+const Weapon = SPDB.Weapon
+const AsOne = SPDB.AsOne
 
 const appendData = () =>
 {
 	// AsOnes[0].En -> "Hikari", AsOnes[0].Ja -> "ヒカリ"
-	const AsOnes = Array.from(AsOne.Order);
+	const AsOnes = Array.from(AsOne.Order)
 	// Skills.Hikari[0] -> "武器切り替え速度上昇"
 	const Skills = {}
 	for(const asone of Object.keys(AsOne.Skill))
 	{
 		if(asone == "Status" || asone == "Order")
 		{
-			continue;
+			continue
 		}
 		else if(Skills[asone] == undefined)
 		{
-			Skills[asone] = [];
+			Skills[asone] = []
 		}
 		for(const skill of AsOne.Skill[asone])
 		{
-			Skills[asone].push(skill.skill);
+			Skills[asone].push(skill.skill)
 		}
 	}
 	// Weapons.Assault.L[0] -> "拳銃 天火", Weapons.Support.LR[0] -> "ヴァイト"
-	const Weapons = {Assault: {L: [], R: [], LR: []}, Vanguard: {L: [], R: [], LR: []}, Support: {L: [], R: [], LR: []}};
+	const Weapons = {Assault: {L: [], R: [], LR: []}, Vanguard: {L: [], R: [], LR: []}, Support: {L: [], R: [], LR: []}}
 	for(const role of Object.keys(Weapon))
 	{
 		if(role == "Status")
 		{
-			continue;
+			continue
 		}
 		for(const weapon of Weapon[role])
 		{
 			switch(weapon.side)
 			{
 				case "L":
-					Weapons[role].L.push(weapon.name);
-					break;
+					Weapons[role].L.push(weapon.name)
+					break
 				case "R":
-					Weapons[role].R.push(weapon.name);
-					break;
+					Weapons[role].R.push(weapon.name)
+					break
 				case "LR":
-					Weapons[role].LR.push(weapon.name);
-					break;
+					Weapons[role].LR.push(weapon.name)
+					break
 			}
 		}
 	}
 	// AirReals[0] -> "ソリディア"
-	const AirReals = [];
+	const AirReals = []
 	for(const part of AirReal.Head)
 	{
-		AirReals.push(part.name);
+		AirReals.push(part.name)
 	}
 
-	const fragment = document.createDocumentFragment();
-	const pSection = document.createElement("section");
-	pSection.setAttribute("class", "portrait");
+	const fragment = document.createDocumentFragment()
+	const pSection = document.createElement("section")
+	pSection.setAttribute("class", "portrait")
 
 	// AsOne
 	const addAsOneExpandableContent = () =>
 	{
-		const pAsOneRadio = document.createElement("div");
-		pAsOneRadio.setAttribute("id", "pAsOne");
-		pAsOneRadio.setAttribute("class", "expandable-content");
-		const pAsOneRow = document.createElement("ons-row");
-		const pAsOneCol = document.createElement("ons-col");
-		const pAsOneSkillCol = document.createElement("ons-col");
-		const pAsOneSkillDiv = {};
+		const pAsOneRadio = document.createElement("div")
+		pAsOneRadio.setAttribute("id", "pAsOne")
+		pAsOneRadio.setAttribute("class", "expandable-content")
+		const pAsOneRow = document.createElement("ons-row")
+		const pAsOneCol = document.createElement("ons-col")
+		const pAsOneSkillCol = document.createElement("ons-col")
+		const pAsOneSkillDiv = {}
 		AsOnes.forEach((who, asoneIndex) =>
 		{
 			pAsOneCol.insertAdjacentHTML("beforeend", `
@@ -83,20 +83,20 @@ const appendData = () =>
 					</label>
 					<label for="pAsOne${asoneIndex}" class="center">${who.Ja}</label>
 				</ons-list-item>
-			`);
+			`)
 
-			pAsOneSkillDiv[who.En] = document.createElement("div");
-			pAsOneSkillDiv[who.En].setAttribute("id", `pAsOne${who.En}`);
+			pAsOneSkillDiv[who.En] = document.createElement("div")
+			pAsOneSkillDiv[who.En].setAttribute("id", `pAsOne${who.En}`)
 			if(asoneIndex != 0)
 			{
-				pAsOneSkillDiv[who.En].setAttribute("class", "hidden");
+				pAsOneSkillDiv[who.En].setAttribute("class", "hidden")
 			}
-			pAsOneSkillCol.innerHTML = "";
+			pAsOneSkillCol.innerHTML = ""
 			Skills[who.En].forEach((skill, skillIndex) =>
 			{
 				if(skill == "？？？")
 				{
-					return;
+					return
 				}
 				pAsOneSkillCol.insertAdjacentHTML("beforeend", `
 					<ons-list-item>
@@ -109,20 +109,20 @@ const appendData = () =>
 						</label>
 						<label for="pAsOne${asoneIndex}-${skillIndex}" class="center">${skill}</label>
 					</ons-list-item>
-				`);
-			});
-			pAsOneSkillDiv[who.En].appendChild(pAsOneSkillCol.cloneNode(true));
-		});
-		pAsOneRow.appendChild(pAsOneCol);
+				`)
+			})
+			pAsOneSkillDiv[who.En].appendChild(pAsOneSkillCol.cloneNode(true))
+		})
+		pAsOneRow.appendChild(pAsOneCol)
 		for(const who of AsOnes)
 		{
-			pAsOneRow.appendChild(pAsOneSkillDiv[who.En]);
+			pAsOneRow.appendChild(pAsOneSkillDiv[who.En])
 		}
-		pAsOneRadio.appendChild(pAsOneRow);
+		pAsOneRadio.appendChild(pAsOneRow)
 
-		return pAsOneRadio.outerHTML;
-	};
-	const pAsOneList_header = document.createElement("ons-list-header");
+		return pAsOneRadio.outerHTML
+	}
+	const pAsOneList_header = document.createElement("ons-list-header")
 	pAsOneList_header.innerHTML = `
 		<ons-row>
 			<ons-col>
@@ -132,9 +132,9 @@ const appendData = () =>
 				アズワンスキル
 			</ons-col>
 		</ons-row>
-	`;
-	const pAsOneList_item = document.createElement("ons-list-item");
-	pAsOneList_item.setAttribute("expandable", "");
+	`
+	const pAsOneList_item = document.createElement("ons-list-item")
+	pAsOneList_item.setAttribute("expandable", "")
 	pAsOneList_item.innerHTML = `
 		<ons-row>
 			<ons-col id="pTxtAsOne" class="area5">
@@ -145,22 +145,22 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addAsOneExpandableContent()}
-	`;
+	`
 
-	pSection.appendChild(pAsOneList_header);
-	pSection.appendChild(pAsOneList_item);
+	pSection.appendChild(pAsOneList_header)
+	pSection.appendChild(pAsOneList_item)
 
 	// Weapon
 	const addWeaponExpandableContent = (role, order) =>
 	{
-		const pWeaponRadio = document.createElement("div");
-		pWeaponRadio.setAttribute("id", `p${role}${order}`);
-		pWeaponRadio.setAttribute("class", "expandable-content");
-		const pWeaponSingleRow = document.createElement("ons-row");
-		const pWeaponLCol = document.createElement("ons-col");
-		const pWeaponRCol = document.createElement("ons-col");
-		const pWeaponDoubleRow = document.createElement("ons-row");
-		const pWeaponLRCol = document.createElement("ons-col");
+		const pWeaponRadio = document.createElement("div")
+		pWeaponRadio.setAttribute("id", `p${role}${order}`)
+		pWeaponRadio.setAttribute("class", "expandable-content")
+		const pWeaponSingleRow = document.createElement("ons-row")
+		const pWeaponLCol = document.createElement("ons-col")
+		const pWeaponRCol = document.createElement("ons-col")
+		const pWeaponDoubleRow = document.createElement("ons-row")
+		const pWeaponLRCol = document.createElement("ons-col")
 
 		Weapons[role].L.forEach((weapon, weaponIndex) =>
 		{
@@ -175,8 +175,8 @@ const appendData = () =>
 					</label>
 					<label for="p${role}${order}L${weaponIndex}" class="center">${weapon}</label>
 				</ons-list-item>
-			`);
-		});
+			`)
+		})
 		Weapons[role].R.forEach((weapon, weaponIndex) =>
 		{
 			pWeaponRCol.insertAdjacentHTML("beforeend", `
@@ -190,8 +190,8 @@ const appendData = () =>
 					</label>
 					<label for="p${role}${order}R${weaponIndex}" class="center">${weapon}</label>
 				</ons-list-item>
-			`);
-		});
+			`)
+		})
 		Weapons[role].LR.forEach((weapon, weaponIndex) =>
 		{
 			pWeaponLRCol.insertAdjacentHTML("beforeend", `
@@ -201,21 +201,21 @@ const appendData = () =>
 					</label>
 					<label for="p${role}${order}LR${weaponIndex}" class="center">${weapon}</label>
 				</ons-list-item>
-			`);
-		});
-		pWeaponSingleRow.appendChild(pWeaponLCol);
-		pWeaponSingleRow.appendChild(pWeaponRCol);
-		pWeaponDoubleRow.appendChild(pWeaponLRCol);
-		pWeaponRadio.appendChild(pWeaponSingleRow);
-		pWeaponRadio.appendChild(pWeaponDoubleRow);
+			`)
+		})
+		pWeaponSingleRow.appendChild(pWeaponLCol)
+		pWeaponSingleRow.appendChild(pWeaponRCol)
+		pWeaponDoubleRow.appendChild(pWeaponLRCol)
+		pWeaponRadio.appendChild(pWeaponSingleRow)
+		pWeaponRadio.appendChild(pWeaponDoubleRow)
 
-		return pWeaponRadio.outerHTML;
-	};
-	const pAsList_header = document.createElement("ons-list-header");
-	pAsList_header.innerHTML = `アサルト`;
-	const pAs1st = document.createElement("ons-list-item");
-	pAs1st.setAttribute("id", "pList_itemAssault1st");
-	pAs1st.setAttribute("expandable", "");
+		return pWeaponRadio.outerHTML
+	}
+	const pAsList_header = document.createElement("ons-list-header")
+	pAsList_header.innerHTML = `アサルト`
+	const pAs1st = document.createElement("ons-list-item")
+	pAs1st.setAttribute("id", "pList_itemAssault1st")
+	pAs1st.setAttribute("expandable", "")
 	pAs1st.innerHTML = `
 		<ons-row class="single">
 			<ons-col width="7%" class="area5">
@@ -240,10 +240,10 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addWeaponExpandableContent("Assault", "1st")}
-	`;
-	const pAs2nd = document.createElement("ons-list-item");
-	pAs2nd.setAttribute("id", "pList_itemAssault2nd");
-	pAs2nd.setAttribute("expandable", "");
+	`
+	const pAs2nd = document.createElement("ons-list-item")
+	pAs2nd.setAttribute("id", "pList_itemAssault2nd")
+	pAs2nd.setAttribute("expandable", "")
 	pAs2nd.innerHTML = `
 		<ons-row class="single">
 			<ons-col width="7%" class="area5">
@@ -268,12 +268,12 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addWeaponExpandableContent("Assault", "2nd")}
-	`;
-	const pVgList_header = document.createElement("ons-list-header");
-	pVgList_header.innerHTML = `ヴァンガード`;
-	const pVg1st = document.createElement("ons-list-item");
-	pVg1st.setAttribute("id", "pList_itemVanguard1st");
-	pVg1st.setAttribute("expandable", "");
+	`
+	const pVgList_header = document.createElement("ons-list-header")
+	pVgList_header.innerHTML = `ヴァンガード`
+	const pVg1st = document.createElement("ons-list-item")
+	pVg1st.setAttribute("id", "pList_itemVanguard1st")
+	pVg1st.setAttribute("expandable", "")
 	pVg1st.innerHTML = `
 		<ons-row class="single">
 			<ons-col width="7%" class="area5">
@@ -298,10 +298,10 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addWeaponExpandableContent("Vanguard", "1st")}
-	`;
-	const pVg2nd = document.createElement("ons-list-item");
-	pVg2nd.setAttribute("id", "pList_itemVanguard2nd");
-	pVg2nd.setAttribute("expandable", "");
+	`
+	const pVg2nd = document.createElement("ons-list-item")
+	pVg2nd.setAttribute("id", "pList_itemVanguard2nd")
+	pVg2nd.setAttribute("expandable", "")
 	pVg2nd.innerHTML = `
 		<ons-row class="single">
 			<ons-col width="7%" class="area5">
@@ -326,12 +326,12 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addWeaponExpandableContent("Vanguard", "2nd")}
-	`;
-	const pSpList_header = document.createElement("ons-list-header");
-	pSpList_header.innerHTML = `サポート`;
-	const pSp1st = document.createElement("ons-list-item");
-	pSp1st.setAttribute("id", "pList_itemSupport1st");
-	pSp1st.setAttribute("expandable", "");
+	`
+	const pSpList_header = document.createElement("ons-list-header")
+	pSpList_header.innerHTML = `サポート`
+	const pSp1st = document.createElement("ons-list-item")
+	pSp1st.setAttribute("id", "pList_itemSupport1st")
+	pSp1st.setAttribute("expandable", "")
 	pSp1st.innerHTML = `
 		<ons-row class="single">
 			<ons-col width="7%" class="area5">
@@ -356,10 +356,10 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addWeaponExpandableContent("Support", "1st")}
-	`;
-	const pSp2nd = document.createElement("ons-list-item");
-	pSp2nd.setAttribute("id", "pList_itemSupport2nd");
-	pSp2nd.setAttribute("expandable", "");
+	`
+	const pSp2nd = document.createElement("ons-list-item")
+	pSp2nd.setAttribute("id", "pList_itemSupport2nd")
+	pSp2nd.setAttribute("expandable", "")
 	pSp2nd.innerHTML = `
 		<ons-row class="single">
 			<ons-col width="7%" class="area5">
@@ -384,31 +384,31 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addWeaponExpandableContent("Support", "2nd")}
-	`;
-	pSection.appendChild(pAsList_header);
-	pSection.appendChild(pAs1st);
-	pSection.appendChild(pAs2nd);
-	pSection.appendChild(pVgList_header);
-	pSection.appendChild(pVg1st);
-	pSection.appendChild(pVg2nd);
-	pSection.appendChild(pSpList_header);
-	pSection.appendChild(pSp1st);
-	pSection.appendChild(pSp2nd);
+	`
+	pSection.appendChild(pAsList_header)
+	pSection.appendChild(pAs1st)
+	pSection.appendChild(pAs2nd)
+	pSection.appendChild(pVgList_header)
+	pSection.appendChild(pVg1st)
+	pSection.appendChild(pVg2nd)
+	pSection.appendChild(pSpList_header)
+	pSection.appendChild(pSp1st)
+	pSection.appendChild(pSp2nd)
 
 	// AirReal
 	const addAirRealExpandableContent = (part) =>
 	{
-		const pAirRealRadio = document.createElement("div");
-		pAirRealRadio.setAttribute("id", `p${part}`);
-		pAirRealRadio.setAttribute("class", "expandable-content");
-		const pAirRealRow = document.createElement("ons-row");
-		const pAirRealCol = document.createElement("ons-col");
+		const pAirRealRadio = document.createElement("div")
+		pAirRealRadio.setAttribute("id", `p${part}`)
+		pAirRealRadio.setAttribute("class", "expandable-content")
+		const pAirRealRow = document.createElement("ons-row")
+		const pAirRealCol = document.createElement("ons-col")
 
 		AirReals.forEach((series, partsIndex) =>
 		{
 			if(series == "？？？")
 			{
-				return;
+				return
 			}
 			pAirRealCol.insertAdjacentHTML("beforeend", `
 				<ons-list-item>
@@ -421,51 +421,51 @@ const appendData = () =>
 					</label>
 					<label for="p${part}${partsIndex}" class="center">${series}</label>
 				</ons-list-item>
-			`);
-		});
-		pAirRealRow.appendChild(pAirRealCol);
-		pAirRealRadio.appendChild(pAirRealRow);
+			`)
+		})
+		pAirRealRow.appendChild(pAirRealCol)
+		pAirRealRadio.appendChild(pAirRealRow)
 
-		return pAirRealRadio.outerHTML;
-	};
+		return pAirRealRadio.outerHTML
+	}
 
-	const pARList_header = document.createElement("ons-list-header");
-	pARList_header.innerHTML = `エア・リアルパーツ`;
-	const pHead = document.createElement("ons-list-item");
-	pHead.setAttribute("id", "pList_itemHead");
-	pHead.setAttribute("expandable", "");
+	const pARList_header = document.createElement("ons-list-header")
+	pARList_header.innerHTML = `エア・リアルパーツ`
+	const pHead = document.createElement("ons-list-item")
+	pHead.setAttribute("id", "pList_itemHead")
+	pHead.setAttribute("expandable", "")
 	pHead.onclick = (event) =>
 	{
 		if(document.getElementById("pList_itemHead").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
-			const pArmor = document.getElementById("pArmor");
+			const pArmor = document.getElementById("pArmor")
 			if(/ =&gt; /.test(pArmor.innerHTML))
 			{
-				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1];
+				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDurability = document.getElementById("pDurability");
+			const pDurability = document.getElementById("pDurability")
 			if(/ =&gt; /.test(pDurability.innerHTML))
 			{
-				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1];
+				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pWeight = document.getElementById("pWeight");
+			const pWeight = document.getElementById("pWeight")
 			if(/ =&gt; /.test(pWeight.innerHTML))
 			{
-				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1];
+				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pLength = document.getElementById("pLength");
+			const pLength = document.getElementById("pLength")
 			if(/ =&gt; /.test(pLength.innerHTML))
 			{
-				pLength.innerHTML = pLength.innerHTML.split(/ =&gt; /)[1];
+				pLength.innerHTML = pLength.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pRange = document.getElementById("pRange");
+			const pRange = document.getElementById("pRange")
 			if(/ =&gt; /.test(pRange.innerHTML))
 			{
-				pRange.innerHTML = pRange.innerHTML.split(/ =&gt; /)[1];
+				pRange.innerHTML = pRange.innerHTML.split(/ =&gt; /)[1]
 			}
 		}
-	};
+	}
 	pHead.innerHTML = `
 		<ons-row>
 			<ons-col width="5%" class="area5">
@@ -479,33 +479,33 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addAirRealExpandableContent("head")}
-	`;
+	`
 
-	const pArm = document.createElement("ons-list-item");
-	pArm.setAttribute("id", "pList_itemArm");
-	pArm.setAttribute("expandable", "");
+	const pArm = document.createElement("ons-list-item")
+	pArm.setAttribute("id", "pList_itemArm")
+	pArm.setAttribute("expandable", "")
 	pArm.onclick = (event) =>
 	{
 		if(document.getElementById("pList_itemArm").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
-			const pArmor = document.getElementById("pArmor");
+			const pArmor = document.getElementById("pArmor")
 			if(/ =&gt; /.test(pArmor.innerHTML))
 			{
-				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1];
+				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDurability = document.getElementById("pDurability");
+			const pDurability = document.getElementById("pDurability")
 			if(/ =&gt; /.test(pDurability.innerHTML))
 			{
-				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1];
+				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pWeight = document.getElementById("pWeight");
+			const pWeight = document.getElementById("pWeight")
 			if(/ =&gt; /.test(pWeight.innerHTML))
 			{
-				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1];
+				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1]
 			}
 		}
-	};
+	}
 	pArm.innerHTML = `
 		<ons-row>
 			<ons-col width="5%" class="area5">
@@ -519,43 +519,43 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addAirRealExpandableContent("arm")}
-	`;
+	`
 
-	const pBody = document.createElement("ons-list-item");
-	pBody.setAttribute("id", "pList_itemBody");
-	pBody.setAttribute("expandable", "");
+	const pBody = document.createElement("ons-list-item")
+	pBody.setAttribute("id", "pList_itemBody")
+	pBody.setAttribute("expandable", "")
 	pBody.onclick = (event) =>
 	{
 		if(document.getElementById("pList_itemBody").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
-			const pArmor = document.getElementById("pArmor");
+			const pArmor = document.getElementById("pArmor")
 			if(/ =&gt; /.test(pArmor.innerHTML))
 			{
-				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1];
+				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDurability = document.getElementById("pDurability");
+			const pDurability = document.getElementById("pDurability")
 			if(/ =&gt; /.test(pDurability.innerHTML))
 			{
-				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1];
+				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pWeight = document.getElementById("pWeight");
+			const pWeight = document.getElementById("pWeight")
 			if(/ =&gt; /.test(pWeight.innerHTML))
 			{
-				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1];
+				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pRepairSpeed = document.getElementById("pRepairSpeed");
+			const pRepairSpeed = document.getElementById("pRepairSpeed")
 			if(/ =&gt; /.test(pRepairSpeed.innerHTML))
 			{
-				pRepairSpeed.innerHTML = pRepairSpeed.innerHTML.split(/ =&gt; /)[1];
+				pRepairSpeed.innerHTML = pRepairSpeed.innerHTML.split(/ =&gt; /)[1]
 			}
-			const prepairWaiting = document.getElementById("prepairWaiting");
+			const prepairWaiting = document.getElementById("prepairWaiting")
 			if(/ =&gt; /.test(prepairWaiting.innerHTML))
 			{
-				prepairWaiting.innerHTML = prepairWaiting.innerHTML.split(/ =&gt; /)[1];
+				prepairWaiting.innerHTML = prepairWaiting.innerHTML.split(/ =&gt; /)[1]
 			}
 		}
-	};
+	}
 	pBody.innerHTML = `
 		<ons-row>
 			<ons-col width="5%" class="area5">
@@ -569,63 +569,63 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addAirRealExpandableContent("body")}
-	`;
+	`
 
-	const pWing = document.createElement("ons-list-item");
-	pWing.setAttribute("id", "pList_itemWing");
-	pWing.setAttribute("expandable", "");
+	const pWing = document.createElement("ons-list-item")
+	pWing.setAttribute("id", "pList_itemWing")
+	pWing.setAttribute("expandable", "")
 	pWing.onclick = (event) =>
 	{
 		if(document.getElementById("pList_itemWing").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
-			const pArmor = document.getElementById("pArmor");
+			const pArmor = document.getElementById("pArmor")
 			if(/ =&gt; /.test(pArmor.innerHTML))
 			{
-				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1];
+				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDurability = document.getElementById("pDurability");
+			const pDurability = document.getElementById("pDurability")
 			if(/ =&gt; /.test(pDurability.innerHTML))
 			{
-				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1];
+				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pWeight = document.getElementById("pWeight");
+			const pWeight = document.getElementById("pWeight")
 			if(/ =&gt; /.test(pWeight.innerHTML))
 			{
-				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1];
+				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDashType = document.getElementById("pDashType");
+			const pDashType = document.getElementById("pDashType")
 			if(/ =&gt; /.test(pDashType.innerHTML))
 			{
-				pDashType.innerHTML = pDashType.innerHTML.split(/ =&gt; /)[1];
+				pDashType.innerHTML = pDashType.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDodge = document.getElementById("pDodge");
+			const pDodge = document.getElementById("pDodge")
 			if(/ =&gt; /.test(pDodge.innerHTML))
 			{
-				pDodge.innerHTML = pDodge.innerHTML.split(/ =&gt; /)[1];
+				pDodge.innerHTML = pDodge.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDash = document.getElementById("pDash");
+			const pDash = document.getElementById("pDash")
 			if(/ =&gt; /.test(pDash.innerHTML))
 			{
-				pDash.innerHTML = pDash.innerHTML.split(/ =&gt; /)[1];
+				pDash.innerHTML = pDash.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pFdType = document.getElementById("pFdType");
+			const pFdType = document.getElementById("pFdType")
 			if(/ =&gt; /.test(pFdType.innerHTML))
 			{
-				pFdType.innerHTML = pFdType.innerHTML.split(/ =&gt; /)[1];
+				pFdType.innerHTML = pFdType.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pFdCharge = document.getElementById("pFdCharge");
+			const pFdCharge = document.getElementById("pFdCharge")
 			if(/ =&gt; /.test(pFdCharge.innerHTML))
 			{
-				pFdCharge.innerHTML = pFdCharge.innerHTML.split(/ =&gt; /)[1];
+				pFdCharge.innerHTML = pFdCharge.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDrift = document.getElementById("pDrift");
+			const pDrift = document.getElementById("pDrift")
 			if(/ =&gt; /.test(pDrift.innerHTML))
 			{
-				pDrift.innerHTML = pDrift.innerHTML.split(/ =&gt; /)[1];
+				pDrift.innerHTML = pDrift.innerHTML.split(/ =&gt; /)[1]
 			}
 		}
-	};
+	}
 	pWing.innerHTML = `
 		<ons-row>
 			<ons-col width="5%" class="area5">
@@ -639,38 +639,38 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addAirRealExpandableContent("wing")}
-	`;
+	`
 
-	const pLeg = document.createElement("ons-list-item");
-	pLeg.setAttribute("id", "pList_itemLeg");
-	pLeg.setAttribute("expandable", "");
+	const pLeg = document.createElement("ons-list-item")
+	pLeg.setAttribute("id", "pList_itemLeg")
+	pLeg.setAttribute("expandable", "")
 	pLeg.onclick = (event) =>
 	{
 		if(document.getElementById("pList_itemLeg").classList.contains("expanded"))
 		{
 			// 装備を確定させる処理
-			const pArmor = document.getElementById("pArmor");
+			const pArmor = document.getElementById("pArmor")
 			if(/ =&gt; /.test(pArmor.innerHTML))
 			{
-				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1];
+				pArmor.innerHTML = pArmor.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pDurability = document.getElementById("pDurability");
+			const pDurability = document.getElementById("pDurability")
 			if(/ =&gt; /.test(pDurability.innerHTML))
 			{
-				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1];
+				pDurability.innerHTML = pDurability.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pWeight = document.getElementById("pWeight");
+			const pWeight = document.getElementById("pWeight")
 			if(/ =&gt; /.test(pWeight.innerHTML))
 			{
-				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1];
+				pWeight.innerHTML = pWeight.innerHTML.split(/ =&gt; /)[1]
 			}
-			const pOccupation = document.getElementById("pOccupation");
+			const pOccupation = document.getElementById("pOccupation")
 			if(/ =&gt; /.test(pOccupation.innerHTML))
 			{
-				pOccupation.innerHTML = pOccupation.innerHTML.split(/ =&gt; /)[1];
+				pOccupation.innerHTML = pOccupation.innerHTML.split(/ =&gt; /)[1]
 			}
 		}
-	};
+	}
 	pLeg.innerHTML = `
 		<ons-row>
 			<ons-col width="5%" class="area5">
@@ -684,10 +684,10 @@ const appendData = () =>
 			</ons-col>
 		</ons-row>
 		${addAirRealExpandableContent("leg")}
-	`;
+	`
 
-	const pSetBonus = document.createElement("ons-list-item");
-	pSetBonus.setAttribute("id", "pList_itemSetBonus");
+	const pSetBonus = document.createElement("ons-list-item")
+	pSetBonus.setAttribute("id", "pList_itemSetBonus")
 	pSetBonus.innerHTML = `
 		<ons-row>
 			<ons-col  class="area5">
@@ -697,18 +697,18 @@ const appendData = () =>
 				${AirReal.SetBonus[0].feature.join('<br>')}
 			</ons-col>
 		</ons-row>
-	`;
-	pSection.appendChild(pARList_header);
-	pSection.appendChild(pHead);
-	pSection.appendChild(pArm);
-	pSection.appendChild(pBody);
-	pSection.appendChild(pWing);
-	pSection.appendChild(pLeg);
-	pSection.appendChild(pSetBonus);
+	`
+	pSection.appendChild(pARList_header)
+	pSection.appendChild(pHead)
+	pSection.appendChild(pArm)
+	pSection.appendChild(pBody)
+	pSection.appendChild(pWing)
+	pSection.appendChild(pLeg)
+	pSection.appendChild(pSetBonus)
 
 	// Spec
-	const pSpec = document.createElement("ons-list-item");
-	pSpec.setAttribute("id", "pSpec");
+	const pSpec = document.createElement("ons-list-item")
+	pSpec.setAttribute("id", "pSpec")
 	pSpec.innerHTML = `
 		<ons-row>
 			<ons-col>アーマー</ons-col>
@@ -786,54 +786,54 @@ const appendData = () =>
 				${AirReal.Wing[0].drift}
 			</ons-col>
 		</ons-row>
-	`;
-	pSection.style.marginBottom = "10em";
-	fragment.appendChild(pSection);
-	fragment.appendChild(pSpec);
+	`
+	pSection.style.marginBottom = "10em"
+	fragment.appendChild(pSection)
+	fragment.appendChild(pSpec)
 
 	// hoist event
-	const pageAssemble = document.getElementById("pageAssemble");
+	const pageAssemble = document.getElementById("pageAssemble")
 	const getOthersParameter = (part, getType) =>
 	{
-		const pHead = {query: document.querySelectorAll(`ons-radio[name="phead"]`)};
-		const pArm = {query: document.querySelectorAll(`ons-radio[name="parm"]`)};
-		const pBody = {query: document.querySelectorAll(`ons-radio[name="pbody"]`)};
-		const pWing = {query: document.querySelectorAll(`ons-radio[name="pwing"]`)};
-		const pLeg = {query: document.querySelectorAll(`ons-radio[name="pleg"]`)};
+		const pHead = {query: document.querySelectorAll(`ons-radio[name="phead"]`)}
+		const pArm = {query: document.querySelectorAll(`ons-radio[name="parm"]`)}
+		const pBody = {query: document.querySelectorAll(`ons-radio[name="pbody"]`)}
+		const pWing = {query: document.querySelectorAll(`ons-radio[name="pwing"]`)}
+		const pLeg = {query: document.querySelectorAll(`ons-radio[name="pleg"]`)}
 
 		for(const element of pHead.query)
 		{
 			if(element.checked)
 			{
-				pHead.checked = element.attributes["input-id"].value.split(/phead/)[1];
+				pHead.checked = element.attributes["input-id"].value.split(/phead/)[1]
 			}
 		}
 		for(const element of pArm.query)
 		{
 			if(element.checked)
 			{
-				pArm.checked = element.attributes["input-id"].value.split(/parm/)[1];
+				pArm.checked = element.attributes["input-id"].value.split(/parm/)[1]
 			}
 		}
 		for(const element of pBody.query)
 		{
 			if(element.checked)
 			{
-				pBody.checked = element.attributes["input-id"].value.split(/pbody/)[1];
+				pBody.checked = element.attributes["input-id"].value.split(/pbody/)[1]
 			}
 		}
 		for(const element of pWing.query)
 		{
 			if(element.checked)
 			{
-				pWing.checked = element.attributes["input-id"].value.split(/pwing/)[1];
+				pWing.checked = element.attributes["input-id"].value.split(/pwing/)[1]
 			}
 		}
 		for(const element of pLeg.query)
 		{
 			if(element.checked)
 			{
-				pLeg.checked = element.attributes["input-id"].value.split(/pleg/)[1];
+				pLeg.checked = element.attributes["input-id"].value.split(/pleg/)[1]
 			}
 		}
 		switch(getType)
@@ -845,7 +845,7 @@ const appendData = () =>
 				((part != "body" && AirReal.Body[pBody.checked].armor | 0) | 0) +
 				((part != "wing" && AirReal.Wing[pWing.checked].armor | 0) | 0) +
 				((part != "leg" && AirReal.Leg[pLeg.checked].armor | 0) | 0)
-				);
+				)
 			case "durability":
 				return (
 				(part != "head" && AirReal.Head[pHead.checked].durability | 0) +
@@ -853,7 +853,7 @@ const appendData = () =>
 				(part != "body" && AirReal.Body[pBody.checked].durability | 0) +
 				(part != "wing" && AirReal.Wing[pWing.checked].durability | 0) +
 				(part != "leg" && AirReal.Leg[pLeg.checked].durability | 0)
-				);
+				)
 			case "weight":
 				return (
 				(part != "head" && AirReal.Head[pHead.checked].weight | 0) +
@@ -861,253 +861,253 @@ const appendData = () =>
 				(part != "body" && AirReal.Body[pBody.checked].weight | 0) +
 				(part != "wing" && AirReal.Wing[pWing.checked].weight | 0) +
 				(part != "leg" && AirReal.Leg[pLeg.checked].weight | 0)
-				);
+				)
 			default:
-				break;
+				break
 		}
-	};
+	}
 	pageAssemble.addEventListener("change", (event) =>
 	{
-		const eventName = event.srcElement.name;
-		const eventId = event.srcElement.id;
+		const eventName = event.srcElement.name
+		const eventId = event.srcElement.id
 
-		const pTxtHead = document.getElementById("pTxtHead");
-		const pTxtArm = document.getElementById("pTxtArm");
-		const pTxtBody = document.getElementById("pTxtBody");
-		const pTxtWing = document.getElementById("pTxtWing");
-		const pTxtLeg = document.getElementById("pTxtLeg");
-		const pTxtSetBonusFeature = document.getElementById("pTxtSetBonusFeature");
-		const pTxts = [pTxtHead, pTxtArm, pTxtBody, pTxtWing, pTxtLeg];
+		const pTxtHead = document.getElementById("pTxtHead")
+		const pTxtArm = document.getElementById("pTxtArm")
+		const pTxtBody = document.getElementById("pTxtBody")
+		const pTxtWing = document.getElementById("pTxtWing")
+		const pTxtLeg = document.getElementById("pTxtLeg")
+		const pTxtSetBonusFeature = document.getElementById("pTxtSetBonusFeature")
+		const pTxts = [pTxtHead, pTxtArm, pTxtBody, pTxtWing, pTxtLeg]
 
 		switch(eventName)
 		{
 			case "pAsOne":
 				{
 					// ["", "0"]
-					const removeIndex = event.srcElement.id.split("pAsOne");
+					const removeIndex = event.srcElement.id.split("pAsOne")
 					AsOnes.forEach((asone, index) =>
 					{
-						const skill = document.getElementById(`pAsOne${AsOnes[index].En}`);
+						const skill = document.getElementById(`pAsOne${AsOnes[index].En}`)
 						if(index == removeIndex[1])
 						{
-							skill.classList.remove("hidden");
+							skill.classList.remove("hidden")
 						}
 						else
 						{
-							skill.classList.add("hidden");
+							skill.classList.add("hidden")
 						}
-					});
+					})
 				}
-				break;
+				break
 			case "pAsOneSkill":
 				{
 					// ["", "0", "0"]
-					const [,asoneIndex,asoneSkillIndex] = eventId.split(/pAsOne|-/);
-					const pTxtAsOne = document.getElementById("pTxtAsOne");
-					const pTxtSkill = document.getElementById("pTxtSkill");
+					const [,asoneIndex,asoneSkillIndex] = eventId.split(/pAsOne|-/)
+					const pTxtAsOne = document.getElementById("pTxtAsOne")
+					const pTxtSkill = document.getElementById("pTxtSkill")
 
-					pTxtAsOne.innerHTML = AsOnes[asoneIndex].Ja;
-					pTxtSkill.innerHTML = Skills[AsOnes[asoneIndex].En][asoneSkillIndex];
+					pTxtAsOne.innerHTML = AsOnes[asoneIndex].Ja
+					pTxtSkill.innerHTML = Skills[AsOnes[asoneIndex].En][asoneSkillIndex]
 				}
-				break;
+				break
 			case "phead":
 				{
 					// ["", "0"]
-					const selectIndex = event.srcElement.id.split(/phead/)[1];
-					const pTxtHeadFeature = document.getElementById("pTxtHeadFeature");
+					const selectIndex = event.srcElement.id.split(/phead/)[1]
+					const pTxtHeadFeature = document.getElementById("pTxtHeadFeature")
 
-					pTxtHead.innerHTML = AirReals[selectIndex];
-					pTxtHeadFeature.innerHTML = `${AirReal.Head[selectIndex].feature.join('<br>')}`;
+					pTxtHead.innerHTML = AirReals[selectIndex]
+					pTxtHeadFeature.innerHTML = `${AirReal.Head[selectIndex].feature.join('<br>')}`
 
 					// 性能の差分を表示する処理
-					const pArmor = document.getElementById("pArmor");
-					const pDurability = document.getElementById("pDurability");
-					const pWeight = document.getElementById("pWeight");
-					const pLength = document.getElementById("pLength");
-					const pRange = document.getElementById("pRange");
-					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					const pNowLength = pLength.innerHTML.split(/ =&gt; /)[0];
-					const pNowRange = pRange.innerHTML.split(/ =&gt; /)[0];
+					const pArmor = document.getElementById("pArmor")
+					const pDurability = document.getElementById("pDurability")
+					const pWeight = document.getElementById("pWeight")
+					const pLength = document.getElementById("pLength")
+					const pRange = document.getElementById("pRange")
+					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0]
+					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0]
+					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0]
+					const pNowLength = pLength.innerHTML.split(/ =&gt; /)[0]
+					const pNowRange = pRange.innerHTML.split(/ =&gt; /)[0]
 					// セットボーナス
-					const is = {"SetBonus": false};
+					const is = {"SetBonus": false}
 					if(pTxts.every((current) => current.innerText === pTxts[0].innerText))
 					{
-						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>');
-						is.SetBonus = true;
+						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>')
+						is.SetBonus = true
 					}
 					else
 					{
-						pTxtSetBonusFeature.innerHTML = "-";
+						pTxtSetBonusFeature.innerHTML = "-"
 					}
 
-					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Head[selectIndex].armor | 0) + getOthersParameter("head", "armor")}`;
-					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Head[selectIndex].durability + getOthersParameter("head", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`;
-					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Head[selectIndex].weight + getOthersParameter("head", "weight")}`;
-					pLength.innerHTML = `${pNowLength} => ${AirReal.Head[selectIndex].length}`;
-					pRange.innerHTML = `${pNowRange} => ${AirReal.Head[selectIndex].range}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Head[selectIndex].armor | 0) + getOthersParameter("head", "armor")}`
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Head[selectIndex].durability + getOthersParameter("head", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Head[selectIndex].weight + getOthersParameter("head", "weight")}`
+					pLength.innerHTML = `${pNowLength} => ${AirReal.Head[selectIndex].length}`
+					pRange.innerHTML = `${pNowRange} => ${AirReal.Head[selectIndex].range}`
 				}
-				break;
+				break
 			case "parm":
 				{
 					// ["", "0"]
-					const selectIndex = event.srcElement.id.split(/parm/)[1];
-					const pTxtArmFeature = document.getElementById("pTxtArmFeature");
+					const selectIndex = event.srcElement.id.split(/parm/)[1]
+					const pTxtArmFeature = document.getElementById("pTxtArmFeature")
 
-					pTxtArm.innerHTML = AirReals[selectIndex];
-					pTxtArmFeature.innerHTML = `${AirReal.Arm[selectIndex].feature.join('<br>')}`;
+					pTxtArm.innerHTML = AirReals[selectIndex]
+					pTxtArmFeature.innerHTML = `${AirReal.Arm[selectIndex].feature.join('<br>')}`
 
 					// 性能の差分を表示する処理
-					const pArmor = document.getElementById("pArmor");
-					const pDurability = document.getElementById("pDurability");
-					const pWeight = document.getElementById("pWeight");
-					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
+					const pArmor = document.getElementById("pArmor")
+					const pDurability = document.getElementById("pDurability")
+					const pWeight = document.getElementById("pWeight")
+					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0]
+					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0]
+					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0]
 					// セットボーナス
-					const is = {"SetBonus": false};
+					const is = {"SetBonus": false}
 					if(pTxts.every((current) => current.innerText === pTxts[0].innerText))
 					{
-						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>');
-						is.SetBonus = true;
+						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>')
+						is.SetBonus = true
 					}
 					else
 					{
-						pTxtSetBonusFeature.innerHTML = "-";
+						pTxtSetBonusFeature.innerHTML = "-"
 					}
 
-					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Arm[selectIndex].armor | 0) + getOthersParameter("arm", "armor")}`;
-					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Arm[selectIndex].durability + getOthersParameter("arm", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`;
-					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Arm[selectIndex].weight + getOthersParameter("arm", "weight")}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Arm[selectIndex].armor | 0) + getOthersParameter("arm", "armor")}`
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Arm[selectIndex].durability + getOthersParameter("arm", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Arm[selectIndex].weight + getOthersParameter("arm", "weight")}`
 				}
-				break;
+				break
 			case "pbody":
 				{
 					// ["", "0"]
-					const selectIndex = event.srcElement.id.split(/pbody/)[1];
-					const pTxtBodyFeature = document.getElementById("pTxtBodyFeature");
+					const selectIndex = event.srcElement.id.split(/pbody/)[1]
+					const pTxtBodyFeature = document.getElementById("pTxtBodyFeature")
 
-					pTxtBody.innerHTML = AirReals[selectIndex];
-					pTxtBodyFeature.innerHTML = `${AirReal.Body[selectIndex].feature.join('<br>')}`;
+					pTxtBody.innerHTML = AirReals[selectIndex]
+					pTxtBodyFeature.innerHTML = `${AirReal.Body[selectIndex].feature.join('<br>')}`
 
 					// 性能の差分を表示する処理
-					const pArmor = document.getElementById("pArmor");
-					const pDurability = document.getElementById("pDurability");
-					const pWeight = document.getElementById("pWeight");
-					const pRepairSpeed = document.getElementById("pRepairSpeed");
-					const prepairWaiting = document.getElementById("prepairWaiting");
-					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					const pNowRepairSpeed = pRepairSpeed.innerHTML.split(/ =&gt; /)[0];
-					const pNowrepairWaiting = prepairWaiting.innerHTML.split(/ =&gt; /)[0];
+					const pArmor = document.getElementById("pArmor")
+					const pDurability = document.getElementById("pDurability")
+					const pWeight = document.getElementById("pWeight")
+					const pRepairSpeed = document.getElementById("pRepairSpeed")
+					const prepairWaiting = document.getElementById("prepairWaiting")
+					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0]
+					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0]
+					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0]
+					const pNowRepairSpeed = pRepairSpeed.innerHTML.split(/ =&gt; /)[0]
+					const pNowrepairWaiting = prepairWaiting.innerHTML.split(/ =&gt; /)[0]
 					// セットボーナス
-					const is = {"SetBonus": false};
+					const is = {"SetBonus": false}
 					if(pTxts.every((current) => current.innerText === pTxts[0].innerText))
 					{
-						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>');
-						is.SetBonus = true;
+						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>')
+						is.SetBonus = true
 					}
 					else
 					{
-						pTxtSetBonusFeature.innerHTML = "-";
+						pTxtSetBonusFeature.innerHTML = "-"
 					}
 
-					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Body[selectIndex].armor | 0) + getOthersParameter("body", "armor")}`;
-					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Body[selectIndex].durability + getOthersParameter("body", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`;
-					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Body[selectIndex].weight + getOthersParameter("body", "weight")}`;
-					pRepairSpeed.innerHTML = `${pNowRepairSpeed} => ${AirReal.Body[selectIndex].repairSpeed}`;
-					prepairWaiting.innerHTML = `${pNowrepairWaiting} => ${AirReal.Body[selectIndex].repairWaiting}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Body[selectIndex].armor | 0) + getOthersParameter("body", "armor")}`
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Body[selectIndex].durability + getOthersParameter("body", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Body[selectIndex].weight + getOthersParameter("body", "weight")}`
+					pRepairSpeed.innerHTML = `${pNowRepairSpeed} => ${AirReal.Body[selectIndex].repairSpeed}`
+					prepairWaiting.innerHTML = `${pNowrepairWaiting} => ${AirReal.Body[selectIndex].repairWaiting}`
 				}
-				break;
+				break
 			case "pwing":
 				{
 					// ["", "0"]
-					const selectIndex = event.srcElement.id.split(/pwing/)[1];
-					const pTxtWingFeature = document.getElementById("pTxtWingFeature");
+					const selectIndex = event.srcElement.id.split(/pwing/)[1]
+					const pTxtWingFeature = document.getElementById("pTxtWingFeature")
 
-					pTxtWing.innerHTML = AirReals[selectIndex];
-					pTxtWingFeature.innerHTML = `${AirReal.Wing[selectIndex].feature.join('<br>')}`;
+					pTxtWing.innerHTML = AirReals[selectIndex]
+					pTxtWingFeature.innerHTML = `${AirReal.Wing[selectIndex].feature.join('<br>')}`
 
 					// 性能の差分を表示する処理
-					const pArmor = document.getElementById("pArmor");
-					const pDurability = document.getElementById("pDurability");
-					const pWeight = document.getElementById("pWeight");
-					const pDashType = document.getElementById("pDashType");
-					const pDodge = document.getElementById("pDodge");
-					const pDash = document.getElementById("pDash");
-					const pFdType = document.getElementById("pFdType");
-					const pFdCharge = document.getElementById("pFdCharge");
-					const pDrift = document.getElementById("pDrift");
-					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					const pNowDashType = pDashType.innerHTML.split(/ =&gt; /)[0];
-					const pNowDodge = pDodge.innerHTML.split(/ =&gt; /)[0];
-					const pNowDash = pDash.innerHTML.split(/ =&gt; /)[0];
-					const pNowFdType = pFdType.innerHTML.split(/ =&gt; /)[0];
-					const pNowFdCharge = pFdCharge.innerHTML.split(/ =&gt; /)[0];
-					const pNowDrift = pDrift.innerHTML.split(/ =&gt; /)[0];
+					const pArmor = document.getElementById("pArmor")
+					const pDurability = document.getElementById("pDurability")
+					const pWeight = document.getElementById("pWeight")
+					const pDashType = document.getElementById("pDashType")
+					const pDodge = document.getElementById("pDodge")
+					const pDash = document.getElementById("pDash")
+					const pFdType = document.getElementById("pFdType")
+					const pFdCharge = document.getElementById("pFdCharge")
+					const pDrift = document.getElementById("pDrift")
+					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0]
+					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0]
+					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0]
+					const pNowDashType = pDashType.innerHTML.split(/ =&gt; /)[0]
+					const pNowDodge = pDodge.innerHTML.split(/ =&gt; /)[0]
+					const pNowDash = pDash.innerHTML.split(/ =&gt; /)[0]
+					const pNowFdType = pFdType.innerHTML.split(/ =&gt; /)[0]
+					const pNowFdCharge = pFdCharge.innerHTML.split(/ =&gt; /)[0]
+					const pNowDrift = pDrift.innerHTML.split(/ =&gt; /)[0]
 					// セットボーナス
-					const is = {"SetBonus": false};
+					const is = {"SetBonus": false}
 					if(pTxts.every((current) => current.innerText === pTxts[0].innerText))
 					{
-						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>');
-						is.SetBonus = true;
+						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>')
+						is.SetBonus = true
 					}
 					else
 					{
-						pTxtSetBonusFeature.innerHTML = "-";
+						pTxtSetBonusFeature.innerHTML = "-"
 					}
 
-					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Wing[selectIndex].armor | 0) + getOthersParameter("wing", "armor")}`;
-					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Wing[selectIndex].durability + getOthersParameter("wing", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`;
-					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Wing[selectIndex].weight + getOthersParameter("wing", "weight")}`;
-					pDashType.innerHTML = `${pNowDashType} => ${AirReal.Wing[selectIndex].dashType}`;
-					pDodge.innerHTML = `${pNowDodge} => ${AirReal.Wing[selectIndex].dodge}`;
-					pDash.innerHTML = `${pNowDash} => ${AirReal.Wing[selectIndex].dash}`;
-					pFdType.innerHTML = `${pNowFdType} => ${AirReal.Wing[selectIndex].fdType}`;
-					pFdCharge.innerHTML = `${pNowFdCharge} => ${AirReal.Wing[selectIndex].fdCharge}`;
-					pDrift.innerHTML = `${pNowDrift} => ${AirReal.Wing[selectIndex].drift}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Wing[selectIndex].armor | 0) + getOthersParameter("wing", "armor")}`
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Wing[selectIndex].durability + getOthersParameter("wing", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Wing[selectIndex].weight + getOthersParameter("wing", "weight")}`
+					pDashType.innerHTML = `${pNowDashType} => ${AirReal.Wing[selectIndex].dashType}`
+					pDodge.innerHTML = `${pNowDodge} => ${AirReal.Wing[selectIndex].dodge}`
+					pDash.innerHTML = `${pNowDash} => ${AirReal.Wing[selectIndex].dash}`
+					pFdType.innerHTML = `${pNowFdType} => ${AirReal.Wing[selectIndex].fdType}`
+					pFdCharge.innerHTML = `${pNowFdCharge} => ${AirReal.Wing[selectIndex].fdCharge}`
+					pDrift.innerHTML = `${pNowDrift} => ${AirReal.Wing[selectIndex].drift}`
 				}
-				break;
+				break
 			case "pleg":
 				{
 					// ["", "0"]
-					const selectIndex = event.srcElement.id.split(/pleg/)[1];
-					const pTxtLegFeature = document.getElementById("pTxtLegFeature");
+					const selectIndex = event.srcElement.id.split(/pleg/)[1]
+					const pTxtLegFeature = document.getElementById("pTxtLegFeature")
 
-					pTxtLeg.innerHTML = AirReals[selectIndex];
-					pTxtLegFeature.innerHTML = `${AirReal.Leg[selectIndex].feature.join('<br>')}`;
+					pTxtLeg.innerHTML = AirReals[selectIndex]
+					pTxtLegFeature.innerHTML = `${AirReal.Leg[selectIndex].feature.join('<br>')}`
 
 					// 性能の差分を表示する処理
-					const pArmor = document.getElementById("pArmor");
-					const pDurability = document.getElementById("pDurability");
-					const pWeight = document.getElementById("pWeight");
-					const pOccupation = document.getElementById("pOccupation");
-					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0];
-					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0];
-					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0];
-					const pNowOccupation = pOccupation.innerHTML.split(/ =&gt; /)[0];
+					const pArmor = document.getElementById("pArmor")
+					const pDurability = document.getElementById("pDurability")
+					const pWeight = document.getElementById("pWeight")
+					const pOccupation = document.getElementById("pOccupation")
+					const pNowArmor = pArmor.innerHTML.split(/ =&gt; /)[0]
+					const pNowDurability = pDurability.innerHTML.split(/ =&gt; /)[0]
+					const pNowWeight = pWeight.innerHTML.split(/ =&gt; /)[0]
+					const pNowOccupation = pOccupation.innerHTML.split(/ =&gt; /)[0]
 					// セットボーナス
-					const is = {"SetBonus": false};
+					const is = {"SetBonus": false}
 					if(pTxts.every((current) => current.innerText === pTxts[0].innerText))
 					{
-						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>');
-						is.SetBonus = true;
+						pTxtSetBonusFeature.innerHTML = AirReal.SetBonus[selectIndex].feature.join('<br>')
+						is.SetBonus = true
 					}
 					else
 					{
-						pTxtSetBonusFeature.innerHTML = "-";
+						pTxtSetBonusFeature.innerHTML = "-"
 					}
 
-					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Leg[selectIndex].armor | 0) + getOthersParameter("leg", "armor")}`;
-					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Leg[selectIndex].durability + getOthersParameter("leg", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`;
-					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Leg[selectIndex].weight + getOthersParameter("leg", "weight")}`;
-					pOccupation.innerHTML = `${pNowOccupation} => ${AirReal.Leg[selectIndex].occupation}`;
+					pArmor.innerHTML = `${pNowArmor} => ${(AirReal.Leg[selectIndex].armor | 0) + getOthersParameter("leg", "armor")}`
+					pDurability.innerHTML = `${pNowDurability} => ${AirReal.Leg[selectIndex].durability + getOthersParameter("leg", "durability") + ((is.SetBonus && AirReal.SetBonus[selectIndex].durability) | 0)}`
+					pWeight.innerHTML = `${pNowWeight} => ${AirReal.Leg[selectIndex].weight + getOthersParameter("leg", "weight")}`
+					pOccupation.innerHTML = `${pNowOccupation} => ${AirReal.Leg[selectIndex].occupation}`
 				}
-				break;
+				break
 			case "pAssault1stL":
 			case "pAssault1stR":
 			case "pAssault2ndL":
@@ -1122,30 +1122,30 @@ const appendData = () =>
 			case "pSupport2ndR":
 				{
 					// ["", "0"]
-					const [,weaponIndex] = event.srcElement.id.split(RegExp(eventName));
+					const [,weaponIndex] = event.srcElement.id.split(RegExp(eventName))
 					// "Assault"
-					const role = eventName.split(RegExp(["1st", "2nd"].join("|")))[0].slice(1);
+					const role = eventName.split(RegExp(["1st", "2nd"].join("|")))[0].slice(1)
 					// "1st"
-					const order = eventName.split(RegExp(["Assault", "Vanguard", "Support"].join("|")))[1].substring(0, 3);
+					const order = eventName.split(RegExp(["Assault", "Vanguard", "Support"].join("|")))[1].substring(0, 3)
 					// "L"
-					const side = eventName.slice(-1);
+					const side = eventName.slice(-1)
 					// "pTxtAssault1stL"
-					const pTxt = {[eventName]: document.getElementById(`pTxt${eventName.slice(1)}`)};
-					pTxt[eventName].innerHTML = Weapons[role][side][weaponIndex];
+					const pTxt = {[eventName]: document.getElementById(`pTxt${eventName.slice(1)}`)}
+					pTxt[eventName].innerHTML = Weapons[role][side][weaponIndex]
 
 					// singleとdoubleでラジオボタンの選択状態を排他する
 					const pRadioLR = {[eventName]: document.getElementsByName(`${eventName.slice(0, -1)}LR`)}
 					for(const radio of pRadioLR[eventName])
 					{
-						radio.checked = false;
+						radio.checked = false
 					}
 					// singleとdoubleの表示を入れ替える
-					const single = document.querySelector(`#pList_item${role}${order} .single`);
-					const double = document.querySelector(`#pList_item${role}${order} .double`);
-					single.classList.remove("hidden");
-					double.classList.add("hidden");
+					const single = document.querySelector(`#pList_item${role}${order} .single`)
+					const double = document.querySelector(`#pList_item${role}${order} .double`)
+					single.classList.remove("hidden")
+					double.classList.add("hidden")
 				}
-				break;
+				break
 
 			case "pAssault1stLR":
 			case "pAssault2ndLR":
@@ -1155,56 +1155,56 @@ const appendData = () =>
 			case "pSupport2ndLR":
 				{
 					// ["", "0"]
-					const [,weaponIndex] = event.srcElement.id.split(RegExp(eventName));
+					const [,weaponIndex] = event.srcElement.id.split(RegExp(eventName))
 					// "Assault"
-					const role = eventName.split(RegExp(["1st", "2nd"].join("|")))[0].slice(1);
+					const role = eventName.split(RegExp(["1st", "2nd"].join("|")))[0].slice(1)
 					// "1st"
-					const order = eventName.split(RegExp(["Assault", "Vanguard", "Support"].join("|")))[1].substring(0, 3);
+					const order = eventName.split(RegExp(["Assault", "Vanguard", "Support"].join("|")))[1].substring(0, 3)
 					// "LR"
-					const side = "LR";
+					const side = "LR"
 					// "pTxtAssault1stLR"
-					const pTxt = {[eventName]: document.getElementById(`pTxt${eventName.slice(1)}`)};
-					pTxt[eventName].innerHTML = Weapons[role][side][weaponIndex];
+					const pTxt = {[eventName]: document.getElementById(`pTxt${eventName.slice(1)}`)}
+					pTxt[eventName].innerHTML = Weapons[role][side][weaponIndex]
 
 					// singleとdoubleでラジオボタンの選択状態を排他する
 					const pRadioL = {[eventName]: document.getElementsByName(`${eventName.slice(0, -2)}L`)}
 					const pRadioR = {[eventName]: document.getElementsByName(`${eventName.slice(0, -2)}R`)}
 					for(const radio of pRadioL[eventName])
 					{
-						radio.checked = false;
+						radio.checked = false
 					}
 					for(const radio of pRadioR[eventName])
 					{
-						radio.checked = false;
+						radio.checked = false
 					}
 					// singleとdoubleの表示を入れ替える
-					const single = document.querySelector(`#pList_item${role}${order} .single`);
-					const double = document.querySelector(`#pList_item${role}${order} .double`);
-					double.classList.remove("hidden");
-					single.classList.add("hidden");
+					const single = document.querySelector(`#pList_item${role}${order} .single`)
+					const double = document.querySelector(`#pList_item${role}${order} .double`)
+					double.classList.remove("hidden")
+					single.classList.add("hidden")
 				}
-				break;
+				break
 
 			default:
-				break;
+				break
 		}
-	});
+	})
 
 	const findElement = (query) =>
 	{
-		const listAssemble = document.getElementById(query);
+		const listAssemble = document.getElementById(query)
 		if(listAssemble != null)
 		{
-			clearInterval(idSetInterval);
-			listAssemble.appendChild(fragment);
+			clearInterval(idSetInterval)
+			listAssemble.appendChild(fragment)
 		}
 		else
 		{
-			console.log(`${query} not found yet...`);
+			console.log(`${query} not found yet...`)
 		}
-	};
-	const idSetInterval = setInterval(findElement, 100, `listAssemble`);
-};
+	}
+	const idSetInterval = setInterval(findElement, 100, `listAssemble`)
+}
 
-appendData();
-};
+appendData()
+}

@@ -1,47 +1,47 @@
 const funcPageStage = () =>
 {
-loadStage();
+loadStage()
 
 const appendData = (list) =>
 {
-	const fragment = document.createDocumentFragment();
+	const fragment = document.createDocumentFragment()
 	for(const items of SPDB.Stage[list])
 	{
 		if(items.name == "？？？")
 		{
-			continue;
+			continue
 		}
-		const list_item = document.createElement("ons-list-item");
-		list_item.setAttribute("expandable", "");
+		const list_item = document.createElement("ons-list-item")
+		list_item.setAttribute("expandable", "")
 		list_item.innerHTML = `
 			<span class="list-item__title">
 				${items.name}
 			</span>
-		`;
+		`
 
-		const expandableContent = document.createElement("div");
-		expandableContent.setAttribute("class", "expandable-content");
-			expandableContent.innerHTML = items.svg;
+		const expandableContent = document.createElement("div")
+		expandableContent.setAttribute("class", "expandable-content")
+			expandableContent.innerHTML = items.svg
 
-		list_item.appendChild(expandableContent);
-		fragment.appendChild(list_item);
+		list_item.appendChild(expandableContent)
+		fragment.appendChild(list_item)
 	}
 
 	const findElement = (query) =>
 	{
-		const listStage = document.getElementById(query);
+		const listStage = document.getElementById(query)
 		if(listStage != null)
 		{
-			clearInterval(idSetInterval);
-			listStage.appendChild(fragment);
+			clearInterval(idSetInterval)
+			listStage.appendChild(fragment)
 		}
 		else
 		{
-			console.log(`${query} not found yet...`);
+			console.log(`${query} not found yet...`)
 		}
-	};
-	const idSetInterval = setInterval(findElement, 100, `listStage`);
-};
+	}
+	const idSetInterval = setInterval(findElement, 100, `listStage`)
+}
 
-appendData("Map");
-};
+appendData("Map")
+}

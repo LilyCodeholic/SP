@@ -1,6 +1,6 @@
 const funcPageNicePlay = () =>
 {
-const NicePlay = SPDB.NicePlay;
+const NicePlay = SPDB.NicePlay
 
 const category =
 {
@@ -10,43 +10,43 @@ const category =
 	"コア": "コア",
 	"他": "その他",
 	"キザナ": "キザナ",
-};
-const tabNicePlay = document.getElementById("tabNicePlay");
+}
+const tabNicePlay = document.getElementById("tabNicePlay")
 tabNicePlay.addEventListener("prechange", (event) =>
 {
-	textToolbar = `ナイスプレイ - ${category[event.tabItem.textContent]}`;
-	document.querySelector("#pageNicePlay .center").innerHTML = textToolbar;
-}, false);
+	textToolbar = `ナイスプレイ - ${category[event.tabItem.textContent]}`
+	document.querySelector("#pageNicePlay .center").innerHTML = textToolbar
+}, false)
 document.querySelector("#pageNicePlay ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = NicePlay.Status;
-	toast.toggle();
-};
+	document.getElementById("textToast").innerHTML = NicePlay.Status
+	toast.toggle()
+}
 
 const appendData = (tab) =>
 {
-	const fragment = document.createDocumentFragment();
+	const fragment = document.createDocumentFragment()
 
 	// ons-list-header
-	const fixedList_header = document.createElement("ons-list-header");
-	const backList_header = document.createElement("ons-list-header");
-	fixedList_header.setAttribute("class", "fixed");
+	const fixedList_header = document.createElement("ons-list-header")
+	const backList_header = document.createElement("ons-list-header")
+	fixedList_header.setAttribute("class", "fixed")
 	fixedList_header.innerHTML = `
 		<ons-row>
 			<ons-col width="80%">ナイスプレイ</ons-col>
 			<ons-col>ポイント</ons-col>
 		</ons-row>
-	`;
-	fragment.appendChild(fixedList_header);
-	fragment.appendChild(backList_header);
+	`
+	fragment.appendChild(fixedList_header)
+	fragment.appendChild(backList_header)
 
 	for(const items of NicePlay[tab])
 	{
 		if(items.play == "？？？")
 		{
-			continue;
+			continue
 		}
-		const list_item = document.createElement("ons-list-item");
+		const list_item = document.createElement("ons-list-item")
 		list_item.innerHTML = `
 			<ons-row>
 				<ons-col width="80%">
@@ -64,29 +64,29 @@ const appendData = (tab) =>
 					${items.point}
 				</ons-col>
 			</ons-row>
-		`;
-		fragment.appendChild(list_item);
+		`
+		fragment.appendChild(list_item)
 	}
 
 	const findElement = (query) =>
 	{
-		const listNicePlay = document.getElementById(query);
+		const listNicePlay = document.getElementById(query)
 		if(listNicePlay != null)
 		{
-			clearInterval(idSetInterval);
-			listNicePlay.appendChild(fragment);
+			clearInterval(idSetInterval)
+			listNicePlay.appendChild(fragment)
 		}
 		else
 		{
-			console.log(`${query} not found yet...`);
+			console.log(`${query} not found yet...`)
 		}
-	};
-	const idSetInterval = setInterval(findElement, 100, `listNicePlay_${tab}`);
-};
+	}
+	const idSetInterval = setInterval(findElement, 100, `listNicePlay_${tab}`)
+}
 
-const tabs = ["AirReal", "Object", "Port", "Core", "Other", "Kizana"];
+const tabs = ["AirReal", "Object", "Port", "Core", "Other", "Kizana"]
 for(const tab of tabs)
 {
-	appendData(tab);
+	appendData(tab)
 }
-};
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = "cachesSP";
+const CACHE_NAME = "cachesSP"
 const urlsToCache =
 [
     "/www/",
@@ -23,17 +23,17 @@ const urlsToCache =
     "/www/json/Task.js",
     "/www/json/Title.js",
     "/www/json/Weapon.js",
-];
+]
 
 self.addEventListener("install", (event) =>
 {
     // インストール処理
     event.waitUntil(caches.open(CACHE_NAME).then((cache) =>
     {
-        console.log("install: cache.addAll(urlsToCache)");
-        return cache.addAll(urlsToCache);
-    }));
-});
+        console.log("install: cache.addAll(urlsToCache)")
+        return cache.addAll(urlsToCache)
+    }))
+})
 
 self.addEventListener("fetch", (event) =>
 {
@@ -43,8 +43,8 @@ self.addEventListener("fetch", (event) =>
         if(response)
         {
 			console.log("fetch: return response")
-            return response;
+            return response
         }
-            return fetch(event.request);
-    }));
-});
+            return fetch(event.request)
+    }))
+})

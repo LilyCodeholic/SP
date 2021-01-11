@@ -1,30 +1,30 @@
 const funcPageTask = () =>
 {
-const Task = SPDB.Task;
+const Task = SPDB.Task
 
-const tabTask = document.getElementById("tabTask");
+const tabTask = document.getElementById("tabTask")
 tabTask.addEventListener("prechange", (event) =>
 {
-	textToolbar = `${event.tabItem.textContent}`;
-	document.querySelector("#pageTask .center").innerHTML = textToolbar;
-}, false);
+	textToolbar = `${event.tabItem.textContent}`
+	document.querySelector("#pageTask .center").innerHTML = textToolbar
+}, false)
 document.querySelector("#pageTask ons-toolbar-button").onclick = () =>
 {
-	document.getElementById("textToast").innerHTML = Task.Status;
-	toast.toggle();
-};
+	document.getElementById("textToast").innerHTML = Task.Status
+	toast.toggle()
+}
 
 const appendData = (tab) =>
 {
-	const fragment = document.createDocumentFragment();
+	const fragment = document.createDocumentFragment()
 	for(const items of Task[tab])
 	{
 		if(items.name == "？？？")
 		{
-			continue;
+			continue
 		}
-		const list_item = document.createElement("ons-list-item");
-		list_item.setAttribute("expandable", "");
+		const list_item = document.createElement("ons-list-item")
+		list_item.setAttribute("expandable", "")
 		switch(tab)
 		{
 			case "Mission":
@@ -45,8 +45,8 @@ const appendData = (tab) =>
 							<ons-col>${items.term}</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			case "Quest":
 				list_item.innerHTML = `
 					<span class="list-item__title">
@@ -85,34 +85,34 @@ const appendData = (tab) =>
 							<ons-col>${items.flag}</ons-col>
 						</ons-row>
 					</div>
-				`;
-				break;
+				`
+				break
 			default:
-				console.error("Task: error");
-				break;
+				console.error("Task: error")
+				break
 		}
-		fragment.appendChild(list_item);
+		fragment.appendChild(list_item)
 	}
 
 	const findElement = (query) =>
 	{
-		const listTitle = document.getElementById(query);
+		const listTitle = document.getElementById(query)
 		if(listTitle != null)
 		{
-			clearInterval(idSetInterval);
-			listTitle.appendChild(fragment);
+			clearInterval(idSetInterval)
+			listTitle.appendChild(fragment)
 		}
 		else
 		{
-			console.log(`${query} not found yet...`);
+			console.log(`${query} not found yet...`)
 		}
-	};
-	const idSetInterval = setInterval(findElement, 100, `listTask_${tab}`);
-};
+	}
+	const idSetInterval = setInterval(findElement, 100, `listTask_${tab}`)
+}
 
-const tabs = ["Mission", "Quest"];
+const tabs = ["Mission", "Quest"]
 for(const tab of tabs)
 {
-	appendData(tab);
+	appendData(tab)
 }
-};
+}

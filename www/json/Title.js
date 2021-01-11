@@ -1338,4 +1338,4 @@ SPDB.Title =
 			"flag":"Round1 TournamentYYYY#n 3位"
 		},
 	]
-};
+}
