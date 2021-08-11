@@ -103,6 +103,7 @@
 				performance.mark(`E_func${eventId}`)
 				performance.measure(`func${eventId}`, `S_func${eventId}`, `E_func${eventId}`)
 				console.log(`  performance: ${eventId} ${performance.getEntriesByName(`func${eventId}`)[0].duration} ms.`)
+				performance.clearMeasures()
 			}, false)
 
 			// 初期ページを設定

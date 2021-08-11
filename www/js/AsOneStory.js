@@ -25,7 +25,7 @@ document.querySelector("#pageAsOneStory ons-toolbar-button").onclick = () =>
 	toast.toggle()
 }
 
-const appendData = (tab) =>
+const appendData = async(tab) =>
 {
 	const fragment = document.createDocumentFragment()
 
@@ -34,12 +34,16 @@ const appendData = (tab) =>
 	article.setAttribute("name", `story${tab}`)
 
 	AsOneStory.Story[tab].forEach((categories, indexCategory) =>
+//	for(let indexCategory = 0; indexCategory < AsOneStory.Story[tab].length; indexCategory++)
 	{
+//		let categories = AsOneStory.Story[tab][indexCategory]
 		const list_header = document.createElement("ons-list-header")
-		list_header.innerHTML = categories.category
+		list_header.insertAdjacentHTML("beforeend", categories.category)
 		article.appendChild(list_header)
-		categories.scene.forEach((titles, indexTitle) =>
+//		categories.scene.forEach((titles, indexTitle) =>
+		for(let indexTitle = 0; indexTitle < categories.scene.length; indexTitle++)
 		{
+			let titles = categories.scene[indexTitle]
 			if(titles.title == "？？？")
 			{
 				return
@@ -50,8 +54,11 @@ const appendData = (tab) =>
 			const expandableContent = document.createElement("div")
 			expandableContent.setAttribute("class", "expandable-content")
 
-			titles.dialog.forEach((dialog, indexDialog) =>
+//			titles.dialog.forEach((dialog, indexDialog) =>
+			for(let indexDialog = 0; indexDialog < titles.dialog.length; indexDialog++)
 			{
+//console.log(tab, indexCategory)
+				let dialog = titles.dialog[indexDialog]
 				const expandableDiv = document.createElement("div")
 				const expandableSpan = document.createElement("span")
 
@@ -91,7 +98,7 @@ const appendData = (tab) =>
 
 				expandableDiv.setAttribute("class", area)
 
-				const expandableList_item = document.createElement("div")
+				const expandableList_item = document.createElement("ons-list-item")
 				expandableList_item.setAttribute("tappable", "")
 				expandableList_item.setAttribute("id", `${tab}${indexCategory}-${indexTitle}-${indexDialog}`)
 				if(indexDialog === 0)
@@ -112,12 +119,11 @@ const appendData = (tab) =>
 						edit.scrollIntoView(false)
 					}
 				}
-
 				expandableDiv.appendChild(expandableSpan)
 				expandableDiv.insertAdjacentHTML("afterbegin", `${actor}<br>`)
 				expandableList_item.appendChild(expandableDiv)
 				expandableContent.appendChild(expandableList_item)
-			})
+			}
 
 			list_item.insertAdjacentHTML("beforeend", `
 				${titles.title}
@@ -127,7 +133,7 @@ const appendData = (tab) =>
 			`)
 			list_item.appendChild(expandableContent)
 			article.appendChild(list_item)
-		})
+		}
 	})
 	fragment.appendChild(article)
 
@@ -148,8 +154,14 @@ const appendData = (tab) =>
 }
 
 const tabs = ["Hikari", "Reika", "Shirley", "Isadora", "Nagi", "Kazuma", "Other"]
-for(const tab of tabs)
+
+//Promise.all(tabs.map((tab) => new Promise(appendData(tab))))
+//tabs.map((tab) => appendData(tab))
+Promise.all(tabs.map(async(tab) =>
 {
-	appendData(tab)
-}
+	return new Promise((resolve, reject) =>
+	{
+		resolve(appendData(tab))
+	})
+}))
 }
